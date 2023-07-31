@@ -125,6 +125,18 @@
       // for (let value of Object.values(obj)) {
       //   console.log(value);
       // }
+
+      const car = {
+        make: "Honda",
+        model: "Accord",
+        year: 1998,
+      };
+      console.log("make" in car); // output: true
+      delete car.make;
+      if ("make" in car === false) {
+        car.make = "Suzuki";
+      }
+      console.log(car.make); //output: "Suzuki"
     </script>
   </body>
 </html>
