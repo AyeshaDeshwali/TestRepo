@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta chars="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = []; //Literal
+      let arr1 = new Array(); //Object
+
+      let object = {}; //Object
+      let object2 = new Object(); //Object
+
+      console.log(arr, arr1);
+      console.log(object, object2);
+
+      let i = 10;
+      let j = i; //10
+      i = 11;
+      console.log(i, j);
+
+      let obj1 = { name: "wecode" };
+      let obj2 = obj1;
+      let obj3 = obj2;
+      obj1.name = "Hello World";
+      obj2.name = "Hello Dear";
+      obj3.name = "Hi";
+      console.log(obj1, obj2, obj3);
+
+      //   let arr = [1, 2, 3, 4, 5];
+      //   let arr2 = arr;
+      //   let arr3 = arr2;
+      //   arr.push(6);
+      //   arr2.push(7);
+      //   arr3.push(8);
+      //   console.log(arr, arr2, arr3);
+
+      //   let map = new Map();
+      //   let map2 = map;
+      //   let map3 = map;
+      //   map.set(1, 100);
+      //   map2.set(2, 200);
+      //   map3.set(3, 300);
+      //   console.log(map, map2, map3);
+
+      //   let father = { houseAddress: "30, Narayanpuri, Jhotwara" };
+      //   let son = father;
+      //   let daughter = father;
+
+      //   let arr = [1, 2, 3, 4, 5];
+      //   arr.splice(2, 1);
+      //   let ans = arr.map((value) => {
+      //     return value * 10;
+      //   });
+      //   ans.push(100);
+      //   console.log(arr, ans);
+
+      //   let arr = [1, 2, 3, 4, 5];
+      //   let ans = arr.map((value) => {
+      //     return [value, value * 2];
+      //   });
+      //   //[1,2,2,4,3,6,4,8,5,10]
+      //   console.log(ans.flat());
+
+      //   let arr = [1, 2, 3, 4, 5];
+      //   let ans = arr.flatMap((value) => {
+      //     return [value, value * 2];
+      //   });
+      //   console.log(ans);
+
+      //   let arr = ["Hello World", "My name is", "Wecode Academy", "Jaipur"];
+      //   let ans = [];
+      //   for (let value of arr) {
+      //     let split = value.split(" ");
+      //     for (let val of split) {
+      //       ans.push(val);
+      //     }
+      //   }
+      //   console.log(ans);
+
+      //   let arr = ["Hello World", "My name is", "Wecode Academy", "Jaipur"];
+      //   let ans = arr.flatMap((value) => {
+      //     return value.split(" ");
+      //   });
+      //   [
+      //     ["Hello", "World"],
+      //     ["My", "Name", "is"],
+      //     ["Wecode", "Academy"],
+      //     ["Jaipur"],
+      //   ];
+      //   console.log(ans);
+      //
+    </script>
+  </body>
+</html>
