@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
+
       // --------------------my practice start----------------------------------------------------------------------
       ///------------------jase array kam krega vase hi set kam krega almost bs eske kuch mathods extra he jase ki has, delete or ye duplicate values nhi rkhta he
       //  ---What is a Set-------------->Set Deta Struecture hota he jo duplicate values nhi rkhta he---------------------------------------------
@@ -242,6 +234,3 @@
         obj[key] = value; //  obj[key] obj.key krne se nhi chlega Annotation Bracket krna pdega
       });
       console.log(obj);
-    </script>
-  </body>
-</html>
