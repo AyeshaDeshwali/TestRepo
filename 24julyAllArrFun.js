@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>allFunction</title>
-  </head>
-  <body>
-    <script>
+
       // ----------------------forEach---------------------------------------------------
 
       // let arr = [1, 2, 3, 4, 5];
@@ -299,6 +291,4 @@
       //   return para % 5 === 0 && para < 10;
       // });
       // console.log(ans);
-    </script>
-  </body>
-</html>
+
