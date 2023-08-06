@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>26julyarray</title>
-  </head>
-  <body>
-    <script>
-      // let arr = [1, 2, 3, 4, 5];
-      // let ans = arr.forEach((value) => {
-      //   console.log(value);
-      // });
-      // ans = arr.map((value) => {
-      //   return value * 10;
-      // });
-      // console.log(ans);
+        // let arr = [1, 2, 3, 4, 5];
+        // let ans = arr.forEach((value) => {
+        //   console.log(value);
+        // });
+        // ans = arr.map((value) => {
+        //   return value * 10;
+        // });
+        // console.log(ans);
 
       //   let arr = ["Shoaib", "Tahir", "Aamir", "Saad", "Ali Sher", "Anis", "Aarif"];
       //   arr.sort(); //Natural Sorting
@@ -126,6 +117,4 @@
       // let b = [a, 6, 7, 8, 9, 10];
       // let c = [a, b, 11, 12, 13, 14];
       // console.log(c.flat());
-    </script>
-  </body>
-</html>
+
