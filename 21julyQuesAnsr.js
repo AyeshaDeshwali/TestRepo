@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
+
       // 1. Check if the array is sorted in ascending order.
 
       // let arr = [1, 2, 3, 4, 5];
@@ -146,6 +138,4 @@
       // a.shift();
       // a.shift();
       // console.log(a);
-    </script>
-  </body>
-</html>
+
