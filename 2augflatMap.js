@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta chars="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2aug</title>
-  </head>
-  <body>
-    <script>
+
       // let arr = []; //Literal
       // let arr1 = new Array(); //Object
 
@@ -204,6 +196,3 @@
       // //   ["Jaipur"],
       // // ];
       // console.log(ans);
-    </script>
-  </body>
-</html>
