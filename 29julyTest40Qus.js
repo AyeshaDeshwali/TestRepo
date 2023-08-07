@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>29julyTest</title>
-  </head>
-  <body>
-    <script>
+
       // ,,,,,,,,,,,,,,,,,,,,,,,,,,exercise-13,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 
       // Question 1. Create an array with three elements and print out the second element.
@@ -183,6 +175,3 @@
       // console.log("Longest String:", longestString);
 
       // Question 5: Write a function that takes an array of numbers and returns the largest number in the array.
-    </script>
-  </body>
-</html>
