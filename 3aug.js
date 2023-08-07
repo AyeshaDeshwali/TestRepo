@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3aug</title>
-  </head>
-  <body>
-    <script>
       //   let arr = [23, 45, 677, 122, 78, 9];
       //   let fun = arr.reduce((crrunt, prive) => {
       //     return crrunt > prive ? crrunt : prive;
@@ -94,6 +85,3 @@
       //     map.set(1, 1);
       //   }
       //   console.log(map);
-    </script>
-  </body>
-</html>
