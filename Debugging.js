@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
       console.log("Hello");
       console.warn("Warning: Heavy load on the site.");
       console.error("Error: You are not connected to the internet");
@@ -66,6 +57,3 @@
       // console.log(i.toFixed(1000)); //RangeError: toFixed() digits argument must be between 0 and 100
 
       // Version control systems are a category of software tools that helps in recording changes made to files by keeping a track of modifications done in the code. for example Github
-    </script>
-  </body>
-</html>
