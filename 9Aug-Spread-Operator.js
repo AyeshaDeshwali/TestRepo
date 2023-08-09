@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
       //   let str = "WeCode Academy";
       //   let arr = [...str];
       //   console.log(arr);
@@ -234,6 +225,3 @@
       // };
       // // console.log(obj); // fix key he likh deya h name age mobile but key ko calculate krna chate h jase ko calcultion kr rhe h Math ki to ['ayesha' + ans]  ase krnge to key daynemic ho jaygi daynemic ka matlb ki key fix nhi h jo user prompt dalega usi ke hisab se aayga
       // console.log(obj["ayesha" + ans]); // ye 3447643 aa jayga kunki user ne jo b diya h prompt me use name me jode diya or jo nikalna h wo nikal lange
-    </script>
-  </body>
-</html>
