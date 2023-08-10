@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
       //   let book = ["Hindi", 200, 50];
       //   console.log(book[1]);esika sortcut niche
 
@@ -52,6 +43,4 @@
       }
       let [oneBook, TowBokk, ThreeBokk] = book();
       console.log(oneBook);
-    </script>
-  </body>
-</html>
+  
