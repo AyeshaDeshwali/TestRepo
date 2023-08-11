@@ -1,0 +1,177 @@
+
+      // ,,,,,,,,,,,,,,,,,,,,,,,,,,exercise-13,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+      // Question 1. Create an array with three elements and print out the second element.
+      //   let arr = [1, 2, 3];
+      //   console.log(arr.at(1));
+
+      //  Question 2. Create an array with five elements and print out the length of the array.
+      //   let arr = [1, 2, 3, 4, 5];
+      //   console.log(arr.length);
+
+      //  Question 3 Create an array with four elements and print out each element using a for loop.
+
+      //   let arr = [1, 2, 3, 4, 5];
+      //   for (i = 0; i < arr.length; i++) {
+      //     console.log(arr[i]);
+      //   }
+
+      //   Question 4. Create an array with six elements and print out each element using a forEach loop.
+      //   let arr = [1, 2, 3, 4, 5, 6];
+      //   arr.forEach((value) => {
+      //     console.log(value);
+      //   });
+
+      //   Question 5. Create an array with three elements and add a fourth element to the end of the array.
+      //   let arr = [1, 2, 3, 4, 5];
+      //   arr.push(6);
+      //   console.log(arr);
+
+      //   Question 6. Create an array with four elements and remove the second element.
+      // let arr = [1, 2, 3, 4, 5, 6];
+      // arr.splice(1, 1);
+      // console.log(arr);
+
+      //   Question 7. Create an array with five elements and remove the last element.
+      //   let arr = [1, 2, 3, 4, 5];
+      //   arr.pop();
+      //   console.log(arr);
+
+      // Question 8. Create an array with three elements and check if the array includes a specific value.
+      //   let arr = [1, 2, 3];
+      //   if (arr.includes(2)) {
+      //     console.log(2);
+      //   } else {
+      //     console.log(0);
+      //   }
+
+      //   Question 9. Create an array with five elements and sort the array in ascending order.
+      // const arr = [12, 457, 34, 9, 4];
+      // arr.sort(function ascending(value1, value2) {
+      //   return value1 - value2;
+      // });
+      // console.log(arr);
+
+      //   Question 10. Create an array with five elements and sort the array in descending order.
+
+      //   const arr = [12, 457, 34, 9, 4];
+      //   arr.sort(descending);
+      //   function descending(value1, value2) {
+      //     return value2 - value1;
+      //   }
+      //   console.log(arr);
+
+      // Question 11. Create two arrays, concatenate them and print out the resulting array.
+      // let a = [10, 20, 30, 40, 50];
+      // let b = [11, 22, 33, 44, 55];
+      // console.log(a.concat(b));
+      // console.log(b.concat(a));
+
+      //   Question 12. Create an array with three elements and convert it to a string.
+      //   let arr = ["saddam", "husain", "merta"];
+      //   console.log(arr.toString());
+
+      //  Question 13. Create an array with four elements and reverse the order of the elements.
+      //   let arr = ["d", "b", "c", "a"];
+      //   console.log(arr.reverse());
+
+      //   Question 14. Create an array with five elements and find the index of a specific value.
+      //   const arr = [1, 2, 3, 4, 5];
+      //   console.log(
+      //     arr.findIndex((value) => {
+      //       return value === 4;
+      //     })
+      //   );
+
+      //   const arr = [10, 2, 9, 4, 5];
+      //   let num = 9;
+      //   for (let i = 0; i < arr.length; i++) {
+      //     if (arr[i] === num) {
+      //       console.log(i);
+      //     }
+      //   }
+
+      //   let a = [1, 2, 3, 4, 5, 6];
+      //   console.log(a.indexOf(3));
+
+      //   Question 15. Create an array with six elements and slice the array to create a new array with the first three elements.
+      //   let arr = [1, 2, 3, 4, 5, 6];
+      //   console.log(arr.slice(0, 3));
+
+      // Question 16. Create an array with six elements and use the map method to double each element.
+      //   let arr = [1, 2, 3, 4, 5];
+      //   let arr2 = arr.map((value) => {
+      //     return value + 1;
+      //   });
+      //   console.log(arr2);
+
+      //   Question 17. Create an array with four elements and use the while loop to calculate the sum of all elements.
+      // const arr = [2, 5, 8, 3];
+      // let a = 0;
+      // let b = 0;
+      // while (b < arr.length) {
+      //   a = a + arr[b];
+      //   b++;
+      // }
+      // console.log(a);
+
+      //   Question 18. Create an array with five elements and use the filter method to return only the even numbers.
+      //   let a = [2, 3, 4, 5, 6, 7, 8, 9, 2, 45];
+      //   let b = a.filter((value) => {
+      //     if (value % 2 === 0) {
+      //       return value;
+      //     }
+      //   });
+      //   console.log(b);
+
+      //   Question 19. Create an array with three elements and use the join method to concatenate the elements with a dash (-) separator.
+      //   let arr = [1, 2, 3];
+      //   console.log(arr.join("-"));
+
+      //   Question 20. Create two arrays with three elements each and use the concat method to combine them into a new array.
+      //   let a = [10, 20, 30];
+      //   let b = [11, 22, 33];
+      //   console.log(a.concat(b));
+      //   console.log(b.concat(a));
+
+      //   -----------------------------exercise-14-------------------------------------------------------------
+
+      //    1. Create an array called fruits that contains the following elements: "apple", "banana", "orange". Now check if "orange" is in the fruits array.
+      //   const FRUITS = ["apple", "banana", "orange"];
+      //   if (FRUITS.includes("orange")) {
+      //     console.log("Orange");
+      //   } else {
+      //     console.log("no orange");
+      //   }
+
+      //   Question 2: Given an array of numbers, write a function that returns the sum of all the even numbers in the array.
+      // function AddSumEvenNumber(numbers) {
+      //   let sum = 0;
+      //   for (let i = 0; i < numbers.length; i++) {
+      //     if (numbers[i] % 2 === 0) {
+      //       sum = sum + numbers[i];
+      //     }
+      //   }
+      //   return sum;
+      // }
+      // let arr = [2, 3, 4, 5, 6, 7, 8];
+      // const num = AddSumEvenNumber(arr);
+      // console.log(num);
+
+      // ???????????? Question 3 : Given two arrays of numbers, write a function that returns a new array that contains only the unique elements from both arrays.
+
+      // Question 4: Given an array of strings, write a function that returns the longest string in the array.
+      // function findLongestString(arr) {
+      //   let longest = "";
+      //   for (let i = 0; i < arr.length; i++) {
+      //     if (arr[i].length > longest.length) {
+      //       longest = arr[i];
+      //     }
+      //   }
+      //   return longest;
+      // }
+      // const arr = ["apple", "banana", "grapefruit", "orange"];
+      // const longestString = findLongestString(arr);
+      // console.log("Longest String:", longestString);
+
+      // Question 5: Write a function that takes an array of numbers and returns the largest number in the array.

@@ -1,0 +1,294 @@
+
+      // ----------------------forEach---------------------------------------------------
+
+      // let arr = [1, 2, 3, 4, 5];
+      // arr.forEach((value) => {
+      //   if (value > 2) {
+      //     console.log(value);
+      //   }
+      // });
+
+      //callback function - ek ase function he jisko argument me pass krte he or jish function ko dete he wo esko call krta he // ek asa function he jesko call kiya jayga lakin kuch kam hone ke baad ya esko automaticly call kiya jayga or jesko denge wo call krega hm esko call nhi krenge
+      //   let arr = [1, 2, 3, 4, 5];//ye value kuch nhi he es value ko as perametor dena pdega //arr ki ek ek value forEach function ko dega to usko lane padegi lane ke liy perametor me value dena pdega
+      //   arr.forEach((value) => { // ek function he jesko ye forEach function call krega hme nhi pta he ki ye esko kase call kr rha he
+      //     if (value > 2) {
+      //       console.log(value);
+      //     }
+      //   }); // 3,4,5 // print krvana he multyple krvana he forEach use krna he
+
+      // --------------------------------------------------------------------------------------
+
+      // let arr = [1, 2, 3, 4, 5];
+      // arr.forEach((value) => {
+      //   if (value > 2) {
+      //     console.log(value);
+      //   }
+      // });
+
+      // --------------------------find--- (dhundna)-----jo bhi number he big he wo aa jayga------------------------------------------------------
+
+      // let a = [11, 2, 3, 4, 5]; // return es liy kr he kunki usko pta nhi chlega find function ko ki muje khna rukna he ye kha rukega jub yha se true return kr denge tb hi ruk jayga
+      // let ans = a.find((value) => {
+      //   return value > 3; // true return krna he agr true return kr deya to eske liy wo value aanser hogi kunki hume es partyculr element ke liy hmari condition true he
+      // }); // find sirf ek hi dhund ke dega // esme sirf condition lga ke return krvana hoga jish condition ke liy true ho gya uske liy wo ansr hoga
+      // console.log(ans); // finde fun ye kam easa krta he ye es callback fun (value) => {return value > 3;} ki es callback me konsi value ke liy muje true return krna he jiske liy true return huaa he wo ansr ho jayga ////3 se big 11 he to 11 he aayaga ye ek number deta he or bhi big hote he fir bhi
+
+      // -------------------------------------------------------------------------------
+      // agr value chay wo number chay jo 3 se big he to find use krenge ------ or agr sirf true or false chay to some
+      ///-------------------------some----- 1 bhi number 3 se big he to true--------------------------------------------------
+
+      // let a = [1, 2, 3, 4, 5];
+      // let ans = a.some((value) => {
+      //   return value > 3;
+      // });
+      // console.log(ans); // some yani ki koy bhi kuch bhi yani kya koy bhi value asi he es array ke ander jo 3 se big he agr wo value he to true return kr do or ar koy bhi value asi nhi he jo 3 se big he to false return kr do
+
+      // ------------------------every---- sare number 3 se big he he to-----------------------------------------------
+
+      //---------agr hr number 3 se big he to ansr true aayga otherwise  false aayga
+      // let arr = [1, 2, 3, 4, 5];
+      // let ans = arr.every((value) => {
+      //   return value > 3;
+      // });
+      // console.log(ans);
+
+      // ---------------------------------findIndex-------------------------------
+
+      // let arr = [11, 10, 3, 4, 15]; // index 0 se soru hogi
+      // ans = arr.findIndex((value) => {
+      //   return value > 11; // 11 number se jo bhi big hoga uski index de dega
+      // });
+      // console.log(ans); // 5
+
+      // ---------------------------map-------yani ki maping--------------------------------
+
+      // let arr = [1, 2, 3, 4, 5];
+      // ans = arr.map((value) => {
+      //   if (value > 3) {
+      //     return value * 10; // jub bhi map function use kre to sub ke liy kuch na kuch return kro nhi krenge to undefined aayga to ye na aaye to hr value ko 10 guna kr diya
+      //     // return value * 10; // kuch return nhi krne se undefined aata he to 3 se big number to into(x) ho jayge lakin 3 undefined aayge
+      //   }
+      // }); // agr kishi number ko dusre number me change krna chate he or wo asa change ho jo sub me kran chate he sare number me to map function ka use krnge
+      // console.log(ans);
+
+      // let arr = [1, 2, 3, 4, 5]; // nya array bnake diya he //prmanet change nhi hota he
+      // ans = arr.map((value) => {
+      //   // return value; // jesa he vesa aa jayga
+      //   return value + 1; //sub me ek ek jud jayga
+      // });
+      // console.log(ans, arr);
+
+      // --------------------------filter----(chantna)----------------------------------
+
+      // let arr = [1, 2, 3, 4, 5]; // find me ke deta he filter me sare dega
+      // let ans = arr.filter((value) => {
+      //   return value > 3; // 3 se big value filter krne se 4,5 aayga
+      // }); /// jha pe bhi ek se jayda value return return kregi to koy bhi function ek se jayda value return kr nhi skta wo array return krega agr ek se jayda value return krvani he kishi function se to hmesha array use krte he
+      // console.log(ans); // agr filter lga rhe he koy chij pe or wo ek se jayda value return kregi
+
+      // let arr = [1, 2, 3, 4, 5];
+      // ans = arr.filter((value) => {
+      //   if (value > 2 && value % 2 === 0) {
+      //     return true;
+      //   } else {
+      //     return false;
+      //   }
+      // });
+      // console.log(ans);
+
+      // ---------------------------reduce---->(kum krna)-----------------------------------
+
+      // let arr = [1, 2, 3, 4, 5]; // callback leta he jisme previousValue , currentIndex leta he
+      // ans = arr.reduce((prev, curr) => {
+      //   console.log(prev, curr); // prev me 1 or curr me 2
+      //   return prev + curr; // return krke waps bhejnge prev+curr ko jode kr return kr do
+      // });
+      // console.log(ans); // array ka reduce function kheta he ki array ko etna reduce kr do ki hemasa eska ansr 1 aaye jase array ke jitne bhi number he un sare number ko jod do sare number jodnge to 1 ansr aayga ya array ke jitne bhi numbers he unko aaps me multyple kr do to bhi 1 hi number aayga ya fir sub subject ke marks unko calculat krke parsrionteng nikalni he tb bhi ansr 1 aayga es tre ki requirement(aavesykta,jrurat) he to reduce function ko use krna he agr hmara 1 ansr aana he to reduce function hmesha 1 ansr dega
+
+      // [1, 2, 3, 4, 5]; /// ye phle ki [1,2] 2 value ko udhata he unko + * jo bhi krna he fark nhi pdta jo bhi krna he kro or usko return kr do ab aage ye hmesah 2 value nhi lega sirf phle bar hi 2 value lega aage hmesha 1 hi value lega or dusri matlb ki prev ye lega jha se ye prev calculat krke aayi he
+      // prev me 1 aaya or curr me 2 (1 or 2) = 3 (3 ko return kr diya)
+      // prev me ab 3 aaya or curr value he 3 to 3 or 3 = 6
+      // prev me ab 6 aaya or curr value he 4 to 6 or 4 = 10
+      // prev me ab 10 aaya or curr value he 5 to 10 or 5 = 15
+      //curr value to aage vali aa jaygi lakin prev value ko return krni padegi
+      // 1+2=3;
+      // 3+3;=6
+      // 6+4=10
+      // 10+5;=15
+
+      // let arr = [1, 2, 3, 4, 5];
+      // ans = arr.reduce((prev, curr) => {
+      //   console.log(prev, curr);
+      //   return prev + curr;
+      // }, 100);
+      // console.log(ans); // agr prev value de rhe he to wo lega nhi de rhe ho starting ki 2 value le lega
+
+      //prev me 100 aayga or curr me 1
+      // 100 + 1
+      // 101 + 2
+      // 103 + 3
+      // 106 + 4
+      // 110 + 5
+      // 115;
+
+      // let names = ["Aadil", "Arun", "Aadi", "Sara", "Ruhi", "Wecode", "Satyam"];
+      // let length = names.reduce((prev, curr) => {
+      //   console.log(prev, curr);
+      //   return prev + curr.length;
+      // }, 0); // agr es trhe requirement ho to hmesha insial value do agr kuch bhi inseal value nhi he to 0 de do
+      // console.log(length);
+      // prev me 0 or curr me Aadil to 0 + Aadil ki length 5
+      // prev me aa gya 5 or curr me Arun to 5 + Arun ki length 9
+      // prev me aa gya 9 or curr me Aadi to 9 + Aadi ki length 13
+      // prev me aa gya 13 or curr me Sara to 13 + Sara ki length 17
+      // prev me aa gya 17 or curr me Ruhi to 17 + Ruhi ki length 21
+      // prev me aa gya 21 or curr me Wecode to 21 + Wecode ki length 27
+      // prev me aa gya 27 or curr me Satyam to 21 + Satyam ki length 33
+
+      //   -----------------------------------------------------------------------------------------
+
+      //  let arr = [1, 2, 3, 4, 5]; // find me ke deta he filter me sare dega
+      //   let ans = arr.filter((value) => {
+      //     return value > 3; // 3 se big value filter krne se 4,5 aayga
+      //   }); /// jha pe bhi ek se jayda value return return kregi to koy bhi function ek se jayda value return kr nhi skta wo array return krega agr ek se jayda value return krvani he kishi function se to hmesha array use krte he
+      //   console.log(ans); // agr filter lga rhe he koy chij pe or wo ek se jayda value return kregi
+
+      // let a = [1, 2, 3, 4, 56, 78];
+      // console.log(
+      //   a.reduce((prev, curr) => {
+      //     return prev + curr;
+      //   }, 0)
+      // );
+
+      // -----------------------ye question diy the---------------------------------------------
+
+      //callback function - ek ase function he jisko argument pass krte he or jish function ko dete he wo esko call krta he // ek asa function he jesko call kiya jayga lakin kuch kam hone ke baad ya esko automaticly call kiya jayga or jesko denge wo call krega hm esko call nhi krenge
+      //   let arr = [1, 2, 3, 4, 5]; // arr ki ek ek value forEach function ko dega to usko lane padegi lane ke liy perametor me value dena pdega
+      //   arr.forEach((value) => {
+      //     console.log(value);
+      //   });
+
+      // -------------------------------------------------------------------------------
+      // 1. Find value greater than 20 using find function
+      // 2. Find string length greater than 10 using find function
+      // 3. Filter all numbers less than 100
+      // 4. Filter all numbers greater than 50 and multiple of 5
+      // 5. Filter all words with length > 5 and contains world 'World' in itself for example Hello World, Computer World
+      // 6. Calculate sum of all the numbers of array using reduce function
+      // 7. Calculate total words with length > 5 in an array using reduce and filter function. Dono se krna hai alag alag
+      // 8. Convert any odd number to even number using map function
+      // 9. Convert any even number to odd number using map function
+      // 10. Check if every number is multiple of 5 or not in the array using every function
+      // 11. Check if any number is multiple of 5 and less than 10 using some function
+
+      // 1.
+      // ans
+      // let a = [12, 20, 34, 5];
+      // let b = a.find((value) => {
+      //   return value > 20;
+      // });
+      // console.log(b);
+
+      // 2.
+      // ans
+      // let a = ["ayesha", "munee", "saddamHusain", "aastana"];
+      // let b = a.find((value) => {
+      //   return value.length > 10;
+      // });
+      // console.log(b);
+
+      // 3.
+      // ans
+      // let arr = [34, 67, 900, 12, 45, 99, 500, 290];
+      // let ans = arr.filter((para) => {
+      //   return para < 100;
+      // });
+      // console.log(ans);
+
+      // 4.
+      // ans
+      // let arr = [60, 30, 20, 70, 90, 34, 12];
+      // let ans = arr.filter((para) => {
+      //   return para > 50 && para % 5 === 0;
+      // });
+      // console.log(ans);
+
+      // 5.
+      // ans
+      // let arr = ["ayesha", "sara", "world", "saddamHusain"];
+      // let ans = arr.filter((value) => {
+      //   return value.length > 5;
+      // });
+      // console.log(ans);
+
+      // 6.
+      // ans
+      // let arr = [1, 2, 3, 4, 5];
+      // let ans = arr.reduce((prev, curr) => {
+      //   console.log(prev, curr);
+      //   return prev + curr;
+      // });
+      // console.log(ans);
+
+      // 7.
+      //ans
+      // const words = [
+      //   "apple",
+      //   "banana",
+      //   "orange",
+      //   "watermelon",
+      //   "grapes",
+      //   "mango",
+      // ];
+      // const chaking = words.reduce((count, word) => {
+      //   if (word.length > 5) {
+      //     return count + 1;
+      //   } else {
+      //     return count;
+      //   }
+      // }, 0);
+      // const filteredWords = words.filter((word) => word.length > 5);
+      // const chaking2 = filteredWords.length;
+      // console.log(chaking); // Output: 2
+      // console.log(chaking2); // Output: 2
+
+      // 8.
+      // ans
+      // let arr = [1, 2, 3, 4, 5, 6, 7, 8];
+      // let ans = arr.map((para) => {
+      //   if (para % 2 !== 0) {
+      //     return para + 1;
+      //   } else {
+      //     return para;
+      //   }
+      // });
+      // console.log(ans);
+
+      // 9.
+      // ans
+      // let arr = [1, 2, 3, 4, 5, 6, 7, 8];
+      // let ans = arr.map((para) => {
+      //   if (para % 2 === 0) {
+      //     return para + 1;
+      //   } else {
+      //     return para;
+      //   }
+      // });
+      // console.log(ans);
+
+      // 10.
+      // ans
+      // let arr = [10, 20, 30, 25];
+      // let ans = arr.every((para) => {
+      //   return para % 5 === 0;
+      // });
+      // console.log(ans);
+
+      //11
+      //ans
+      // let arr = [10, 5, 20, 45, 9];
+      // let ans = arr.some((para) => {
+      //   return para % 5 === 0 && para < 10;
+      // });
+      // console.log(ans);
+
