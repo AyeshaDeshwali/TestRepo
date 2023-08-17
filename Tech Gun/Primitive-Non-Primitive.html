@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //  Primitive VS Non Primitive
+      //  deffrence
+      //   let a = 10; //Primitive -- > Primitive to orignol value ko hold krta he
+      //   let obj = {}; //Non Primitive----> ye object ka reference hold krta h
+      //   console.log(a);
+      //   console.log(obj); // a ke ander 10 pda huaa lakin obj ke ander ye object nhi pda huaa h (obj ke ander es object ka memory ka jo address h wo pda huaa h)
+      //   // For Example
+      //   let mobail = 124587453;
+      //   let house = "Merta Karkwal"; // gr na bta ke gr ka addrss bta deya to ye gr to nhi h ye addrss h gr ka to agr gr pr jana pdega to pehle ye addrss udhao or phir gr pe jao ye do kam krna pdega
+      //   let house1 = {}; // es treeke se object bnate he to eska matlb he ki ye object memory me jake bnega or eska memory ka koy na koy address wo jo memory ka addrss hoga house ke value wo hogi lakin hme console me dekta object h kunki javascript value nikal ke or value print krva dete h wo koy dikt nhe h
+      //   console.log(mobail);
+
+      //   let house2 = {};
+      //   let house3 = {}; /// ye dekte sem h to enke hisha be se answer true aana chay tha lakin false aa rah kunki ye object ko chack nhi kr rah h ye chack kr rha h en donu ke memory ke address ko
+      //   console.log(house2 === house3); // false aayga kunki ye dekte sem h lakin ye do alg alg object h donu memory me alg alg jake bnage to alg alg jghe bnege to donu ke address b alg alg honge
+
+      //   let house1 = {};
+      //   let house2 = {};
+      //   let house3 = house1;
+      //   console.log(house1 === house2);
+      //   console.log(house1 === house3); // true aayga kunki house1 house3 ke brabr h
+      //   console.log(house2 === house3); // false aayga kunki house2 === house3 me comprseion ho rah h or house3 house1 ke brabr nhi he to es liy false aayga
+
+      // do object kbhi b brabr nhi ho skte h
+
+      //   console.log(
+      //     {
+      //       name: "ayesha",
+      //     } === // == krnge to b ye brabr nhi h
+      //       {
+      //         name: "ayesha",
+      //       }
+      //   ); // ye judva dikh rhe h but ye sem nhi h matlb ye memory me jake alg alg seve huve h
+
+      let map = new WeakMap();
+      obj = {
+        name: "ayesha",
+        age: 19,
+      };
+      map.set(obj, 100);
+      //   console.log(map.get(obj));
+      console.log(map);
+    </script>
+  </body>
+</html>

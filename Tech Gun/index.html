@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      id="test"
+      style="background-color: red; height: 200px; width: 200px"
+    ></div>
+    <script>
+      let arr = [
+        "brown",
+        "green",
+        "red",
+        "yellow",
+        "black",
+        "orange",
+        "deeppink",
+      ];
+      let count = 0;
+      setInterval(() => {
+        document.getElementById("test").style.backgroundColor = arr[count];
+        count++;
+      }, 1000);
+    </script>
+  </body>
+</html>
