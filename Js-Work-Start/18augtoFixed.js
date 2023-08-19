@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
+
       // Integer / int //// bina dashmlv vale numbers Integet ya int hoti h
       // float / double //  dashmlv vali numbers float ya double hoti h
       // float or double me sirf memory ka diffrence h
@@ -149,6 +141,5 @@
       // console.log(isNaN(10)); //kya 10 NaN he to false kunki 10 NaN nhi h
 
       console.log(Number.MAX_SAFE_INTEGER); // 9007199254740991
-    </script>
-  </body>
-</html>
+
+
