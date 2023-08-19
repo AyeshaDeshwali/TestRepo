@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>17aug</title>
-  </head>
-  <body>
-    <script>
+
       // const d = new Date();
       // console.log(`${d.getFullYear()}-${d.getDate()}-${d.getMonth() + 1}`);
 
@@ -132,6 +124,4 @@
       //   }, 1000);
       // }
       // printCurrentTime(); // printCurrentTime function ko pehli baar call karna
-    </script>
-  </body>
-</html>
+ 
