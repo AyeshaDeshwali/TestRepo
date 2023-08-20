@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WS20aug</title>
+  </head>
+  <body>
+    <script>
+      // 1. Marksheet print
+      //     -> Print marks in descending order with subject
+      //     -> 80 >= Distinction
+      //     -> All subject marks print
+      //     -> Total Marks
+      //     -> Percentage print
+      //     -> Father Name, Student Name, Roll no, school/college name, Class name print
+
+      // 2. Take an Array
+      //     -> Filter all odd numbers
+      //     -> Filter all numbers greater than 30 and less than 200
+      //     -> Convert every odd number to even number
+      //     -> Print sum of all the numbers
+
+      //   3. Once upon a time, in a quaint village, lived four brothers - (comma separated names). They were hardworking and compassionate (occupation), tilling the land their ancestors had tended for generations.
+
+      //   One day, a severe drought struck the village, leaving the fields parched and the crops withering away. The brothers were worried about their livelihood and the well-being of their fellow villagers. Despite their own struggles, they decided to help their community.
+
+      //   [Eldest brother name], the eldest brother, devised a plan to dig a well that would provide a consistent water source. [Second son], with his engineering skills, designed a simple yet effective irrigation system. [Third son] used his persuasive nature to gather support from the village, while [4th Son], the youngest, tirelessly worked alongside his brothers.
+
+      //   Their dedication paid off. With the well and irrigation system in place, the village began to flourish again. Crops grew, and the villagers no longer worried about scarcity. The brothers' unity and selflessness had saved the day.
+
+      //   This tale of four brothers and their unwavering commitment to their community serves as a reminder that compassion, innovation, and teamwork can overcome even the most challenging times.
+
+      //   4. Create a array of Youtube playlist. With objects like below
+      //   [
+      //   {
+      //       channelName: "EasyCodingBySajid",
+      //       videoName: "Lecture 1 JavaScript Introduction",
+      //       playListName: "JavaScript",
+      //       duration: 20,
+      //       watched: true
+      //   }
+      //   ]
+
+      // Now answer below questions.
+      //     -> Tell me how many videos you have watched
+      //     -> Tell me how many minutes you have given to Youtube
+      //     -> Tell me which videos you have not watched
+      //     -> Tell me which videos you have watched on a particular channel
+      //     -> Tell me what is your favourite playlist name
+
+      // 5. Create a datetime counter and display in format dd-mm-yyyy hh:mm:ss
+
+      //   6. Print below pattern
+      //       1 2 3 4 5
+      //       6 7 8 9 1
+      //       1 2 3 4 5
+      //       6 7 8 9 1
+      //       1 1 1 1 1
+
+      //   7. Write below code to match a criteria and check a person matches how many criteria's
+      //       To solve this exercise create a persone object like below
+      //           {
+      //               name: "Sajid Ali Khan",
+      //               gender: "M",
+      //               age: 31,
+      //               address: {
+      //                   pincode: 302012,
+      //                   city: "Jaipur",
+      //                   state: "Rajasthan"
+      //               },
+      //               mobile: 9584354354
+      //           }
+
+      //       1. Check if person's name contain more than 2 words?
+      //       2. Gender female?
+      //       3. If person lives in Delhi or not?
+      //       4. Mobile number is present or not?
+      //       5. Is person older than 30 years?
+
+      // 8. Fee calculator. Create array of objects like below
+      // [
+      //     {
+      //         studentName: "Sajid",
+      //         batchName: "JavaScript",
+      //         id: 101,
+      //         fees": [300,2000],
+      //         teacherName: "Shahrukh"
+      //     }
+      // ]
+
+      // Answer below questions:
+      //     1. How many students are studying in a particular batch?
+      //     2. How many students a particular teacher is teaching?
+      //     3. Total fee deposited by all the students?
+      //     4. Total fee deposited by students of a particular batch?
+      //     5. How many studens have not deposited any fee?
+
+      //   9. Take a sentence like
+      //       "My name is Wecode Academy and I teach JavaScript";
+
+      //   Now do below operations on this String
+      //       1. convert all characters to lowercase
+      //       2. replace JavaScript with Nodejs
+      //       3. Remove any space before or after the string
+      //       4. Now divide the sentence in two parts
+      //       5. Convert first part to upper case
+      //       6. Convert second part to lower case
+      //       7. Concatenate both the words and print on console
+
+      // 10. Convert any rupee to words like till 3-2 digits
+      //     10 -> Ten Rupees
+      //     1 -> 1 Rupees
+      //     100 ->  One hundered rupees
+      //     999-> Nine Hundred Ninty Nine rupees
+      //     540-> Five Hundred Fourty Rupees
+      //     777-> Seven Hundred Seventy Seven Rupees
+
+      //   ---------------------------------------------------------------------------
+
+      /**
+             * 1. Marksheet print
+                -> Print marks in descending order with subject
+                -> 80 >= Distinction
+                -> All subject marks print
+                -> Total Marks
+                -> Percentage print
+                -> Father Name, Student Name, Roll no, school/college name, Class name print
+             */
+      //         const studentMarkDetails = {
+      //   studentName: "Sajid",
+      //   fatherName: "Raj Kumar",
+      //   rollNo: 21,
+      //   schoolName: "Bharti Sen Sec School",
+      //   className: 1288,
+      //   marks: {
+      //      hindi: 90 ,
+      //      english: 70 ,
+      //      maths: 50 ,
+      //      science: 100 ,
+      //      history: 80},
+      //   },
+      //   printDetails() {
+      //     const marks = Object.values(this.marks);
+      //     const totalMarks = marks.reduce((total, mark) => total + mark, 0);
+      //     marks.sort((a, b) => {
+      //       return b - a;
+      //     });
+      //     console.log(`
+      //         StudentName: ${this.studentName}
+      //         FatherName: ${this.fatherName}
+      //         Roll No.: ${this.rollNo}
+      //         School Name: ${this.schoolName}
+      //         Class Name: ${this.className}
+      //         Total Marks: ${totalMarks}
+      //     `);
+      //     for (let mark of Object.entries(this.marks)) {
+      //       if (mark[1] >= 80) {
+      //         console.log(mark[0], mark[1], "Distinction");
+      //       } else {
+      //         console.log(mark[0], mark[1]);
+      //       }
+      //     }
+      //   },
+      // };
+
+      // studentMarkDetails.printDetails();
+
+      //   studentMarkDetails.printDetails();
+
+      // const marks = [
+      //   { hindi: 90 },
+      //   { english: 70 },
+      //   { maths: 50 },
+      //   { science: 100 },
+      //   { history: 80 },
+      // ];
+      // marks.sort((a, b) => {
+      //   console.log(a, b);
+      //   return Object.values(b)[0] - Object.values(a)[0];
+      // });
+      // console.log(marks);
+
+      //   let arr = [10, 12, 2, 3, 15, 18, 8, 9, 10];
+      //   let filterdNumbers = arr.filter((value) => {
+      //     return value % 2 === 1;
+      //   });
+
+      //   console.log(filterdNumbers);
+      //   filterdNumbers = filterdNumbers.filter((value) => {
+      //     return value > 3 && value < 20;
+      //   });
+      //   console.log(filterdNumbers);
+      //   const mappedNumbers = filterdNumbers.map((value) => {
+      //     return value + 1;
+      //   });
+      //   console.log(mappedNumbers);
+      //   console.log(
+      //     mappedNumbers.reduce((total, value) => {
+      //       return total + value;
+      //     }, 0)
+      //   );
+
+      //   let arr = [123, 21, 32, 43, 55, 64, 121, 233, 101, 1101, 111, 120, 130, 11];
+      //   let answer = arr
+      //     .filter((value) => {
+      //       return value % 2 === 1;
+      //     })
+      //     .filter((value) => {
+      //       return value > 30 && value < 200;
+      //     })
+      //     .map((value) => {
+      //       return value + 1;
+      //     })
+      //     .reduce((a, b) => {
+      //       return a + b;
+      //     });
+      //   console.log(answer);
+
+      //   setInterval(function () {
+      //     let date = new Date();
+
+      //     console.log(
+      //       `${date.getDate()}:${
+      //         date.getMonth() + 1
+      //       }:${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+      //     );
+      //   }, 1000);
+
+      //   let word = "My name is Wecode Academy and I teach JavaScript"
+      //     .toLowerCase()
+      //     .replace("javascript", "Nodejs")
+      //     .trim();
+      //   let index = Math.floor(word.length / 2);
+      //   let firstPart = word.substring(0, index);
+      //   let secondPart = word.substring(index);
+      //   console.log(firstPart.toUpperCase() + secondPart.toLowerCase());
+
+      //   const map = new Map();
+      //   map.set(1, "One");
+      //   map.set(2, "Two");
+      //   map.set(3, "Three");
+      //   map.set(4, "Four");
+      //   map.set(5, "Five");
+      //   map.set(6, "Six");
+      //   map.set(7, "Seven");
+      //   map.set(8, "Eight");
+      //   map.set(9, "Nine");
+
+      //   const secondMap = new Map();
+      //   secondMap.set(10, "Ten");
+      //   secondMap.set(20, "Twenty");
+      //   secondMap.set(30, "Thirty");
+      //   secondMap.set(40, "Fourty");
+
+      //   let num = 29;
+      //   let rem = num % 10;
+      //   let div = num / 10;
+      //   console.log(num);
+      //   console.log(${secondMap.get(Math.trunc(div) * 10)}  ${map.get(rem)});
+
+      //   const youtubeVideos = [
+      //     {
+      //       channelName: "EasyCodingBySajid",
+      //       videoName: "Lecture 1 JavaScript Introduction",
+      //       playListName: "JavaScript",
+      //       duration: 20,
+      //       watched: true,
+      //     },
+      //     {
+      //       channelName: "CodeWithHarry",
+      //       videoName: "Lecture 1 Python Introduction",
+      //       playListName: "Python",
+      //       duration: 50,
+      //       watched: true,
+      //     },
+      //     {
+      //       channelName: "EasyCodingBySajid",
+      //       videoName: "Lecture 2 Operators",
+      //       playListName: "JavaScript",
+      //       duration: 30,
+      //       watched: false,
+      //     },
+      //     {
+      //       channelName: "EasyCodingBySajid",
+      //       videoName: "Lecture 3 Truthy Falsy Values",
+      //       playListName: "JavaScript",
+      //       d
+
+      //   > S K:
+      //   duration: 60,
+      //       watched: true,
+      //     },
+      //   ];
+
+      //   console.log(
+      //     youtubeVideos.reduce((total, movieObject) => {
+      //       if (movieObject.watched) {
+      //         return total + 1;
+      //       } else {
+      //         return total;
+      //       }
+      //     }, 0)
+      //   );
+
+      //   console.log(
+      //     youtubeVideos.reduce((total, movieObject) => {
+      //       if (movieObject.watched) {
+      //         return total + movieObject.duration;
+      //       } else {
+      //         return total;
+      //       }
+      //     }, 0)
+      //   );
+
+      //   console.log(
+      //     youtubeVideos.filter((movieObject) => {
+      //       return !movieObject.watched;
+      //     })
+      //   );
+
+      //   console.log(
+      //     youtubeVideos.filter((movieObject) => {
+      //       return movieObject.channelName === "EasyCodingBySajid";
+      //     })
+      //   );
+
+      //   const map = new Map();
+      //   for (let value of youtubeVideos) {
+      //     if (map.get(value.playListName)) {
+      //       map.set(value.playListName, map.get(value.playListName) + 1);
+      //     } else {
+      //       map.set(value.playListName, 1);
+      //     }
+      //   }
+      //   console.log(map);
+
+      // ------------------------My Parctic--------------------------
+
+      // 2.
+      //Filter all odd numbers
+      // let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      // let ans = arr.filter((num) => {
+      //   if (num % 2 === 1) {
+      //     console.log(num);
+      //   }
+      // });
+
+      //  Filter all numbers greater than 30 and less than 200
+      //
+      //   let arr = [100, 34, 12, 50, 500, 230, 10];
+      //   let ans = arr.filter((num) => {
+      //     if (num > 30 && num < 200) {
+      //       console.log(num);
+      //     }
+      //   });
+
+      // Convert every odd number to even number
+      // let arr = [1, 3, 7, 9, 2, 4, 8];
+      // let ans = arr.map((num) => {
+      //   if (num % 2 === 0) {
+      //     return num;
+      //   } else {
+      //     return num + 1;
+      //   }
+      // });
+      // console.log(ans);
+
+      // Print sum of all the numbers
+      //   let arr = [1, 2, 3, 4, 5];
+      //   let ans = arr.reduce((total, current) => {
+      //     return total + current;
+      //   }, 0);
+      //   console.log(ans);
+
+      //   4.
+      //   const youtubePlaylist = [
+      //     {
+      //       channelName: "EasyCodingBySajid",
+      //       videoName: "Lecture 1 JavaScript Introduction",
+      //       playListName: "JavaScript",
+      //       duration: 20,
+      //       watched: true,
+      //     },
+      //     {
+      //       channelName: "TechTutorials",
+      //       videoName: "Python Basics for Beginners",
+      //       playListName: "Python",
+      //       duration: 25,
+      //       watched: false,
+      //     },
+      //     {
+      //       channelName: "ArtCrafting",
+      //       videoName: "Watercolor Painting Tutorial",
+      //       playListName: "PHP",
+      //       duration: 15,
+      //       watched: true,
+      //     },
+      //   ];
+
+      //   const watchedVideos = youtubePlaylist.filter((video) => video.watched);
+      //   const ans1 = watchedVideos.length;
+      //   console.log(ans1);
+
+      //   const ans2 = youtubePlaylist.reduce((total, video) => {
+      //     return total + video.duration;
+      //   }, 0);
+      //   console.log(ans2);
+
+      //   let ans3 = youtubePlaylist.find((find) => {
+      //     return find.playListName == "JavaScript";
+      //   });
+      //   console.log(ans3);
+    </script>
+  </body>
+</html>
