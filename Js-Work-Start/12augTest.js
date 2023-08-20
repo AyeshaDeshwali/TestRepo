@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>12augTest</title>
-  </head>
-  <body>
-    <script>
       //1. Write a function that takes a string and returns a new string with all the words reversed using the spread operator.
 
       //2. Create a function that takes in an array and uses the rest operator to remove the first element from the array and finally return the array without first element.
@@ -172,6 +163,3 @@
       //   [`${address}${age}Address`]: address,
       // };
       // console.log(myObject);
-    </script>
-  </body>
-</html>
