@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>16aug</title>
-  </head>
-  <body>
-    <script>
+
       // const ka use krna he Date Method me
 
       // Example ---
@@ -120,6 +112,3 @@
       // https://www.w3schools.com/js/js_dates.asp
       // Current Millis
       // Convert milliseconds to date-time. Link to a moment.
-    </script>
-  </body>
-</html>
