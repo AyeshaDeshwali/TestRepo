@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
     <!--1.-->
     <!-- <input type="text" value="" id="test" />
     <p onmouseenter="hello()" id="hello">Hello JavaScript</p>
@@ -96,6 +88,4 @@
       //   console.log(event);
       //   alert("Wecode");
       // });
-    </script>
-  </body>
-</html>
+ 
