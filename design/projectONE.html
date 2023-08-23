@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Image Animation</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+      .container {
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        id="animated-img"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh_Wf4VR2KvZQ1WRcPcw5YfT_brEa4oym8j7Kxqx9-6KItsCS3vmSf84h_mO87tzaO6VeYyC9WAPmX_Jd0P2BbTHlp3ZLKxh2rIxlNHHIvHtOXDI9q-ApDc2UWsBiPNe2WsfywQPGI60h3C8S3nxFKmsiA7asPx8EjJobG7rUIddVnkN7RnbeajCiDfgg/s16000/Girls%20dp%20(39).jpg"
+      />
+    </div>
+    <script>
+      const animatedImg = document.getElementById("animated-img");
+      let width = 100;
+      let height = 100;
+      function animateImage() {
+        width += 20;
+        height += 20;
+        animatedImg.style.width = `${width}px`;
+        animatedImg.style.height = `${height}px`;
+        // const container = document.querySelector(".container");
+        // const containerWidth = container;
+        // const containerHeight = container;
+      }
+      setInterval(animateImage, 1000);
+    </script>
+  </body>
+</html>
