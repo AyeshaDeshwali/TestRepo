@@ -1,3 +1,62 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Image Animation</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        id="animated-img"
+        src="https://wallpaperaccess.com/full/1357404.jpg"
+        alt="Animated Image"
+      />
+    </div>
+    <script>
+      const animatedImg = document.getElementById("animated-img");
+
+      let width = 100;
+      let height = 100;
+
+      function animateImage() {
+        width += 10;
+        height += 10;
+
+        animatedImg.style.width = `${width}px`;
+        animatedImg.style.height = `${height}px`;
+
+        const container = document.querySelector(".container");
+        const containerWidth = container;
+        const containerHeight = container;
+
+        animatedImg.style.left = `${(containerWidth - width) / 2}px`;
+        animatedImg.style.top = `${(containerHeight - height) / 2}px`;
+
+        requestAnimationFrame(animateImage);
+      }
+
+      animateImage();
+    </script>
+  </body>
+</html> -->
+
+<!-------------------------------------------------------------->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
