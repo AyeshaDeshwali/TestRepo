@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Example</title>
+    <style>
+      body {
+        background-color: rgb(84, 59, 109);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      #form-container {
+        background-color: white;
+        padding: 50px;
+        text-align: center;
+      }
+      h2 {
+        margin: 0px 0px 10px 0px;
+      }
+      input,
+      select {
+        width: 200px;
+        padding: 10px;
+        margin: 10px 0px;
+      }
+      input[type="submit"],
+      input[type="reset"] {
+        width: 100px;
+        background-color: rgb(108, 78, 136);
+        border: 0px;
+        color: white;
+        cursor: pointer;
+      }
+      .error {
+        color: red;
+        margin: 5px 0;
+        text-align: left;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="form-container">
+      <h2>Registration Form</h2>
+      <form action="#" onsubmit="return validateForm()">
+        <input type="text" placeholder="Full Name" id="fullName" /><br />
+        <p id="nameError" class="error"></p>
+        <input
+          type="number"
+          placeholder="Phone Number"
+          id="phoneNumber"
+        /><br />
+        <p id="phoneError" class="error"></p>
+        <input type="email" placeholder="Email Address" id="email" /><br />
+        <p id="emailError" class="error"></p>
+        <input type="date" id="birthDate" /><br />
+        <select id="selectList">
+          <option value="" selected disabled>Select an Option</option>
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option></select
+        ><br />
+        <br />
+        <input type="radio" id="male" name="gender" value="male" /><label
+          for="male"
+          >Male</label
+        >
+        <input type="radio" id="female" name="gender" value="female" /><label
+          for="female"
+          >Female</label
+        ><br />
+
+        <p id="genderError" class="error"></p>
+
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Reset" />
+      </form>
+    </div>
+    <script>
+      function validateForm() {
+        let fullName = document.getElementById("fullName");
+        let phoneNumber = document.getElementById("phoneNumber");
+        let email = document.getElementById("email");
+        let birthDate = document.getElementById("birthDate");
+        let selectList = document.getElementById("selectList");
+        let bonus = document.getElementById("bonus");
+        let male = document.getElementById("male");
+        let female = document.getElementById("female");
+        let nameError = document.getElementById("nameError");
+        let phoneError = document.getElementById("phoneError");
+        let emailError = document.getElementById("emailError");
+        let genderError = document.getElementById("genderError");
+        let flag = true;
+
+        nameError.innerHTML = "";
+        phoneError.innerHTML = "";
+        emailError.innerHTML = "";
+        genderError.innerHTML = "";
+
+        if (fullName.value === "") {
+          nameError.innerHTML = "Full Name is required";
+          flag = false;
+        }
+
+        if (phoneNumber.value === "") {
+          phoneError.innerHTML = "Phone Number is required";
+          flag = false;
+        }
+
+        if (email.value === "") {
+          emailError.innerHTML = "Email Address is required";
+          flag = false;
+        }
+
+        if (!male.checked && !female.checked) {
+          genderError.innerHTML = "Please select a gender";
+          flag = false;
+        }
+
+        return flag;
+      }
+    </script>
+  </body>
+</html>
