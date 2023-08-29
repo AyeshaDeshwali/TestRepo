@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        background-color: rgb(84, 59, 109);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      #form-container {
+        background-color: white;
+        padding: 50px;
+        text-align: center;
+      }
+      h2 {
+        margin: 0px 0px 10px 0px;
+      }
+      input {
+        width: 200px;
+        padding: 10px;
+        margin: 10px 0px;
+      }
+      input[type="submit"] {
+        width: 222px;
+        background-color: rgb(108, 78, 136);
+        border: 0px;
+        color: white;
+      }
+      .error {
+        color: red;
+        margin: 0px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="form-container">
+      <h2>Login</h2>
+      <form action="#" onsubmit="return validateForm()">
+        <input type="text" placeholder="User Name" id="username" /><br />
+        <p id="userError" class="error"></p>
+        <input type="password" placeholder="Password" id="password" /><br />
+        <p id="passError" class="error"></p>
+
+        <input type="submit" />
+      </form>
+    </div>
+    <script>
+      function validateForm() {
+        let username = document.getElementById("username");
+        let password = document.getElementById("password");
+        let userError = document.getElementById("userError");
+        let passError = document.getElementById("passError");
+        let flag = true;
+
+        userError.innerHTML = "";
+        passError.innerHTML = "";
+
+        if (username.value === "") {
+          userError.innerHTML = "User Name is empty";
+          userError.style.display = "block";
+          flag = false;
+        } else if (username.value.length < 3) {
+          userError.innerHTML = "User Name requires at least 3 characters";
+          userError.style.display = "block";
+          flag = false;
+        }
+
+        if (password.value === "") {
+          passError.innerHTML = "Password is empty";
+          passError.style.display = "block";
+          flag = false;
+        }
+
+        if (flag) {
+          username.value = "";
+          password.value = "";
+        }
+
+        return flag;
+      }
+    </script>
+  </body>
+</html>
