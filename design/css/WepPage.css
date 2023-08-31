@@ -1,0 +1,129 @@
+* {
+  padding: 0%;
+  margin: 0%;
+}
+
+.logo {
+  width: 200px;
+  height: 70px;
+  margin-right: 21px;
+  border-top-width: 1px solid red; /* Top border with 1px thickness */
+  border-right-width: 1px; /* Right border with 1px thickness */
+  border-bottom-width: 1px; /* Bottom border with 1px thickness */
+  border-left-width: 1px; /* Left border with 1px thickness */
+}
+.pearent {
+  display: flex;
+  position: absolute;
+  top: 20px;
+  right: 50%;
+}
+.pearent ul,
+li {
+  color: black;
+  margin-left: 25px;
+  list-style: none;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.btn1 {
+  position: absolute;
+  top: -53px;
+  right: 43%;
+  font-weight: 500 !important;
+}
+
+.btn2 {
+  position: absolute;
+  top: -53px;
+  right: 37%;
+  font-weight: 500 !important;
+}
+.sign {
+  position: absolute;
+  top: 18px;
+  right: 2%;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.secondImg {
+  height: 500px;
+  margin-bottom: 40px;
+}
+
+.makes {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.getBtn {
+  background-color: rgb(11, 93, 216);
+  width: 110px;
+  border: none;
+  border-radius: 40px;
+  color: white;
+  padding: 3px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.talk {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.stay {
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.top {
+  position: relative;
+  top: 100px;
+  left: 30px;
+}
+
+.side {
+  margin-left: 12%;
+}
+.last {
+  width: 0px;
+  height: 250px;
+}
+
+.card {
+  width: 80%;
+  height: 490px;
+  margin-left: 10%;
+}
+
+.go {
+  background-color: rgb(11, 93, 216);
+  width: 130px;
+  border: none;
+  border-radius: 40px;
+  color: white;
+  padding: 4px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.Cbody {
+  margin: 25px;
+}
+
+.lastText {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 32px;
+  margin-top: 10px;
+}
+.split {
+  line-height: 40px;
+  margin-top: 10px;
+}
