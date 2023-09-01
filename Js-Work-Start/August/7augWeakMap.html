@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7aug</title>
+  </head>
+  <body>
+    <script>
+      // ----------------------------------------------------------
+      //   const map = new WeakMap();
+      //   let obj1 = {
+      //     name: "Wecode",
+      //   };
+      //   let obj2 = {
+      //     name: "Hello",
+      //   };
+      //   let obj3 = {
+      //     name: "Hi",
+      //   };
+      //   map.set(obj1, 100);
+      //   map.set(obj2, 200);
+      //   map.set(obj3, 300);
+      //   obj2 = null;
+      //   for (let i = 1; i < 100000; i++) {
+      //     console.log(i);
+      //   }
+      //   console.log(map); //200 value will be removed
+
+      //  ---------------------------------------------------------------
+
+      // let person = {
+      //   name: "ayesha",
+      //   age: 19,
+      //   mobail: 2389458643,
+      //   address: {
+      //     pencode: 202,
+      //     city: "Merta",
+      //   },
+      // };
+
+      // let arr = [
+      //   {
+      //     name: "ayesha",
+      //     age: 20,
+      //     mobail: 2389458643,
+      //     address: {
+      //       pencode: 202,
+      //       city: "Delhi",
+      //     },
+      //   },
+      //   {
+      //     name: "husain",
+      //     age: 5,
+      //     mobail: 2389458643,
+      //     address: {
+      //       pencode: 202,
+      //       city: "Morra",
+      //     },
+      //   },
+      //   {
+      //     name: "saddam",
+      //     age: 25,
+      //     mobail: 2389458643,
+      //     address: {
+      //       pencode: 202,
+      //       city: "Merta",
+      //     },
+      //   },
+      // ];
+
+      // arr.forEach((value) => {
+      //   console.log(value);
+      // });
+
+      // let ans = arr.filter((value) => value.age > 6);
+      // console.log(ans);
+
+      // let ans = arr.filter((value) => {
+      //   return value.name === "husain";
+      // });
+      // console.log(ans);
+
+      // let ans = arr.reduce((total, currentValue) => {
+      //   return total + currentValue.age; /// total me jo sub aata he or currentValue pass vala hota he agle vala
+      // }, 0); /// pta nhi lga skte ke age ketni esliy 0 se start krna hoga
+      // console.log(ans);
+
+      //   let ans = arr.find((value) => {
+      //     return value.age > 5;
+      //   });
+      //   console.log(ans);
+
+      //   let ans = arr.every((value) => {
+      //     return value.age > 5; // every function me false ayaga agr sub ke age 5 se big nhi huy to
+      //   });
+      //   console.log(ans);
+
+      // QUE.1 Write a function that takes an object as an input and returns a new object with the same keys and values, but with all the string values capitalized.
+
+      // let person = {
+      //   name: "ayesha",
+      //   adderss: "merta",
+      //   fatherName: "yusuf khan",
+      // };
+      // for (let [key, value] of Object.entries(person)) {
+      //   console.log(key, value);
+      //   person[key] = value.charAt(0).toUpperCase() + value.slice(1);
+      // }
+      // console.log(person);
+
+      // for (let value of Object.entries(person)) {
+      //   console.log(value[1]);
+      //   person[value[0]] = value[1].charAt(0).toUpperCase() + value.slice(1);
+      // }
+      // console.log(person);
+
+      // let person = {
+      //   name: "ayesha",
+      //   adderss: "merta",
+      //   fatherName: "yusuf khan",
+      // };
+      // for (let [key, value] of Object.entries(person)) {
+      //   if (key === "name" || key === "adderss" || key === "fatherName") {
+      //     person[key] = value.toUpperCase();
+      //   } else {
+      //     person[key] = value.toLowerCase();
+      //   }
+      // }
+      // console.log(person);
+
+      // let person = {
+      //   name: "ayesha",
+      //   adderss: "merta",
+      //   fatherName: "yusuf khan",
+      // };
+      // for (let value of Object.entries(person)) {
+      //   console.log(value); //value[1]
+      // }
+
+      // ---------------------------------- WeakMap()////////////////
+
+      //   let obj = {
+      //     name: "ayesha",
+      //     adderss: "merta",
+      //     fatherName: "yusuf khan",
+      //   };
+      //   obj = null;
+      //   console.log(obj); // null kr diya ab esko axaces nhi kr skte h kase b ab y gya hmar hath se
+
+      // let set = new Set();
+      // set.add({ name: "ayesha" }, 100);
+      // set.add(2);
+      // set.add(3);
+      // set.add(4);
+      // set.add({ name: "ayesha" });
+      // console.log(set);
+
+      // WeakMap and WaekSet -------> ye kete h agr koy object set me ya map ke key m add keya h (for Example)
+      //   let map = new Map();
+      //   map.set(1, 100); // key me 1 or value me 100
+      //   console.log(map); // map keta he ki kbhi b futrue use kro hmesha ek ki 1 me 100 hi melega
+
+      //   agr hmne key ke rup me kish Object ko use kiya he(for Example)
+      //   let map = new Map();
+      //   map.set({ name: "ayesha" }, 100); // key me Object or value me 100
+      //   console.log(map);  // es map ko khi pr b aage use krenge to koy problem nhi h hemasha ye Object rhega or esme 100 rhega
+
+      //WeakMap kheta agr tumne key ke rup me koy Object ko use kiya he(for Example)
+      //   let map = new Map();
+      //   map.set({ name: "ayesha" }, 100);
+      //   console.log(map); // WeakMap kheta agr tumne key ke rup me koy Object ko use kiya he me usko hta dunga map se delete kr dunga
+
+      //   let map = new Map();
+      //   map.set({ nam: "ayesha" }, 100);
+      //   console.log(map.get({ nam: "ayesha" })); /// 100 nekalne ke liy get me key krte he to yha pr object h jo ki key h usko krne s b undefined aayga
+
+      //   Primitive VS Non Primitive
+      // deffrence
+      //   let a = 10; //Primitive -- > Primitive to orignol value ko hold krta he
+      //   let obj = {}; //Non Primitive----> ye object ka reference hold krta h
+      //   console.log(a);
+      //   console.log(obj); // a ke ander 10 pda huaa lakin obj ke ander ye object nhi pda huaa h (obj ke ander es object ka memory ka jo address h wo pda huaa h)
+      //   For Example
+      //   let mobail = 124587453;
+      //   let house = "Merta Karkwal"; // gr na bta ke gr ka addrss bta deya to ye gr to nhi h ye addrss h gr ka to agr gr pr jana pdega to pehle ye addrss udhao or phir gr pe jao ye do kam krna pdega
+      //   let house1 = {}; // es treeke se object bnate he to eska matlb he ki ye object memory me jake bnega or eska memory ka koy na koy address wo jo memory ka addrss hoga house ke value wo hogi lakin hme console me dekta object h kunki javascript value nikal ke or value print krva dete h wo koy dikt nhe h
+      //   console.log(mobail);
+
+      //   let house2 = {};
+      //   let house3 = {}; /// ye dekte sem h to enke hisha be se answer true aana chay tha lakin false aa rah kunki ye object ko chack nhi kr rah h ye chack kr rha h en donu ke memory ke address ko
+      //   console.log(house2 === house3); // false aayga kunki ye dekte sem h lakin ye do alg alg object h donu memory me alg alg jake bnage to alg alg jghe bnege to donu ke address b alg alg honge
+
+      //   let house1 = {};
+      //   let house2 = {};
+      //   let house3 = house1;
+      //   console.log(house1 === house2);
+      //   console.log(house1 === house3); // true aayga kunki house1 house3 ke brabr h
+      //   console.log(house2 === house3); // false aayga kunki house2 === house3 me comprseion ho rah h or house3 house1 ke brabr nhi he to es liy false aayga
+
+      // do object kbhi b brabr nhi ho skte h
+
+      //   console.log(
+      //     {
+      //       name: "ayesha",
+      //     } === // == krnge to b ye brabr nhi h
+      //       {
+      //         name: "ayesha",
+      //       }
+      //   ); // ye judva dikh rhe h but ye sem nhi h matlb ye memory me jake alg alg seve huve h
+
+      //   let person = {
+      //     name: "ayesha",
+      //     adderss: "merta",
+      //     fatherName: "yusuf khan",
+      //   };
+      //   person = null; // agr koy object bnaya h or esko null kr deya to garbage collectorj es object ko memory se hta dega
+
+      //   let map = new WeakMap();
+      //   map.set(1, 100);
+      //   map.set(2, 200);
+      //   map.set(3, 300); // WeakMap se Map krnge to aa jayga lakin WeakMap Primitive ko alow nhi krta he
+      //   console.log(map); // 1,2,3 ko key ke form me use nhi kr skte h //jo keys use ki h wo glt h matlb Primitive values ko as key alow nhi kr rah he //WeakMap jo bhi Primitive value hoti bolean string number unko ye alow nhi kr raha he   //WeakMap ke keys sirf objects hi ho sakte hain, primitive values (jaise ki numbers) keys ke roop mein use nahi ho sakte hain.
+
+      // let map = new WeakMap();
+      // let obj = {
+      //   name: "ayesha",
+      // };
+      // let obj2 = {
+      //   name: "ayesha",
+      // };
+      // let obj3 = {
+      //   name: "ayesha",
+      // };
+      // map.set(obj, 100);
+      // map.set(obj2, 200);
+      // map.set(obj3, 300);
+      // console.log(map); /// WeakMap jo key mangta he Object mangta h
+      // console.log(map.get(obj3)); // key bnane ke liy object3 ka use keya to get krte time bhi object3 krna hoga // 300 nikalne ke liy ye krnge
+
+      //   let map = new WeakMap();
+      //   let obj = {
+      //     name: "ayesha",
+      //   };
+      //   let obj2 = {
+      //     name: "hello",
+      //   };
+      //   let obj3 = {
+      //     name: "hi",
+      //   };
+      //   map.set(obj, 100);
+      //   map.set(obj2, 200);
+      //   map.set(obj3, 300);
+      //   obj2 = null; // null krne ke turnt baad print krvaua tb b print ho rah he lakin jub loop chlaya to tb ye print nhi ho rah he kunki garbage collector ko chlne ke liy time chay baad me delete kr dega
+      //   for (let i = 1; i <= 10000; i++) {
+      //     console.log(i);
+      //   }
+      //   console.log(map); // 1 problem  key me Primitive values stor nhi krva skte h Object stor krvana hoga
+      // computor me jb code likhte he or us code me hmne koy Object ke null kr deya to wo b memory me ab kchra bn cuka h kunki wo kam nhi aa raha he or memory lake beda he to wo khcra bn gya ab us kchre ko saf garbage collector krega to garbage collector ko chlne ke liy thoda sa time chay hota he garbage collector chlta to he lakin kb chlega ye hum deside nhi kr skte ho skta he turnt chl jay ho skta he thoda sa let chle ye javascript diside krti
+      // obj2 = null krke turnt print krvaya shi print ho rha tha koy dekht nhi aa rhi thi lakin print krvane se phle bich me loop chla diya to jb tk loop chal raha etne me garbage collector active ho gya garbage collector ko uski indegtion pta chl jata ke koy asi chij h jo object thi phle or ab null ho chuki h to garbage collector jata h or jane ke baad memory se hta deta h kunki wo ab memory se ht gya to map se b ht jayga kunki WeakMap use kiya h
+      //agr WeakMap ke ander humne koy Object as key use kr liya or baad me us Object null kr diya to WeakMap us object map ke ander se hta dega to object ht gya to uski value ka koy kam nhi to value b ht jayge esi vje se loop chlake print krvaya to 100 or 300 hi value print ho rhe he 200 print nhi ho rhi h
+      // WeakMap or WeakSet ka yhi kam h ye Object pe kam krte h or jb tk object ka refrnce h mtlb jb tk hum us object exasce kr skte he kisi variable me stor kr ke rkha huaa h tb tk to wo chlega or agr badbad ho gy glti se null kr deya to hmara deta gya
+
+      //------------------------------ WeakSet()- or-- WeakMap ka sem hi kam h-----------------------------------
+
+      //   let set = new WeakSet();
+      //   let obj = {
+      //     name: "ayesha",
+      //   };
+      //   let obj2 = {
+      //     name: "hello",
+      //   };
+      //   let obj3 = {
+      //     name: "hi",
+      //   };
+      //   set.add(obj, 100);
+      //   set.add(obj2, 200);
+      //   set.add(obj3, 300);
+      //   obj2 = null; // null krne ke turnt baad print krvaua tb b print ho rah he lakin jub loop chlaya to tb ye print nhi ho rah he kunki
+      //   for (let i = 1; i <= 100000; i++) {
+      //     console.log(i);
+      //   }
+      //   console.log(set);
+    </script>
+  </body>
+</html>

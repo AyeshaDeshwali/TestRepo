@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>16aug</title>
+  </head>
+  <body>
+    <script>
+      // const ka use krna he Date Method me
+
+      // Example ---
+      // dd/mm/yyyy
+      // mm/dd/yyyy
+      // mm/dd
+      // dd / mm
+
+      // const date = new Date();
+      // console.log(date);
+
+      // 1000 millSconds---1 second
+      // 60 second --------1 minut
+      // 60 menuts --------1 hour
+      // 24 hour ----------1 day
+      // leap year nhi hota he to 365 day hote he or leap year hota he to 366 day hote he
+      // total 12 months
+      // Date(year,month,day,hour,minuts,seconds,millSeconds)
+
+      //months 0 se 11 tk chlta he kunki january ko 0 se start kiya jata he or december ko 11 mana jata h
+
+      // const date = new Date(2025, 10, 10, 12, 50, 30);
+      // const date = new Date(2025, 10); // year or month ke baad date nhi dange to ye aoutomatic 1 date lga dega
+      // console.log(date);
+
+      // 1 second ke ander 1000 millesecons hoti h
+      // to 2 year ko millesecond me converd krna chate he
+      // to ye ase converd hogi (2 * 365 * 24 * 60 * 60 * 1000) // enko gunaa krne se 2 year ke braber kitni millesecond hogi wo aa jaygi
+      //------------------------year Day  Hour min  sec  mileSec
+
+      // const date = new Date(2 * 365 * 24 * 60 * 60 * 1000);
+      // console.log(date); //Date Object ko meliSecond de rhe he *(into) krke javascript 2 years ko add krke new time bna dega lakin jo add krega uska bace(bace ka matlb jhan se esko sru krna h) year 1970 hoga
+      // javascript ko kbi b time meliSecond me dange to bace year lega wo (1 jun 1970) hoga es me 2 years add ho jayenge to (1 jun 1972) ho jayga
+
+      // India Standard Time
+      // Time zone in Sirasna, 341514 (GMT+5:30)
+
+      // IND  +5:30
+      // PK   +5:00
+      // US   -4:00
+      //ER    +2:00
+
+      // What is our time zone in?
+      // + 530
+      //time zone India ka(IST) he Indian Standard Time (IST), + 530
+
+      // console.log(new Date(2025, 0)); // Jan 01 2025
+      // console.log(new Date(2025, 0, 26)); //Jan 26 2025
+      // console.log(new Date(2025, 0, 26, 12)); //Jan 26 2025 12:00
+      // console.log(new Date(2025, 0, 26, 12, 30)); //Jan 26 2025 12:30
+      // console.log(new Date(2025, 0, 26, 12, 40, 50)); //Jan 26 2025 12:40:50
+
+      // console.log(new Date()); // curnt date
+
+      // console.log(new Date("2023-08-15 12:10:15"));
+      // console.log(new Date("03/25/2015")); // - or / dane se date bn jaygi
+
+      // const date = new Date();
+      // console.log(date.getDate());
+      // console.log(date.getDay()); //Week day
+      // console.log(date.getFullYear());
+      // console.log(date.getHours());
+      // console.log(date.getMilliseconds());
+      // console.log(date.getMinutes());
+      // console.log(date.getMonth()); //Month - 1 // 0 se sru hota h
+      // console.log(date.getSeconds());
+      // console.log(date.getTime()); //Total time in milliseconds
+
+      // const date = new Date(1 * 24 * 60 * 60 * 1000); // jetne day jodna chate he wo 1 ke jghe kr skte h
+      // console.log(date); /// 1 day ke brabr jitni meliSecnds hoti wo es date object ko dange to 1970 me 1 day jode dega
+
+      // const date = new Date(19585 * 24 * 60 * 60 * 1000); // jetne day jodna chate he wo 1 ke jghe kr skte h
+      // console.log(date.getTime()); // 1970 se lake aaj tk 19585 din ho chuke he agr esko millesconds me converd krte he to aaj ki date aajyagi
+      // // ye 19585 * 24 * 60 * 60 * 1000 aaj 16 date ke brabr he
+      // console.log(date);
+
+      // const date = new Date();
+      // date.setMonth(10);
+      // date.getHours(2);
+      // date.setSeconds(20);
+      // date.setFullYear(2024);
+      // date.setDate(20);
+      // date.setMinutes(58);
+      // console.log(date);
+
+      // const date = new Date("Aug 17,2023,6:44:50");
+      // date.setDate(date.getDate() + 10); //10 day add hoke aayge date me
+      // console.log(date);
+
+      // const date = new Date("Aug 17,2023,6:44:50");
+      // const dat = new Date("Aug 17,2023,6:44:50");
+      // dat.setDate(date.getDate() + 10); //10 day add hoke aayge date me
+      // console.log(date);
+      // console.log(dat);
+
+      // const date = new Date("Aug 17,2023,6:44:50");
+      // date.setDate(19); // setMinutes(58),setFullYear(2024),setSeconds(20),getHours(2),setMonth(10)
+      // console.log(date);
+
+      let x = new Date("Aug 18,2023,6:44:50");
+      let y = new Date();
+      if (y > x) {
+        console.log("x is past date");
+      } else if (x > y) {
+        console.log("y is future date");
+      } else {
+        console.log("x is same date");
+      }
+
+      // let str = "Hello Deshwali";
+      // let addStr = "";
+      // for (let i = 0; i < str.length; i++) {
+      //   let char = str[i];
+      //   if (char === char.toUpperCase()) {
+      //     addStr += char.toLowerCase();
+      //   } else {
+      //     addStr += char.toUpperCase();
+      //   }
+      // }
+      // console.log(addStr);
+      // https://currentmillis.com/
+      // https://www.w3schools.com/js/js_dates.asp
+      // Current Millis
+      // Convert milliseconds to date-time. Link to a moment.
+    </script>
+  </body>
+</html>

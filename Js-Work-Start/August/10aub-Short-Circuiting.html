@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10aug</title>
+  </head>
+  <body>
+    <script>
+      // let a = 10; // agr value false hogi to 100 aayga
+      // if (!a) {
+      //   a = 100;
+      // }
+      // a = a ? a : 100;
+      //   a = a || 100;
+      // console.log(a);
+
+      // console.log(null ?? 20);
+
+      // console.log((false || 0) ?? 50);
+
+      //   let a = 0;
+      //   a = a || 100;
+      //   a ||= 100;
+      //   console.log(a);
+
+      //   a = a && 100;
+      //   a &&= 100;
+
+      //   a = a ?? 100;
+      //   a ??= 100;
+
+      //   a = a + 10;
+      //   a += 10;
+
+      // let obj = {
+      //   address: {
+      //     pincode: 302012,
+      //   },
+      // };
+      // console.log(obj.myAddress.city); //error
+
+      //   let obj = {
+      //     address: {
+      //       pincode: 302012,
+      //       subAddress: {
+      //         city: "Jaipur",
+      //       },
+      //     },
+      //   };
+      //   console.log(obj?.address?.sub?.city);
+
+      //   ..................................................................
+
+      // ####Short Circuiting
+      // Use of ||
+      // Replace with ternary operator
+      // With non nullish values
+      // Use of &&
+      // Calling function using &&
+      // The Nullish Coalescing Operator ??
+      // Logical Assignment Operator
+      // ||=
+      // &&=
+      // ??=
+
+      // let a = 10 || 20 || 30 || 40 > 20 || 20 < 30;
+      // console.log(a); // 10 (true he)
+
+      // let a = 10 || 20 || 30 || 40 > 20 || 20 < 30;
+      // console.log(a); // 10 (20 ke vjhe se true
+
+      // let a = 0 || false || NaN || undefined || null;
+      // console.log(a); // null // esme sbhi false h to last me jo hoga wo hi aayga // agr esme ek b value asi nhi h jeski vje se answer true ho rha h to last vala jo b hoga wo hoga
+
+      // console.log(null || 30); // 30
+      // console.log(null || undefined); // undefined
+      // console.log(10 || 30); // 10
+
+      // let a = 10 && 20 && 30 && 40 > 20 && 20 < 30;
+      // console.log(a); // true
+
+      // let a = 0 && 20 && 30 && 40 > 20 && 20 < 30;
+      // console.log(a); // 0 // && me jaha condition false hogi wo hi run hogi
+
+      // let a = 10 && null && 30 && 40 > 20 && 20 < 30;
+      // console.log(a); // null
+
+      // let a = 10 && 20 && undefined && 40 > 20 && 20 < 30;
+      // console.log(a); // undefined
+
+      // let a = 10 && 20 && 50 && NaN && 20 < 30;
+      // console.log(a); // NaN
+
+      // let a = 10 && 20 && 10 && 20 && 0;
+      // console.log(a); // 0
+
+      // let a = 10 || (20 && 50) || (10 < 20 && 0);
+      // console.log(a); // 10
+
+      // let a = null || (20 && 50) || (10 < 20 && 0);
+      // console.log(a); // 50 // null h || (or) me false ho gya aage bd jayga  (20 && 50) ye donu && me en me se 50 hi aayga last me esliy  or 50 truthy value h to ye ho gya run
+
+      // let a = null || (20 && 0) || (10 < 20 && 0);
+      // console.log(a); // 0  // && me last vala hi answer ho jata h to last me 0 h wo aa jayga
+      //  null || 0 ||  0
+
+      // || me jo value mil gay wo hi answer h or nhi mily to last tk jayga jaha tk || opretor h or last vala hi answer ho jayga chay wo true value ho ya false value ho
+      // && me phly falsy value mil to wo answer ho jayga nhi to last tk jayga or last vala answer ho jayga
+
+      // let a = 10;  // ek chij ko krne ke 3 treeke ho gay if-else tranry operator  or OR || opertor
+      // if (!a) {
+      //   a = 100; /// first treeka
+      // }
+      // // a = a ? a : 100; // second treeka
+      // // a = a || 100; // thrd treeka
+      // console.log(a);
+
+      // console.log(10 || 20); // 10
+      // console.log(0 || 20); // 20
+
+      // undefined or null ye 2 hee asi value h jinka koy matlb nhi hota he matlb empty ya not defied manlo
+      //agr hum chate he undefined or null ke alava koy b value ho to usko as truty hi consider kro matlb ki ek value ke tre consider usko falsy value kr tre consider mat kro usko normal value ke tre consider kro to us case me  ?? (Nullish Coalescing Operator ??)
+      //  agr esme ?? answer false aayga
+
+      // console.log(false ?? 20); // false
+      // console.log(0 ?? 20); // 0
+      // console.log("" ?? 20); // empty string aayga
+      // console.log(NaN ?? 20); // NaN
+      // // lakin undefined or null krnge to nhi aayga
+      // console.log(undefined ?? 20); // 20
+      // console.log(null ?? 20); //20
+      // sirf  undefined or null en 2 case me kuch or lane ke liy ?? ye lgana hoga
+      // or hm keshi b falsy value ke liy kam nhi krna chate to fir || operator use krnge
+
+      // console.log((10 || 20 || 0) ?? 50); // 10
+      // console.log((false || 0) ?? 50); // 0 // false or 0 me asnwer 0 aayga kunki false flasy value h to last vala answer ho gya 0 or 0 or ?? 50 answer aayga 0 kunki 0 na to null or na hi undefined
+      // console.log((10 || 20 || 0) ?? 50); // 10
+
+      // ||=
+      // let a = false; // falsy values ----> false 0 NaN undefined null '' // ye falsy value krne se 100 aayega
+      // a ||= 100; // sortcut
+      // // a = a || 100; // a agr falsy value h to answer hoga 100 // a = 10 krne se answer 10 hi aayga kunki ye truthy value h
+      // console.log(a);
+
+      // a = a + 10;
+      // a += 10; // sortcut
+      // a = a || 100;
+      // a ||= 100; // sortcut
+      // a = a && 100;
+      // a &&= 100; // sortcut
+      // a = a ?? 100;
+      // a ??= 100; // sortcut
+
+      // let obj = {
+      //   address: {
+      //     pincode: 10203,
+      //   },
+      // };
+      // console.log(obj.address); // {pincode: 10203}
+      // console.log(obj.address.pincode); // 10203
+      // console.log(obj.address.city); // undefined aayga kunki address me city h nhi
+      // console.log(obj.myaddress.city); // error aayga kunki myaddress hee nhi he to city kha se aagya
+
+      // let obj = {
+      //   address: {
+      //     pincode: 10203,
+      //     subAddress: {
+      //       city: "Jaipur",
+      //     },
+      //   },
+      // };
+      // console.log(obj.address.subAddress); // {city: 'Jaipur'}
+      // console.log(obj.address.sub.city); // sub nhi he to city kase milega
+      // last tk phunch gy or v nhi h to undefined aayga
+      // bich me kuch gayb h error aayga
+
+      // Optional Chaining
+      // let obj = {
+      //   address: {
+      //     pincode: 10203,
+      //     subAddress: {
+      //       city: "Jaipur",
+      //     },
+      //   },
+      // };
+      // // console.log(obj?.address?.sub.city); // sub nhi h to sum ke ander city kase milagi
+      // console.log(obj?.address?.sub?.city); // agr hm chate sub nhi h error na de ke undefined de to eske liy ? lga do
+      // console.log(obj?.address?.subAddress?.city); ? ye lgane se error nhi aaygi undefined aaygi
+      // ? ye usi condition me lgaynge bigenuses recvarment asi ke perticulr value aa b skte h or nhi b aa skte h tb to ? (question mark) lga dena
+      // but ye exptat he ke aaygi hi aaygi matlb subAddress ke ander city hoga hi hoga ya address ke ander pincode hoga hi hoga tb ye ? nhi lgana h kunki hoga or error to nhi aaygi jo last me denge wo nhi h to undefined aayga
+      // to code shi trike se nhi chlega undefined ke hisab se chlega or error aaygi to code error kr hisab se chlega
+
+      // let a = 10;
+      // let b = 20;
+      // let c = 30;
+      // a = b = c;
+      // console.log(a, b, c); // 30 30 30 aayga
+      // a = b = c; // c 30 he wo b me jayga to b ke 30 ho jayge or b a me to b ke 30 he olredy to a ke bhi 30 ho jaygi
+      // a = b = 30;
+      // a = 30; // simple sa matlb ye h jo sabse right me value he wo a or b donu ke value ho jaygi
+      // c ke value 30 h c ko udhake b me dala deya to b ho gya 30 or b ko udhake a me dal rhe h to b 30 he to a bhi 30 ho jayga
+      // simple sa matlb ye h jo sabse right me value he wo a or b donu ke value ho jaygi
+    </script>
+  </body>
+</html>

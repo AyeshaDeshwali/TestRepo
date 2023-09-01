@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function convertToWords(amount) {
+        const singleDigits = [
+          "",
+          "One",
+          "Two",
+          "Three",
+          "Four",
+          "Five",
+          "Six",
+          "Seven",
+          "Eight",
+          "Nine",
+        ];
+        const doubleDigits = [
+          "",
+          "",
+          "Twenty",
+          "Thirty",
+          "Forty",
+          "Fifty",
+          "Sixty",
+          "Seventy",
+          "Eighty",
+          "Ninety",
+        ];
+        const teens = [
+          "Ten",
+          "Eleven",
+          "Twelve",
+          "Thirteen",
+          "Fourteen",
+          "Fifteen",
+          "Sixteen",
+          "Seventeen",
+          "Eighteen",
+          "Nineteen",
+        ];
+        if (amount < 1 || amount > 999) {
+          return "Invalid amount";
+        }
+        if (amount >= 100) {
+          const hundreds = Math.floor(amount / 100);
+          const remainder = amount % 100;
+          let words = singleDigits[hundreds] + " Hundred";
+          if (remainder > 0) {
+            words += " " + convertToWords(remainder);
+          }
+          return words;
+        } else if (amount >= 20) {
+          const tens = Math.floor(amount / 10);
+          const ones = amount % 10;
+          return (
+            doubleDigits[tens] + (ones > 0 ? " " + singleDigits[ones] : "")
+          );
+        } else if (amount >= 10) {
+          return teens[amount - 10];
+        } else {
+          return singleDigits[amount];
+        }
+      }
+      // Testing the function with examples
+      console.log(convertToWords(10)); // Ten Rupees
+      console.log(convertToWords(1)); // 1 Rupees
+      console.log(convertToWords(100)); // One Hundred Rupees
+      console.log(convertToWords(999)); // Nine Hundred Ninety Nine Rupees
+      console.log(convertToWords(540)); // Five Hundred Forty Rupees
+      console.log(convertToWords(777)); // Seven Hundred Seventy Seven Rupees
+    </script>
+  </body>
+</html>
