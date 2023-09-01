@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //         sum(10, 20); //Call/Invoke/Execute/Run
+
+      // function max(num1, num2) {
+      //   if (num1 > num2) {
+      //     return num1;
+      //   } else if (num2 > num1) {
+      //     return num2;
+      //   } else {
+      //     console.log("Both Are Equal");
+      //     return 501;
+      //   }
+      // }
+      // let ans = max(20, 20);
+      // console.log(ans);
+
+      // function max(num1, num2, num3) {
+      //   if (num1 > num2 && num1 > num3) {
+      //     return num1;
+      //   } else if (num2 > num1 && num2 > num3) {
+      //     return num2;
+      //   } else if (num3 > num1 && num3 > num2) {
+      //     return num3;
+      //   } else {
+      //     console.log("All three numbers Are Equal");
+      //   }
+      // }
+      // let ans = max(40, 50, 60);
+      // console.log(ans);
+
+      function fn1() {
+        console.log(1);
+      }
+      function fn2() {
+        console.log(2);
+      }
+      function fn3() {
+        console.log(3);
+      }
+      fn1();
+      fn2();
+      fn3();
+
+      function cafeBae() {
+        console.log("Chai");
+        mojoCafe();
+        console.log("Coffee");
+      }
+      function mojoCafe() {
+        console.log("Juice");
+        starCafe();
+        console.log("Shake");
+      }
+      function starCafe() {
+        console.log("Pasta");
+        dominos();
+        console.log("French Fries");
+      }
+      function dominos() {
+        console.log("Pizza");
+      }
+      cafeBae(); //Chai Juice Pasta Pizza FrenchFries Shake Coffee
+      console.log("Hello World");
+
+      function fn1() {
+        console.log(1);
+        console.log(2);
+        fn2();
+        console.log(3);
+      }
+      function fn2() {
+        console.log(4);
+        fn3();
+        console.log(5);
+        console.log(6);
+      }
+      function fn3() {
+        console.log(7);
+        console.log(8);
+        console.log(9);
+      }
+      fn1();
+
+      function fn1() {
+        console.log(1);
+        console.log(2);
+        fn2();
+        fn3();
+        console.log(3);
+      }
+      function fn2() {
+        console.log(4);
+        console.log(5);
+        console.log(6);
+      }
+      function fn3() {
+        console.log(7);
+        console.log(8);
+        console.log(9);
+      }
+      fn1();
+
+      function fn1() {
+        console.log(1);
+        console.log(2);
+        fn2();
+        fn3();
+        console.log(3);
+      }
+      function fn2() {
+        console.log(4);
+        console.log(5);
+        fn3();
+        console.log(6);
+      }
+      function fn3() {
+        console.log(7);
+        console.log(8);
+        console.log(9);
+      }
+      fn1();
+
+      function max(num1, num2) {
+        if (num1 > num2) {
+          return num1;
+        } else if (num2 > num1) {
+          return num1;
+        }
+      }
+      const maximum = function (num1, num2) {
+        if (num1 > num2) {
+          return num1;
+        } else if (num2 > num1) {
+          return num1;
+        }
+      };
+      const maxim = (num1, num2) => {
+        if (num1 > num2) {
+          return num1;
+        } else if (num2 > num1) {
+          return num1;
+        }
+      };
+    </script>
+  </body>
+</html>

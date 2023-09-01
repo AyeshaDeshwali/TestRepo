@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Return ka use function me kisi value ko function se bahar laane ke liye hota hai. Jab bhi hum kisi function ko call karte hain, to function uski operation complete karke ek result produce karta hai. Lekin ye result function ke andar hi reh jata hai aur usko hum function ke bahar use nahi kar sakte. Isliye, hum return statement ka use karte hain, jisse function se ek value return ho aur hum us value ko function call karne wale code me use kar sakein.
+      // Function ke andar jab return statement execute hota hai, to function ki execution immediate terminate ho jati hai, aur control function call karne wale code me wapas aa jata hai sath hi return kiya gaya value bhi sath lekar ata hai.
+      // Example ke liye, pichle question me diya gaya code dekhte hain:
+
+      function AddSumEvenNumber(numbers) {
+        let sum = 0;
+        for (let i = 0; i < numbers.length; i++) {
+          if (numbers[i] % 2 === 0) {
+            sum = sum + numbers[i];
+          }
+        }
+        return sum; // Is line me 'sum' variable ki value return ki jati hai.
+      }
+      let arr = [2, 3, 4, 5, 6, 7, 8];
+      const num = AddSumEvenNumber(arr);
+      console.log(num);
+      // Is example me return sum; line, AddSumEvenNumber function se sum variable ki value ko function call karne wale code me laane ke liye kiya gaya hai.
+      // Jab function AddSumEvenNumber(arr) call hota hai, to function me sum of even numbers calculate hota hai, phir return sum; ki wajah se yeh value num variable me store ho jati hai.
+      // Iske baad console.log(num); se hum num variable ki value console me print kar sakte hain.
+      // Is tarah, return ka use kisi function ki execution result ko function call karne wale code me lekar aane ke liye kiya jata hai.
+    </script>
+  </body>
+</html>

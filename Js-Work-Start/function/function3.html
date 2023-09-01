@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function fn2() {
+        console.log(4);
+        console.log(5);
+        fn3(); //Cyclic Dependency - Neven Do This
+        console.log(6);
+      }
+      function fn3() {
+        console.log(7);
+        console.log(8);
+        console.log(9);
+        fn2(); //Cyclic Dependency - Neven Do This
+      }
+      fn2();
+
+      // function sum(a, b = 200) {
+      //   console.log(a, b);
+      //   console.log(a + b);
+      // }
+      // sum(10, 100);
+
+      // function sum(a, b = 200) {
+      //   console.log(a, b);
+      //   console.log(a + b);
+      // }
+      // sum(10);
+
+      // function sum(a = 100, b = 200) {
+      //   console.log(a, b);
+      //   console.log(a + b);
+      // }
+      // sum();
+      // function sum(a = 100, b = 200) {
+      //   console.log(a, b);
+      //   console.log(a + b);
+      // }
+      // sum(undefined, undefined);
+      // sum(); //both are equal
+      // //value pass kr rhe hain to vo value consider hogi
+      // //value pass ni kr rhe hain to undefined
+      // //agar value undefined hai to default value consider hogi
+
+      // sum(10, 20);
+      // add(10, 20);
+      // function sum(a, b) {
+      //   console.log(a + b); //function declaration
+      // }
+      // const add = function (a, b) {
+      //   console.log(a + b); //function expression
+      // };
+      // add(10, 20);
+      // sum(10, 20);
+      // //1st Difference - Syntax
+      // //2nd Difference - We can not call function expression before declaration
+
+      // function (a, b) {
+      //   console.log(a + b); //Anonymous Function - Function without name
+      // };
+
+      // const sum = function (a, b) {
+      //   console.log(a + b);
+      // };
+      // sum(10, 20);
+      // const max = function (num1, num2) {
+      //   if (num1 > num2) {
+      //     return num1;
+      //   } else if (num2 > num1) {
+      //     return num2;
+      //   } else {
+      //     return "Both are equal";
+      //   }
+      // };
+      // console.log(max(20, 20));
+
+      // function hello() {
+      //   console.log("Hello");
+      // }
+      // hello();
+      // eval('function hello() {console.log("Hello");} hello();');
+      // console.log(eval("46+2-3"));
+
+      // function sum(a, b) {
+      //   console.log(a + b); //function declaration
+      // }
+      // const add = function (a, b) {
+      //   console.log(a + b); //function expression
+      // };
+      // const plus = (a, b) => {
+      //   console.log(a + b); //arrow function
+      // };
+      // sum(10, 20);
+      // add(10, 20);
+      // plus(10, 20);
+
+      // const add = function (a, b) {
+      //   console.log(a + b); //function expression
+      // };
+      // const plus = (a, b) => console.log(a + b); //arrow function
+      // add(10, 20);
+      // plus(10, 20);
+
+      // const sum = (a, b) => console.log(a + b);
+      // sum(10, 20);
+
+      // function sum(a, b) {
+      //   return a + b;
+      // }
+      // console.log(sum(10, 20));
+      // const add = (a, b) => a + b;
+      // console.log(add(10, 20));
+
+      // function sum(a, b) {
+      //   console.log("Hello");
+      //   return a + b;
+      // }
+      // console.log(sum(10, 20));
+      // const add = (a, b) => {
+      //   console.log("Hello");
+      //   return a + b;
+      // };
+      // console.log(add(10, 20));
+    </script>
+  </body>
+</html>

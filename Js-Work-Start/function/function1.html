@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // why creat function ? Reson
+      //1. Modular approach (Modules) - small small parts me divide
+      //2. Reuse function sum 2 number add - Reuse
+      //3. Maintainance easy ho jata hei
+      //4  coding Guidelines suggests creating function plus other ReadableStreamBYOBRequest
+      //5. function independent, other code se alag
+
+      // Camel Casing
+      // sumOfTwoNumbers
+      // printTwoNumbers
+      // calculatePercentage
+      // calculatInterest
+      // printResult
+      // 7 max paramters 7 se jyada nhi dena chay kuniki problem hogi menage nhi ho pata
+      //return some values else JS will undefined
+      // only 1 return statement will work which comes first
+      // function
+
+      // Type of functions
+      // Function declaration
+      // Function expression
+      // Arrow function
+      // Anonymous function
+
+      //   function declaration
+      // function sum(params1, params2) {
+      //   console.log(params1 + params2);
+      // }
+      // sum(2, 2);
+
+      //   kuch bhi return nhi krne pr javascript kudh se undefined print kr deta hei
+
+      function sum() {
+        return 1;
+        return 2;
+        return 3;
+      }
+      sum(); /// hemasha 1 hi return hoga kunki phle he jo pehle rehga wo hi return hoga
+
+      //1.  function expression ko Variable me assign  krte hai or esko phale use ni kr skte hai
+
+      //       // sum(10, 20); // Error
+      //       let sum = function (a, b) {
+      //         console.log(a + b);
+      //       };
+      //       sum(10, 20); // 30
+
+      // 2.   function declaration ko phale use kr skte hai
+
+      //       sum(10, 20); // 30
+      //       function sum(a, b) {
+      //         console.log(a + b);
+      //       }
+      //       sum(10, 20); // 30
+
+      // 3.  arrow function bhi function expression ki trhe he hai esko bhi phale use ni kr skte hai but arrow function me single statement ka code likhna hota hai to {} and return likhne ke need ni hai
+      //       // sum(20, 30); // Error
+      //       let sum = (a, b) => console.log(a + b);
+      //       sum(20, 30); // 50
+    </script>
+  </body>
+</html>
