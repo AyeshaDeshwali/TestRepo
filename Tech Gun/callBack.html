@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>callback</title>
+  </head>
+  <body>
+    <script>
+      // function show() {
+      //   console.log("hello");
+      // }
+      // function fun(callback) {
+      //   callback();
+      // }
+      // fun(show);
+
+      //   function show(a) {
+      //     console.log(a);
+      //   }
+      //   function fun(callback) {
+      //     let a = 101;
+      //     callback(a);
+      //   }
+      //   fun(show);
+
+      //   function fun(callback) {
+      //     let a = 101;
+      //     callback(a);
+      //   }
+      //   fun(function show(a) {
+      //     console.log(a);
+      //   });
+
+      //   function fun(callback) {
+      //     let a = 101;
+      //     callback(a);
+      //   }
+      //   fun(function (a) {
+      //     console.log(a);
+      //   });
+
+      //   function fun(callback) {
+      //     let a = 101;
+      //     callback(a);
+      //   }
+      //   fun((a) => console.log(a));
+
+      // ----------------------------------------------------
+
+      //   synchronous or asynchronous
+
+      //1. Synchronous
+
+      //   function show() {
+      //     console.log("hello");
+      //   }
+      //   function fun(callback) {
+      //     callback();
+      //   }
+      //   fun(show);//pehle print hoga
+      //   console.log("End!"); // baad me print hoga
+
+      //2. Aynchronous
+
+      setTimeout(function () {
+        console.log("hello friends"); // baad me print hoga y
+      }, 3000);
+      console.log("End!"); // phele ye print hoga
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   let book = ["Hindi", 200, 50];
+      //   console.log(book[1]);esika sortcut niche
+
+      //   let book = ["Hindi", 200, 50];
+      //   let name = book[0];
+      //   let pages = book[1];
+      //   let price = book[2];
+      //   console.log(name);  // esika sortcut niche
+
+      //   let book = ["Hindi", 200, 50];
+      //   let [first, pages, price] = book;
+      //   console.log([first]);//Hindi
+
+      //   let a = ["ayesha", 19, , "Merta"];
+      //   let [name, age, address, id] = a;
+      //   console.log(id); // yha pr extraa dena se undefined aayga lakin uper me , ye krenge to wo ek value ho jyagi log me jo b krene wo aajayga nhi krne se undefined aayga
+
+      //   let a = ["ayesha", 19, "Merta"]; // es array me bich me ye , krne se ek value bun jati he jo undefined hogi lakin log me jo denge difoult wo show ho jayga
+      //   let [name, age, address, id = 101] = a; //agr yaha pr id defout nhi deta he to undefined aayga
+      //   console.log(id); //agr array me koy value nhi he yaha pr de dete he to undefined aayga lkin defoult de skte he jase id=101;ase krne se id show ho jaygi
+
+      // jb blank value he tb ek defoult value set krdo nhi to undefined hoga
+      //    or jub set kr deta he uske liy value rhta he to defoult value ignor ke deya jayga
+
+      //   let a = ["ayesha", 19, "Merta", 101]; // ya pr id de huy he 101 ye show hogi agr ya pr sirf , ye rhta he to defolut 102 vali value show hoti
+      //   let [name, age, address, id = 102] = a;
+      //   console.log(id);
+
+      //   nested array me bhi ase kam hoga
+
+      //   let a = ["ayesha", "deshwali", "19", ["India", 2023]];
+      //   let [name, fullname, age, [contry, year]] = a;
+      //   console.log(contry);
+
+      //   function book() {
+      //     return "Hindi"; // ye string return kr rha he
+      //   }
+      //   let name = book();
+      //   console.log(name);
+
+      function book() {
+        return ["Hindi", "English", "Math"]; // ye array return kr rha he
+      }
+      let [oneBook, TowBokk, ThreeBokk] = book();
+      console.log(oneBook);
+    </script>
+  </body>
+</html>

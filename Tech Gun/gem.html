@@ -1,0 +1,130 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blinking Gem</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+
+      .gem {
+        width: 50px;
+        height: 50px;
+        background-color: #00bfff;
+        border-radius: 50%;
+        animation: blink 1s infinite;
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gem" id="gem"></div>
+    <script src="script.js"></script>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Picker</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .color-picker {
+        text-align: center;
+      }
+      .color-box {
+        width: 100px;
+        height: 100px;
+        margin-top: 20px;
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="color-picker">
+      <input type="color" id="colorInput" />
+      <div class="color-box" id="colorBox"></div>
+    </div>
+    <script>
+      const colorInput = document.getElementById("colorInput");
+      const colorBox = document.getElementById("colorBox");
+
+      colorInput.addEventListener("input", function (event) {
+        const selectedColor = event.target.value;
+        colorBox.style.backgroundColor = selectedColor;
+      });
+    </script>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Changing Button</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+
+      .color-box {
+        width: 100px;
+        height: 100px;
+        margin-top: 20px;
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="colorButton">Change Color</button>
+    <div class="color-box" id="colorBox"></div>
+    <script>
+      const colorButton = document.getElementById("colorButton");
+      const colorBox = document.getElementById("colorBox");
+
+      colorButton.addEventListener("click", function () {
+        const randomColor = generateRandomColor();
+        colorBox.style.backgroundColor = randomColor;
+      });
+
+      function generateRandomColor() {
+        const letters = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+    </script>
+  </body>
+</html> -->

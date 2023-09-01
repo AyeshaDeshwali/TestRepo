@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coercion</title>
+  </head>
+  <body>
+    <script>
+      // Type Conversion
+      // Converting One Datatype -> To anaother Datatype
+      // for Example
+      //   let x = 10;
+      //   x = true;
+      //   x = "new string";
+
+      //    kabi b kesi 1 deta type ko dusre data type me convert krnege to usko Type Conversion kahte h
+
+      //   Explicit type conversion/Manual Type conversion
+      //   const value1 = "5";
+      //   const value2 = 9;
+      //   let sum = value1 + value2;
+      //   console.log(sum); // 59
+
+      //   String(123); // '123'
+      //   String(-12.3); // '-12.3'
+      //   String(null); // 'null'
+      //   String(undefined); // 'undefined'
+      //   String(true); // 'true'
+      //   String(false); // 'false'
+
+      //   Implicit type conversion/Automatic Type conversion/Coercion
+
+      //   true + false; //1
+      //   12 / "6"; // 2
+      //   "number" + 15 + 3; //number153
+      //   15 + 3 + "number"; //18number
+      //   "true" == true; // false
+      //   false == false  // false
+      //   null == ''  // false
+      //   ['x'] == 'x' // true
+
+      // Explicit me  -> String,Boolean,Number  enka use krte h
+      // Implicit me -> Operator ka use krte h
+
+      //   Types of Conversion
+      //  1. String
+      //  2. Boolean
+      //  3. Number
+
+      //   String(123); // Explicit
+      //   123 + ""; // Implicit
+
+      // 1. String Conversion
+      //   String(123); // '123'
+      //   String(-12.3); // '-12.3'
+      //   String(null); // 'null'
+      //   String(undefined); // 'undefined'
+      //   String(true); // 'true'
+      //   String(false); // 'false'
+
+      // 2. Boolean Conversion
+      //   Boolean(2); // Explicit
+      //   if(2){} // Implicit
+      //   !!2 // Implicit
+      //   2 || 'hello' // Implicit
+
+      //   Boolean(""); // false
+      //   Boolean(0); // false
+      //   Boolean(-0); // false
+      //   Boolean(NaN); // false
+      //   Boolean(null); // false
+      //   Boolean(undefined); // false
+      //   Boolean(false); // false
+
+      //   3. Number Conversion
+      //   Number('123') // Explicit
+      //   +'123'   // Implicit
+      //   123 != '456' // Implicit
+      //   4 > '5' // Implicit
+      //   5/null // Implicit
+      //   true | 0 // Implicit
+
+      //   Number(null); // 0
+      //   Number(undefined); // NaN
+      //   Number(true); // 1
+      //   Number(false); // 0
+      //   Number("12"); // 12
+      //   Number("-12.34"); // -12.34
+      //   Number("\n"); // 0
+      //   Number("12s"); // NaN
+      //   Number(123); // 123
+
+      //   console.log(true + false); // 1
+      //   console.log(12 + "6"); // 2
+      //   console.log("number" + 15 + 3); // 'number153'
+      //   console.log(15 + 3 + "number"); // '18number'
+      //   console.log([1] > null); // true
+      //   console.log("true" == true); // false // 'true' string me h to NaN  or y true jo 1 to false aayga
+
+      //   -----------------code with harry-----------------------
+
+      //    Explicit type conversion/Manual Type conversion
+
+      //   let a;
+      //   a = String(23);
+      //   console.log(a, typeof a);
+      //   let b = String(true);
+      //   console.log(b, typeof b);
+
+      //   let date = new Date();
+      //   console.log(date, typeof date);
+
+      //   let date = String(new Date());
+      //   console.log(date, typeof date);
+
+      //   let arr = String([1, 2, 3, 4, 5]);
+      //   console.log(arr, typeof arr);
+
+      //   let arr = String([1, 2, 3, 4, 5]);
+      //   console.log(arr.length, typeof arr);
+
+      //   let arr = [1, 2, 3, 4, 5];
+      //   console.log(arr.length, typeof arr);
+
+      //   toString() // string me convert kr deta h
+
+      //   let a = 8;
+      //   console.log(a.toString()); // string me convert ho gaya
+
+      //   let a = 8;
+      //   console.log(a); // number me rehga
+
+      //   let a = true;
+      //   console.log(a.toString()); // true
+
+      //   let date = new Date();
+      //   console.log(date.toString());
+
+      //   let str = Number("12334");
+      //   console.log(str, typeof str);
+
+      //   let str = Number("12334");
+      //   str = Number("1as4");
+      //   str = Number([1, 2, 3, , 4, 5]);
+      //   console.log(str, typeof str);
+
+      //   let number = parseInt("34.45"); // number me dega or 34.54 krne pr b 34 hi dega ye intger me pars kr rah h
+      // //   number = Number("34.45");
+      //   console.log(number, typeof number);
+
+      //   let number = parseFloat("23.45"); // 23.45 folting point number me converting kr deta h
+      //   console.log(number, typeof number);
+
+      //   let number = parseFloat("23.45");
+      //   console.log(number.toFixed(2), typeof number); // 23.45 number //
+      //   console.log(number.toFixed(), typeof number); // 23 number //
+
+      // ketne decimal points ke baad number dekna chate h to  toFixed() ka use krnge
+
+      //   Implicit type conversion/Automatic Type conversion/Coercion
+
+      //   let str = "34";
+      //   let num = 30;
+      //   console.log(str + num); //3430
+
+      //   let str = Number("34");
+      //   let num = 30;
+      //   console.log(str + num); //3430
+    </script>
+  </body>
+</html>
