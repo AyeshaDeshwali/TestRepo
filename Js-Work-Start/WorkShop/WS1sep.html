@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WS1Sep</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f0f0f0;
+        margin: 100px;
+      }
+
+      #datetime {
+        font-size: 24px;
+        color: white;
+        padding: 10px;
+        background-color: rgba(12, 11, 11, 0.851);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =========================================================== -->
+
+    <input type="number" id="numberInput" />
+    <button onclick="checkNumber()">Submit</button>
+
+    <!-- =============================================== -->
+    <!-- <span id="datetime"></span> -->
+    <!-- =============================================== -->
+
+    <!-- Q 3 -->
+    <!-- <span>Enter obtained marks in your subjects</span><br /><br />
+    <input type="text" name="" id="marks" /> <br /><br />
+    <button id="btn" onclick="getResult()">submit</button> -->
+
+    <script>
+      //   function updateDateTime() {
+      //     let date = new Date();
+      //     const datetimeElement = document.getElementById("datetime");
+      //     datetimeElement.textContent = `${date.getDate()}-${
+      //       date.getMonth() + 1
+      //     }-${date.getFullYear()}   ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+      //   }
+      //   updateDateTime();
+      //   setInterval(updateDateTime, 1000);
+
+      //   ==================================================//
+
+      // function checkNumber() {
+      //   const number = document.getElementById("numberInput").value;
+      //   if (number % 2 === 0) {
+      //     alert(number + " is even  number");
+      //   } else {
+      //     alert(number + " is odd number");
+      //   }
+      // }
+
+      //   =============================================================
+      // 3.
+      const movies = [
+        {
+          moviename: "Movie A",
+          actorname: "Actor One",
+          releaseyear: 2010,
+          watched: true,
+          producer: "Producer P",
+        },
+        {
+          moviename: "Movie B",
+          actorname: "Actor Two",
+          releaseyear: 2015,
+          watched: false,
+          producer: "Producer Q",
+        },
+        {
+          moviename: "Movie C",
+          actorname: "Actor Three",
+          releaseyear: 2010,
+          watched: true,
+          producer: "Producer R",
+        },
+      ];
+      const watchedMovies = movies.filter((movie) => movie.watched);
+      const watchedMovieNames = watchedMovies.map((movie) => movie.moviename);
+      console.log("Watched movies:", watchedMovieNames);
+
+      const favoriteActor = "Actor One";
+      console.log("My favorite actor:", favoriteActor);
+
+      const targetYear = 2010;
+      const moviesInTargetYear = movies.filter(
+        (movie) => movie.releaseyear === targetYear
+      );
+      const movieNamesInTargetYear = moviesInTargetYear.map(
+        (movie) => movie.moviename
+      );
+      console.log(`Movies released in ${targetYear}:`, movieNamesInTargetYear);
+
+      const sortedMovies = movies
+        .slice()
+        .sort((a, b) => a.releaseyear - b.releaseyear);
+      console.log("Movies sorted by release year:", sortedMovies);
+
+      const watchedMovieCount = watchedMovies.length;
+      console.log("Total watched movies:", watchedMovieCount);
+
+      //   ====================================================================
+
+      //   5
+      //   const numbers = [85, 120, 95, 150, 110, 105, 200, 90];
+      //   const filteredNumbers = numbers.filter((number) => number > 100);
+      //   if (filteredNumbers.length > 0) {
+      //     const maxNumber = Math.max(...filteredNumbers);
+      //     const minNumber = Math.min(...filteredNumbers);
+      //     const sum = maxNumber + minNumber;
+      //     console.log(sum);
+      //   } else {
+      //     console.log("No numbers greater than 100 found in the array.");
+      //   }
+
+      //6
+      //   function createCalculator(operator) {
+      //     if (operator === "+") {
+      //       return function (a, b) {
+      //         return a + b;
+      //       };
+      //     } else if (operator === "-") {
+      //       return function (a, b) {
+      //         return a - b;
+      //       };
+      //     } else if (operator === "*") {
+      //       return function (a, b) {
+      //         return a * b;
+      //       };
+      //     } else if (operator === "/") {
+      //       return function (a, b) {
+      //         if (b !== 0) {
+      //           return a / b;
+      //         } else {
+      //           return "Division by zero is not allowed";
+      //         }
+      //       };
+      //     } else {
+      //       return "Invalid operator";
+      //     }
+      //   }
+      //   const addition = createCalculator("*");
+      //   const result = addition(5, 3);
+      //   console.log(result);
+
+      // 7
+      //   document.write(Math.trunc(Math.random() * 100) + 100);
+
+      //   //Q. 8
+      // let date = new Date(2004, 11 - 1, 20);
+      // console.log(date);
+
+      //   let date = new Date();
+      //   let mydate = (date = new Date("2004,11,20"));
+      //   console.log(mydate);
+
+      //   // Q 9.
+      //   const mymap = new Map();
+      //   mymap.set(20, 10);
+      //   mymap.set(34, 450);
+      //   mymap.set(221, 340);
+      //   mymap.set(56, 20);
+      //   mymap.set(90, 300);
+      //   mymap.set(90, 180);
+      //   let ans = new Map();
+      //   mymap.forEach((value, key) => {
+      //     if (value > 100 && key > 50) {
+      //       ans.set(key, value);
+      //     }
+      //   });
+      //   console.log(ans);
+
+      //   //   14
+      function reverseCase(str) {
+        let result = "";
+        for (let i = 0; i < str.length; i++) {
+          let char = str[i];
+          if (char === char.toUpperCase()) {
+            result += char.toLowerCase();
+          } else {
+            result += char.toUpperCase();
+          }
+        }
+        return result;
+      }
+      let str = "Wecode Academy";
+      let finalResultStr = reverseCase(str);
+      console.log(finalResultStr.split("").reverse().join(""));
+
+      //   ==============================================================
+
+      //   Q.15.
+      //      1.First-class functions ka matlab hota hai ki functions ko JavaScript mein ek normal value ki tarah treat kiya ja sakta hai.
+      //      Yani ki, hum functions ko variables mein store kar sakte hain, functions ko functions ke andar pass kar sakte hain.
+
+      //   const greet = function (name) {
+      //     console.log(`Hello, ${name}!`);
+      //   };
+      //   greet("world");
+
+      //   //    2. asa function jo parameter me function le or return b function kre ye donu kam krta ho to ase functoin ko High Order Function kehte h
+
+      //   function calculate(num1, num2, operation) {
+      //     return operation(num1, num2);
+      //   }
+      //   function add(a, b) {
+      //     return a + b;
+      //   }
+      //   console.log(calculate(2, 6, add));
+
+      //   //    3. kisi function ko as parameter pass krte he to
+      //   //    jish function ko pass krte he wo function Callback Function khlata h
+
+      //   function X() {
+      //     console.log("This is X function");
+      //   }
+      //   function Y(cb) {
+      //     console.log("This is Y function");
+      //     cb();
+      //   }
+      //   Y(X);
+
+      //   =================================================================
+
+      // Q 12
+      // let countryName = prompt("Enter Country Name ");
+      // switch (countryName) {
+      //   case "india":
+      //     alert("India is in Asia  continent");
+      //     break;
+      //   case "pakistan":
+      //     alert("Algeria is in Asia  continent");
+      //     break;
+      //   case "england":
+      //     alert("england is in Europ continent");
+      //     break;
+      //   case "france":
+      //     alert("France is in EUrope continent ");
+      //     break;
+      //   case "brazil":
+      //     alert("Brazil is in South America");
+      //     break;
+      //   case "south africa":
+      //     alert("south africa is in Africa continent");
+
+      //   default:
+      //     alert("No match ");
+      //     break;
+      // }
+
+      // Question3:
+      // function getResult() {
+      //   const total = 500;
+      //   const obtMars = document.getElementById("marks").value;
+      //   const percentage = (obtMars / total) * 100;
+      //   if (percentage >= 80) {
+      //     alert("first grade and your percentage is  " + percentage + "%");
+      //   } else if (percentage >= 60 && percentage < 80) {
+      //     alert("second grade and your percentage is  " + percentage + "%");
+      //   } else if (percentage >= 35 && percentage < 60) {
+      //     alert("third grade and your percentage is  " + percentage + "%");
+      //   } else {
+      //     alert("fourth grade and your percentage is  " + percentage + "%");
+      //   }
+      // }
+    </script>
+  </body>
+</html>

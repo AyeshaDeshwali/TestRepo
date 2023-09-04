@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f0f0f0;
+        margin: 100px;
+      }
+
+      #datetime {
+        font-size: 24px;
+        color: white;
+        padding: 10px;
+        background-color: rgba(12, 11, 11, 0.851);
+      }
+    </style>
+  </head>
+  <body>
+    <span id="datetime"></span>
+    <script>
+      function updateDateTime() {
+        let date = new Date();
+        const datetimeElement = document.getElementById("datetime");
+        datetimeElement.textContent = `${date.getDate()}-${
+          date.getMonth() + 1
+        }-${date.getFullYear()}   ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+      }
+      updateDateTime();
+      setInterval(updateDateTime, 1000);
+    </script>
+  </body>
+</html>
+
+<!-- <body>
+     <div
+      style="
+        background-color: chartreuse;
+        height: 200px;
+        width: 300px;
+        margin-top: 100px;
+        margin-left: 100px;
+        border: 5px solid #000;
+        border-radius: 20px;
+        padding: 10px;
+        font-size: 25px;
+      "
+    >
+      date:
+      <div id="date"></div>
+
+      HH:
+      <span
+        id="hour"
+        style="
+          background-color: rgb(255, 156, 43);
+          color: white;
+          margin-left: 10px;
+        "
+      ></span>
+
+      MM:
+      <span
+        id="minut"
+        style="
+          background-color: rgb(255, 156, 43);
+          color: white;
+          margin-left: 10px;
+        "
+      ></span>
+
+      SS:
+      <span
+        id="second"
+        style="
+          background-color: rgb(255, 156, 43);
+          color: white;
+          margin-left: 10px;
+        "
+      ></span>
+</div>
+  </body>
+  <script>
+  const date = new Date();
+      document.getElementById("date").textContent = date;
+
+      let seconds = 0;
+      let minutes = 0;
+      let hours = 0;
+      setInterval(() => {
+        document.getElementById("second").textContent = ++seconds;
+
+        if (seconds === 59) {
+          document.getElementById("minut").textContent = ++minutes;
+          seconds = 0;
+        }
+        if (minutes === 59) {
+          document.getElementById("hour").textContent = ++hours;
+          minutes = 0;
+        }
+        hours = 0;
+      }, 1000);
+    </script> -->
+
+6560, 8656, 8184, 3633, 6404

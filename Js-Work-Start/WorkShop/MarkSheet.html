@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .container h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      .subject {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .subject label {
+        font-weight: bold;
+        width: 100px;
+      }
+
+      .subject input[type="number"] {
+        width: 60px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      .result {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .result div {
+        margin-bottom: 10px;
+      }
+
+      .result label {
+        font-weight: bold;
+      }
+
+      .button-container {
+        text-align: center;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>MarkSheet Calculator</h1>
+      <div class="subject">
+        <label for="hindi">Hindi:</label>
+        <input type="number" id="hindi" value="" />
+      </div>
+      <div class="subject">
+        <label for="english">English:</label>
+        <input type="number" id="english" value="" />
+      </div>
+      <div class="subject">
+        <label for="math">Math:</label>
+        <input type="number" id="math" value="" />
+      </div>
+      <div class="subject">
+        <label for="science">Science:</label>
+        <input type="number" id="science" value="" />
+      </div>
+      <div class="subject">
+        <label for="sanskrit">Sanskrit:</label>
+        <input type="number" id="sanskrit" value="" />
+      </div>
+      <div class="button-container">
+        <button
+          type="button"
+          name="calculate"
+          id="calculate"
+          onclick="calculate()"
+        >
+          Calculate
+        </button>
+      </div>
+      <div class="result" id="marksheet" style="display: none">
+        <div><strong>MarkSheet</strong></div>
+        <div>Subject 1: <span id="marks1"></span></div>
+        <div>Subject 2: <span id="marks2"></span></div>
+        <div>Subject 3: <span id="marks3"></span></div>
+        <div>Subject 4: <span id="marks4"></span></div>
+        <div>Subject 5: <span id="marks5"></span></div>
+        <div>Total Marks: <span id="total"></span></div>
+        <div>Obtained Marks: <span id="obtained"></span></div>
+        <div>Percentage: <span id="percentage"></span></div>
+        <div>Grade: <span id="grade"></span></div>
+      </div>
+    </div>
+    <script>
+      function calculate() {
+        const sub1 = +document.getElementById("hindi").value;
+        const sub2 = +document.getElementById("english").value;
+        const sub3 = +document.getElementById("math").value;
+        const sub4 = +document.getElementById("science").value;
+        const sub5 = +document.getElementById("sanskrit").value;
+        const obtainedMarks = sub1 + sub2 + sub3 + sub4 + sub5;
+        const totalMarks = 5 * 100;
+        const percentage = (obtainedMarks / totalMarks) * 100;
+        let grade;
+        if (percentage >= 60) {
+          grade = "First Grade";
+        } else if (percentage >= 40) {
+          grade = "Second Grade";
+        } else if (percentage >= 33) {
+          grade = "Third Grade";
+        } else {
+          grade = "Fail";
+        }
+        document.getElementById("marksheet").style.display = "block";
+        document.getElementById("marks1").textContent = sub1;
+        document.getElementById("marks2").textContent = sub2;
+        document.getElementById("marks3").textContent = sub3;
+        document.getElementById("marks4").textContent = sub4;
+        document.getElementById("marks5").textContent = sub5;
+        document.getElementById("total").textContent = totalMarks;
+        document.getElementById("obtained").textContent = obtainedMarks;
+        document.getElementById("percentage").textContent = percentage;
+        document.getElementById("grade").textContent = grade;
+      }
+    </script>
+  </body>
+</html>

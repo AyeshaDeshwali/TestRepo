@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WorkS</title>
+  </head>
+  <style>
+    /*Q 4. */
+    .sem {
+      height: 50px;
+      color: white;
+      width: 50px;
+      padding: 8px 7px 3px 5px;
+      margin: 10px;
+      color: white;
+      border-radius: 30px;
+      font-size: 27px;
+      text-align: center;
+      background-color: rgb(69, 69, 138);
+    }
+  </style>
+  <body>
+    <!-- Q.1. Moviess object array. moviesname, actorname, releaseyear, watched, producer
+
+    1. Kaun kaun si moviess watch krli hai unka nam btao
+    2. Tumara favourite actor kaun hai 
+    3. kaun kaun si moviess particular year me launch hui 
+    4. Moviess objects ko ascending order me sort krna hai based on year 
+    5. total tumne kitni moviess dekhi hai unka count btana hai 
+    
+    Q.2 DOM 
+    inputbox  number enter 
+    Submit 
+    
+    Number odd/Even  alert/html
+
+    Q.3 DOM 
+    5 Subjects ke number puchne hain 
+    fir submit button pr click krna hai 
+    click krne pr ye info print krvani hai 
+    Total Marks 500
+    Obtained marks 400
+    Percentage 80%
+    Grade: First Grade 
+    
+    Q.4 Game DOM 
+    Colorful watch 
+    [Date]/[Month]/[Year] [HH]:[MM]:[S]:[MS]
+    
+    Q.5 Array numbers ka. Is Array me jitne numbers 100 se bde hain unhe filter krna hai 
+    then unme se sbse max number and sbse min number nikalne hain 
+    Dono min and max ko add krna hai and finally number ko print krva dena hai 
+    
+    Q.6 Function bnana hai. Function ke parameter pass krna hai Symbol
+    Symbol +, -, *, /
+    Jo symbol hai uska function return krna hai return sum()
+    2 numbers ke lie
+    returned function ko call krna hai 
+    
+    Q.7. 100 se 200 ke bich me random number generate krna hai 
+
+    Q.8. Ek date ka object bnana hai. Us dat ke object ki date tumare birthday valid date kr deni hai 
+    2001   1 July 
+    
+    Q.9 Ek Map bnana hai key, value 
+    Map se vo sare key-value filter krne hai jisme value 100 se bdi ho and key 50 se bdi ho 
+
+    Q.10. Ek Passport application form bnana hai using DOM 
+    Error message HTML me hi dhikana hai 
+
+    Q.11 5 Sound ki audio download. 5 button bnane hai. Jis b button press kroge vhi song play hona chahiye
+
+    Q.12 Switch. Country names. Continent India Asia, Pak Asia, China Asia, Africa. Not valid country
+
+    Q.13 Students object ka array bnana hai. 
+    [
+    {
+    name :"Sajid"
+    mobile: "934543543545",
+    party : false
+    }
+    ]
+    Total 15
+    
+    
+    Random generate  1-15 8
+    Index se student pick false -> true. Party Sajid dega 
+    Index se student pick false -> already true. Sajid Party de chuka hai
+    
+    Submit button in html. click pr function 
+    
+    Q.14 String --- Helo my Name is Wecode Academy
+    Small -> Captial
+    Capital -> Small 
+    Word ulta kr dena 
+    ymedacA edoceW
+    YMEDACa EDOCEw
+    
+    Q.15 First Class function 
+    High order function 
+    callback function 
+    ko theory me explain krna hai -->
+
+    <!-- ((((((((((((((((((((((((((((((((((((((((((())))))))))))))))))))))))))))))))))))))))))) -->
+
+    <!--Q2. -->
+    <!-- <input type="number" valid="" id="num" />
+    <button type="button" id="btn" onclick="check()">Submit</button> -->
+
+    <!--Q2. -->
+    <!-- <input type="text" id="num" />
+    <button id="checkButton">Check</button> -->
+
+    <!-- 3. -->
+    <!-- <div>Hindi: <input type="number" id="hindi" value="" /></div>
+    <br />
+    <div>English: <input type="number" id="english" value="" /></div>
+    <br />
+    <div>Math: <input type="number" id="math" value="" /></div>
+    <br />
+    <div>Science: <input type="number" id="science" value="" /></div>
+    <br />
+    <div>Sanskrit: <input type="number" id="sanskrit" value="" /></div>
+    <div id="marksheet" style="display: none">
+      <div>MarkSheet</div>
+      Subject 1
+      <div id="marks1"></div>
+      Subject 2
+      <div id="marks2"></div>
+      Subject 3
+      <div id="marks3"></div>
+      Subject 4
+      <div id="marks4"></div>
+      Subject 5
+      <div id="marks5"></div>
+      Total Marks
+      <div id="total"></div>
+      Obtained Marks
+      <div id="obtained"></div>
+      Percentage
+      <div id="percentage"></div>
+      Grade
+      <div id="grade"></div>
+    </div>
+    <button type="button" name="" id="" onclick="calculate()">Submit</button> -->
+
+    <!-- Q4. -->
+    <!-- <div style="display: flex; align-items: center; justify-content: center">
+      <div
+        class="sem"
+        style="background-color: rgb(169, 82, 82)"
+        id="date"
+      ></div>
+      <div
+        class="sem"
+        style="background-color: rgb(155, 91, 46)"
+        id="month"
+      ></div>
+      <div
+        class="sem"
+        style="background-color: rgb(74, 170, 138)"
+        id="year"
+      ></div>
+      <div
+        class="sem"
+        style="background-color: rgb(100, 67, 130)"
+        id="hour"
+      ></div>
+      <div
+        class="sem"
+        style="background-color: rgb(89, 58, 58)"
+        id="minut"
+      ></div>
+      <div
+        class="sem"
+        style="background-color: rgb(72, 93, 51)"
+        id="second"
+      ></div>
+    </div> -->
+
+    <script>
+      // ans1.
+
+      // const moviess = [
+      //   {
+      //     moviesname: "DDLJ",
+      //     actorname: "Srk",
+      //     releaseyear: 2001,
+      //     watched: true,
+      //     producer: "John",
+      //   },
+      //   {
+      //     moviesname: "Sholey",
+      //     actorname: "Amitabh",
+      //     releaseyear: 2004,
+      //     watched: true,
+      //     producer: "Reyan",
+      //   },
+      //   {
+      //     moviesname: "Dhoom 2",
+      //     actorname: "Srk",
+      //     releaseyear: 2009,
+      //     watched: true,
+      //     producer: "John",
+      //   },
+      //   {
+      //     moviesname: "Dhoom 1",
+      //     actorname: "Ritik",
+      //     releaseyear: 2001,
+      //     watched: false,
+      //     producer: "Reyan",
+      //   },
+      // ];
+      // console.log(
+      //   moviess
+      //     .filter((movies) => {
+      //       return movies.watched;
+      //     })
+      //     .map((value) => {
+      //       return value.moviesname;
+      //     })
+      // );
+      // console.log(
+      //   moviess
+      //     .filter((movies) => {
+      //       return movies.releaseyear === 2001;
+      //     })
+      //     .map((value) => {
+      //       return value.moviesname;
+      //     })
+      // );
+      // console.log(
+      //   moviess.sort((a, b) => {
+      //     return a.releaseyear - b.releaseyear;
+      //   })
+      // );
+      // console.log(
+      //   moviess.reduce((total, movies) => {
+      //     if (movies.watched) {
+      //       return total + 1;
+      //     }
+      //     return total;
+      //   }, 0)
+      // );
+      // const actorMap = new Map();
+      // for (let movies of moviess) {
+      //   if (movies.watched) {
+      //     if (actorMap.get(movies.actorname)) {
+      //       actorMap.set(movies.actorname, actorMap.get(movies.actorname) + 1);
+      //     } else {
+      //       actorMap.set(movies.actorname, 1);
+      //     }
+      //   }
+      // }
+      // console.log(actorMap);
+
+      // ans 2.
+      // function check() {
+      //   let ans = +document.getElementById("num").value;
+      //   if (ans % 2 === 0) {
+      //     alert("Even");
+      //   } else {
+      //     alert("Odd");
+      //   }
+      // }
+
+      // asn 2.
+      // function check() {
+      //   let ans = +document.getElementById("num").value;
+      //   if (ans % 2 === 0) {
+      //     alert("Even");
+      //   } else {
+      //     alert("Odd");
+      //   }
+      // }
+      // document
+      //   .getElementById("checkButton")
+      //   .addEventListener("click", function () {
+      //     check();
+      //   });
+
+      //ans 2. Example q1.
+      // function check() {
+      //   const num = +prompt("Enter number");
+      //   document.getElementById("num").value = num;
+      //   if (num % 2 === 0) {
+      //     alert("Even");
+      //   } else {
+      //     alert("Odd");
+      //   }
+      // }
+
+      // ans 3.
+      // function calculate() {
+      //   const sub1 = +document.getElementById("hindi").value;
+      //   const sub2 = +document.getElementById("english").value;
+      //   const sub3 = +document.getElementById("math").value;
+      //   const sub4 = +document.getElementById("science").value;
+      //   const sub5 = +document.getElementById("sanskrit").value;
+      //   const obtainedMarks = sub1 + sub2 + sub3 + sub4 + sub5;
+      //   const totalMarks = 5 * 100;
+      //   const percentage = (obtainedMarks / totalMarks) * 100;
+      //   let grade;
+      //   if (percentage >= 60) {
+      //     grade = "First Grade";
+      //   } else if (percentage >= 40) {
+      //     grade = "Second Grade";
+      //   } else if (percentage >= 33) {
+      //     grade = "Third Grade";
+      //   } else {
+      //     grade = "Fail";
+      //   }
+      //   document.getElementById("marksheet").style.display = "block";
+      //   document.getElementById("marks1").textContent = sub1;
+      //   document.getElementById("marks2").textContent = sub2;
+      //   document.getElementById("marks3").textContent = sub3;
+      //   document.getElementById("marks4").textContent = sub4;
+      //   document.getElementById("marks5").textContent = sub5;
+      //   document.getElementById("total").textContent = totalMarks;
+      //   document.getElementById("obtained").textContent = obtainedMarks;
+      //   document.getElementById("percentage").textContent = percentage;
+      //   document.getElementById("grade").textContent = grade;
+      // }
+
+      // 4.
+      // setInterval(() => {
+      //   const date = new Date();
+      //   document.getElementById("date").textContent = date.getDate();
+      //   document.getElementById("month").textContent = date.getMonth() + 1;
+      //   document.getElementById("year").textContent = date.getFullYear();
+      //   document.getElementById("hour").textContent = date.getHours();
+      //   document.getElementById("minut").textContent = date.getMinutes();
+      //   document.getElementById("second").textContent = date.getSeconds();
+      // }, 1000);
+
+      // 5.
+      // const arr = [56, 32, 45, 120, 340, 23, 445, 7, 52, 101];
+      // const ans = arr.filter((value) => {
+      //   return value > 100;
+      // });
+      // // console.log(ans);
+      // const max = Math.max(...ans);
+      // const min = Math.min(...ans);
+      // // console.log(max, min);
+      // console.log(max + min);
+
+      //6
+      // function createCalculator(operator) {
+      //   if (operator === "+") {
+      //     return function (a, b) {
+      //       console.log(a + b);
+      //     };
+      //   } else if (operator === "-") {
+      //     return function (a, b) {
+      //       console.log(a - b);
+      //     };
+      //   } else if (operator === "*") {
+      //     return function (a, b) {
+      //       console.log(a * b);
+      //     };
+      //   } else if (operator === "/") {
+      //     return function (a, b) {
+      //       console.log(a / b);
+      //     };
+      //   }
+      // }
+      // createCalculator("*")(5, 3); /// sortcut
+      // const addition = createCalculator("*");
+      // addition(5, 3);
+
+      // ans 14
+      // const myStr = "Hello my Name is Wecode Academy";
+      // const ans = [...myStr].map((value) => {
+      //   if (value.toLowerCase() === value) {
+      //     return value.toUpperCase();
+      //   } else {
+      //     return value.toLowerCase();
+      //   }
+      // });
+      // let ultaWord = " ";
+      // for (let index = ans.length - 1; index >= 0; index--) {
+      //   ultaWord += ans[index];
+      // }
+      // console.log(ultaWord);
+    </script>
+  </body>
+</html>
