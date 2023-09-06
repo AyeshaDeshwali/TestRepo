@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // console.log(window);
+      // console.log(i);
+      // console.log("Hello");
+      // console.log("Hello");
+      // console.log("Hello");
+      // console.log("Hello");
+      // var i = 10;
+      // console.log(i);
+
+      // let i = 10;
+      // function test() {
+      //   //let i = 20;
+      //   if (10 < 20) {
+      //     console.log(i);
+      //     console.log("hello");
+      //     console.log("hello");
+      //     console.log("hello");
+      //     var i = 30;
+      //     console.log(i); //30
+      //   }
+      //   console.log(i); //30
+      // }
+      // test();
+      // console.log(i); //10
+      // //30 30 10
+
+      // let i = 10;
+      // function test() {
+      //   let i = 20;
+      //   if (10 < 20) {
+      //     console.log(i);
+      //     console.log("hello");
+      //     console.log("hello");
+      //     console.log("hello");
+      //     let i = 30;
+      //     console.log(i); //30
+      //   }
+      //   console.log(i); //30
+      // }
+      // test();
+      // console.log(i); //10
+      // //30 30 10
+
+      // var i = 10;
+      // function test() {
+      //   var i = 20;
+      //   if (10 < 20) {
+      //     //Block scope
+      //     var i = 30;
+      //     console.log(i); //30
+      //   }
+      //   console.log(i); //30
+      // }
+      // test();
+
+      // if (10 < 20) {
+      //   //Block scope
+      //   var i = 30;
+      //   console.log(i); //30
+      // }
+      // console.log(i); //10
+      // //30 30 10
+
+      // -------------------------------------------------------------------------
+      // -------------------------------------------------------------------------
+
+      // //   -------------------Scope------------------------------------
+
+      // Scope ye btata he tumne wo variable jo let const var wo kha bnaya h unko kha use kiya h
+
+      // "use strict";
+      // x = 10;
+      // console.log(x); // Error
+      // function test(x, x) {
+      //   console.log(x); // Error
+      // }
+
+      // Window ek object h jo ki global object yani ke es khi b use kr skte h
+      // let or const Window object ke part nhi h
+      // alert window ka part h
+      // Function Scope
+      // Global Scope
+      // Block Scope
+      // Redeclartion
+      // TDZ (Temporal Dead Zone)
+      // Hoisting
+
+      // Global Scope
+      // let a = 10;
+      // let b = 20;
+      // const c = 30;
+      // var d = 40;
+      // console.log(a, b, c, d);
+      // function test() {
+      //   console.log(a, b, c, d);
+      // }
+      // test();
+      // console.log(a, b, c, d); // function ke bar he esliy khi pr b use kr skte h
+
+      //   if (10 < 20) {
+      //     console.log(a, b, c, d);
+      //   }
+
+      // if (10 < 30) {
+      //   let sum = 1000;
+      //   console.log(sum);
+      // }
+      // console.log(sum); // uper var krenge to hi 1000 print hoga let or const se nhi hoga kunki en donu ka block scope hota he {} es ke ander hi use kre skte h bar nhi
+
+      //   Function Scope // es me baar use nhi kr skte h
+      //   function test() {
+      //     let a = 10;
+      //     let b = 20;
+      //     const c = 30;
+      //     var d = 40;
+      //     console.log(a, b, c, d);
+      //   }
+      //   test();
+      //   console.log(a); // yaha use nhi kr skte h
+
+      //   Block Scope
+      //   if (10 < 20) {
+      //     let a = 10;
+      //     var b = 20;
+      //     const c = 30;
+      //     console.log(a, b, c);
+      //   }
+      //   console.log(b); // b ko use kr skte h kunki eska block skop nhi h var h es liy baar use kr skte h lakin a, b ko use nhi kr skte h
+
+      // let i = 10;
+      // function test() {
+      //   let i = 20;
+      //   if (10 < 20) {
+      //     //Block scope
+      //     let i = 30;
+      //     console.log(i); //30 // ye if else me jo block scope me lika gya h to ye i first use hoga
+      //   }
+      //   console.log(i); //20 // ye second i vala h jo ki funcional scope me lika gya h
+      // }
+      // test();
+      // console.log(i); //10 // ye first i vala h jo ki globle scope me h
+
+      // var i = 10;
+      // function test() {
+      //   var i = 20;
+      //   if (10 < 20) {
+      //     var i = 30; /// var ka block scope nhi hota h ye es baar niklega baar effect krega yani ke ye function scope me jo var ke value h use change kr dega
+      //     console.log(i); // 30
+      //   }
+      //   console.log(i); // 30
+      // }
+      // test();
+      // console.log(i); // 10
+
+      // function scope ke baar var ko use nhi kr skte h block scope ke baar use kr skte h
+      /// let const or var ko fucntoin kr baar koy effect nhi hota h
+
+      // Redeclartion
+      //   let a = 10;
+      //   var b = 20;
+      //   const c = 30;
+      //   // let a = 10; //Redeclartion alowe nhi krega
+      //   var d = 120;
+      //   console.log(d);
+      //   var d = 140;
+      //   console.log(d);
+      //   c = 30; // error // const ko alowe nhi krega
+      //   let and var ke ander dubara se value reasgin kr skte h new values dal skte h but const ke ander y sub nhi kr skte h
+
+      // TDZ - Temporal Dead Zone
+      //   console.log(c); // undefined
+      //   let a = 10;
+      //   const b = 20;
+      //   var c = 30;
+      //   console.log(c); // 30
+      // jish area me let or const ko use nhi kr skte h us ko bolte he Temporal Dead Zone
+
+      //  Hoisting
+      console.log(i);
+      console.log("hello world");
+      console.log("hi, ayesha how are you");
+      console.log(i);
+      var i = "Aashiya";
+      console.log(i); /// var ke Hoisting hoti yani undefined aata h value nhi milti lakin let or const ki Hoisting nhi hoti h Error show hoti h
+    </script>
+  </body>
+</html>

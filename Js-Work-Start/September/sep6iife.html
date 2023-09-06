@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iife</title>
+  </head>
+  <body>
+    <script>
+      // iffe - Immediately Invoked(call) Function Expression
+
+      // () parentheses ke ander daal diya to Expression bn gy to Expression bolte h esko
+      //   (() => {
+      //     console.log("hello ayesha");
+      //   })();
+
+      // agr javascript me kbhi b asi requirement aa jay ke hme function sirf ek baar hi call krna h yani ki wo bnega apna kam krega or khtam
+      // iife es funcion variable me stor nhi krva skte h or na kbhi future me use kr skte h na kbhi call kr skte h call bhi apne aap hoyga apne aap hi chlega bnega or katam ho jayga
+
+      //   (function () {
+      //     console.log("hello ayesha");
+      //   })(); // ab y dubara call nhi ho skta ek baar bus ek baar call huaa kam kiya khtam
+
+      //   (function (a, b) {
+      //     console.log(a + b);
+      //   })(2, 8);
+
+      // function ko as Expression bnate h () daal date h or fir usko call kr late h or call k liy koy argument pass krna h to () yha pass kr do
+
+      //   (() => {
+      //     for (let i = 1; i <= 10; i++) {
+      //       console.log(i);
+      //     }
+      //   })();
+
+      ((num) => {
+        for (let i = 1; i <= 10; i++) {
+          console.log(num * i);
+        }
+      })(5);
+    </script>
+  </body>
+</html>

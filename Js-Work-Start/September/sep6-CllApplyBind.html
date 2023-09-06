@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6Sep</title>
+  </head>
+  <body>
+    <script>
+      // const sajid = {
+      //   name: "Sajid",
+      //   age: 31,
+      //   address: {
+      //     pincode: 302012,
+      //     city: "Jaipur",
+      //   },
+      //   printDetails() {
+      //     console.log(this.address.pincode);
+      //     console.log(this.name, this.age, this.address.city);
+      //   },
+      // };
+      // const vajid = {
+      //   name: "Vajid",
+      //   age: 30,
+      //   address: {
+      //     pincode: 302020,
+      //     city: "Sikar",
+      //   },
+      //   printDetails() {
+      //     console.log(this.address.pincode);
+      //     console.log(this.name, this.age, this.address.city);
+      //   },
+      // };
+      // sajid.printDetails();
+      // vajid.printDetails();
+
+      // ======================================================
+
+      // const sajid = {
+      //   name: "Sajid",
+      //   age: 31,
+      //   address: {
+      //     pincode: 302012,
+      //     city: "Jaipur",
+      //   },
+      // };
+      // const vajid = {
+      //   name: "Vajid",
+      //   age: 30,
+      //   address: {
+      //     pincode: 302020,
+      //     city: "Sikar",
+      //   },
+      // };
+      // function printDetails(obj) {
+      //   console.log(obj.address.pincode);
+      //   console.log(obj.name, obj.age, obj.address.city);
+      // }
+      // printDetails(sajid);
+      // printDetails(vajid);
+      // ======================================================
+
+      // function printDetails(num1, num2) {
+      //   console.log(num1, num2);
+      //   console.log(this.address.pincode);
+      //   console.log(this.name, this.age, this.address.city);
+      //   console.log(this.mobile);
+      // }
+      // printDetails.call(sajid, 10, 20);
+      // printDetails.call(vajid, 100, 200);
+
+      // ==========================================
+      // printDetails.apply(sajid, [10, 20]);
+      // printDetails.apply(vajid, [100, 200]);
+
+      // const bind1020 = printDetails.bind(sajid, 10, 20);
+      // const bind100200 = printDetails.bind(sajid, 100, 200);
+      // bind1020();
+      // bind100200();
+
+      // function test(a, b) {
+      //   console.log(a + b);
+      // }
+
+      // const test1020 = test.bind({}, 10, 20);
+      // test1020();
+      // test1020();
+      // ==========================================
+      // const wecodeAcademy = {
+      //   instituteName: "Wecode Academy",
+      //   mobile: 943543543543,
+      //   address: {
+      //     pincode: 302012,
+      //     area: "Jhotwara",
+      //     city: "Jaipur",
+      //   },
+      // };
+      // const prathamSoftware = {
+      //   instituteName: "Pratham Software",
+      //   mobile: 7897987879,
+      //   address: {
+      //     pincode: 302030,
+      //     area: "Sitapura",
+      //     city: "Jaipur",
+      //   },
+      // };
+      // function printDetails() {
+      //   console.log(`
+      //     Our office address : ${this.instituteName}, ${this.address.area}, ${this.address.city}, ${this.address.pincode}
+      //     Mobile : ${this.mobile}
+      //   `);
+      // }
+      // printDetails.call(wecodeAcademy);
+      // printDetails.call(prathamSoftware);
+
+      // JavaScript me call, apply, aur bind ka upayog kisi function ko specific context (object) me call karne ke liye kiya jata hai.
+      // Ye methods especially tab kaam aate hain jab aap ek function ko kisi specific object ke saath use karna chahte hain.
+
+      // Yadi aap ek normal function bana kar use kar rahe hain, to wo function global context (yaani window object) ke saath execute hoga. Lekin, kabhi-kabhi aap chahte hain ki wo function kisi specific object ke saath execute ho. Iske liye call, apply, aur bind ka upayog hota hai:
+
+      // call: call method ka upayog ek function ke saath arguments ke saath kiya jata hai. Is method ke dwara aap ek function ko ek object ke saath specific arguments ke saath call kar sakte hain.
+
+      // function greet() {
+      //   console.log(Hello, ${this.name}!);
+      // }
+
+      // const person = { name: 'John' };
+      // greet.call(person); // "Hello, John!"
+
+      // apply: apply method bhi call jaisa hota hai, lekin isme aap ek array ke roop me arguments pass kar sakte hain.
+
+      // Example:
+
+      // function greet(greeting) {
+      //   console.log(${greeting}, ${this.name}!);
+      // }
+
+      // const person = { name: 'John' };
+      // greet.apply(person, ['Hello']); // "Hello, John!"
+
+      // bind: bind method ek naya function create karta hai jo original function ko ek specific context ke saath bind kar deta hai. Is method ka upayog aksar event listeners ya callback functions ke liye kiya jata hai.
+
+      // Example:
+
+      // function greet() {
+      //   console.log(Hello, ${this.name}!);
+      // }
+
+      // const person = { name: 'John' };
+      // const greetJohn = greet.bind(person);
+      // greetJohn(); // "Hello, John!"
+
+      // Yadi aap ek normal function bana kar use karte hain, to aapko har baar manually context pass karna padega, jabki call, apply, aur bind se aap ek baar context bind karke usi context ke saath multiple times function ko call kar sakte hain. Isse code readability aur reusability bhi improve hoti
+
+      //  ((((((((((((((******************************************************))))))))))))))
+
+      // let obj = {
+      //   name: "Aashiya",
+      //   age: 19,
+      //   address: {
+      //     pincode: 341510,
+      //     city: "Merta",
+      //   },
+      //   mobile: 2342342,
+      // };
+
+      // let obj2 = {
+      //   name: "Ayesha",
+      //   age: 18,
+      //   address: {
+      //     pincode: 341510,
+      //     city: "Jaipur",
+      //   },
+      // };
+
+      // function printDetails(num1, num2) {
+      //   console.log(num1, num2);
+      //   console.log(this);
+      //   console.log(this.address.pincode);
+      //   console.log(this.name, this.age, this.address.city);
+      //   console.log(this.mobile); // aashiya ke pass mobile h to print ho jayga lakin ayesha ke paas nhi h to undefined print hoga
+      // }
+      // printDetails.call(obj, 100, 200);
+      // printDetails.call(obj2, 10, 20); // jish object ke sath call kr rhe h uske hishab se this ke value automatacly change ho rhe h
+
+      // ----------------jase call hota h vase hi apply hota h esme bus jo argument date wo array ke ander dane hote h --------------------
+
+      // function printDetails(num1, num2) {
+      //   console.log(num1, num2);
+      //   console.log(this); // sara object deta h
+      //   console.log(this.address.pincode);
+      //   console.log(this.name, this.age, this.address.city);
+      //   console.log(this.mobile); // aashiya ke pass mobile h to print ho jayga lakin ayesha ke paas nhi h to undefined print hoga
+      // }
+      // printDetails.apply(obj, [100, 200]);
+      // printDetails.apply(obj2, [10, 20]); // agr ye argument nhi he jase ke 10,20 vagera to just Call hi krna h bus or agr argument dane he multyple , seprate de do lakin agr arguments ka array h to apply function ka use krna hoga
+      // arrya ke case me apply use kr lena or array nhi h to Call ka use kr lena
+
+      // call or apply to turnt call ho jate lakin bind call nhi hota h ye kehta h tumne muje call kiya lakin me call nhi hounga me tume ek value duga us value ke tum kisi  container me ya variable me rk lo or jub future me jrurat pde tb call kr lena
+      // function printDetails(num1, num2) {
+      //   console.log(num1, num2);
+      //   console.log(this.address.pincode);
+      //   console.log(this.name, this.age, this.address.city);
+      //   console.log(this.mobile);
+      // }
+      // // function ko call abhi nhi krna h future me krna h to pr esko side me apne pass stop ke trhe rkena chate h to rkh skte h
+      // const stop1 = printDetails.bind(obj, 10, 20);
+      // const stop2 = printDetails.bind(obj, 100, 200); // agr kishi ko function bind krke rkh liya kuch values ke sath or future kbhi esko call kr liya to vhi values melagi jis time pr bind krke rkhi
+      // stop1();
+      // stop2();
+
+      // function test(a, b) {
+      //   console.log(this); // 10 object me aa gya
+      //   console.log(a, b);
+      // }
+      // const add = test.bind(10, 20); /// 10 print nhi hoga 10 this me yani ke object me chla gya
+      // add();
+
+      // [------------------------------------------------------------------
+      // function test(a, b) {
+      //   console.log(a + b);
+      // }
+      // const add = test.bind({}, 10, 20); //first number pe object date h or uske baad numbers date h jo b 10 20 to agr apne pass object nhi h to {} kali object de do or baad me 10 20 de do to pring ho jayga
+      // add();
+      // // spoze ke bhut big code likh diya to or us test vale function ko dubara chlana h to chla skte h
+      // const obj1 = {
+      //   name: "aasta",
+      //   age: 18,
+      //   address: {
+      //     pincode: 302012,
+      //     city: "Merta",
+      //   },
+      //   printDetails() {
+      //     console.log(this.address.pincode);
+      //     console.log(this.name, this.age, this.address.city);
+      //   },
+      // };
+      // add(); // value 30 hi melagi
+      // const obj2 = {
+      //   name: "ayesha",
+      //   age: 19,
+      //   address: {
+      //     pincode: 302020,
+      //     city: "Merta",
+      //   },
+      //   printDetails() {
+      //     console.log(this.address.pincode);
+      //     console.log(this.name, this.age, this.address.city);
+      //   },
+      // };
+      // add(); // es function ko kai pr b kitni baar use kr vlaue hmesha 30 hi melagi
+      // -----------------------------------------------]
+
+      // const wecodeAcademy = {
+      //   instituteName: "Wecode Academy",
+      //   mobile: 943543543543,
+      //   address: {
+      //     pincode: 302012,
+      //     area: "Jhotwara",
+      //     city: "Jaipur",
+      //   },
+      // };
+      // const prathamSoftware = {
+      //   instituteName: "Pratham Software",
+      //   mobile: 7897987879,
+      //   address: {
+      //     pincode: 302030,
+      //     area: "Sitapura",
+      //     city: "Jaipur",
+      //   },
+      // };
+      // function printDetails() {
+      //   console.log(`
+      //     Our office address : ${this.instituteName}, ${this.address.area}, ${this.address.city}, ${this.address.pincode}
+      //     Mobile : ${this.mobile}
+      //   `);
+      // }
+      // printDetails.call(wecodeAcademy);
+      // printDetails.call(prathamSoftware);
+    </script>
+  </body>
+</html>
