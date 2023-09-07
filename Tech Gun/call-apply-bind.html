@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>callApplyBind</title>
+  </head>
+  <body>
+    <script>
+      //
+      // ******************************CALL*********************
+      // turnt invoke kr deta h
+
+      //   let obj1 = {
+      //     name: "aastana",
+      //     lName: "khanm",
+      //   };
+      //   let obj2 = {
+      //     name: "ayesha",
+      //     lName: "deshwali",
+      //     fullName: function () {
+      //       return this.name + " " + this.lName;
+      //     },
+      //   };
+      //   console.log(obj2.fullName.call(obj1));
+      //call function ke help se 1 object me dusre object ke methods ko use kr skte h
+
+      //   let obj1 = {
+      //     name: "aastana",
+      //     lName: "khanm",
+      //     fullName: function (user) {
+      //       return this.name + " " + this.lName + " " + user;
+      //     },
+      //   };
+      //   let obj2 = {
+      //     name: "ayesha",
+      //     lName: "deshwali",
+      //   };
+      //   console.log(obj1.fullName.call(obj2, "saddam")); // jo first argument h wo hmesha asi object ko denote krega jisme call fun ka use krna h
+      // or first argumenet ke baad me jitne b arguments honge wo as parametor pass honge hmare function me
+
+      //   let obj1 = {
+      //     name: "aastana",
+      //     lName: "khanm",
+      //     fullName: function (first, second) {
+      //       return this.name + " " + this.lName + " " + first + " " + second;
+      //     },
+      //   };
+      //   let obj2 = {
+      //     name: "ayesha",
+      //     lName: "deshwali",
+      //   };
+      //   console.log(obj1.fullName.call(obj2, "saddam", "husain"));
+
+      //   let person1 = {
+      //     name: "ayesha",
+      //     age: 19,
+      //     designation: "Web Developer",
+      //   };
+      //   let ans = function () {
+      //     console.log(this);
+      //   };
+      //   ans.call(person1);
+      //   let person2 = {
+      //     name: "saddm husain",
+      //     age: 28,
+      //     designation: "Software Engineer",
+      //   };
+      //   ans.call(person2);
+
+      // ****************** APPLY ** [] eske ander dena hota h ********************
+
+      // Apply fun and Call fun donu sem result provide krte h esme Diffrence ye h ki jub Call method ka use kiya to arguments ko ,(coma) seprted kiya tha lakin Apply me [] me krte h
+
+      //   let obj1 = {
+      //     name: "aastana",
+      //     lName: "khanm",
+      //     fullName: function (first, second) {
+      //       return this.name + " " + this.lName + " " + first + " " + second;
+      //     },
+      //   };
+      //   let obj2 = {
+      //     name: "ayesha",
+      //     lName: "deshwali",
+      //   };
+      //   console.log(obj1.fullName.apply(obj2, ["saddam", "husain"]));
+
+      // *****************Bind************************ 1 valeu return krta h
+      // bind fun es object ko es function se bind krti h or ek result return krti h
+      // bind method es function ke 1 copy bnake de deta h jo ke return krta h to usko ek variable me stor kr late h or baad me jub chay es function ko use kr skte h
+
+      //   let obj1 = {
+      //     name: "aastana",
+      //     lName: "khanm",
+      //     fullName: function (first, second) {
+      //       return this.name + " " + this.lName + " " + first + " " + second;
+      //     },
+      //   };
+      //   let obj2 = {
+      //     name: "ayesha",
+      //     lName: "deshwali",
+      //   };
+      //   const result = obj1.fullName.bind(obj2, "saddam", "husain");
+      //   console.log(result()); // jub chay use kre skte h
+      //   console.log(result());
+
+      //   let obj1 = {
+      //     name: "aastana",
+      //     lName: "khanm",
+      //     fullName: function () {
+      //       return this.name + " " + this.lName;
+      //     },
+      //   };
+      //   let obj2 = {
+      //     name: "ayesha",
+      //     lName: "deshwali",
+      //   };
+      //   let ans = obj1.fullName.bind(obj1)(); // () yaha pe b call kr skte h
+      //   console.log(ans);
+
+      // let student = {
+      //   firstName: "ayesha",
+      //   lastName: "deshwali",
+      //   age: 19,
+      // };
+      // let teacher = {
+      //   firstName: "saddam",
+      //   lastName: "husain",
+      //   age: 28,
+      // };
+      // function get() {
+      //   console.log(this.firstName);
+      // }
+      // function subject(sub, sub2) {
+      //   // return sub, sub2;
+      //   return [sub, sub2];
+      // }
+      //   console.log(subject.apply(teacher, ["hindi", "math"]));
+      //   console.log(subject.call(teacher, "hindi", "math"));
+      //   const ans = subject.bind(teacher, "hindi", "math");
+      //   console.log(ans());
+      //   const ans2 = subject.bind(teacher, "hindi", "math")();
+      //   console.log(ans2); /// () uper line me lgane se b kam chl jayga
+
+      //   let student = {
+      //     firstName: "ayesha",
+      //     lastName: "deshwali",
+      //     age: 19,
+      //   };
+      //   let teacher = {
+      //     firstName: "saddam",
+      //     lastName: "husain",
+      //     age: 28,
+      //   };
+      //   function getEmail() {
+      //     return (this.email = `${this.firstName}.${this.lastName}@gmail.com`);
+      //   }
+      //   function subject(sub, sub2) {
+      //     return [sub, sub2];
+      //   }
+      //   console.log(getEmail.call(teacher));
+      //   console.log(getEmail.call(student));
+      //   console.log(teacher);
+      //   console.log(student);
+
+      let student = {
+        firstName: "ayesha",
+        lastName: "deshwali",
+        age: 19,
+      };
+      let teacher = {
+        firstName: "saddam",
+        lastName: "husain",
+        age: 28,
+      };
+      function getEmail() {
+        return (this.email = `${this.firstName}.${this.lastName}@gmail.com`);
+      }
+      function subject(sub, sub2) {
+        return (this.choose = [sub, sub2]);
+      }
+      console.log(getEmail.call(teacher));
+      console.log(subject.apply(teacher, ["hindi", "math"]));
+      console.log(teacher);
+      let ans = subject.bind(teacher, "hindi", "math");
+      console.log(ans());
+    </script>
+  </body>
+</html>
