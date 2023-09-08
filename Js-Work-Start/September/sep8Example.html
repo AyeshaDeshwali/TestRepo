@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // sync code phle run hoga
+      // or async code baad me run hoga
+
+      // JavaScript Engine
+      // Example
+      //JavaScript ek software ke ander RUN hoti h wo software jase ke Web Browser me run hoti h jo b software h wo JS ko webBrowser me run krega
+      //jo software h webBrowser m RUN karne ke liy wo Engine khlata h
+      //Engine alg-alg trhe ke hote h jase ke
+      //Mozila me [Spider Monky]
+      //Google Chrome ke ander V8 hota h (Power Full h ye sub se jayda) to ye ek prkar ka SoftWare hoaa jo ki JS ke Code ko RUN krta h
+      //software to code ko RUN krta h
+      // or Code RUN hota h Memory me
+
+      //   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      // Execution Context
+      // JavaScript me, "execution context" ek environment ko refer karta hai jisme koi bhi code execute hota hai.
+      // Isme us code ko chalane aur manage karne ke liye sab kuch shaamil hota hai, jaise ki variables, functions,
+      // aur scope chain. Execution context ko samajhna JavaScript code ke kaise chal raha hai, ye samajhne ke liye bahut mahatvapurna hai.
+
+      // JavaScript me do pramukh prakar ke execution contexts hote hain:
+      // 1. Global Execution Context
+      // (1).Global execution context vo outermost context hota hai aur jab aapka JavaScript code chala jata hai, to ye banta hai.
+      // (2)Isme global object (jaise ki browser me window ya Node.js me global) hota hai, aur this keyword me global object ka ek reference hota hai.
+      // (3)Jo bhi code kisi function ya block ke andar nahi hai, vo global execution context me chala jata hai.
+
+      // 2. Function Execution Context
+      // (1). Har bar jab ek function call hota hai, tab ek naya function execution context banta hai.
+      // (2). Har function execution context ke apne scope hote hain, jo function ke local variables aur parameters ko contain karte hain.
+      // (3). Isme ek outer (enclosing) execution context ka reference hota hai, jisse scope chain ban jati hai, jisse higher-level scopes se variables tak pahuncha ja sakta hai.
+      // (4). Function execution context me this keyword ka matlab function ko kaise call kiya gaya hai, us par depend karta hai.
+
+      // Jab JavaScript code chala jata hai, to execution context stack, jo ki "call stack" ke roop me jaana jata hai,
+      //  in contexts ka track rakhta hai. Jab ek function call hoti hai, tab ek naya function execution context stack par push hota hai,
+      //  aur jab function poora hota hai, tab uska context stack se pop ho jata hai.
+      //  Ye stack-based prakriya yeh ensure karti hai ki JavaScript code vyavasthit tarike se execute hota hai aur variables aur function references apne sahi context me sahi se resolve hote hain.
+
+      //   var globalVar = "I am a global variable";
+      //   function foo() {
+      //     var localVar = "I am a local variable";
+      //     function innerFunction() {
+      //       console.log(globalVar); // Access global variable
+      //       console.log(localVar); // Access local variable
+      //     }
+      //     innerFunction();
+      //   }
+      //   foo();
+
+      //   Global scope ke alava koy b chij agr h to wo funcion ke ander likhi hogi ya keshi  for(loop) if else ke ander likhi hogi
+      //   Async मल्टी-थ्रेड है, जिसका अर्थ है कि ऑपरेशन या प्रोग्राम समानांतर में चल सकते हैं। सिंक सिंगल-थ्रेड है, इसलिए एक समय में केवल एक ही ऑपरेशन या प्रोग्राम चलेगा।
+
+      //   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+      let i = 10;
+      const j = 20;
+      for (let i = 1; i <= 10; i++) {
+        console.log(i);
+      }
+      function one() {
+        let i = 40;
+        const j = 50;
+        console.log(1, i, j);
+        two();
+      }
+      setTimeout(() => {
+        console.log("hello 10");
+      }, 10000);
+      function two() {
+        console.log(2);
+      }
+
+      setInterval(() => {
+        console.log("Interval 1");
+      }, 1000);
+
+      one();
+      Promise.resolve(10).then((value) => {
+        console.log(value);
+      });
+      function three() {
+        console.log(3);
+      }
+      three();
+      setTimeout(() => {
+        console.log("hello 5");
+      }, 5000);
+
+      setInterval(() => {
+        console.log("Interval 2");
+      }, 2000);
+
+      Promise.resolve(900).then((value) => {
+        console.log(value);
+      });
+
+      // sync code phle run hoga
+      // or async code baad me run hoga
+
+      // setInterval,setTimeout ya coy b Callback vala code h jo asynck h ue ke uper Promise priority de jaygi
+      // Promise ke baad hi setInterval,setTimeout chlega
+
+      // JavaScript Engine - jo ki JavaScript ke code ko run krta h hr browser me alg-alg hota h chrome ke ander V8 hota h jo ki node.js m b use hota h
+      // Call Stack - call stack me Stack Memory hoti h or esme sari calls ka stack hota h 1 ke uper 1 1 ke uper 1 Execution Context ka stack hota h 2 call stack bnta h 1 to global ka or 1 hr functions ka jase jase call hoga jub-jub call tub-tub Execution Context bnega us function ka function se baar aate hi uska Execution Context khtm
+      // Event Loop - event loop ka kam donu jo queue banegi usme se code ko udhana or run krvana  Promise vale ko priority melagi callback queue ke uper
+    </script>
+  </body>
+</html>
