@@ -138,3 +138,22 @@
       console.log(a);  
       console.log(a);
 ```
+
+
+
+| Precedence | Operator                                | Description              |
+| ---------- | --------------------------------------- | ------------------------ |
+| 1          | ()                                      | Parentheses              |
+| 2          | ! ~ + - ++ -- typeof void               | Unary operators          |
+| 3          | \* / %                                  | Multiplicative operators |
+| 4          | + -                                     | Additive operators       |
+| 5          | << >> >>>                               | Bitwise shift operators  |
+| 6          | < <= > >= instanceof                    | Relational operators     |
+| 7          | == != === !==                           | Equality operators       |
+| 8          | &                                       | Bitwise AND operator     |
+| 9          | ^                                       | Bitwise XOR operator     |
+| 10         | &#124;                                  | Bitwise OR operator      |
+| 11         | &&                                      | Logical AND operator     |
+| 12         | &#124;&#124;                            | Logical OR operator      |
+| 13         | ? :                                     | Conditional operator     |
+| 14         | = += -= \*= /= %= <<= >>= &= ^= &#124;= | Assignment operators     |
