@@ -1,6 +1,6 @@
 ##  1. JavaScript Inside (JavaScript Ke Andar):
 
-####  JavaScript ek programming language hai jo aksar web development mein istemal hoti hai. Isse aap website mein interactivity aur functionality add kar sakte hain.
+-  JavaScript ek programming language hai jo aksar web development mein istemal hoti hai. Isse aap website mein interactivity aur functionality add kar sakte hain.
 
 ####   2. JavaScript Engine (JavaScript Engine):
 
@@ -36,15 +36,23 @@
 #### 10.  Execution Context:
 
 - Execution Context ek aisa container hota hai jahan par JavaScript code execute hota hai. Ye teen mukhya cheezen (components) include karta hai:
-   - 1. Variable Environment: Variable Environment mein aapke code mein declared variables aur unki values ko store kiya jata hai. Yani, yeh jagah hoti hai jahan par aapke variables ki values rakhi jati hain.
-      --(1). let, const, aur var Declarations (let, const, और var घोषणाएं): Variable Environment mein, aapke code mein declare ki gayi let, const, aur var ke variables ki information bhi hoti hai. Inmein se 'let' aur 'const' block-level scope (kisi specific block tak hi seemit) mein hoti hain, jabki 'var' function-level scope (kisi function tak hi seemit) mein hoti hai.
-     -- (2). Functions: Execution Context mein, aapke code mein define ki gayi functions bhi hote hain. In functions ko use karke aap specific tasks ko execute kar sakte hain.
-     -- (3). Arguments Objects: Arguments Objects woh special object hai jo function ke andar aapke arguments (pramano) ko store karta hai. Isse aap functions ke dwara pass kiye gaye arguments ko access kar sakte hain.
-  -  2. Scope Chain: Scope Chain ek hierarchy hoti hai jisme Execution Contexts ek dusre ke andar organized hote hain. Yeh hierarchy determine karta hai ki konsa variable kis Execution Context mein accessible hai.
+   - 1. Variable Environment: Variable Environment mein aapke code mein declared variables aur unki values ko store kiya jata hai. Yani, yeh jagah hoti hai jahan par aapke variables ki values rakhi jati 
+                   hain.
+        - let, const, aur var Declarations (let, const, and var): Variable Environment mein, aapke code mein declare ki gayi let, const, aur var ke variables ki information bhi hoti hai. Inmein se 'let' 
+                   aur 'const' block-level scope (kisi specific block tak hi seemit) mein hoti hain, jabki 'var' function-level scope (kisi function tak hi seemit) mein hoti hai.
+        -  Functions: Execution Context mein, aapke code mein define ki gayi functions bhi hote hain. In functions ko use karke aap specific tasks ko execute kar sakte hain.
+        -  Arguments Objects: Arguments Objects woh special object hai jo function ke andar aapke arguments (pramano) ko store karta hai. Isse aap functions ke dwara pass kiye gaye arguments ko access 
+                  ar sakte hain.
+  -  2. Scope Chain: Scope Chain ek hierarchy hoti hai jisme Execution Contexts ek dusre ke andar organized hote hain. Yeh hierarchy determine karta hai ki konsa variable kis Execution Context mein 
+             accessible hai.
   -  3.  this keyword (this कीवर्ड): 'this' keyword Execution Context ke hisab se determine hota hai aur yeh batata hai ki function kis object ke andar call hua hai.
 
 #### 11.  Execution Context ko do hisson mein divide kiya ja sakta hai:
-      - 1. Type of Execution Context:
-        --  a. Global: Global Execution Context vo hota hai jo aapke code ka sabse bada context hota hai, matlab, aapke program ka starting point. Yahan par aapke code mein define ki gayi variables aur functions globally accessible hoti hain.
-        -- b. Functional: Functional Execution Context vo hota hai jo jab aap ek function ko call karte hain, tab create hota hai. Isme woh sab kuch hota hai jo function ke andar hote hain, jaise variables, functions, aur arguments.
+
+ -  Type of Execution Context:
+
+    - 1. Global: Global Execution Context vo hota hai jo aapke code ka sabse bada context hota hai, matlab, aapke program ka starting point. Yahan par aapke code mein define ki gayi variables aur 
+                functions globally accessible hoti hain.
+    - 2. Functional: Functional Execution Context vo hota hai jo jab aap ek function ko call karte hain, tab create hota hai. Isme woh sab kuch hota hai jo function ke andar hote hain, jaise 
+              variables, functions, aur arguments.
    
