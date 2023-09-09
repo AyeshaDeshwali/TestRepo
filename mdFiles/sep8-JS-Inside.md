@@ -23,7 +23,7 @@
 
 ####  7. Interpreter (Interpreter):
 
-- Interpreter JavaScript engine ka ek aur hissa hota hai. Ye compiler dwara banaye gaye l`ower-level` code ko line by line execute karta hai.
+- Interpreter JavaScript engine ka ek aur hissa hota hai. Ye compiler dwara banaye gaye `lower-level` code ko line by line execute karta hai.
 
 #### 8. Compiler Vs. Interpreter (Compiler Vs. Interpreter):
 
