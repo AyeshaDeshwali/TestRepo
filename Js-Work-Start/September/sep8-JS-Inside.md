@@ -1,7 +1,10 @@
 ##  1. JavaScript Inside (JavaScript Ke Andar):
-###  JavaScript ek programming language hai jo aksar web development mein istemal hoti hai. Isse aap website mein interactivity aur functionality add kar sakte hain.
 
-      // 2. JavaScript Engine (JavaScript Engine): Ye web browser ya runtime environment ka hissa hota hai jo JavaScript code ko execute karta hai. Isse aapke JavaScript programs chalte hain.
+####  JavaScript ek programming language hai jo aksar web development mein istemal hoti hai. Isse aap website mein interactivity aur functionality add kar sakte hain.
+
+####   2. JavaScript Engine (JavaScript Engine):
+
+-  ye web browser ya runtime environment ka hissa hota hai jo JavaScript code ko execute karta hai. Isse aapke JavaScript programs chalte hain.
 
       // 3. Call Stack (Call Stack): Call stack ko aise sochiye jaise ek stack (tukda) jahan par instructions rakh jati hain. Jab aapka JavaScript code chalta hai, har ek function call stack mein add hoti hai. Stack ke upar wala function wahi hota hai jo abhi chal raha hai.
 
