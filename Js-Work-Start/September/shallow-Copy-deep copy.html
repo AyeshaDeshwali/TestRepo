@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   Shallow copy aur deep copy, dono tarike hain data ko copy karne ke, lekin
+      //   unmein ek antar hai jo data ke hierarchy aur references ko define karta hai.
+      //   Shallow Copy (Choti Copy): < Shallow copy mein, sirf top-level object ya
+      //   array ko copy kiya jata hai, lekin uske andar ke nested objects ya arrays ke
+      //   references wahi rehte hain. Matlab, top-level copy banati hai, lekin nested
+      //   data ke references same rehte hain.
+
+      //   <!-- Deep Copy (Gehri Copy): -->
+      //   <!-- <Deep copy mein, original data ke har level ke copies banai jati hain. Matlab, top-level object ya array copy hone ke sath-sath uske andar ke nested objects ya arrays bhi copies banate hain, aur yeh process nested levels tak chalti hai. Iska matlab hai ki copied data ek completely alag instance hoti hai aur usme kisi bhi level ke changes asli data ko affect nahi karte. -->
+      //   const original = { name: "John", hobbies: ["Reading", "Gardening"] }; const
+      //   shallowCopy = { ...original }; shallowCopy.hobbies.push("Cooking");
+      //   console.log(original.hobbies); // Output: ["Reading", "Gardening",
+      //   "Cooking"]
+
+      //     const original = {
+      //   name: "John",
+      //   hobbies: ["Reading", "Gardening"]
+      // };
+      // const deepCopy = JSON.parse(JSON.stringify(original));
+      // deepCopy.hobbies.push("Cooking");
+      // console.log(original.hobbies); // Output: ["Reading", "Gardening"]
+
+      //     Ismein shallowCopy top-level object ko copy kar leta hai, lekin hobbies array ka reference same rehta hai, isliye jab hum shallowCopy ke hobbies array mein ek item add karte hain, to asli data (original) mein bhi woh item add ho jata hai.
+      // Deep Copy Example:
+      //   const original = {
+      //     name: "John",
+      //     hobbies: ["Reading", "Gardening"],
+      //   };
+      //   const deepCopy = JSON.parse(JSON.stringify(original));
+      //   deepCopy.hobbies.push("Cooking");
+      //   console.log(original.hobbies); // Output: ["Reading", "Gardening"]
+
+      //     Ismein deepCopy top-level object ko copy karke uske andar ke nested data ko bhi alag copies banata hai. Isliye jab hum deepCopy ke hobbies array mein ek item add karte hain, to asli data (original) mein koi change nahi hota.
+
+      // Yeh antar dono tarike ke data copying mein hota hai. Shallow copy sirf top-level reference ko copy karta hai, jabki deep copy puri data hierarchy ko copy karta hai.
+    </script>
+  </body>
+</html>
