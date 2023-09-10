@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   "use strict ";
+      //   let i = 10;
+      //   let j = 20;
+      //   function one() {
+      //     console.log(arguments[1]); // jo number leknge wo utne number vala print ho jayga
+      //     let i = 10;
+      //     let j = 20;
+      //     var k = 30;
+      //     console.log(this);
+      //     console.log(i, j, k);
+      //     function two() {
+      //       console.log("two");
+      //     }
+      //     two();
+      //   }
+      //   one(100, 200);
+
+      //   "use strict"; // es se function vala this undefined aayga
+      //   function one() {
+      //     console.log(this); // this ke value b Execution Contex pe depaind kregi
+      //   }
+      //   one();
+      //   console.log(this);
+
+      // Event Loop - 2 queue hoti callback queue promise
+      //   RAM का पूरा नाम (Full form) – रैंडम एक्सेस मेमोरी (Random Access Memory है। यह सिलिकॉन से बनी हुई एक मेमोरी चिप होती है,
+      //    जिसमें डेटा व प्रोग्राम अस्थायी (temporary) तौर पर लोड या स्टोर होते हैं। इन data व program का प्रयोग, CPU द्वारा processing के दौरान किया जाता है।
+      //  यह कम्प्यूटर की प्रायमरी या मुख्य मेमोरी होती है।
+
+      // रैम का काम आपके आदेशानुसार किसी एप को लाकर उसे रन करना है.
+
+      //   shallow copy
+      //   const obj = {
+      //     name: "ayesha",
+      //     age: 19,
+      //     pincode: 341510,
+      //     city: "jaipur",
+      //     myHomeTwonAddress: {
+      //       pincode: 111000,
+      //       city: "merta",
+      //     },
+      //   };
+      //   const ans = obj;
+      //   console.log(ans, obj);
+      //   ans.name = "husain";
+      //   console.log(ans, obj); // normal copy sirf assginment matlb assgin kr diya eska address usko de diya
+
+      //   const otherObj = { ...obj };
+      //   console.log(obj, otherObj);
+      //   otherObj.myHomeTwonAddress.pincode = "303030";
+      //   console.log(obj, otherObj);
+
+      //  jub b shallow copy krte he primitive value to  ajects copy ho jati unme koy b change nhi hota h lakin jo reference h value h  jo objects h unko agr change krege to donu me change hoga
+      const obj = {
+        name: "ayesha",
+        age: 19,
+        pincode: 341510,
+        city: "jaipur",
+        myHomeTwonAddress: {
+          pincode: 111000,
+          city: "merta",
+        },
+      };
+      // deep copy
+      let ans = JSON.parse(JSON.stringify(obj));
+      console.log(ans, obj);
+    </script>
+  </body>
+</html>
