@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Compiler
+      // Interpreter
+      // Compiler Vs Interpreter
+
+      //   -----------------Compiler----------------
+      //  ----------------Compiler file ko Compiler krke 1 new file bnati h fir usko run krte h
+      //  Compiler - compilation
+      //  Interpreter - Interpretertion
+      // JavaScript ke ander compilation nhi hota h
+      // JAVA ke ander compilation hota h
+
+      //   --------------------Interpreter----------------
+      // Interpreter code ko line by line read krta h or usko run krta h Interpreter me koy b fil nhi bnti bich m  or JavaScript Interpreter hi use krta h
+      // Interpreter ek - ek line by line read hota h chlti h or run hoti h
+
+      // ---------------------JIT (Just-in-time)---------------------
+      // agr koy code bar-bar use ho rha h repeat ho rha h to javascript usko try krti h optimies krne ka
+      // javascript in donu ka mixer use krne lag gy Compiler Vs Interpreter
+      // code ko Compile kr liya ek sath sare code ko lakin javascript es ke liy new file nhi banti Compiletion me new file banti lakin javascript new file na bnake  hand to hand run kr dati h es se pura code Compile hoke run ho gya bich m jo file bnne thi wo file nhi bny
+
+      // ------------- Creation Phase
+      // ------------- Code Phase
+
+      // Creation Phase me jis-jis pritycoulr chijo ko memory vegra asgin hony h variables pta lgata h js ke kon kon se variables bnay kis ko var bnay kis ko let se bnay kes ko kes line tk use nhi kr dena h kis ko kis line tk undefined value deni h or uske baad ye value dani h ye sara Creation Phase ke vhje se pta chlta h
+      // javascript khti h ki tumara Creation Phase chlta h to pure code ko jake dekta h ye
+      //Code Phase me code run hota h
+
+      //   -------------- hoisting ---------------------
+      // var me to undefined value melti h
+      //  let or const mr TDZ(temporal dead zone) ke vhje se Error aati h
+      // let or const ke b hoistin hoti h but frk itna sa h ki var ko use kr skte h let or const ko use nhi kr skte h TDZ(temporal dead zone) ki vjhe se
+      // var ke liy TSZ(temporal dead zone) jisa koy constep hota nhi h let const me hota h to es vjhe se var ko use kr skte h but value undefined milti h
+      // Creation Phase chlta h Creation Phase me deka jata h ki kitne var let const bnya huy h unko var let or const ko memory asgin ho jati h but TDZ(temporal dead zone) ki vjhe se enko use nhi kr pate h
+
+      for (var i = 1; i <= 10; i++) {
+        setTimeout(() => {
+          console.log(i);
+        }, i * 1000);
+      }
+
+      //       JavaScript ek interpreted language hai jo Just-In-Time (JIT) compilation ka upayog karti hai. Chaliye samjhate hain ki yeh kya hota hai:
+
+      // Interpreted Language (अनुवादित भाषा):
+
+      // JavaScript ek pramukh roop se interpreted language hai. Iska matlab hai ki aap JavaScript mein likha hua code runtime (chalaan samay) mein ek interpreter dwara ek line ke baad ek line ke roop mein execute hota hai. Interpreter aapke code ko padhta hai aur turant usse execute karta hai, kisi alag se compilation kadam ke bina.
+      // Just-In-Time (JIT) Compilation (बस-इन-टाइम कॉम्पाइलेशन):
+
+      // Jabki JavaScript pramukh roop se interpreted language hai, vartaman JavaScript engines ne performance sudharane ke liye Just-In-Time (JIT) compilation naamak takneek ka upayog kiya hai.
+      // JIT compilation mein, JavaScript engine source code ko seedhe naahi execute nahi karta hai. Isse pahle, ise runtime (chalaan samay) mein JavaScript code ko machine code ya bytecode representation mein parivartit karta hai.
+      // Engine isse karte samay code ko chalane ke saath-saath analyze karta hai aur code mein aksar chalaye jaane wale ya "hot" code paths ko pahchan karke unhe tezi se execute karne ke liye optimize machine code mein parivartit karta hai.
+      // Parivartit code ko memory mein rakh kar aur usse us code ke aane wali executions ke liye punah prayog karke, isse performance ko kafi sudhar diya jata hai.
+      // JIT compilation JavaScript ko kai paristhitiyon mein lagbhag native (sthayi) performance pradan karne mein madadgar hota hai, jisse ise web applications aur server-side applications dono ke liye upayukt banata hai.
+      // Isliye, sanchaar mein, JavaScript shuru mein anuvaadit hoti hai, lekin vartaman JavaScript engines JIT compilation ka upayog karte hain, code ke hisson ko behtar performance ke liye optimize machine code mein anuvadit karne ke liye, anuvaadan aur compilation dono ke labhon ka sangam karke.
+
+      // Regenerate
+      // Send a message
+
+      // Free Research Preview. ChatGPT may produce inaccurate information about people, places, or facts. ChatGPT August 3 Version
+    </script>
+  </body>
+</html>
