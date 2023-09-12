@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   Main samajh gaya ki aap specific language (Hindi) mein jawab chahte hain. Yahan par Hindi mein doosra jawab hai:
+
+      //   JavaScript mein, arguments object ek special object hai jo ek function ke andar available hota hai aur function ko call karte samay usmein di gayi arguments (parameters) ko represent karta hai. Yeh aapko function mein pass kiye gaye saare arguments tak pahunchne ki anumati deta hai, chahe woh arguments function ke parameter list mein naam se define kiye gaye hon ya nahi.
+
+      //   Iska kaam kaise karta hai:
+
+      //   Jab aap ek function ko define karte hain, aap function ke parameter list mein naam se parameters specify kar sakte hain. For example:
+      //   function exampleFunction(a, b, c) {
+      //     // Function code here
+      //   }
+
+      //   Is example mein a, b, aur c named parameters hain.
+
+      //   Lekin JavaScript mein arguments object bhi upalabdha hai, jo aap function ke andar use kar sakte hain taki aap function ke parameter list mein naam se define nahi kiye gaye arguments tak pahunch saken. For example:
+
+      //   function exampleFunction() {
+      //     // Aap 'arguments' object ka istemal karke arguments tak pahunch sakte hain
+      //     console.log(arguments[0]); // Pahla argument tak pahunchne ke liye
+      //     console.log(arguments[1]); // Dusra argument tak pahunchne ke liye
+      //     // ...
+      //   }
+
+      //   Is case mein, aap exampleFunction ko kisi bhi sankhya mein arguments ke saath call kar sakte hain, aur aap woh arguments arguments[0], arguments[1], aadi ke dwara function ke andar access kar sakte hain.
+
+      //   Yahan ek udaharan hai kaise aap arguments object ka istemal kar sakte hain:
+
+      //   function sum() {
+      //     let total = 0;
+      //     for (let i = 0; i < arguments.length; i++) {
+      //       total += arguments[i];
+      //     }
+      //     return total;
+      //   }
+
+      //   console.log(sum(1, 2, 3)); // Output: 6
+      //   console.log(sum(10, 20, 30, 40, 50)); // Output: 150
+
+      //   Dhyaan rahe ki arguments object ek powerful feature hai, lekin yadi sambhav ho to naam se define ki gayi parameters ka istemal karna behtar hota hai, kyun ki yeh aapke code ko padhne aur maintain karne mein sahayak hota hai. Aur modern JavaScript mein, aap rest parameter syntax (...) ka istemal karke multiple arguments ko ek array mein capture kar sakte hain, jo aksar arguments object se adhik suvidhajanak hota hai.
+
+      //    ****************************************************************
+
+      // Parameters (पैरामीटर):
+
+      // Parameters function ke definition mein woh variables hote hain jo function ko define karte samay specify kiye jaate hain.
+      // In parameters ke naam se function mein arguments ko access kiya ja sakta hai.
+      // Parameters function ke declaration ke hisab se fix hote hain aur function ke internal logic mein inki values use hoti hain.
+      // Example:
+
+      // javascript
+      // Copy code
+      // function add(x, y) {
+      //   return x + y;
+      // }
+      // Yahan, x aur y parameters hain.
+
+      // Arguments (आर्ग्यूमेंट्स):
+
+      // Arguments function ko call karte samay diye gaye values hote hain.
+      // In arguments ko function ke andar arguments object ke through access kiya ja sakta hai.
+      // Arguments function ke har call par alag ho sakte hain aur unka count bhi alag ho sakta hai.
+      // Example:
+
+      // javascript
+      // Copy code
+      // add(2, 3); // Yahan, 2 aur 3 arguments hain.
+      // Antar me samajhne ke liye dekhein:
+
+      // javascript
+      // Copy code
+      // function add(x, y) {
+      //   console.log(x, y); // x aur y parameters hain
+      //   console.log(arguments[0], arguments[1]); // arguments array ke roop mein diye gaye values
+      // }
+
+      // add(2, 3); // Output: 2 3, 2 3
+      // Ismein x aur y parameters hain, jo function ke definition mein specify kiye gaye hain. Aur arguments[0] aur arguments[1] arguments array ke roop mein function ko call karte samay diye gaye values ko represent karte hain.
+    </script>
+  </body>
+</html>
