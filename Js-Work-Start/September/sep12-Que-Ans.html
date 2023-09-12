@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+  </head>
+  <body>
+    <script>
+      // What is JS Engine? Famous JS engines ke names btao
+      // Compiler vs Interpreter? Use, Js kya use krti hai?, kaam?
+      // Call Stack and Execution Context explain in detail
+      // What is this keyword?
+      // Different types ke scope ko explain kro? Lexical Scoping?
+      // Primitive and Non Primitive types me kya difference hota hai? Memory difference?
+      // Shallow Copy vs Deep copy?
+      // What is arguments object in function?
+      // Different types of memories? Stack, Queue, Heap
+
+      // Recordings
+      // Repo Notes
+      // Google
+      // Youtube
+      // ChatGPT
+
+      // Call Stack
+      // function one() {
+      //   two();
+      // }
+      // function two() {
+      //   three();
+      // }
+      // function three() {
+      //   console.log("hi dear");
+      //   return "hello";
+      // }
+      // debugger;
+      // one();
+
+      // let obj = {
+      //   name: "ayesha",
+      // };
+      // let user = obj;
+      // user.name = "saddam husain";
+      // console.log(obj);
+
+      // let x = "ayesha";
+      // let y = x;
+      // y = "bhati";
+      // console.log(x);
+
+      // jb  variable ko copy krte h to uski value copy hoti
+      // lakin jub object ko copy krte h to uski memory location copy hoti h
+
+      // shallow copy
+
+      // let obj = {
+      //   name: "ayesha",
+      // };
+      // let user = obj;
+      // user.name = "saddam husain";
+      // console.log(obj);
+
+      // let obj = {
+      //   name: "ayesha",
+      // };
+      // let user = Object.assign({}, obj);
+      // user.name = "deshwali";
+      // console.log(obj);
+
+      // let obj = {
+      //   name: "ayesha",
+      // };
+      // let user = { ...obj };
+      // user.name = "deshwali";
+      // console.log(obj);
+
+      // let obj = {
+      //   name: "ayesha",
+      //   address: {
+      //     city: "merta",
+      //     pincode: "341510",
+      //   },
+      // };
+      // let user = { ...obj };
+      // user.address.city = "jaipur";
+      // console.log(obj);
+
+      // Deep copy
+
+      // let obj = {
+      //   name: "ayesha",
+      //   address: {
+      //     city: "merta",
+      //     pincode: "341510",
+      //   },
+      // };
+      // let user = JSON.parse(JSON.stringify(obj));
+      // user.address.city = "jaipur";
+      // console.log(obj, user);
+
+      // let obj = {
+      //   name: "ayesha",
+      //   address: {
+      //     city: "merta",
+      //     pincode: "341510",
+      //   },
+      //   getDate: function () {
+      //     return "hello";
+      //   },
+      // };
+      // let user = JSON.parse(JSON.stringify(obj));
+      // user.address.city = "jaipur";
+      // console.log(obj);
+
+      // let obj = {
+      //   name: "ayesha",
+      //   address: {
+      //     city: "merta",
+      //     pincode: "341510",
+      //   },
+      //   getFun: function () {
+      //     return "hello";
+      //   },
+      // };
+      // let user = _.cloneDeep(obj);
+      // user.address.city = "jaipur";
+      // console.log(obj);
+      // console.log(user);
+    </script>
+  </body>
+</html>
