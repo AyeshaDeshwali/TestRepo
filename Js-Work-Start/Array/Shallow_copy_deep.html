@@ -1,0 +1,21 @@
+      Shallow Copy aur Deep Copy, dono programming me data ko copy karne ke do alag tariko ko represent karte hain. In dono techniques ka use kisi object ya data structure ke copies banane ke liye hota hai, lekin dono me fark hota hai ki kaise copies banti hain.
+
+      Shallow Copy (Gehra Nakal):
+
+      Shallow copy me, sirf top-level object copy hota hai, lekin uske andar ke nested objects reference (yaani pointer) ke roop me rehte hain. Matlab, agar aap ek object ki shallow copy banate hain, toh iska matlab hota hai ki aapne us object ke andar ke objects ko nahi copy kiya hai, bas unka reference copy kiya hai.
+      Agar aap kisi nested object me changes karte hain, to yeh changes original object par bhi asar dalte hain, kyunki dono objects ka reference wahi shared hota hai.
+      Shallow copy ka use generally memory aur performance optimization ke liye kiya jata hai, kyunki isme actual data copy nahi hoti, sirf references copy hoti hain.
+      Deep Copy (Gehri Nakal):
+
+      Deep copy me, har level ke object ki puri copy banai jati hai. Yani ke original object ke andar ke objects bhi copy hote hain, aur unme bhi agar koi nested objects hain to unka bhi copy banai jati hai.
+      Isse, original object aur uske copies ek doosre se alag hote hain. Agar aap kisi copy me kuch changes karte hain, to original object par koi asar nahi padta, kyunki dono completely separate copies hote hain.
+      Deep copy ka use generally data integrity aur isolation maintain karne ke liye kiya jata hai, jahan par aap chahate hain ki copies aur original data ek doosre se alag rahe.
+      Ek simple example ke through samjhate hain:
+
+      Suppose aapke paas ek book hai, jisme chapters hain, aur har chapter me pages hain.
+
+      Shallow copy: Agar aap book ki shallow copy banate hain, toh copy me sirf book ka reference hoga, lekin chapters aur pages ke references original book ke hi honge. Agar aap copy me kuch page badalte hain, to original book me bhi wohi changes dikhega, kyunki dono copies wohi pages share kar rahe hain.
+
+      Deep copy: Agar aap book ki deep copy banate hain, toh copy me book ke saare chapters aur pages ka alag-alag copy hoga. Agar aap copy me kuch page badalte hain, to original book me koi asar nahi padta, kyunki dono copies alag-alag pages ko refer kar rahe hain.
+
+      Is tarah se, shallow copy aur deep copy ka use case depend karta hai ki aap kis tarah ke behavior chahte hain apne data copies me.
