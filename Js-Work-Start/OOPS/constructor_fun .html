@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   let obj = {};
+      //   obj.name = "ayesha"; // property baad me b add kr skte h
+      //   obj.sayHi = function () {
+      //     console.log("Hi.....");
+      //   };
+      //   console.log(obj.sayHi());
+
+      //   let obj = new Object();
+      //   obj.name = "ayesha"; // property baad me b add kr skte h
+      //   obj.sayHi = function () {
+      //     console.log("Hi.....");
+      //   };
+      //   console.log(obj.sayHi());
+
+      //   ****************************************************
+
+      //   let person1 = {
+      //     name: "ayesha",
+      //     lName: "deshwali",
+      //     age: 19,
+      //     fullname: function () {
+      //       this.name + ": " + this.lName;
+      //     },
+      //   };
+      //   let person2 = {
+      //     name: "saddam",
+      //     lName: "husian",
+      //     age: 19,
+      //     fullname: function () {
+      //       this.name + ": " + this.lName;
+      //     },
+      //   };
+
+      // *********************constartion function *************
+
+      //   function Person(first, second, age) {
+      //     this.firstName = first;
+      //     this.lastName = second;
+      //     this.age = age;
+      //   }
+      //   let person1 = new Person("ayesha", "deshwali", 19);
+      //   // dusra object bnane ke liy copy pest nhi krna pdega kunki property to sub ke sem hi h baus vlaue change krni hogi ho jo yaha se ho jaygi
+      //   let person2 = new Person("saddam", "husain", 30);
+      //   console.log(person1);
+      //   console.log(person2);
+
+      //   function Person(first, second, age) {
+      //     this.firstName = first;
+      //     this.lastName = second;
+      //     this.age = age;
+      //     this.sayHi = function () {
+      //       console.log("Hi......."); // object ke ander ke function ko mathod bolte h
+      //     };
+      //   }
+      //   let person1 = new Person("ayesha", "deshwali", 19);
+      //   let person2 = new Person("saddam", "husain", 30);
+      //   console.log(person1);
+      //   console.log(person2);
+
+      function Person(first, second, age) {
+        this.firstName = first;
+        this.lastName = second;
+        this.age = age;
+        this.sayHi = function () {
+          console.log("Hi.......");
+        };
+        this.change = function (newAge) {
+          this.age = newAge;
+        };
+      }
+      let person1 = new Person("ayesha", "deshwali", 19);
+      person1.change(31);
+      let person2 = new Person("saddam", "husain", 30);
+      console.log(person1);
+      console.log(person2);
+    </script>
+  </body>
+</html>

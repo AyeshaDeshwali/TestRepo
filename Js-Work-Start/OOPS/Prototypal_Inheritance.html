@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   let person1 = {};
+      //   console.log(person1);
+      //   let person2 = {
+      //     name: "ayesha",
+      //   };
+      //   console.log(person2);
+
+      //   let person1 = {};
+      //   console.log(person1);
+      //   let person2 = {
+      //     name: "ayesha",
+      //   };
+      //   console.log(person2.hasOwnProperty("name")); // true
+      //   console.log(person2.hasOwnProperty("age")); // false
+      //hasOwnProperty - es se pta kr skte h ki name nam ki property h ya nhi
+      // hasOwnProperty - ye prototype me hi milta h
+
+      let person1 = {};
+      console.log(person1);
+      function Person(n) {
+        this.name = n;
+      }
+      let person3 = new Person("husain");
+      console.log(person3);
+    </script>
+  </body>
+</html>
