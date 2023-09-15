@@ -1,0 +1,18 @@
+{
+  "name": "ayesha",
+  "age": 39,
+  "is_student": true,
+  "passport_no": null,
+  "p_lang": ["c", "c++", "java", "php", "paython"],
+  "address": {
+    "city": "merta",
+    "state": "Rajsthan",
+    "pincode": 341510
+  }
+}
+
+
+    "single cote '' no work
+    last data me ,coma nhi lgana h
+    next(aage koy data) data hoga to ,coma lgana h"
+"lines ko comnet b nhi kr skte h es liy error aa raa h"
