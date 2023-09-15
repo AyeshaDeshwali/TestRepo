@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>constructor</title>
+</head>
+
+<body>
+  <script>
+    // const Animal = function (name, legs, color) {
+    //   this.animalName = name;
+    //   this.legs = legs;
+    //   this.color = color;
+    // };
+    // const Dog = function (name, legs, color) {
+    //   this.animalName = name;
+    //   this.legs = legs;
+    //   this.color = color;
+    // };
+    // const lion = new Animal("Lion", 4, "Yellow");
+    // const parrot = new Animal("Parrot", 2, "Green");
+    // const dog = new Dog("Dog", 4, "Black");
+    // console.log(lion, parrot, dog);
+
+    // const Account = function (
+    //   name,
+    //   bankName,
+    //   aadharCardNo,
+    //   mobile,
+    //   address,
+    //   currentBalance
+    // ) {
+    //   this.accountHolderName = name;
+    //   this.bankName = bankName;
+    //   this.aadharCardNo = aadharCardNo;
+    //   this.mobileNo = mobile;
+    //   this.address = address;
+    //   this.currentBalance = currentBalance || 1000;
+    // };
+    // const hdfc = new Account(
+    //   "Sajid Ali Khan",
+    //   "HDFC",
+    //   3435,
+    //   4565465465,
+    //   "Jaipur",
+    //   10000
+    // );
+    // console.log(hdfc);
+
+    //   const Animal = function (name, legs, color) {
+    //     this.animalName = name;
+    //     this.legs = legs;
+    //     this.color = color;
+    //     this.eat = function eat() {
+    //       console.log(${this.animalName} Eating);
+    //     };
+    //     this.sleep = function () {
+    //       console.log(${this.animalName} Sleeping);
+    //     };
+    //   };
+    //   const lion = new Animal("Lion", 4, "Yellow");
+    //   lion.eat();
+    //   lion.sleep();
+    //   const dog = new Animal("Dog", 4, "Yellow");
+    //   dog.eat();
+    //   dog.sleep();
+
+    // 1. Constructor function
+    // 2. Properties
+    // 3. Actions/Functions
+    // 4. Different types ke objects ke bnane hai
+    // 5. Prperties ko print krvana hai
+    // 6. Actions ko run krvana hai
+
+    // Example
+    // Animal
+    // Account
+    // Car
+    // Bike
+    // Student
+    // Employee
+    // Batch
+
+    // +++++++++++++++++ sir code end ++++++++++++++++++++++++++++++++++++++++++++++
+
+    //   const Animal = function () {};
+    //   const fun = new Animal();
+    //   console.log(fun);
+
+    //   const Animal = function (name, age, color) {
+    //     console.log(name, +age, color);
+    //   };
+    //   const lion = new Animal("Lion", "4", "black");
+    //   const goat = new Animal("Goat", "6", "white");
+    //   console.log(lion);
+    //   console.log(goat);
+
+    //   const Animal = function (name, age, color) {
+    //     this.Name = name;
+    //     this.Age = age;
+    //     this.Color = color;
+    //   };
+    //   const dog = new Animal("dog", "4", "black");
+    //   const goat = new Animal("goat", "3", "white");
+    //   console.log(dog);
+    //   console.log(goat);
+
+    // const Animal = function (name, age, color) {
+    //   this.Name = name;
+    //   this.Age = age;
+    //   this.Color = color;
+    // };
+    //   const Dog = function (name, age, color) {
+    //     this.Name = name;
+    //     this.Age = age;
+    //     this.Color = color;
+    //   };
+    //   const dog = new Animal("dog", "4", "black");
+    //   const goat = new Dog("goat", "3", "white");
+    //   const parrot = new Parrot("goat", "3", "white");
+    //   console.log(dog);
+    //   console.log(goat); // sem propertyes h to es liy alg alg fun bnane ke jrurat nhi h sirf Animal me sari sem property dake alg-alg animl ke kiy use kr skte h jasi ke uper bnaya huaa h
+
+    //   const Account = function (
+    //     name,
+    //     bankName,
+    //     aadharCardNo,
+    //     mobile,
+    //     address,
+    //     currentBaleins
+    //   ) {
+    //     this.Name = name;
+    //     this.BankName = bankName;
+    //     this.aadharCardNo = aadharCardNo;
+    //     this.Mobile = mobile;
+    //     this.Address = address;
+    //     this.currentBaleins = currentBaleins || 1000;
+    //   };
+
+    //   const Details = new Account(
+    //     "ayesha",
+    //     "SBI",
+    //     2345363234,
+    //     5432165423,
+    //     "Merta City",
+    //     50_000
+    //   );
+    //   console.log(Details);
+
+    // const Animal = function (name, age, color) {
+    //   this.AnimalName = name;
+    //   this.Age = age;
+    //   this.Color = color;
+    //   (this.eat = () => {
+    //     console.log(`${this.AnimalName} Eating....`);
+    //   }),
+    //     (this.sleep = () => {
+    //       console.log(`${this.AnimalName} Sleeping....`);
+    //     });
+    // };
+    // const dog = new Animal("dog", 2, "bleck");
+    // dog.eat();
+    // dog.sleep();
+    // const lion = new Animal("lion", 2, "bleck");
+    // lion.eat();
+    // lion.sleep();
+    // console.log(lion);
+
+
+    // function Student(fname, lname, age, cls, rno) {
+    //   this.firstName = fname;
+    //   this.lastName = lname;
+    //   this.age = age;
+    //   this.class = cls;
+    //   this.rollNo = rno;
+    //   this.result = function (a, b) {
+    //     console.log(a + b)
+    //   }
+    // }
+    // const student1 = new Student('mo.', "Husain", 8, 4, 88)
+    // console.log(student1)
+    // student1.result(2, 2)
+
+
+    // function Bank_Details(fName, lName, age, aadharNo, BirthDate, BankName, accoutNO, currentBalance, location) {
+    //   this.firstName = fName;
+    //   this.lastName = lName;
+    //   this.age = age;
+    //   this.aadharCardNo = aadharNo;
+    //   this.BirthDate = BirthDate;
+    //   this.BankName = BankName;
+    //   this.accountNo = aadharNo;
+    //   this.Balance = currentBalance
+    //   this.location = location
+    //   this.Deposit = function (n) {
+    //     console.log(n)
+    //   };
+    //   this.withdraw = function (n) {
+    //     console.log(n)
+    //   }
+    // }
+    // const myDocuments = new Bank_Details('mo.', 'husain', 3, 4342657832, "15-9-2020", 'SBBJ', 2354523456, 3000, 'Merta')
+    // console.log(myDocuments)
+    // myDocuments.Deposit(1200)
+    // myDocuments.withdraw(1000)
+  </script>
+</body>
+
+</html>
