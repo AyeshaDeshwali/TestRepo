@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const Car = function (name, average, color) {
+            this.name = name;
+            this.average = average;
+            this.color = color;
+            this.city = 'Jaipur'
+        }
+        // Car.prototype.country = 'India';
+        // Car.prototype.prototype.city = 'japan'
+        // const hondaCar = new Car('honda', 45, 'white')
+        // const maruthyCar = new Car('maruty', 50, 'blue')
+        // const bick = new Car('bick', 60, 'gray')
+        // hondaCar.lonch = 2020;
+        // console.log(hondaCar)
+        // console.log(maruthyCar.country)
+        // console.log(bick.country)
+
+        // console.log(Car.prototype)
+        // console.log(Car.prototype.prototype)
+
+
+        //     const hondaCar = new Car('honda', 45, 'white')
+        //     console.log(hondaCar.hasOwnProperty('color')) // true
+
+
+        // const hondaCar = new Car('honda', 45, 'white')
+        // console.log(hondaCar.__proto__) // hondaCar ka jo prototype h wo print hoga
+
+
+        // const hondaCar = new Car('honda', 45, 'white')
+        // console.log(hondaCar.__proto__ === Car.prototype) /// true
+        // // Car ka jo preant h  or es hondaCar ke constructor function ka jo ye proto property m jo value pdi h ye donu sem h 
+        // // hondaCar ka prototype or Car ka prototype sem h
+        // // Car.prototype ye liko ya  hondaCar.__proto__ ek hi baat h
+        // console.log(Car.prototype) // ye likne pr to protoype aa rha h
+        // console.log(Car.__proto__) // lakin ye likne pr nhi aa rha h
+        // // __proto__  eska matlb ke es property constructor function pe use nhi kr skte h
+        // // __proto__  esko object pe use krte h
+        // console.log(hondaCar.__proto__.__proto__);
+        // // agr prenat ka preant chay to Car.protoype.prototype likange to nhi milega
+        // // lakin agr object ka nam .(dot) __proto__.__proto__ liknge to wo property mil jaygi preant vali
+
+        const hondaCar = new Car('honda', 45, 'white')
+        hondaCar.__proto__.__proto__.pincode = 341510;
+        console.log(hondaCar.pincode); // preant ke preant ke pass milea pincode
+        console.log(hondaCar)
+        const bick = new Car('splender', 78, 'black')
+        console.log(bick.pincode) // eske ander b pincode aa raha h // kunki hondaCar ne preant ke preant me pincode add kr diya 
+        // hondaCar ke preant ka preant or bick ka preant ke preant sem h
+    </script>
+</body>
+
+</html>
