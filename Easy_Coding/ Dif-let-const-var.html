@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Window ek object h jo ki global object yani ke es khi b use kr skte h
+      // let or const Window object ke part nhi h
+      // alert window ka part h
+      // Function Scope
+      // Global Scope
+      // Block Scope
+      // Redeclartion
+      // TDZ
+
+      // Global Scope
+      //   let a = 10;
+      //   let b = 20;
+      //   const c = 30;
+      //   var d = 40;
+      //   console.log(a, b, c, d);
+
+      //   function test() {
+      //     console.log(a, b, c, d);
+      //   }
+      //   test();
+
+      //   if (10 < 20) {
+      //     console.log(a, b, c, d);
+      //   }
+
+      //   Function Scope // es me baar use nhi kr skte h
+      //   function test() {
+      //     let a = 10;
+      //     let b = 20;
+      //     const c = 30;
+      //     var d = 40;
+      //     console.log(a, b, c, d);
+      //   }
+      //   test();
+      //   console.log(a); // yaha use nhi kr skte h
+
+      //   Block Scope
+      //   if (10 < 20) {
+      //     let a = 10;
+      //     var b = 20;
+      //     const c = 30;
+      //     console.log(a, b, c);
+      //   }
+      //   console.log(b); // b ko use kr skte h kunki eska block skop nhi h var h es liy baar use kr skte h lakin a, b ko use nhi kr skte h
+
+      // Redeclartion
+      //   let a = 10;
+      //   var b = 20;
+      //   const c = 30;
+      //   // let a = 10; //Redeclartion alowe nhi krega
+      //   var d = 120;
+      //   console.log(d);
+      //   var d = 140;
+      //   console.log(d);
+      //   c = 30; // error // const ko alowe nhi krega
+      //   let and var ke ander dubara se value reasgin kr skte h new values dal skte h but const ke ander y sub nhi kr skte h
+
+      // TDZ - Temporal Dead Zone
+      //   console.log(c); // undefined
+      //   let a = 10;
+      //   const b = 20;
+      //   var c = 30;
+      //   console.log(c); // 30
+    </script>
+  </body>
+</html>
