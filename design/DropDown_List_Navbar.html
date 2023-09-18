@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #262626;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 40px auto;
+            height: 60px;
+            width: 800px;
+            background: #262626;
+            border-radius: 50px;
+            box-shadow: -5px -5px 10px #0d0d0d inset,
+                5px 5px 10px #333 inset;
+        }
+
+        .container .navbar {
+            height: 45px;
+            width: 96.5%;
+            background: #262626;
+            border-radius: 50px;
+            box-shadow: 5px 5px 10px #0d0d0d inset,
+                -5px -5px 10px #333 inset;
+        }
+
+        .container ul {
+            list-style: none;
+
+        }
+
+        .container ul li {
+            position: relative;
+            float: left;
+            margin: 2px;
+            height: 40px;
+            width: 150px;
+            color: #fff;
+            line-height: 40px;
+            text-align: center;
+            font-size: 15px;
+            text-transform: uppercase;
+            font-family: arial;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: .2s;
+        }
+
+        .container ul li:hover {
+            background: #ff3300;
+            box-shadow: 5px 5px 10px #ff707d inset,
+                -5px -5px 10px #b32400 inset;
+
+        }
+
+        .container ul ul {
+            position: absolute;
+            top: 50px;
+            box-shadow: -5px -5px 10px #0d0d0d inset,
+                5px 5px 10px #333 inset;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: .2s ease-out;
+        }
+
+        .container ul li:hover>ul {
+            transform: scaleY(1);
+
+        }
+
+        .container ul ul ul {
+            margin-left: 152px;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <ul>
+                <li>item1</li>
+                <li>item2</li>
+                <li>item3
+                    <ul>
+                        <li>sub-item1</li>
+                        <li>sub-item2
+                            <ul>
+                                <li>sub-item1</li>
+                                <li>sub-item2</li>
+                                <li>sub-item3</li>
+                            </ul>
+                        </li>
+                        <li>sub-item3</li>
+                        <li>sub-item4</li>
+                    </ul>
+                </li>
+                <li>item4</li>
+                <li>item5</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
