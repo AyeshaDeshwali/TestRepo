@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let arr = [] // array ke ander b prototype h kunki ye b ek object hi h
+        // arr[0] = 1;
+        // arr[1] = 2;
+        // arr[2] = 3;
+        // Array.prototype.ayesha = () => {
+        //     console.log('hello')
+        // }
+        // console.log(arr)
+        // arr.ayesha()
+
+        // let arr = []
+        // arr[0] = 1;
+        // arr[1] = 2;
+        // arr[2] = 3;
+        // Array.prototype.at = () => {
+        //     console.log('hello')
+        // }
+        // console.log(arr)
+        // arr.at(-1) // -1 se 3 print hona chay tha pr nhi hoga // at function hmara bnaya huaa function h na ke array vala
+        // asa krna hi nhi h best practice nhi h javascript khud hme function deta h to array.prototype ye krne ke jrurat nhi h
+        // chije to chlagi koy dikt nhi h pr jub aapki chije chlne lg jaygi to javascript ke khudki chije nhi chlegi
+
+
+        // OOPs in JavaScript
+        // Constructor functions and new operator
+        // Prototypes
+        // Native Prototype
+        // Prototypal inheritance and prototype chain
+        // Prototypal inheritance on Built -in objects
+
+        // ye sub yani ki(Constructor functions vala kam) krne ka dusra treeka - ES6 classes
+
+        // ES6 classes
+        // Setters and Getters
+        // Static methods
+        // Object.create
+        // Inheritance between classes
+
+
+        // const Animal = function (name, color) {
+        //     this.name = name;
+        //     this.color = color;
+        //     this.printDetails = function () {
+        //         console.log(this.name, this.color)
+        //     }
+        // }
+        // class Person {
+        //     constructor(name, color) {
+        //         this.name = name;
+        //         this.color = color;
+        //         this.printDetails = function () {
+        //             console.log(this.name, this.color)
+        //         }
+        //     }
+        // }
+        // const tiger = new Animal('Tiger', 'Yellow')
+        // const person = new Person('ayesha', 'white')
+        // console.log(tiger)
+        // console.log(person)
+        // tiger.printDetails()
+        // person.printDetails() // sem hi h donu kam bus sentence alg- alg h
+
+
+        // class Person {
+        //     constructor(name, color) {
+        //         this.name = name;
+        //         this.color = color;
+        //         this.printDetails = function () {
+        //             console.log(this.name, this.color)
+        //         };
+        //     }
+        // }
+        // Person.prototype.test = () => {
+        //     console.log('hello!') // constructor function me kuch be add krna hota tha to ase hi krte h lakin ab ye chij yaha ase nhi krne h / agr Person ke prototype me kuch b add krna h to es constructor ke bahar lik do bus. 
+        // }
+        // const manager = new Person('ayesha', 'white')
+        // console.log(manager)
+        // manager.test()
+
+
+        // class Person {
+        //     constructor(name, color) {
+        //         this.name = name;
+        //         this.color = color;
+        //         this.printDetails = function () {
+        //             console.log(this.name, this.color)
+        //         }; // name,color,printDetails ye hi dikega kunki ye 3 constructor ke ander add keya h yani ye es object ke khud ke property he  or constructor ke baar kuch b add karnge to wo jake prototype me add ho jayga
+        //     }
+        //     test = () => {
+        //         console.log('hello...') // ye function constructor ke bahar bnaya h ander nhi bnaya h
+        //     }
+        // }
+        // const manager = new Person('ayesha', 'white')
+        // console.log(manager)
+        // manager.test()
+
+
+        //  this.printDetails = function () {
+        //         console.log(this.name, this.color)
+        //     }; // printDetail ko sare object ke liy use karnge to baar-baar bnane ke jarurt nhi h
+
+
+
+        class Person {
+            constructor(name, color) {
+                this.name = name;
+                this.color = color;
+            }
+            test() {
+                console.log('hello...')
+            }
+            printDetails() {
+                console.log(this.name, this.color)
+            };
+        }
+        const manager = new Person('ayesha', 'white')
+        console.log(manager)
+        manager.test();
+
+
+
+
+        // class Car {
+        //     constructor(brand) {
+        //         this.carname = brand;
+        //     }
+        //     present() {
+        //         return 'I have a ' + this.carname;
+        //     }
+        // }
+        // class Model extends Car {
+        //     constructor(brand, mod) {
+        //         super(brand);
+        //         this.model = mod;
+        //     }
+        //     show() {
+        //         return this.present() + ', it is a ' + this.model;
+        //     }
+        // }
+        // let myCar = new Model("Ford", "Mustang");
+        // console.log(myCar.show()); 
+    </script>
+</body>
+
+</html>
