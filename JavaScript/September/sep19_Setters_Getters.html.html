@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructor</title>
+</head>
+
+<body>
+    <script>
+
+
+        // *********************************************************
+
+
+        //Setter
+        //Getter
+        //Private Fields
+        //Static methods
+
+
+        // class Animal {
+        //     constructor(name, color) {
+        //         this.name = name + " Danger";
+        //         this.color = color
+        //     }
+        // }
+        // const tiger = new Animal('Tiger', 'Yellow')
+        // console.log(tiger)
+        // tiger.name = 'Tom'
+        // console.log(tiger)
+
+
+        // class Car {
+        //     constructor(name, color) {
+        //         this.name = name + " Car";
+        //         this.color = color
+        //     }
+        //     set name(carName) { // property ka nam or setter ka nam sem nhi hota  h
+        //         this.name = carName + "Car" // name property ka nam h or setter ka nam b name hi h to ye confuze ho jayga ki name ke property set karni h ya fir ye setter call karna h to ye bar -bar bar-bar call hota rhega kunki esko lagega ki hr bar setter ko call krna h jasi es setter ko call krne aayga ander dubare se this.name = kr rhe h esko legega ki dubara set kro to ye call-call karte karte finaly ek ERROR(RangeError: Maximum call stack size exceeded) aa jayga ki stack memory full ho  gy h - to es chij se bachne ke liy property ka nam or setter ka nam sem nhi ho skta h
+        //     }
+        // }
+        // const honda = new Car('Honda', 'White')
+        // honda.name = 'ford'//  name ke value set kar se rhe h to setter function automaticly call hoga
+        // console.log(honda)
+
+
+
+        // class Car {
+        //     constructor(name, color) {
+        //         this.carName = name + " Car";
+        //         this.color = color
+        //     }
+        //     set name(cars) {
+        //         this.carName = cars + "Car"
+        //     }
+        // }
+        // const honda = new Car('Honda', 'White')
+        // // honda.carName = 'Ford' // es bjay honda.name = 'Suzki'
+        // honda.name = 'Suzki '
+        // console.log(honda)
+
+        // class Car {
+        //     constructor(name, color) {
+        //         this.carName = name + " Car";
+        //         this.color = color
+        //     }
+        //     set name(cars) {
+        //         this.carName = cars + "Car"
+        //     }
+        //     get name() {
+        //         return this.carName + " Petrol "
+        //     }
+        // }
+        // const honda = new Car('Honda', 'White')
+        // honda.name = 'Ford '
+        // console.log(honda.name)
+        // honda.carName = 'Suzuki'
+        // console.log(honda.carName)
+        // carName vale property ko baar se b set kar diya h agr hm chate h ki esko koy baar se set na kar ske to uske lie jo constructor me this.carName deya usko privaet kr do # lga ke
+
+
+        // class Car {
+        //     #_carName // privaet property
+        //     constructor(name, color) {
+        //         this.#_carName = name + " Car";
+        //         this.color = color
+        //     }
+        //     set name(cars) {
+        //         this.#_carName = cars + "Car"
+        //     }
+        //     get name() {
+        //         return this.#_carName + " Petrol "
+        //     }
+        // }
+        // const honda = new Car('Honda', 'White')
+        // honda.name = 'Ford '
+        // console.log(honda.name)
+        // // console.log(honda._carName) // underScor ke sath access krne nhi de raha  undefined aa raha h
+        // // console.log(honda.#_carName) // # lgake karne se ye khe rha h Private property h baar se access nhi kar skte ho //  ERROR - Private field '#_carName' must be declared in an enclosing class
+        // /// bar se khi se b change nhi kar skte h  agr change krna h to constructor me kro ya Setters Getters mr kro ya fir koy function bnake kro
+        // // color Private property nhi h
+        // console.log(honda.color)
+
+
+
+        // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=
+        // class Car {
+        //     constructor(name, color) {
+        //         this.carName = name + " Car";
+        //         this.color = color
+        //     }
+        //     set name(cars) {
+        //         this.carName = cars + "Car"
+        //     }
+        //     get name() {
+        //         return this.carName + " Petrol "
+        //     }
+        //     static test() { // static ko htane se allow kr lega
+        //         console.log("Hello....")
+        //     }
+        // }
+
+
+        // const honda = new Car('Honda', 'White')
+        // honda.test() //  TypeError: honda.test is not a function
+        // static - स्थिर
+
+
+        // Car.test() // es se krne se chl jayga kunki koy object nhi bnaya h direct class se call keya h
+        // agr asi recoverment ho ki test function ko Car ke alava koy or use na kr ske to uske aage static lga do
+        // static functoin class se belong krna h na ki object se
+
+        // console.log(Number.isFinite(10)) // true
+        // console.log(Number.parseInt(10)) // 10
+        // number ka object nhi bnaya direct isFinite functoin ko call kr liya
+        // in sub ko bina object bnay call kr rhe h matlb ki ye sare ke sare functions static h
+        // static function ke liy object bnane ke jarurt nhi h direct class ka nam . function ka nam
+
+        // forExample agr koy puch ke asi koy class example do javascript me jiske liy object bnane ke jarur nhi hoti - isFinite(), parseInt() ets.
+
+        // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+        // class Date {
+        //     #_year // privaet property
+        //     constructor(year) {
+        //         this.#_year = year || 2004;
+        //     }
+        //     set year(year) {
+        //         this.#_year = year
+        //     }
+        //     get year() {
+        //         return this.#_year;
+        //     }
+        // }
+        // const myDate = new Date()
+        // // console.log(myDate)
+        // myDate.year = 2023 // year set ho rhi h
+        // console.log(myDate.year) // year get ho rhi h
+
+
+        // -------------------------------------------------------------
+        
+        // class Car {
+        //     constructor(name, color) {
+        //         this.name = name;
+        //         this.color = color;
+        //     }
+        //     stoped() {
+        //         console.log('stoped...'); // normal function ke ander khud ka this hota h
+        //     }
+        //     stoppedArrow = () => {
+        //         console.log('stoppedArrow...'); /// Arrow function ka khud ka this nhi hota h
+        //     }
+        // }
+        // let hondaCar = new Car('Honda', 'white');
+        // let toyotaCar = new Car('Toyota', 'black');
+        // console.log(hondaCar.stoped === toyotaCar.stoped); // true
+        // console.log(hondaCar.stoppedArrow === toyotaCar.stoppedArrow); // false
+
+    </script>
+</body>
+
+</html>
