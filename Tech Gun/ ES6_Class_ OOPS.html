@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // class Person {
+        //     constructor(name, color) {
+        //         this.name = name;
+        //         this.color = color;
+        //     }
+
+        //     test() {
+        //         console.log('hi...')
+        //     }
+        //     static sproperpy = 'somthing'
+        //     hello() {
+        //         console.log("hello")
+        //     }
+        // }
+        // const manager = new Person('ayesha', 'white')
+        // console.log(manager)
+        // manager.hello()
+        // console.log(manager.sproperpy)
+
+        // -----------------------Inheritance--start code-------------------------------------------------------------------------------------------------
+
+        /// jub b class se extends karte h to prototype vala function b aa jata h or property b aa jata h
+        // matlb pura ka pura class extends ho jata h yani copy ho jata h ek tre se
+
+        // class emp {
+        //     constructor() {
+        //         console.log('emp constructor called....')
+        //     }
+        // }
+        // class manager extends emp {
+        // }
+        // let manager1 = new manager('ayesha')
+        // console.log(manager1)
+
+
+
+        // class emp {
+        //     constructor(name) {
+        //         this.name = name // name ko ayesha mil jaygi
+        //     }
+        // }
+        // class manager extends emp { // property(nam) emp me define keya h or use manger extends kr leta h yaa pr// extends karte h emp ko to eske pass jo property hota h wo b ab aa jata h prototype ke sath - sath
+        // } // manger class blanck h fir b name diya ayesha yaha pr usko mil gya
+        // let manager1 = new manager('ayesha')
+        // console.log(manager1)
+
+
+
+        // class emp { // preant class
+        //     constructor(name) {
+        //         this.name = name
+        //     }
+        // }
+        // class manager extends emp { // child class
+        //     constructor(nam, d) { // jub b child class ka constructor bnate h to usko preant vale constructor ko call krna hota h call karne ke liy hota h super()
+        //         super(nam) //preant vale constructor me parametor h to usko yaha pr pass krna hota h
+        //         this.department = d;
+        //     }
+        // }
+        // let manager1 = new manager('ayesha', 'web development') // constructor me do chije le rhe h ayesha or web development to child constructor ke ander b 2 baar krna pdega parametor
+        // console.log(manager1)
+
+
+        // class emp {
+        //     constructor(n) {
+        //         this.name = n;
+        //     }
+        //     msg() {
+        //         console.log("hi...") // manger ke pass mil jayga
+        //     }
+        // }
+        // class manger extends emp {
+        //     constructor(p, depar) {
+        //         super(p)
+        //         this.deparmante = depar
+        //     }
+        // }
+        // let man = new manger('ayesha', 'web development')
+        // console.log(man)
+        // man.msg()
+
+
+        // class emp {
+        //     constructor(n) {
+        //         this.name = n;
+        //     }
+        //     msg() {
+        //         console.log("hi...") // manger ke pass mil jayga
+        //     }
+        // }
+        // class manger extends emp {
+        //     constructor(p, depar) {
+        //         super(p)
+        //         this.deparmante = depar
+        //     }
+        //     info() {
+        //         console.log('hello...')
+        //     }
+        // }
+        // let man = new manger('ayesha', 'web development')
+        // console.log(man)
+        // man.msg();
+        // man.info()
+
+
+        // class emp {
+        //     constructor(n) {
+        //         this.name = n;
+        //     }
+        //     msg() {
+        //         console.log("hi...")
+        //     }
+        // }
+        // class manger extends emp {
+        //     constructor(p, depar) {
+        //         super(p)
+        //         this.deparmante = depar
+        //     }
+        //     info() {
+        //         console.log(this.name + " is manger of department " + this.deparmante) // extends emp krne se preant vala name(ayesha) wo esme aa jayga
+        //     }
+        // }
+        // let man = new manger('ayesha', 'web development')
+        // console.log(man)
+        // man.msg();
+        // man.info()
+        // manger me emp vala function dikega or emp vale function me manger function dikega prototype me
+
+
+        // class emp {
+        //     constructor(n) {
+        //         this.name = n;
+        //     }
+        //     msg() {
+        //         console.log("hi...")
+        //     }
+        // }
+        // class manger extends emp {
+        //     constructor(p, depar) {
+        //         super(p)
+        //         this.deparmante = depar
+        //     }
+        //     info() { // msg function ko info vale me call krne ke liy super(msg)
+        //         super.msg()
+        //         console.log(this.name + " is manger of department " + this.deparmante) // extends emp krne se preant vala name(ayesha) wo esme aa jayga
+        //     }
+        // }
+        // let man = new manger('ayesha', 'web development')
+        // man.info() // call sirf info ko kiya h but msg vala b execute ho jayga ye vala b ho jayga
+        // // ek class ke mathdo ko dusre class ke ander b use kr skte h
+
+
+
+        // class emp {
+        //     constructor(n) {
+        //         this.name = n;
+        //     }
+        //     msg() {
+        //         console.log("hi...")
+        //     }
+        // }
+        // class manger extends emp {
+        //     constructor(p, depar) {
+        //         super(p)
+        //         this.deparmante = depar
+        //     }
+        //     msg() {
+        //         console.log("msg...")
+        //     }
+        //     info() {
+        //         // this.msg() // this krne se eske ander vala call hoga
+        //         super.msg() // super.msg() krne se preant vala call hoga
+        //         console.log(this.name + " is manger of department " + this.deparmante) // extends emp krne se preant vala name(ayesha) wo esme aa jayga
+        //     }
+        // }
+        // let man = new manger('ayesha', 'web development')
+        // console.log(man.info())
+
+        // agr sem property ya mathod h manger class me or emp class me to - manger calss ka call krne ke liy this ka use krek krna hoga or agr preant class ke property ya mathod use krna chate h to waha pr super ka use krna hoga
+
+
+        // class emp {
+        //     constructor(n) {
+        //         this.name = n;
+        //     }
+        //     msg() {
+        //         console.log("hi...")
+        //     }
+        // }
+        // class manger extends emp {
+        //     constructor(p, depar) {
+        //         super(p)
+        //         this.deparmante = depar
+        //     }
+        //     msg() {
+        //         console.log("hi...")
+        //     }
+        //     info() {
+        //         console.log(this.name + " is manger of department " + this.deparmante) // extends emp krne se preant vala name(ayesha) wo esme aa jayga
+        //     }
+        // }
+        // class admin extends manger { // /admin ke ander manger or emp donu aa gay
+        //     // constructor() { }
+        // }
+
+        // let admin1 = new admin('ayesha', 'web development')
+        // console.log(admin1)
+
+        // -----------------------Inheritance--end code-------------------------------------------------------------------------------------------------
+
+        // ================== public private property =======================
+
+        // class emp {
+        //     constructor(n) {
+        //         this.name = n;
+        //     }
+        //     getName() {
+        //         console.log(this.name)
+        //     }
+        // }
+        // const Emp1 = new emp('ayesha')
+        // console.log(Emp1)
+        // console.log(Emp1.name) // name ko dekna cahte h kya nam h to direct ye kar skte h // public property h yani ke ye direct object se call ho skta h Emp1.name asi kre se aa jayga
+        /// private me asa nhi hota h private bnane ke liy # dena hota h
+
+
+
+        // class emp {
+        //     #name
+        //     constructor(n) {
+        //         this.#name = n;
+        //     }
+        //     getName() {
+        //         console.log(this.name)
+        //     }
+        // }
+        // const Emp1 = new emp('ayesha')
+        // console.log(Emp1)
+        // console.log(Emp1.#name) // ab direct access nhi kr pa rhe h  kunki baar nhi hoga ander access krna chay to ho jayga
+
+
+
+        // class emp {
+        //     #name
+        //     constructor(n) {
+        //         this.#name = n;
+        //     }
+        //     getName() {
+        //         console.log(this.#name)
+        //     }
+        // }
+        // const Emp1 = new emp('ayesha')
+        // console.log(Emp1)
+        // console.log(Emp1.getName()) // ab ayesha nam aa jayga kunki private matho ya property ko direct object ke sath call nhi krte h
+
+        // class emp {
+        //     #name
+        //     constructor(n) {
+        //         this.#name = n;
+        //     }
+        //     #getName() {
+        //         console.log(this.#name)
+        //     }
+        //     pub() {
+        //         this.#getName()
+        //     }
+        //     // es class me 2 chije private thi ek to name property(bnane ka treka y hota h ki constructor ke baar ek baar define krna compulsory h es liy phle difine keya )  or dusra
+        // }
+
+        // const Emp1 = new emp('ayesha')
+        // console.log(Emp1.pub()) // kisi mathod ko b private bna skte h # lga ke
+        /// private sirf class ke ander hi use ho skta h public baar object ke sath b j
+        /// or public baar object ke sath b use ho skta h
+
+        // ++++++++++++++++++++++++++ Mixins ++++++++++++++++++++++++
+        // kisi b class ko extra power dene ke liy Mixins ka use krte h
+
+        // let obj = {
+        //     sayHi() {
+        //         console.log("Sya....")
+        //     },
+        //     sayBye() {
+        //         console.log("Bye....")
+        //     }
+        // }
+        // class user {
+        //     constructor() {
+        //         this.name = 'ayesha'
+        //     };
+        // }
+        // let user1 = new user()
+        // console.log(user1)
+
+
+
+        // let obj = {
+        //     sayHi() {
+        //         console.log("Sya....")
+        //     },
+        //     sayBye() {
+        //         console.log("Bye....")
+        //     }
+
+        // }
+        // class user {
+        //     constructor() {
+        //         this.name = 'ayesha'
+        //     };
+        // }
+        // class admin extends user {
+
+        // }
+
+        // Object.assign(user.prototype, obj)
+        // let admin1 = new user()
+        // console.log(admin1.sayHi()) // extends krke b kr skte h or asa ase kr skte h jldi aa jayga
+
+
+
+        // let obj = {
+        //     sayHi() {
+        //         console.log("Hi....")
+        //     },
+        //     sayBye() {
+        //         console.log("Bye....")
+        //     }
+        // }
+        // class user {
+        //     constructor() {
+        //         this.name = 'ayesha'
+        //     };
+        // }
+        // class admin extends user {
+        // }
+        // Object.assign(admin.prototype, obj) // admin ke prototype me obj ko add kr diya obj ke ander sayHi or sayBye mathod ko enko esne admin ke ander dal diya 
+        // let admin1 = new admin()
+        // console.log(admin1)
+        // admin1.sayHi()
+        // admin1.sayBye()
+
+
+        /// ek class ko extends kiya ja skta h lakin Mixins ke help se multypal chijo ek me lake gusa skte h
+
+
+        let obj = {
+            sayHi() {
+                console.log("Hi....")
+            },
+            sayBye() {
+                console.log("Bye....")
+            }
+        }
+        let obj2 = {
+            sayHi() {
+                console.log("Hii....")
+            },
+            sayBye() {
+                console.log("Bye.Bye...")
+            }
+        }
+        class user {
+            constructor() {
+                this.name = 'ayesha'
+            };
+        }
+        class admin extends user {
+
+        }
+        Object.assign(admin.prototype, obj);
+        Object.assign(admin.prototype, obj2); // obj or obj2 donu ka jitna b mathod h admin me aa jayga
+        let admin1 = new admin()
+        console.log(admin1)
+        admin1.sayHi()
+        admin1.sayBye()
+    </script>
+</body>
+
+</html>
