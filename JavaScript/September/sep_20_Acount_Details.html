@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const account = new Account();
+        // howMessage();
+        // let choice = +prompt("Please enter your choice")
+        // while (choice !== 5) {
+        //     showMessage();
+        //     choice = +prompt("Please enter your choice")
+        //     switch (choice) {
+        //         case 1:
+        //             account.withdrawl();
+        //             break;
+        //         case 2:
+
+        //         default:
+        //             alert("Sorry wrong choice.");
+        //     }
+        // }
+
+        // function showMessage() {
+        //             `Welcome to HDFC Bank
+        //   Enter 1 for Withdrawl
+        //   Enter 2
+        //   Enter 3 for PIN Change
+        //   Enter 4 for Print Statement
+        //   Enter 5 for exit
+        //   `
+        //         }
+
+
+        // _____________________________________________________________________________
+
+        class Account {
+            #AadharCardNumber;
+            #CurrentBalance;
+            constructor(AccountHolderName, AccountType, AadharCardNumber, CurrentBalance, MobileNumber, pin) {
+                this.AccountHolderName = AccountHolderName;
+                this.AccountType = AccountType;
+                this.#AadharCardNumber = AadharCardNumber;
+                this.#CurrentBalance = CurrentBalance || 20_000
+                this.MobileNumber = MobileNumber;
+                this.pin = pin;
+            }
+
+            get accountHolderName() {
+                return this._accountHolderName;
+            }
+
+            set accountHolderName(name) {
+                this._accountHolderName = name;
+            }
+
+            // Getter and Setter for Account Type
+            get accountType() {
+                return this._accountType;
+            }
+
+            set accountType(type) {
+                this._accountType = type;
+            }
+        }
+
+        let ayesha = new Account('Ayesha', 'SavingsAccount', " 1234-5678-9012", 30_000, 5463235745, 1234)
+        console.log(ayesha)
+    </script>
+</body>
+
+</html>
