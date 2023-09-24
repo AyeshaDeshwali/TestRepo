@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>super</title>
+</head>
+
+<body>
+    <script>
+        //         //Inheritance
+
+
+        //             class Car {
+        //                 constructor(brand, color, type) {
+        //                     //Car
+        //                     this.brand = brand;
+        //                     this.color = color;
+        //                     this.fuelType = type;
+        //                 }
+        //             }
+        //             class Ford {
+        //                 constructor(brand, color, type, flyingCar, engineCC) {
+        //                     //Car
+        //                     this.brand = brand;
+        //                     this.color = color;
+        //                     this.fuelType = type;
+
+        //                     //Ford Car
+        //                     this.isFlyingCar = flyingCar;
+        //                     this.engineCC = engineCC;
+        //                 }
+        //             }
+
+        //             const car = new Car("Ford", "Red", "Diesel");
+        //             const fordCar = new Ford("Ford", "Red", "Diesel", true, 500);
+        //             console.log(car, fordCar);
+        // =========================================================
+
+
+
+
+
+
+
+        // class Car {
+        //   constructor(brand, color, type) {
+        //     this.brand = brand;
+        //     this.color = color;
+        //     this.fuelType = type;
+        //   }
+        // }
+        // class Ford extends Car {
+        //   constructor(brand, color, type, flyingCar, engineCC) {
+        //     super(brand, color, type);
+        //     this.isFlyingCar = flyingCar;
+        //     this.engineCC = engineCC;
+        //     this.brand = "Honda";
+        //   }
+        // }
+
+        // const car = new Car("Ford", "Red", "Diesel");
+        // const fordCar = new Ford("Ford", "Red", "Diesel", true, 500);
+        // console.log(car, fordCar);
+
+
+        // =======================================================
+
+        // class Car {
+        //     constructor(brand, color, type) {
+        //         this.brand = brand;
+        //         this.color = color;
+        //         this.fuelType = type;
+        //     }
+        //     applyBreak() {
+        //         console.log("Applying Break");
+        //     }
+        //     accelerate() {
+        //         console.log("Running Car");
+        //     }
+        // }
+        // class Ford extends Car {
+        //     constructor(brand, color, type, flyingCar, engineCC) {
+        //         super(brand, color, type);
+        //         this.isFlyingCar = flyingCar;
+        //         this.engineCC = engineCC;
+        //         this.brand = "Honda";
+        //     }
+        //     accelerate() {
+        //         console.log("Running Ford Car");
+        //     }
+        // }
+
+        // const car = new Car("Ford", "Red", "Diesel");
+        // const fordCar = new Ford("Ford", "Red", "Diesel", true, 500);
+        // console.log(car, fordCar);
+        // fordCar.applyBreak();
+        // fordCar.accelerate();
+        // car.accelerate();
+
+
+        // __________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+        class Car {
+            constructor(name, color, average) {
+                this.name = name;
+                this.color = color;
+                this.average = average;
+                function fun() {
+                    console.log('hello')
+                }
+            }
+        }
+        class Ford extends Car {
+            constructor(name, color, average) {
+                super(name, color, average)
+                this.name = name;
+                this.color = color;
+                this.average = average;
+            }
+        }
+        const car = new Car('Tata', 'blue', 45)
+        const fordCar = new Ford('Ford', 'red', 50)
+        console.log(car)
+        console.log(fordCar)
+
+
+
+
+        // class Father {
+        //     constructor(name, age, about) {
+        //         this.name = name;
+        //         this.age = age;
+        //         this.about = about;
+        //     }
+        //     first() {
+        //         console.log('Yusuf Khan')
+        //     }
+        // }
+        // class Brother extends Father {
+        //     constructor(name, age, about) {
+        //         super()
+        //         this.name = name;
+        //         this.age = age;
+        //         this.about = about;
+        //     }
+        //     second() {
+        //         console.log('saddam husain')
+        //     }
+        // }
+        // class Nephew extends Brother {
+        //     constructor(name, age, about) {
+        //         super()
+        //         this.name = name;
+        //         this.age = age;
+        //         this.about = about;
+        //     }
+        //     thrid() {
+        //         console.log('mo. husain')
+        //     }
+        // }
+        // const father = new Father("yusuf khan", 55, "goat greazz");
+        // const brother = new Brother("saddam husain", 30, 'shoftwar ingenear');
+        // const nephew = new Nephew("husain", 3, 'play');
+        // father.first()
+        // brother.second()
+        // nephew.thrid()
+
+    </script>
+</body>
+
+</html>
