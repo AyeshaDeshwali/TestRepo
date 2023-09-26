@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>api</title>
+</head>
+
+<body>
+    <script>
+        // setTimeout(() => {
+        //     let i = 10;
+        //     console.log(i.toUpperCase())
+        // }, 1000);
+
+
+        //  setTimeout(() => {
+        //     for (let i = 1; i <= 10; i++) {
+        //         console.log(i)
+        //     }
+        // }, 10000)
+        // console.log('hello')
+
+        // async function test() {
+        //     for (let i = 1; i <= 10; i++) {
+        //         console.log(i)
+        //     }
+        // }
+        // console.log('hello')
+
+        loadDoc("https://restcountries.com/v3.1/name/india", myFunction2);
+        function loadDoc(url, cFunction) {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                cFunction(this);
+            };
+            xhttp.open("GET", url);
+            xhttp.send();
+        }
+        function myFunction2(xhttp) {
+            console.log(xhttp)
+        }
+
+
+        // loadDoc("https://restcountries.com/v3.1/name/india", myFunction2);
+        //     function loadDoc(url, cFunction) {
+        //         const xhttp = new XMLHttpRequest();
+        //         xhttp.onload = function () {
+        //             cFunction(this);
+        //         };
+        //         xhttp.open("GET", url);
+        //         xhttp.send();
+        //     }
+        //     function myFunction2(xhttp) {
+        //         console.log(xhttp.response)
+        //     }
+
+
+        // loadDoc("https://restcountries.com/v3.1/name/india", myFunction2);
+        // function loadDoc(url, cFunction) {
+        //     const xhttp = new XMLHttpRequest();
+        //     xhttp.onload = function () {
+        //         cFunction(this);
+        //     };
+        //     xhttp.open("GET", url);
+        //     xhttp.send();
+        // }
+        // function myFunction2(xhttp) {
+        //     console.log(JSON.parse(xhttp.response));
+        // }
+
+
+    </script>
+</body>
+
+</html>
