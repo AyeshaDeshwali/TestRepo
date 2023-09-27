@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promiss</title>
+</head>
+
+<body>
+
+    <script>
+
+        // const xhttp = new XMLHttpRequest();
+        // xhttp.onload = function () {
+        //     console.log(JSON.parse(this.responseText));
+        // };
+        // xhttp.open("GET", "https://restcountries.com/v3.1/name/india");
+        // xhttp.send();
+
+
+        // function test(fn1, fn2) {
+        //     const num = +prompt("What is your favourite number");
+        //     if (num >= 10) {
+        //         fn1();
+        //     } else {
+        //         fn2();
+        //     }
+        // }
+        // test(
+        //     () => {
+        //         console.log("Hello");
+        //     },
+        //     () => {
+        //         console.log("Hi");
+        //     }
+        // );
+
+
+        // const prom = new Promise((success, failure) => {
+        //     const num = +prompt("What is your favourite number");
+        //     if (num >= 10) {
+        //         success();
+        //     } else {
+        //         failure();
+        //     }
+        // });
+
+        // prom.then(
+        //     () => {
+        //         console.error("Hi");
+        //     },
+        //     () => {
+        //         console.log("Hello");
+        //     }
+        // );
+
+
+        // const prom = new Promise((resolve, reject) => {
+        //     reject();
+        // });
+
+        // prom.then(undefined, () => {
+        //     console.log("Hi");
+        // });
+
+
+        // const response = fetch("https://restcoutries.com/v3.1/name/india");
+        // console.log(response);
+
+        // // Promise States
+
+        // // 3 values:
+
+        // // Pending
+        // // Fullfilled/Rejected
+
+
+        // const prom = new Promise((success, failure) => {
+        //     let i = 10;
+        //     i.toUpperCase();
+        //     success();
+        // });
+        // console.log(prom);
+        // prom.then(
+        //     () => {
+        //         console.error("Hi");
+        //     },
+        //     () => {
+        //         console.log("Hello");
+        //     }
+        // );
+
+        // console.log("Hello");
+        // setTimeout(() => {
+        //     console.log("Hello 2");
+        // }, 0);
+        // const prom = new Promise((resolve) => {
+        //     resolve();
+        // });
+        // prom.then(() => {
+        //     console.log("Hello Promise");
+        // });
+
+        // const response = fetch("https://restcountries.com/v3.1/name/india");
+        // response.then(
+        //     (res) => {
+        //         res.json().then((data) => {
+        //             console.log(data);
+        //         });
+        //     },
+        //     () => {
+        //         console.log("Error");
+        //     }
+        // );
+        // console.log("Hello");
+
+
+        // fetch vs Ajax
+        // Simplicity and Clarity
+        // Promise Based
+        // Built in JSON parsing
+        // Support for other types
+        // Standardization
+        // Simplicity in sending data
+        // Global Fetch support in all modern browsers
+
+
+
+        // __________________________________my code_________________________________________________________
+
+
+
+
+        //HTTP Methods
+        // GET - GET is used to request data from a specified resource. Note that the query string(name / value pairs) is sent in the URL of a GET request:
+        // POST - POST is used to send data to a server to create/update a resource.
+        // PUT - PUT is used to send data to a server to create/update a resource.
+        // HEAD - HEAD is almost identical to GET, but without the response body.
+        // DELETE - The DELETE method deletes the specified resource.
+        // PATCH - The PATCH method is used to apply partial modifications to a resource.
+        // OPTIONS - The OPTIONS method describes the communication options for the target resource.
+        // CONNECT - The CONNECT method is used to start a two-way communications (a tunnel) with the requested resource.
+        // TRACE - The TRACE method is used to perform a message loop-back test that tests the path for the target resource (useful for debugging purposes).
+
+        // The two most common HTTP methods are: GET and POST.
+
+
+        // const xhttp = new XMLHttpRequest()
+        // xhttp.onload = function () {
+        //     console.log(this)
+        // }
+        // xhttp.open("GET", "https://restcountries.com/v3.1/name/india")
+        // xhttp.send();
+
+
+        // 1 object(XMLHttpRequest) bnana h open function me method likna h mathod ka type "GET", or api call kr lani h
+        // get keya h
+        // post ke liy post api chay post api free me nhi melti h post api bnani padti h
+
+        // const xhttp = new XMLHttpRequest()
+        // xhttp.onload = function () {
+        //     // console.log(this.response) // data mil jayga
+        //     console.log(this.responseText) // data mil jayga
+        // }
+        // xhttp.open("GET", "https://restcountries.com/v3.1/name/india")
+        // xhttp.send();
+
+
+        // const xhttp = new XMLHttpRequest()
+        // xhttp.onload = function () {
+        //     console.log(JSON.parse(this.responseText)) // data mil jayga
+        // }
+        // xhttp.open("GET", "https://restcountries.com/v3.1/name/india")
+        // xhttp.send();
+
+        // ____________________________Promiss__1 Object hota h_____________________________________
+
+        // promiss ka b object bnta h
+
+        // promiss ko call krne ke liy .then lgana pdta h
+
+        // const prom = new Promise((resolve, reject) =>{
+        // })
+
+        // __________________________________________________________________________
+
+
+        // function test(fun1, fun2) {
+        //     let i = 101
+        //     if (i > 10) {
+        //         fun1()
+        //     } else {
+        //         fun2()
+        //     }
+        // }
+        // test(() => {
+        //     console.log('rigth')
+        // }, () => {
+        //     console.log('wrong')
+        // })
+
+
+        // function test(fun1, fun2) {
+        //     const num = +prompt('what is your number')
+        //     if (num > 10) {
+        //         fun1()
+        //     } else {
+        //         fun2()
+        //     }
+        // }
+        // test(() => {
+        //     console.log('rigth')
+        // }, () => {
+        //     console.log('wrong')
+        // })
+
+
+        // const prom = new Promise((fun1, fun2) => {      // jase uper vala code kam kr rha h vase ye kam kr rha h pr kuch difference he
+        //     const num = +prompt('what is your number')
+        //     if (num >= 10) {
+        //         fun1()
+        //     } else {
+        //         fun2()
+        //     }
+        // })
+        // prom.then(() => {   // promiss ko call krne ke liy then ka use krte h ye fun1 or fun2 ko call krega
+        //     console.log('right')
+        // }, () => {
+        //     console.log('wrong')
+        // })
+
+
+        // const prom = new Promise((fun1, fun2) => { // 1 number pe yani ke fun1 ye success vala function h or 2 number fun2 ye error vala function h
+        //     const num = +prompt('what is your number')
+        //     if (num >= 10) {
+        //         fun2()
+        //     } else {
+        //         fun1() // right ke case me fun2 call hoga or wrong ke case me fun1 call hoga
+        //     }
+        // })
+        // prom
+        //     .then(() => {
+        //         console.log('right') // success function
+        //     },
+        //         () => {
+        //             console.log("wrong") // error function
+        //         })
+
+        // .catch(() => {
+        //     console.log('wrong')
+        // })
+
+
+        // const prom = new Promise((resolve, reject) => {
+        //     resolve()
+        // })
+        // prom.then(() => {
+        //     console.log('rigth')
+        // }, () => {
+        //     console.log('wrong') // ye kbi b call nhi hoga kunki success(resolve) vala hi call kiya hmesha to ye call nhi hoga
+        // })
+
+
+        // const prom = new Promise((resolve, reject) => {
+        //     reject()
+        // })
+        // prom.then(() => {
+        //     console.log('rigth')
+        // }, () => {
+        //     console.log('wrong')  /// reject ko call kiya h to ye wrong vala call hoga rigth vala call nhi hoga kbi b
+        // })
+
+
+
+        // const prom = new Promise((resolve, reject) => {
+        //     reject()
+        // })
+        // prom.then(() => {
+        //     console.log('rigth')
+        // }, () => {
+        //     console.log('wrong') // agr sirf reject hi krna h to right  fun ka koy sense nhi bnta
+        // })
+
+
+        /// null, undefined de dange to b chl jayga
+        // const prom = new Promise((resolve, reject) => {
+        //     reject()
+        // })
+        // prom.then(null, () => {
+        //     console.log('wrong')
+        // }) // right ko call nhi kiya to null de diya
+
+
+        // const response = fetch("https://restcountries.com/v3.1/name/india")
+        // console.log(response) // pending me aa rha h
+
+
+        // Promise ke 3 values
+        // 1 pending // agr promiss(api call) abi kam kr rha h tb to pending state m rehga
+        // 2 fulfilled // agr promiss ka kam khtm ho gya successfully to fulfilled
+        // 3 rejected   // ohterwise rejected
+
+
+        // const prom = new Promise((success, failure) => {
+        //     const num = +prompt('what is your number')
+        //     if (num >= 10) {
+        //         success()
+        //     } else {
+        //         failure()
+        //     }
+        // })
+        // console.log(prom) // 10 se jayda dane se fulfilled aa raha h
+        // prom.then(() => {
+        //     console.log('right')
+        // }, () => {
+        //     console.log('wrong') // 10 se kum dane se rejected aa raha h
+        // })
+
+        // const prom = new Promise((success, failure) => { })
+        // console.log(prom) // pending //na success ho rha h na hi failure ho raha h promiss object ke ander koy b yani ki donu function call nhi kiya to ye hmesha pending state me rhega hmesa
+        // prom.then(() => {
+        //     console.log('right')
+        // }, () => {
+        //     console.log('wrong')
+        // })
+
+
+        // const prom = new Promise((success, failure) => {
+        //     failure() // failure me call krne se promiss rejected state me chla gya
+        // })
+        // console.log(prom)
+        // prom.then(() => {
+        //     console.log('right')
+        // }, () => {
+        //     console.log('wrong')
+        // })
+
+
+        // const prom = new Promise((success, failure) => {
+        //     success() // success me call krne se promiss fulfilled state me chla gya
+        // })
+        // console.log(prom)
+        // prom.then(() => {
+        //     console.log('right')
+        // }, () => {
+        //     console.log('wrong')
+        // })
+
+
+
+        // promiss ke ander khi pr b error aa gy to promiss object automaticly usa rejected state me kr dega
+        // const prom = new Promise((success, failure) => {
+        //     let i = 10
+        //     i.toUpperCase() // es me error aa gya kunki number pe toUpperCase nhi kr skte h to eske vjhe se promiss rejected ho gya
+        //     success()
+        // })
+        // console.log(prom)
+        // prom.then(() => {
+        //     console.log('right')
+        // }, () => {
+        //     console.log('wrong') // error vala call huva h success ko call kiya h fir b
+        // }) //failure ko call nhi kiya fir b ye call ho rha h automatic kunki promiss ke ander error aa gy chuki h to promiss ne automaticly failure vale function ko call kr diya h
+
+
+
+        ///  fetch ka use api call kren ke liy keyga jata h get vgera kuch nhi lika to eska matlb ki get nhi lik rhe h ot ye api call ho rhi h esak matbl bydefoult ye GET api hi h ye fetch function get api ko hi call kr raha h agr kuch nhi lik rhe h to
+
+
+
+        // const response = fetch("https://restcountries.com/v3.1/name/india")
+        // console.log(response) //api call kri to promiss ne kaha ki api call kr rha h api ka response 1,4,6,9 second me aa skta h muje nhi pta tb tk me Pending state me hu
+
+        // const response = fetch("https://restcountries.com/v3.1/name/india")
+        // response.then(() => {
+        //     console.log("Success") // success // agr api successfully call ho gy tb to ye success vala call hoga
+        // }, () => {
+        //     console.log('Error') // otherwise error vala call hoga
+        // })
+
+        // const response = fetch("https://restcountriesaaaaaa.com/v3.1/name/india")
+        // response.then(() => {
+        //     console.log("Success")
+        // }, () => {
+        //     console.log('Error') // error vala call hoga  kunki url glt h
+        // })
+        // // jo fetch function se promiss return ho rha h us promiss ka state agr fulfilled hota h aage chl ke tb to ye success vala call ho jayga automatic or agr us promiss me error aa jati h to error vala call hoga
+
+
+        // const response = fetch("https://restcountries.com/v3.1/name/india")
+        // response.then(() => {
+        //     // console.log(this) // this ke ander data nhi h to esko deta diya jayga
+        // }, () => {
+        //     console.log('Error')
+        // })
+
+
+        // const response = fetch("https://restcountries.com/v3.1/name/india") // api ka response ase lange
+        // response.then((res) => {
+        //     // fetch function jub-jub es success vale functoin ko call krega to automatic ye jo response  aa rha h us response ko pass kr dega success vale callback function ko
+        //     console.log(res) // india vali api ka response mil jayga data nhi dik raha h india ka
+        // }, () => {
+        //     console.log('Error')
+        // })
+
+
+        // const response = fetch("https://restcountries.com/v3.1/name/india") // api ka response ase lange
+        // response.then((res) => {
+        //     console.log(res.json()) // api call ho gy to ye vala call ho gya lakin deta lane ke json function call kran pdta h response pe to call kiya json ne promiss diya to us case me  .then lgana hoga
+        // }, () => {
+        //     console.log('Error')
+        // })
+
+
+        // const response = fetch("https://restcountries.com/v3.1/name/india") // api ka response ase lange
+        // response.then((res) => {
+        //     res.json().then((data) => {
+        //         console.log(data)
+        //     })
+        // }, () => {
+        //     console.log('Error')
+        // }) // ye code asynchronously run ho rha h
+        // console.log("Hello") // pehle print hoga
+
+
+        // console.log("Hello") // first
+        // setTimeout(() => {
+        //     console.log("Hello 2") // laset
+        // }, 0)
+        // const prom = new Promise((resolve, reject) => {
+        //     resolve()
+        // })
+        // prom.then(() => {
+        //     console.log(true, "promiss") // second
+        // }, () => {
+        //     console.log(false)
+        // })
+
+        // Promise setTimeout vgera se pehl chlega
+        // async me sbse pehle promiss ko priority milti h
+
+
+        // fetch vs Ajax
+        // Simplicity and Clarity
+        // Promise Based
+        // Built in JSON parsing
+        // Support for other types
+        // Standardization
+        // Simplicity in sending data
+        // Global Fetch support in all modern browsers
+
+        // fetch use krte h ajax ke bjya to ye bhut simple h fetch liko api liko kam khtm usme new object bnao send kro oper kro onload event ye sub krne ke jrurat nhi h fetch me
+        // fetch function ye promiss Based he matlb ke hme promiss return krta h
+        // ajax hme promiss return nhi krta h
+        // data print krte vkt fetch ke ander json.pars krne ke jrurat nhi h
+        // ajax ke ander json.pars krna pdta h ajxa string me data deta h
+        // fetch inbild sport h to hme json me nhi data milta h
+        // ajax ko do hi chijo ke liy use krte h ya to xml ke liy ya json ke liy
+        // lakin fetch ke ander sari deta type matlbe img,audio,video, text, json,xml ye sare deta type ke liy sport krega ye
+        // fetch ke ander data send krna aasan h ajax se
+        // fetch ka use krne ka subse big main resion h promiss fetch promiss return krta h
+
+    </script>
+</body>
+
+</html>
