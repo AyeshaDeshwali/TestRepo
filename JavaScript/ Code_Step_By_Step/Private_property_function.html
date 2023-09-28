@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privates</title>
+</head>
+
+<body>
+    <button onclick="getDatails()">Get Details</button>
+    <script>
+
+        // class BankAccount {
+        //     name = "Ayesha";
+        //     pinCode = 341510;
+        //     getName() {
+        //         return this.name
+        //     }
+        // }
+        // const Details = new BankAccount()
+        // console.log(Details.getName())
+        // console.log(Details.name)
+
+
+        // class BankAccount {
+        //     name = "Ayesha";
+        //     #pinCode = 341510; // baar access nhi kr skte h private h
+        //     getName() {
+        //         return this.name
+        //     }
+        // }
+        // const Details = new BankAccount()
+        // console.log(Details.getName())
+        // console.log(Details.pinCode)
+        // console.log(Details.#pinCode)
+
+        // class BankAccount {
+        //     name = "Ayesha";
+        //     pinCode = 341510;
+        //     getName() {
+        //         return this.name
+        //     }
+        //     getPin() {
+        //         return this.pinCode
+        //     }
+        // }
+        // const Details = new BankAccount()
+        // console.log(Details.getName())
+        // console.log(Details.getPin())
+
+
+
+        class BankAccount {
+            name = "Ayesha";
+            #pinCode = 341510;
+            getName() {
+                return this.name
+            }
+            #getIfcsCode() {
+                return 894972
+            }
+            getDatails() {
+                return {
+                    pinCode: this.#pinCode,
+                    name: this.name,
+                    ifcs: this.#getIfcsCode()
+                }
+            }      // jo private he usko class ke ander use kr skte h but baar nhi
+        }
+        function getDatails() {
+            const Details = new BankAccount()
+            console.log(Details.getDatails())
+        }
+    </script>
+</body>
+
+</html>

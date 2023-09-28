@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Prototype</title>
+</head>
+
+<body>
+    <script>
+        let obj1 = {
+            name: 'ayesha'
+        }
+        let obj2 = {
+            city: 'merta',
+            __proto__: obj1
+        }
+        console.log(obj2)
+
+        // _____________________________________________________________________________________
+        // let obj1 = {
+        //     name: 'ayesBha',
+        //     getName: function () {
+        //         return this.name
+        //     }
+        // }
+        // let obj2 = {
+        //     city: 'merta',
+        //     __proto__: obj1
+        // }
+        // console.log(obj2)
+        // // console.log(obj2.getName())
+
+
+        // _______________________________________________________________________________
+        // let obj1 = {
+        //     name: 'ayesha',
+        //     getName: function () {
+        //         return this.name
+        //     },
+        //     getCity: function () {
+        //         return this.city
+        //     }
+        // }
+        // let obj2 = {
+        //     city: 'merta',
+        //     __proto__: obj1
+        // }
+        // console.log(obj2)
+        // console.log(obj2.getCity())
+
+
+
+
+        // ___________________________________________________________________________________
+        // let obj1 = {
+        //     name: 'ayesha',
+        //     getName: function () {
+        //         return this.name
+        //     },
+        //     getCity: function () {
+        //         return this.city
+        //     }
+        // }
+        // let obj2 = {
+        //     city: 'merta',
+        //     name: 'husain',
+        //     __proto__: obj1
+        // }
+        // console.log(obj2)
+        // console.log(obj2.getCity())
+        // let obj3 = {
+        //     roll: 20,
+        //     __proto__: obj2
+        // }
+        // console.log(obj3.getName())
+
+
+        // __________________________________________________________________________
+        // let arr = ['saddam husain']
+        // Array.prototype.show = function () {
+        //     return this
+        // }
+        // const live = ['karkwal']
+        // console.log(live.show())
+
+        // ____________________________________________________________________________________
+
+        // let arr = ['saddam husain']
+        // Array.prototype.show = function () {
+        //     return this
+        // }
+        // const live = ['karkwal']
+        // console.log(live.show())
+        // Array.prototype.convert = function () {
+        //     let obj = {}
+        //     this.forEach(elm => {
+        //         obj[elm] = elm
+        //     })
+        //     return obj
+        // }
+        // console.log(live.convert())
+
+        // __________________________________________________________________________
+        // let arr = ['saddam husain']
+        // Array.prototype.show = function () {
+        //     return this
+        // }
+        // const live = ['karkwal']
+        // console.log(live.show())
+        // Array.prototype.convert = function () {
+        //     let obj = {}
+        //     this.forEach(elm => {
+        //         obj[elm] = elm
+        //     })
+        //     return obj
+        // }
+        // console.log(live.convert())
+        // function myPrototype(name) {
+        //     this.name = name
+        // }
+        // const myProto = new myPrototype('aashiya')
+        // console.log(myProto)
+
+        // let obj1 = {
+        //     name: 'ayesha',
+        //     getName: function () {
+        //         return this.name
+        //     },
+        //     getCity: function () {
+        //         return this.city
+        //     }
+        // }
+        // let arr = ['saddam husain']
+        // Array.prototype.show = function () {
+        //     return this
+        // }
+        // const live = ['jaipur']
+        // console.log(live.show())
+        // Array.prototype.convert = function () {
+        //     let obj = {}
+        //     this.forEach(elm => {
+        //         obj[elm] = elm
+        //     })
+        //     return obj
+        // }
+        // console.log(live.convert())
+
+        // function myPrototype(name, city) {
+        //     this.name = name,
+        //         this.city = city
+        // }
+
+        // myPrototype.prototype = obj1
+        // const myProto = new myPrototype('aashiya', 'jaipur')
+        // console.log(myProto.getName());
+        // console.log(myProto.getCity())
+    </script>
+</body>
+
+</html>
