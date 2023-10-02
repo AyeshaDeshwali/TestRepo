@@ -106,6 +106,316 @@
         //         console.log("Thank your for using our application");
         //     }
         //     console.log("Hello");
+
+        // _______________________________________________________________________________
+
+        // await ko async ke sath hi use krna hota h
+
+
+        // async function test() {
+        //     const prom = fetch('https://restcountries.com/v3.1/name/japan')
+        //     return prom
+        // }
+
+        // const ans = test()
+        // ans.then((value) => {
+        //     console.log(value)
+        // }, (error) => {
+        //     console.log(error)
+        // })
+
+
+
+        // async function test() {
+        //     const india = await fetch('https://restcountries.com/v3.1/name/india')
+        //     const japan = await fetch('https://restcountries.com/v3.1/name/japan')
+        //     const china = await fetch('https://restcountries.com/v3.1/name/china')
+        //     return [india, japan, china]
+        // }
+        // console.time('time')
+        // const ans = test()
+        // console.log(ans)
+        // ans.then((value) => {
+        //     console.log(ans)
+        //     console.log(value)
+        //     console.timeEnd('time')
+
+        // }, (error) => {
+        //     console.log(error)
+        // })
+
+
+        // ye kam kren ke 2 treeke h ya to await  ya fir .then lga date
+        // fetch ek promiss return krta h us promiss ko lane ke liy .then nhi lga ke await lga diya h await lgane pe jo b success vale callback me jo kam hona chay tha wo await se automatic ho gya eske
+
+        // async function test() {
+        //     const india = await fetch('https://restcountries.com/v3.1/name/india')
+        //     return india
+        // }
+        // const call = test()
+        // call.then((value) => {
+        //     console.log(value)
+        // }, (error) => {
+        //     console.log(error)
+        // })
+
+        // async function test() {
+        //     const india = fetch('https://restcountries.com/v3.1/name/india').then((response) => {
+        //         console.log(response)
+        //     })
+        // }
+
+        // async function test() {
+        //     const india = fetch('https://restcountries.com/v3.1/name/india')
+        //     return india
+        // }
+
+
+        // async function test() {
+        //     const india = await fetch('https://restcountries.com/v3.1/name/india')
+        //     const ans = india.json() // .json b promiss return krta h es me se data chay to fir se eske aage await lgana hoga
+        //     return ans
+        // }
+        // const call = test()
+        // call.then((value) => {
+        //     console.log(value)
+        // }, (error) => {
+        //     console.log(error)
+        // })
+
+
+        // await ek to us particular line pe wait krta h aage ki chije nhi chlne deta or dusri chij ki await promiss ko apne aap kudh fullfild kr deta h success calaback , then lgana ki jrurt nhi h ye kudh kr dega
+        // async function test() {
+        //     const india = await fetch('https://restcountries.com/v3.1/name/india')
+        //     const indiaData = await india.json()
+        //     return indiaData
+        // }
+        // const call = test()
+        // call.then((value) => {
+        //     console.log(value)
+        // }, (error) => {
+        //     console.log(error)
+        // })
+
+
+        // async function test() {
+        //     const india = await fetch('https://restcountries.com/v3.1/name/india')
+        //     const japan = await fetch('https://restcountries.com/v3.1/name/japan')
+        //     const china = await fetch('https://restcountries.com/v3.1/name/china')
+        //     const indiaData = await india.json()
+        //     return indiaData
+        // }
+        // const call = test()
+        // call.then((value) => {
+        //     console.log(value)
+        // }, (error) => {
+        //     console.log(error)
+        // })
+
+        // agr ase 3 api call kri h or sub ke aage await lga diya h eska matlb ki  ye ek sath chl skte thi lakin ab ek sath na chl ke ek ke baad ek, ek ke baad ek chlegi esko jaha jrura hogi whi use krenge hr jghe use nhi krnge
+
+
+        // ______________________try__catch___________________________
+
+        // agr error aaygi to ye catch block chlega or error nhi aayi to catch block nhi chlega
+
+        // agr hme lgta h ki hmare code me error aa skta h to us particular code ko try catch ke ander likh do
+
+
+        // agr hmare code me error aa rhi h us error ko hme hendle krna h or hm chate h ki baaki ka code jo chl rha h wo chlta rhe baki ka code na ruke to hm usko try catch ke ander likh skte h
+
+        // let i = 10
+        // console.log(i.toLowerCase()) // error // kunki number pe nhi chlega ye string pe chlega string ka funcion h esliy
+
+
+        // let i = 10
+        // try {
+        //     console.log(i.toLowerCase()) // eske ander error aa skte h to us error ko catch krna pdega
+        // } catch (error) {
+        //     console.log(error) // error catch ke ander mil jaygi
+        // }
+
+
+        // let i = 'Mo. Husain'
+        // try {
+        //     console.log(i.toLowerCase())
+        // } catch (error) {
+        //     console.log(error)
+        // }
+
+
+        // let i = "Husain";
+        // try {
+        //     console.log(i.toLowerCase())
+        // } catch (error) {
+        //     console.log(error)
+        // }
+        // console.log("Hello")
+
+
+        // let i = 10;
+        // try {
+        //     console.log(i.toLowerCase())
+        // } catch (error) {
+        //     console.log(error) // yaha to error h pr fir b hello print ho jayga
+        // }
+        // console.log("Hello") // hello es liy chlega kunki jo tyr block me jo error aayi h wo catch block ne catch kr li or yaha pr chije sortout ho gy aage ka code as it is(jesa h vesa h) chl jayga
+
+        // let i = 10;
+        // console.log(i.toLowerCase())
+        // console.log("Hello") // ab hello print nhi hoga
+
+
+        // let i = 10;
+        // try {
+        //     console.log(i.toLowerCase())
+        // } catch (error) {
+        //     // console.log("Error in converting text to lowerCase" + i) // error aayi but dikh nhi rhi h just message dikaya h
+        //     console.error("Error in converting text to lowerCase" + i)
+        // }
+        // console.log("Hello")
+
+
+        // ek finally hota h jo catch ke baad lik ste h
+
+        // let i = 10;
+        // try {
+        //     console.log(i.toLowerCase())
+        // } catch (error) {
+        //     console.error("Error in converting text to lowerCase" + i)
+        // } finally {
+        //     console.log('finally block is working')
+        // }
+        // console.log("Hello")
+
+
+        // let i = "10"; // ab error nhi aaygi error nhi aayi to catch vala to nhi chlega but finally abhi b chlega
+        // try {
+        //     console.log(i.toLowerCase())
+        // } catch (error) {
+        //     console.error("Error in converting text to lowerCase" + i)
+        // } finally {
+        //     console.log('finally block is working')
+        // }
+        // console.log("Hello")
+
+
+        // jub b try catch ke sath finally likenge to chay error aaye ya na aaye finally block chlega hee chlega
+
+        // finally ko waha pr use krte h jaha pr error aaye chay nhi aaye hme ye kam krna hi krna h to us case me finally ko use kr skte h
+
+
+
+        // let i = 10; // error aane pr b message dikega or error nhi aane pr b message nhi dikega
+        // try {
+        //     console.log(i.toLowerCase())
+        // } catch (error) {
+        //     console.error("Error in converting text to lowerCase" + i)
+        // } finally {
+        //     alert('Thank your for using our application') /// error aayga fir b message dikega
+        // }
+        // console.log("Hello")
+
+
+
+        // tyr - eske ander wo code likte h jisme error aa skte h
+        // catch -  eske ander jo error aayi h usko print krvate h ya jo b kam krna h error aane ke case me wo code yaha likh dange
+        // finally - error aaye ya na aaye eske ander vala code chlega hi chlega esko error hendling ke liy use krte h
+
+        // jaburdsti error dalne ke liy
+
+
+        // let i = ' ayesha'
+        // try {
+        //     console.log(i.toLowerCase())
+        //     throw new Error()
+        // } catch (error) {
+        //     console.error("Error in converting text to lowerCase" + i)
+        // } finally {
+        //     console.log('Thank your for using our application')
+        // }
+        // console.log("Hello")
+
+
+        // let i = ' ayesha'
+        // try {
+        //     console.log(i.toLowerCase())
+        //     throw new Error("Custom Error for training")
+        // } catch (error) {
+        //     console.log(error)
+        //     console.error("Error in converting text to lowerCase" + i) // error nhi h fir b error dikegi
+        // } finally {
+        //     console.log('Thank your for using our application')
+        // }
+        // console.log("Hello")
+
+
+
+
+        // let i = ' ayesha'
+        // try {
+        //     console.log(i.toLowerCase())
+        //     new Error("Custom Error for training") // agr throw nhi liknge to code as it is print hoga kunki new Error() likha h error ka object bnaya h error ka object bnaynge to kuch nhi hoga koy error throw nhi hogi agr error ko throw krna chate h to throw likna pdega
+        // } catch (error) {
+        //     console.log(error)
+        //     console.error("Error in converting text to lowerCase" + i)
+        // } finally {
+        //     console.log('Thank your for using our application')
+        // }
+        // console.log("Hello")
+
+
+        // eska ye matlb nhi h ki try ke ander 10 lines ka code likha h or phle line pr error aagy to baki ki 9 line b chlegi wo nhi hoga
+
+
+        // let i = 10
+        // try {
+        //     console.log(i.toLowerCase())
+        //     console.log("hello 1")
+        //     console.log("hello 2")
+        //     console.log("hello 3")
+        //     console.log("hello 4") // sub print honge agr error nhi hoy to
+        //     throw new Error("Custom Error for training")
+        // } catch (error) {
+        //     console.log(error)
+        //     console.error("Error in converting text to lowerCase" + i)
+        // } finally {
+        //     console.log('Thank your for using our application')
+        // }
+        // console.log("Hello")
+
+        let i = 10
+        try {
+            console.log("hello 1")
+            console.log("hello 2")
+            console.log("hello 3")
+            console.log("hello 4")
+            console.log(i.toLowerCase()) // error last me h to uper vale sub chlenge
+            throw new Error("Custom Error for training")
+        } catch (error) {
+            console.log(error)
+            console.error("Error in converting text to lowerCase" + i)
+        } finally {
+            console.log('Thank your for using our application')
+        }
+        console.log("Hello")
+
+
+        // let i = 10
+        // try {
+        //     console.log("hello 1")
+        //     console.log("hello 2")
+        //     console.log(i.toLowerCase())
+        //     console.log("hello 3")
+        //     console.log("hello 4") // 3 or 4 nhi chlega kunki uper error h
+        //     throw new Error("Custom Error for training")
+        // } catch (error) {
+        //     console.log(error)
+        //     console.error("Error in converting text to lowerCase" + i)
+        // } finally {
+        //     console.log('Thank your for using our application')
+        // }
+        // console.log("Hello")
     </script>
 </body>
 
