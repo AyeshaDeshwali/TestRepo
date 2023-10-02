@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // const promise = fetch("https://restcountries.com/v3.1/name/india");
+        // promise
+        //     .then((response) => {
+        //         console.log("Received api response");
+        //         return response.json();
+        //     })
+        //     .then((data) => {
+        //         console.log("Received api data");
+        //         console.log(data);
+        //         return new Promise((resolve) => {
+        //             resolve(10);
+        //         });
+        //     })
+        //     .then((data) => {
+        //         console.log(data);
+        //     })
+        //     .catch((error) => {
+        //         console.log("Got error", error);
+        //     });
+
+
+        // const promise = Promise.resolve(100);
+        // promise.then((data) => {
+        //     console.log(data);
+        // });
+
+        // const errorPromise = Promise.reject(100);
+        // errorPromise.then(null, (data) => {
+        //     console.log(data);
+        // });
+
+
+
+        // console.log("A");
+        // setTimeout(() => {
+        //     console.log("B");
+        // }, 0);
+        // const promise = Promise.resolve("C");
+        // promise.then((data) => {
+        //     console.log(data);
+        // });
+        // console.log("D");
+        // setTimeout(() => {
+        //     console.log("E");
+        // }, 2000);
+        // Promise.resolve("F").then((data) => {
+        //     console.log(data);
+        // });
+        // setTimeout(() => {
+        //     console.log("G");
+        // }, 1000);
+
+
+        // async function test() {
+        //     await fetch("https://restcountries.com/v3.1/name/india");
+        //     await fetch("https://restcountries.com/v3.1/name/china");
+        //     await fetch("https://restcountries.com/v3.1/name/japan");
+        // }
+        // test();
+
+        // ____________________________my practice _________________________________________________________
+
+        // Chaining Promises
+
+        // const prom = fetch("https://restcountries.com/v3.1/name/india")
+        // prom.then((responce) => {
+        //     console.log(responce.json()) // json se ek or promiss milega jisme deta milega
+        // })
+
+        // const prom = fetch("https://restcountries.com/v3.1/name/india")
+        // prom.then((responce) => { // uper ke thre yhi pr use krne ke bjay return kr diya 
+        //     return responce.json() // return kr diya get krne ke liy ek aage or then lgana hoga or agr es then vale se sara kam successfully ho gya to niche then vala ka success vala chl jayga     
+        // }).then((data) => { 
+        //     console.log(data)
+        // })
+
+
+        const prom = fetch("https://restcountries.com/v3.1/name/india")
+        prom.then((response) => {
+            console.log('received api response')
+            return response.json()
+        }).then((data) => {
+            console.log('received api data')
+            console.log(data)
+        })
+    </script>
+</body>
+
+</html>
