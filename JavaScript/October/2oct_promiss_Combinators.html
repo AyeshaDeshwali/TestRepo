@@ -87,14 +87,160 @@
         // })
 
 
-        const prom = fetch("https://restcountries.com/v3.1/name/india")
-        prom.then((response) => {
-            console.log('received api response')
-            return response.json()
-        }).then((data) => {
-            console.log('received api data')
-            console.log(data)
-        })
+        // const prom = fetch("https://restcountries.com/v3.1/name/india")
+        // prom.then((response) => {
+        //     console.log('received api response')
+        //     return response.json()
+        // }).then((data) => {
+        //     console.log('received api data')
+        //     console.log(data)
+        // }, (error) => {
+        //     console.log(error)
+        // })
+
+
+        // const prom = fetch("https://restcountries.com/v3.1/name/india")
+        // prom.then((response) => { // es then ne error throw ki
+        //     console.log('received api response')
+        //     // return response.json()
+        //     throw new Error("my error") // data return krne ke bjay error throw kr di
+        // }).then((data) => { // to ye vala then us error ko hendle krega eske success vale m nhi jake error vale me jayga
+        //     console.log('received api data')
+        //     console.log(data)
+        // }, (error) => { // 
+        //     console.log(error)
+        // })
+
+
+        // const prom = fetch("https://restcountries.com/v3.1/name/india")
+        // prom.then((response) => {
+        //     console.log('received api response')
+        //     return response.json()
+        // }).then((data) => {
+        //     console.log('received api data')
+        //     console.log(data)
+        //     throw new Error("my error") // Uncaught aayga yani ke es error khi pr b handle nhi keya 
+        // }, (error) => {
+        //     console.log(error)
+        // })
+
+
+        // (error) => {
+        //     console.log(error)
+        // }) // then then ye use kiya h to sub me ye error callback lgane ke jarurt nhi h last me catch lga do
+
+
+        // const prom = fetch("https://restcountries.com/v3.1/name/india")
+        // prom.then((response) => {
+        //     console.log('received api response')
+        //     return response.json()
+        // }).then((data) => {
+        //     console.log('received api data')
+        //     console.log(data)
+        // }).catch((error) => { // sare then jaha pr khtm ho rhe h waha pr lga do catch or eske ander ek callback hoga error vala esme success vala nhi hota h 
+        //     console.log("Got Error" + error)
+        // })// donu then me khi pr b error aay to y catch block hi chlega
+
+
+
+        // const prom = fetch("https://restcountries.com/v3.1/name/india")
+        // prom.then((response) => {
+        //     console.log('received api response')
+        //     return response.json()
+        // }).then((data) => {
+        //     console.log('received api data')
+        //     console.log(data)
+        //     return new Promise((resolve) => {
+        //         console.log(10)
+        //     })
+        // })
+        //     .then((data) => {
+        //         console.log(data)
+        //     })
+        //     .catch((error) => {
+        //         console.log("Got Error " + error)
+        //     })
+
+
+        // const prom = fetch("https://restcountries.com/v3.1/name/india")
+        // prom.then((response) => {
+        //     throw new Error("Hello my error")
+        //     console.log('received api response')
+
+        //     return response.json()
+        // }).then((data) => {
+        //     console.log('received api data')
+        //     console.log(data)
+        //     return new Promise((resolve) => {
+        //         console.log(10)
+        //     })
+        // })
+        //     .then((data) => {
+        //         console.log(data)
+        //     })
+        //     .catch((error) => {
+        //         console.log("Got Error " + error)
+        //     })
+
+
+        // const prom = fetch("https://restcountries.com/v3.1/name/india")
+        // prom.then((response) => {
+        //     console.log('received api response')
+        //     return response.json()
+        // }).then((data) => {
+        //     throw new Error("Hello my error")
+        //     console.log('received api data')
+        //     console.log(data)
+        //     return new Promise((resolve) => {
+        //         console.log(10)
+        //     })
+        // })
+        //     .then((data) => {
+        //         throw new Error("Hello my error")
+        //         console.log(data)
+        //     })
+        //     .catch((error) => {
+        //         console.log("Got Error " + error)
+        //     })
+
+        // error khi pr b aao catch me hi melegi
+        // agr multypal promiss ke chaning kri h to last me .catch  kr dange to sari ki sari errors es .catch me catch ho jaygi
+        // hr success ke sath error callback bnane ke jarurt nhi h last vala chl jayga automaic .catch
+
+
+        // const prom = new Promise.resolve(1000)
+        // prom.then((data) => {
+        //     console.log(data)
+        // })
+
+        // const errorProm = new Promise.reject(1000)
+        // errorProm.then((data) => {
+        //     console.log(data)
+        // })
+
+
+
+        // fetch('https://restcountries.com/v3.1/name/india')
+        // fetch('https://restcountries.com/v3.1/name/japan')
+        // fetch('https://restcountries.com/v3.1/name/china')
+
+        async function test() {
+            await fetch('https://restcountries.com/v3.1/name/india')
+            await fetch('https://restcountries.com/v3.1/name/japan')
+            await fetch('https://restcountries.com/v3.1/name/china')
+        }
+
+        test()
+
+
+
+        // uper vale codes se
+        // Consuming Promises
+        // Chaining Promises
+        // Handling Rejected Promises -  ye sub cover hote h
+
+
+
     </script>
 </body>
 
