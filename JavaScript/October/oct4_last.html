@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // primitive data types and non primitive data types
+
+
+        //primitive variables ke ander deta type ke ander original value rheti h
+
+        // let i = 10;
+        // let j = i
+        // i = 20 // j ki value abi b 10 hi rhegi // 10 primitive value he
+        // console.log(i, j)
+
+
+        // let i = "Hello";
+        // let j = i
+        // i = "Hi"
+        // console.log(i, j)
+
+        // i ke ander primitive data(string number boolean) stor kiya h or uska reference kisi dusre variable me dal diya jase ke j me ab i m kuch b change krange to j m koy b reflect nhi hoga  kunki ye primitive data type h
+
+        // non primitive data types
+
+        // let i = { name: 'ayesha' };
+        // let j = i
+        // console.log(i, j) // j me i object ka reference stor hoga
+
+        // let i = { name: 'ayesha' };
+        // let j = i
+        // console.log(i, j) // agr object bnate h or us object ko as it is asgin kr date h dusre object ko jase ki kiya h matlb ke i or j donu es object refer krte h
+
+
+
+        // let i = { name: 'ayesha' };
+        // let j = i
+        // // i.name = "saddam"
+        // j.name = 'husain'
+        // console.log(i, j) // 1 me change krne se donu me change ho jata h kunki donu sem object ko point kr reh h
+
+        // Shallow copy
+
+        // let i = { name: 'ayesha' };
+        // let j = { ...i }
+        // j.name = "deshwali" // sirf j me change huaa h
+        // console.log(i, j)
+
+        // let i = { name: 'ayesha', address: { pincode: 341510 } };
+        // let j = { ...i }
+        // j.name = "deshwali"
+        // j.address.pincode = 234235 // donu me change hoga kunki address fir se ek object h shallow copy sirf jo non primitive data types h unme change krne pe donu me change nhi hoga lakin agr object ke ander object h usme change krnge to donu me reflect hoga
+        // console.log(i, j)
+
+
+        // shallow copy ye kam nhi kregi ke esme chage kru to donu me na dike uske liy deep copy krni pdte h
+
+
+        // let i = { name: 'ayesha', address: { pincode: 341510 } };
+        // let j = JSON.parse(JSON.stringify(i))
+        // j.name = "husain"
+        // j.address.pincode = 234235
+        // console.log(i, j)
+
+        // khi b kuch b change kro donu me change nho hona chay tub to deep copy krni hogi
+        // or agr primitive data type vali values h unme change krna h to donu me change nhi hona chay to shallow copy krna h
+
+        // Symbol
+
+        // let i = 10;
+        // let j = 10
+        // console.log(i === j) // true kunki 10 10 ke braber h
+
+        // let i = Symbol(10);
+        // let j = Symbol(10);
+        // console.log(i === j) // false
+        // console.log(i, j) // sem dikte h pr h nhi
+
+        // let i = Symbol('hi');
+        // let j = Symbol('hi');
+        // console.log(i === j)
+        // console.log(i, j)
+
+        // let i = Symbol(10);
+        // let j = Symbol(10);
+        // console.log(i + j) // error // Symbol pe + - jo bhi h wo nhi kr skte h
+        // console.log(i, j)
+
+
+        // 2 chij bilkul sem h pr alg alg manna chate h to us jghe pe symbol use krna hoga sem value ke sath symbol bna do
+        // symbol me kuch b le skte h string number ye sub ko alg hi manta h
+
+
+        // Literal VS Object
+        // const i = "Hello" // normal string h // Literal
+        // const j = new String("Hello") // ye object vali string h
+        // console.log(i, j)
+
+        // let i = "hello"
+        // let j = "hello"
+        // let k = "hello" // 3 hello ki memory 1 hi bnegi
+        // i j k sub usi memory ko point krenge
+
+        // const l = new String('hello')
+        // const m = new String('hello')
+        // const n = new String('hello')
+        // 3 object bnege
+
+        // phla to memory ka diffrence or jub string Literal bnate h to ek hi memory me jaynge
+        // or agr new String("hello") krke 4 bar bnaya to 4 alg alg memory me jaynge
+
+        // object memory me apni persnal memory bnayga // sub alg alg memory ko point karenge
+        // literal apni commen momory bnayga // 1 hi memory jaki 1 memory ko point krenge
+
+        // const i = "Hello"
+        // const j = new String("Hello")
+        // console.log(i === j) // false
+        // console.log(typeof i) // string
+        // console.log(typeof j) // object
+        // console.log(i == j) // true // value to sem h pr deta type sem nhi h === ye krne se false hoga
+
+        // const j = new String("Hello")
+        // const k = new String("Hello")
+        // console.log(j == k) // value b braber h or data type b braber h fir b false hi aayga // == es se b false hi aayga kunki donu object kbi b sem nhi ho skte h kunki donu ke memory alg alg h
+
+        // Literal ko hi use krna h jayda
+
+
+        //// "use strict"
+        // x = 10
+        // console.log(10) // error
+        // function test(a, a) {
+        //     console.log(a, a)
+        // }
+        // console.log(10, 20) // error // use strict ke se error aati agr nhi lgate h to nhi aaygi javascript in errors ko ignor marti h
+        // asi kafi sari errors hoti h jisko javascript ignor marti h kunki code ko strictly check nhi krta h
+        // use strict lga dena h sub se uper top pe es se code strictly check hoga errors ko ignor nhi maregi
+
+
+        let obj = {
+            name: "ayesha",
+            pincode: 341510,
+            age: 20
+        }
+        for (let key in obj) {
+            // console.log(key)
+            console.log(key + ": " + obj[key])
+        }
+
+        for in object pe kam krta h
+        for of array pe kam krta h
+    </script>
+</body>
+
+</html>
