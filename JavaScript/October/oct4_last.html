@@ -157,25 +157,58 @@
         // for of array pe kam krta h
 
 
+        // console.log(k) // ReferenceError: Cannot access 'k' before initialization
+        // console.log(a) //  ReferenceError: a is not defined
         // function test() {
         //     console.log("Hello")
         // }
         // let i = 10;
         // let j = 20
+        // let k = 30 // es k uper jtna arrea h wo temporal dead zone h to k ko uper use nhi kr skte h
 
+        // let const ko jish line pe bnate h us line se phle khi pe b use nhi kr skte h jish line pe bnaya gya h us phle ka jo b area (lines) h wo sub us variables ki temporal dead zone hota h 
         // jo b variables let ya const ka use krke bnate h unke liy ek temporal dead zone (TDZ)  hota h
-   
-       /// jo b variables let ya const ka use krke jish line pr bnaya gya h us line se phle use nho ho skta e i or j ke liy temporal dead zone (TDZ)  he i or j ke uper vali lines sub
-       // let var and const 3 ki hosting hoti h pr temporal dead zone (TDZ)  ke vjhe se use nhi kr pate 
-   
 
+        /// jo b variables let ya const ka use krke jish line pr bnaya gya h us line se phle use nho ho skta e i or j ke liy temporal dead zone (TDZ)  he i or j ke uper vali lines sub
+        // let var and const 3 ki hosting hoti h pr temporal dead zone (TDZ)  ke vjhe se use nhi kr pate 
+    
+        // temporal dead zone var ke liy nhi hota h
+        
         // control structures  
         // if else
-        // function 
+        // function
+        // arrya, object
         // loop se yhi sub control structures  hote h
 
+        //RegExp
         
-   </script>
+        // RegExp Comment - koy b chij jaha pr pattern kam aa rha h waha pe RegExp use hoti h   
+        // jase ki -
+        // valid  mobile no.
+        // valid indian mobile no.
+        // valid email id.
+        // valid aadharCard no.
+        // valid pan card no.
+
+         // ___@___.com
+         // ayesha@gmail.com
+
+        // ^ (caret कैरट)
+        
+        // ^[6-9]/d{9}$
+
+        // ^ start
+        // [6-9] - number 6,7,8,9 se start hoga
+        // /d - Digit
+        // {9} - 9 Digit
+        // $ end
+
+        //  RegExp(Regular Expression) pattern ko match karvane ke liye JavaScript mein RegExp object ka istemal hota hai.
+        //  Regular expressions ek powerful tool hote hain jo text patterns ko search, match, aur manipulate karne mein madad karte hain.
+        //  Aap RegExp ka upayog String objects ke methods jaise ki match(), test(), exec(), aur replace() ke sath kar sakte hain.
+        
+
+    </script>
 </body>
 
 </html>
