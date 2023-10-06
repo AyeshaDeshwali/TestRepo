@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- CSS (Cascading Style Sheets) mein kai tarah ki properties hoti hain, jo web pages ko design aur style karne mein
+    helpfull hoti hain.
+
+
+   1. color: Text color set karne ke liye.
+   2. font-family: Font family choose karne ke liye.
+   3. font-size: Font size set karne ke liye.
+   4. background-color: Background color set karne ke liye.
+   5. margin: Element ke bahar ki spacing set karne ke liye.
+   6. padding: Element ke andar ki spacing set karne ke liye.
+   7. border: Border style, width, aur color set karne ke liye.
+   8. text-align: Text ka alignment set karne ke liye.
+   9. width aur height: Element ki width aur height set karne ke liye.
+   10. display: Element ka display style set karne ke liye (block, inline, inline-block, etc.).
+   11. position: Element ka positioning set karne ke liye (absolute, relative, fixed, etc.).
+   12. float: Element ko left ya right align karne ke liye.
+   13. list-style: List items ke style ko set karne ke liye.
+   14. opacity: Element ki opacity (transparent hone) set karne ke liye.
+   15. z-index: Element ki stacking order (z-index) set karne ke liye.
+   16. transform: Element ko rotate, scale, translate, ya skew karne ke liye.
+   17. transition: CSS transitions ke liye animation effect set karne ke liye.
+    18. text-decoration: Text ke underline, overline, aur line-through styling ke liye.
+    19. text-transform: Text ke case ko uppercase, lowercase, aur capitalize mein change karne ke liye.
+    20. box-shadow: Box ke liye shadow effect set karne ke liye.
+    21. background-image: Background image set karne ke liye.
+    22. background-size: Background image size ko adjust karne ke liye.
+    23. background-position: Background image ka position set karne ke liye.
+    24. border-radius: Element ke borders ko rounded corners mein convert karne ke liye.
+    25. cursor: Mouse pointer ka style set karne ke liye.
+    26. line-height: Text lines ke beech ki spacing set karne ke liye.
+    27. outline: Element ke outline style, color, aur width ko set karne ke liye.
+    28. overflow: Element ke content ka overflow behavior set karne ke liye.
+    29. text-overflow: Text ke overflow hone par ellipsis (...) ka display karne ke liye.
+    30. box-sizing: Box model ko adjust karne ke liye (content-box, border-box).
+    31. visibility: Element ko visible ya hidden karne ke liye.
+    32. font-weight: Font ka boldness level set karne ke liye.
+    33. font-style: Font ka style (italic, normal, etc.) set karne ke liye.
+    34. letter-spacing: Text letters ke beech ki spacing set karne ke liye.
+    35. text-shadow: Text ke liye shadow effect set karne ke liye.
+    36. word-spacing: Words ke beech ki spacing set karne ke liye.
+    37. white-space: White space handling ko control karne ke liye (normal, nowrap, etc.).
+    38. border-radius: Element ke borders ko rounded corners mein convert karne ke liye.
+    39. box-shadow: Element ke box ke liye shadow effect set karne ke liye.
+    40. outline: Element ke outline style, color, aur width ko set karne ke liye.
+    41. overflow: Element ke content ka overflow behavior set karne ke liye.
+    42. list-style-type: List items ke markers (bullets/numbers) ki style set karne ke liye.
+    43. list-style-position: List items ke markers ki position set karne ke liye (inside/outside).
+    44. text-align-last: Last line of text ka alignment set karne ke liye.
+    45. transform-origin: Element ke transformation point (rotate/translate ke liye) ko set karne ke liye.
+    46. animation: CSS animations ke liye animation properties set karne ke liye.
+    47. transition-property: CSS transitions mein animated property ko select karne ke liye.
+    48. transition-duration: CSS transitions ki duration (samay) ko set karne ke liye.
+    49. transition-timing-function: CSS transitions ki timing function set karne ke liye.
+    50. transition-delay: CSS transitions ki delay time set karne ke liye.
+    51. border-collapse: Table ke border collapse behavior ko set karne ke liye.
+    52. caption-side: Table caption ki position set karne ke liye.
+    53. empty-cells: Table cells jo empty hain unka display behavior set karne ke liye.
+    54. background-attachment: Background image ki attachment behavior set karne ke liye (scroll, fixed, etc.).
+    55. background-repeat: Background image ki repeat behavior set karne ke liye (repeat, no-repeat, etc.).
+    56. background-origin: Background image ka origin point set karne ke liye.
+    57. background-clip: Background image ka clipping behavior set karne ke liye.
+    58. box-decoration-break: Box decoration (like border, padding, etc.) ke line-break behavior ko set karne ke liye.
+    59. outline-offset: Element ke outline ke distance ko set karne ke liye.
+    60. quotes: Quotation marks ke style ko set karne ke liye.
+    61. resize: Element ko resizable banane ke liye.
+    62. user-select: User selection behavior ko control karne ke liye (none, text, etc.).
+    63. backface-visibility: 3D transformations mein element ke backface visibility ko set karne ke liye.
+    64. perspective: 3D transformations mein perspective point ko set karne ke liye.
+    65. column-count: Multicolumn layout mein columns ki count ko set karne ke liye.
+    66. column-gap: Multicolumn layout mein columns ke beech ki spacing ko set karne ke liye.
+    67. column-rule: Multicolumn layout mein column rule (border) ki style, color, aur width ko set karne ke liye.
+    68. column-width: Multicolumn layout mein column ki width ko set karne ke liye.
+    69. word-wrap: Text words ko line breaks ke bina wrap karne ya wrap karne ke liye.
+    70. hyphens: Text mein hyphens (shorthand ke liye) ko set karne ke liye.
+    71. border-image: Border ke liye image, slice, aur scaling ko set karne ke liye.
+    72. object-fit: Images aur videos ke liye content ko fit karne ka behavior set karne ke liye.
+    73. object-position: Images aur videos ke liye content position ko set karne ke liye.
+    74. pointer-events: Element par pointer events ke behavior ko control karne ke liye.
+    75. will-change: Browser ko future mein element ke liye optimization karne ke liye hint dene ke liye.
+    76. filter: Image aur element par filters (blur, brightness, etc.) ko apply karne ke liye.
+    77. clip-path: Element ke shape aur clipping path ko define karne ke liye.
+    78. counter-reset aur counter-increment: CSS counters ko set karne ke liye.
+    79. page-break-before, page-break-after, aur page-break-inside: Page breaks ko control karne ke liye.
+    80. overflow-wrap: Text wrapping behavior ko set karne ke liye.
+
+-->
+</body>
+
+</html>
