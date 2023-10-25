@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        h1#heading {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        #container {
+            margin: 15px auto 0 auto;
+            width: 80%;
+            text-align: center;
+            background-color: rgb(23, 210, 148);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .input-div {
+            display: inline-block;
+        }
+
+        .inpt {
+            padding: 5px 10px;
+            margin: 10px;
+            font-size: 30px;
+            font-weight: bold;
+            width: 200px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        label {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="heading">Unit Converter</h1>
+    <div id="container">
+        <div class="input-div">
+            <label for="">Feet</label><br>
+            <input type="number" name="" value="1" id="feet" class="inpt">
+        </div>
+        <div class="input-div">
+            <h1>=</h1>
+        </div>
+        <div class="input-div">
+            <label for="">Inches</label><br>
+            <input type="number" name="" value="12" id="inch" class="inpt">
+        </div>
+    </div>
+    <script src="./js/Unit_Converter.js"></script>
+</body>
+
+</html>
