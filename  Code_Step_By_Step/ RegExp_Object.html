@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //  RegExp  ek object  h
+        // i(Case - Insensitive Flag): "i" flag ka istemal pattern ke sath case -insensitive matching ke liye hota hai.Yani ki, pattern ke letters ko upper -case aur lower -case dono ke taur par match karega.
+        // g(Global Flag): "g" flag ka istemal pattern ke sath global matching ke liye hota hai.Yani ki, pattern jitni baar bhi input string mein match kare, woh sabhi matches ko dhundhega.
+
+        // _____________________________exec____________________________
+
+
+        // let pattern = /[a-z]/i // only a se z tk small later honge to pattern se match hoga
+        // let pass = '12345' // a se laker z tk small charctor honge to pattern se match hoga lakin yaha pr number ko store kiya to ye number pattern se match nhi howa ho null aa rha h
+        // document.write(pattern.exec(pass)) /// yha pr return kiya gya h exec ke thru null aayga
+
+        // let pattern = /[a-z]/i
+        // let pass = 'a'
+        // document.write(pattern.exec(pass))
+
+
+        // let pattern = /[a-z]/i
+        // let pass = 'a22343' // ase pattern match ho rha h                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  '
+        //document.write(pattern.exec(pass))
+        // Yani, /[a-z]/i sab kuch ko match karega, jabki / [a - z] / sirf lowercase alphabet characters ko match karega.
+
+
+        // let pattern = /[a-z]/g
+        // let pass = 'a22343' // a se pattern match ho rha h                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  '
+        // document.writeg(pattern.exec(pass))
+
+
+        // -----------test function s pattern match hota h to true aata h otherwaise false
+
+        // let pattern = /[a-z]/g
+        // let pass = "323abcd323" // abcd ko bich m lika h fir b true aayga
+        // document.write(pattern.test(pass))
+
+        // let pattern = /[a-z]/g
+        // let pass = "213123"
+        // document.write(pattern.test(pass)) // false
+
+        // let pattern = /[a-z][0-9]/g // a se z small me or 0 se 9 tk donu me se ek ek b h to hi true aayga nhi to false aayga
+        // let pass = "21a3bc12e3"
+        // document.write(pattern.test(pass))
+
+        // let pattern = /[a-z][0-9]/g
+        // let pass = "322"
+        // document.write(pattern.test(pass)) /// false
+
+
+
+        // let pattern = /[a-z][0-9]/ig
+        // let pass = "32ads2AdfGHOEIw655" // true
+        // document.write(pattern.test(pass))  // capital dane se b true aa raha h ig se
+
+
+        // let pattern = /[a-z][0-9]/ig
+        // let pass = "32ads2AdfGHOEIw655" // true
+        // document.write(pattern.test(pass))
+
+        // __________________________match________________________
+
+
+        // let text = "javascript is a popular language I found it very simple javascript is my favorite language";
+        // let ans = text.match(/javascript/g)
+        // document.write(ans)
+
+        // let text = "JavaScript is a popular language I found it very simple javascript is my favorite language";
+        // let ans = text.match(/javascript/ig) // ig se small h ya capital h nhi deka jata print ho jata h as it is
+        // document.write(ans)
+
+        // __________________search index deta h_______________________
+
+        // let text = "JavaScript is a popular language I found it very simple javascript is my favorite language";
+        // let ans = text.search(/simple/i) // simple ketne index baad h wo index print hogi
+        // document.write(ans)
+
+
+        // ______________________replese____________________________-
+
+        // let text = "Ayesha is a very very good girl"
+        // let ans = text.replace(/[aeiou]/ig, " ")
+        // console.log(ans)
+
+
+        // let text = "Ayesha is a very very good girl"
+        // let ans = text.replace(/very/ig, "VERY")
+        // console.log(ans)
+
+        // let text = "Ayesha is a very very good girl"
+        // let ans = text.replace(/very/ig, "VERY")
+        // console.log(ans)
+
+
+        // _____________________ new RegExp______________________
+
+        // const pattern = new RegExp(''); // /(?:)/
+        // document.write(pattern)
+
+        // const pattern = new RegExp('saddam husain'); // /saddam husain/
+        // document.write(pattern)
+
+        // __________________password creat____________________
+
+        // /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/
+        // At least one upper case English letter, (?=.*?[A-Z])
+        // At least one lower case English letter, (?=.*?[a-z])
+        // At least one digit, (?=.*?[a-z])
+        // At least one special character, (?=.*?#?!@$%^&*-)
+        // Minimum eight in length.{8,} (with the anchors)
+
+
+        let pattern = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[a-z]).{8,}$/
+        let pass = "Test@1234"
+        let ans = pattern.test(pass)
+        console.log(ans)
+        if (ans === true) {
+            console.log("right password")
+        } else {
+            console.log("wrong password")
+        }
+
+    </script>
+</body>
+
+
+
+</html>
