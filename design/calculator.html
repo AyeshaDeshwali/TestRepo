@@ -1,45 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>calculator</title>
-    <link rel="stylesheet" href="calculator.css" />
-  </head>
-  <body>
+<html>
+
+<head>
+    <style>
+        .calculator {
+            width: 240px;
+            margin: 0 auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="button"] {
+            width: 40px;
+            height: 40px;
+            margin: 2px;
+            font-size: 18px;
+            background-color: #444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        input[type="button"].equals {
+            background-color: #ff6600;
+            color: white;
+            width: 100%;
+        }
+
+        input[type="button"].backspace {
+            color: white;
+            width: 50%;
+        }
+
+        input[type="button"].clear-all {
+            background-color: #ff0000;
+            width: 50%;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #display {
+            width: 100%;
+        }
+    </style>
+    </style>
+</head>
+
+<body>
     <div class="calculator">
-      <input type="text" placeholder="0" id="inputBox" />
-      <div>
-        <button class="opretor">AC</button>
-        <button class="opretor">DEL</button>
-        <button class="opretor">%</button>
-        <button class="opretor">/</button>
-      </div>
-      <div>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button class="opretor">*</button>
-      </div>
-      <div>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button class="opretor">-</button>
-      </div>
-      <div>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button class="opretor">+</button>
-      </div>
-      <div>
-        <button>00</button>
-        <button>0</button>
-        <button>.</button>
-        <button class="equalBtn">=</button>
-      </div>
+        <input type="text" id="display" readonly>
+        <input type="button" value="7" onclick="appendToDisplay('7')">
+        <input type="button" value="8" onclick="appendToDisplay('8')">
+        <input type="button" value="9" onclick="appendToDisplay('9')">
+        <input type="button" value="+" onclick="appendToDisplay('+')">
+        <input type="button" value="4" onclick="appendToDisplay('4')">
+        <input type="button" value="5" onclick="appendToDisplay('5')">
+        <input type="button" value="6" onclick="appendToDisplay('6')">
+        <input type="button" value="-" onclick="appendToDisplay('-')">
+        <input type="button" value="1" onclick="appendToDisplay('1')">
+        <input type="button" value="2" onclick="appendToDisplay('2')">
+        <input type="button" value="3" onclick="appendToDisplay('3')">
+        <input type="button" value="*" onclick="appendToDisplay('*')">
+        <input type="button" value="/" onclick="appendToDisplay('/')">
+        <input type="button" value="0" onclick="appendToDisplay('0')">
+        <input type="button" class="clear-all" value="Clear All" onclick="clearDisplay()">
+        <input type="button" class="backspace" value="Backspace" onclick="clearLastCharacter()">
+        <input type="button" class="equals" value="=" onclick="calculate()">
+
     </div>
-    <script src="calculator.js"></script>
-  </body>
+
+    <script>
+        function appendToDisplay(value) {
+            document.getElementById('display').value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+
+        function clearLastCharacter() {
+            var display = document.getElementById('display').value;
+            if (display.length > 0) {
+                display = display.slice(0, -1);
+                document.getElementById('display').value = display;
+            }
+        }
+
+        function calculate() {
+            try {
+                document.getElementById('display').value = eval(document.getElementById('display').value);
+            } catch (error) {
+                document.getElementById('display').value = 'Error';
+            }
+        }
+    </script>
+</body>
+
 </html>
+
+<!-- _________________________________________________________________-->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <input type="text" id="display" readonly>
+    <br>
+    <button onclick="appendToDisplay('1')">1</button>
+    <button onclick="appendToDisplay('2')">2</button>
+    <button onclick="appendToDisplay('3')">3</button>
+    <button onclick="appendToDisplay('+')">+</button>
+    <br>
+    <button onclick="appendToDisplay('4')">4</button>
+    <button onclick="appendToDisplay('5')">5</button>
+    <button onclick="appendToDisplay('6')">6</button>
+    <button onclick="appendToDisplay('-')">-</button>
+    <br>
+    <button onclick="appendToDisplay('7')">7</button>
+    <button onclick="appendToDisplay('8')">8</button>
+    <button onclick="appendToDisplay('9')">9</button>
+    <button onclick="appendToDisplay('*')">*</button>
+    <br>
+    <button onclick="appendToDisplay('0')">0</button>
+    <button onclick="clearDisplay()">C</button>
+    <button onclick="clearLastCharacter()">&larr;</button>
+    <button onclick="appendToDisplay('/')">/</button>
+    <br>
+    <button onclick="calculate()">=</button>
+    <script>
+        function appendToDisplay(value) {
+            document.getElementById('display').value += value;
+        }
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+        function clearLastCharacter() {
+            var display = document.getElementById('display').value;
+            if (display.length > 0) {
+                display = display.slice(0, -1);
+                document.getElementById('display').value = display;
+            }
+        }
+        function calculate() {
+            try {
+                document.getElementById('display').value = eval(document.getElementById('display').value);
+            } catch (error) {
+                document.getElementById('display').value = 'Error';
+            }
+        }
+    </script>
+</body>
+
+</html> -->

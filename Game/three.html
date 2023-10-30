@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Tic-Tac-Toe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            margin: 100px auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0;
+            color: #333;
+        }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            margin: 20px 0;
+        }
+
+        .cell {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            color: #fff;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .cell:hover {
+            background-color: #2980b9;
+        }
+
+        .message {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        #reset {
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #reset:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Tic-Tac-Toe</h1>
+        <div id="board" class="board">
+            <div class="cell" data-cell="0"></div>
+            <div class="cell" data-cell="1"></div>
+            <div class="cell" data-cell="2"></div>
+            <div class="cell" data-cell="3"></div>
+            <div class="cell" data-cell="4"></div>
+            <div class="cell" data-cell="5"></div>
+            <div class="cell" data-cell="6"></div>
+            <div class="cell" data-cell="7"></div>
+            <div class="cell" data-cell="8"></div>
+        </div>
+
+        <div class="message" id="message">Player X's turn</div>
+        <button id="reset">Reset Game</button>
+    </div>
+    <script>
+        const board = document.getElementById("board");
+        const cells = document.querySelectorAll(".cell");
+        const message = document.getElementById("message");
+        const resetButton = document.getElementById("reset");
+
+        let currentPlayer = "X";
+        let gameBoard = ["", "", "", "", "", "", "", "", ""];
+        let gameActive = true;
+
+        function checkWinner() {
+            const winPatterns = [
+                [0, 1, 2],
+                [3, 4, 5],
+                [6, 7, 8],
+                [0, 3, 6],
+                [1, 4, 7],
+                [2, 5, 8],
+                [0, 4, 8],
+                [2, 4, 6]
+            ];
+
+            for (let pattern of winPatterns) {
+                const [a, b, c] = pattern;
+                if (gameBoard[a] && gameBoard[a] === gameBoard[b] && gameBoard[a] === gameBoard[c]) {
+                    return gameBoard[a];
+                }
+            }
+
+            if (!gameBoard.includes("")) {
+                return "Tie";
+            }
+
+            return null;
+        }
+
+        function handleClick(e) {
+            const cellIndex = e.target.getAttribute("data-cell");
+
+            if (gameBoard[cellIndex] === "" && gameActive) {
+                gameBoard[cellIndex] = currentPlayer;
+                e.target.textContent = currentPlayer;
+                e.target.style.backgroundColor = "#ecf0f1";
+
+                const winner = checkWinner();
+                if (winner) {
+                    gameActive = false;
+                    if (winner === "Tie") {
+                        message.textContent = "It's a Tie!";
+                    } else {
+                        message.textContent = `Player ${winner} wins!`;
+                    }
+                } else {
+                    currentPlayer = (currentPlayer === "X") ? "O" : "X";
+                    message.textContent = `Player ${currentPlayer}'s turn`;
+                }
+            }
+        }
+
+        function resetGame() {
+            gameBoard = ["", "", "", "", "", "", "", "", ""];
+            gameActive = true;
+            currentPlayer = "X";
+            message.textContent = "Player X's turn";
+            cells.forEach(cell => {
+                cell.textContent = "";
+                cell.style.backgroundColor = "#3498db";
+            });
+        }
+
+        cells.forEach(cell => {
+            cell.addEventListener("click", handleClick);
+        });
+
+        resetButton.addEventListener("click", resetGame);
+
+
+    </script>
+</body>
+
+</html>

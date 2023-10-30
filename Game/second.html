@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            margin: 100px auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0;
+            color: #333;
+        }
+
+        .choices {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .choice {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .choice:hover {
+            background-color: #2980b9;
+        }
+
+        .result {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Rock Paper Scissors</h1>
+        <div class="choices">
+            <div class="choice" id="rock">Rock</div>
+            <div class="choice" id="paper">Paper</div>
+            <div class="choice" id="scissors">Scissors</div>
+        </div>
+        <div class="result" id="result"></div>
+    </div>
+    <script>
+        const choices = document.querySelectorAll(".choice");
+        const result = document.getElementById("result");
+
+        choices.forEach(choice => {
+            choice.addEventListener("click", playGame);
+        });
+
+        function playGame(e) {
+            const userChoice = e.target.id;
+            const computerChoice = getComputerChoice();
+            const winner = getWinner(userChoice, computerChoice);
+            displayResult(winner, computerChoice);
+        }
+
+        function getComputerChoice() {
+            const options = ["rock", "paper", "scissors"];
+            const randomIndex = Math.floor(Math.random() * 3);
+            return options[randomIndex];
+        }
+
+        function getWinner(user, computer) {
+            if (user === computer) {
+                return "It's a tie!";
+            } else if (
+                (user === "rock" && computer === "scissors") ||
+                (user === "scissors" && computer === "paper") ||
+                (user === "paper" && computer === "rock")
+            ) {
+                return "You win!";
+            } else {
+                return "Computer wins!";
+            }
+        }
+
+        function displayResult(winner, computerChoice) {
+            result.innerHTML = `Computer chose ${computerChoice}. ${winner}`;
+        }
+
+    </script>
+</body>
+
+</html>

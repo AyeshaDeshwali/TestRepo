@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #game {
+            height: 500px;
+            width: 390px;
+            border: 1px solid black;
+            margin: 1rem auto;
+            background: url(https://opengameart.org/sites/default/files/background-1_0.png);
+            background-size: contain;
+            overflow: hidden;
+        }
+
+        #bluecar {
+            height: 100px;
+            width: 130px;
+            /* background-color: black; */
+            position: relative;
+            top: 0px;
+            left: 0px;
+            text-align: center;
+            animation: move 1s linear infinite;
+
+        }
+
+        #bluecar img {
+            height: 100px;
+
+        }
+
+        @keyframes move {
+            0% {
+                top: 0px;
+            }
+
+            100% {
+                top: 501px;
+            }
+
+        }
+
+        #racecar {
+            height: 100px;
+            width: 130px;
+            /* background-color: red; */
+            position: relative;
+            top: 250px;
+            left: 130px;
+            text-align: center;
+        }
+
+        #racecar img {
+            height: 100px;
+
+        }
+
+        #result {
+            height: 200px;
+            width: 400px;
+            background-color: rgb(113, 128, 158);
+            margin: 1rem auto;
+            border-radius: 20px;
+            font-size: 30px;
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgb(3, 255, 238);
+            display: none;
+        }
+
+        #score {
+            font-size: 2.2rem;
+            color: rgb(185, 12, 12);
+            text-shadow: none;
+        }
+
+        #btn {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            border: none;
+            background-color: black;
+            color: cyan;
+            font-size: 25px;
+            margin-top: 10px;
+            cursor: pointer;
+            text-shadow: 2px 2px 4px rgb(255, 255, 255);
+
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- https://uppbeat.io/browse/sfx/gaming3 -->
+
+    <div id="game">
+        <div id="bluecar"><img src="https://github.com/Abhisek730/racing-moto-game-/blob/main/blue.png?raw=true" alt="">
+        </div>
+        <div id="racecar"><img src="https://github.com/Abhisek730/racing-moto-game-/blob/main/race.png?raw=true" alt="">
+        </div>
+    </div>
+    <div id="result">
+        <h1>Game Over</h1>
+        <p id="score"></p>
+        <button id="btn" onclick="location.reload()">Restart</button>
+    </div>
+
+    <audio id="jumpsound" src=" https://uppbeat.io/browse/sfx/gaming3"></audio>
+    <script>
+        var blueCar = document.getElementById("bluecar");
+        var raceCar = document.getElementById("racecar");
+        var result = document.getElementById("result")
+        const score = document.getElementById("score")
+        var game = document.getElementById("game");
+        var counter = 0;
+        var jumpsound = document.getElementById("jumpsound")
+        // bluecar move
+        blueCar.addEventListener("animationiteration", function () {
+            var random = ((Math.floor(Math.random() * 3)) * 130)
+            blueCar.style.left = random + "px";
+            counter++
+        })
+        //rececar move
+        window.addEventListener("keydown", function (e) {
+            if (e.keyCode == "39") {
+                var raceCarLeft = parseInt(window.getComputedStyle(raceCar).getPropertyValue("left"))
+                if (raceCarLeft < 260) { raceCar.style.left = (raceCarLeft + 130) + "px" }
+                jumpsound.play()
+            };
+            if (e.keyCode == "37") {
+                var raceCarLeft = parseInt(window.getComputedStyle(raceCar).getPropertyValue("left"))
+                if (raceCarLeft > 0) {
+                    raceCar.style.left = (raceCarLeft - 130) + "px"
+                    jumpsound.play()
+                }
+
+            }
+        })
+        //Game over
+        setInterval(function Gameover() {
+            var blueCarTop = parseInt(window.getComputedStyle(blueCar).getPropertyValue("top"))
+            var blueCarLeft = parseInt(window.getComputedStyle(blueCar).getPropertyValue("left"));
+            var raceCarLeft = parseInt(window.getComputedStyle(raceCar).getPropertyValue("left"));
+            if ((blueCarLeft === raceCarLeft) && (blueCarTop > 250) && (blueCarTop < 450)) {
+                result.style.display = "block";
+                game.style.display = "none";
+                score.innerHTML = `score: ${counter} `;
+                counter = 0;
+            }
+        }, 10)
+
+
+// __________________________________________________________________________________
+        
+
+        // const blueCar = document.getElementById("bluecar");
+        // const raceCar = document.getElementById("racecar");
+        // const result = document.getElementById("result");
+        // const score = document.getElementById("score");
+        // const game = document.getElementById("game");
+        // const jumpsound = document.getElementById("jumpsound");
+        // let counter = 0;
+        // blueCar.addEventListener("animationiteration", () => {
+        //     blueCar.style.left = `${Math.floor(Math.random() * 3) * 130}px`;
+        //     counter++;
+        // });
+        // window.addEventListener("keydown", (event) => {
+        //     const raceCarLeft = parseInt(window.getComputedStyle(raceCar).getPropertyValue("left"));
+        //     const moveAmount = 130;
+
+        //     if (event.keyCode === 39 && raceCarLeft < 260) {
+        //         raceCar.style.left = `${raceCarLeft + moveAmount}px`;
+        //         jumpsound.play();
+        //     } else if (event.keyCode === 37 && raceCarLeft > 0) {
+        //         raceCar.style.left = `${raceCarLeft - moveAmount}px`;
+        //         jumpsound.play();
+        //     }
+        // });
+        // setInterval(() => {
+        //     const blueCarTop = parseInt(window.getComputedStyle(blueCar).getPropertyValue("top"));
+        //     const blueCarLeft = parseInt(window.getComputedStyle(blueCar).getPropertyValue("left"));
+        //     const raceCarLeft = parseInt(window.getComputedStyle(raceCar).getPropertyValue("left"));
+        //     if (blueCarLeft === raceCarLeft && blueCarTop > 250 && blueCarTop < 450) {
+        //         result.style.display = "block";
+        //         game.style.display = "none";
+        //         score.innerHTML = `Score: ${counter}`;
+        //         counter = 0;
+        //     }
+        // }, 10);
+
+// ____________________________________________________________________________________
+
+        // const blueCar = document.getElementById("bluecar");
+        //     const raceCar = document.getElementById("racecar");
+        //     const result = document.getElementById("result");
+        //     const score = document.getElementById("score");
+        //     const game = document.getElementById("game");
+        //     const jumpsound = document.getElementById("jumpsound");
+        //     let counter = 0;
+
+        //     blueCar.addEventListener("animationiteration", () => {
+        //         blueCar.style.left = `${Math.floor(Math.random() * 3) * 130}px`;
+        //         counter++;
+        //     });
+
+        //     window.addEventListener("keydown", (event) => {
+        //         const raceCarLeft = parseInt(getComputedStyle(raceCar).left);
+        //         const moveAmount = 130;
+
+        //         if (event.key === "ArrowRight" && raceCarLeft < 260) {
+        //             raceCar.style.left = `${raceCarLeft + moveAmount}px`;
+        //             jumpsound.play();
+        //         } else if (event.key === "ArrowLeft" && raceCarLeft > 0) {
+        //             raceCar.style.left = `${raceCarLeft - moveAmount}px`;
+        //             jumpsound.play();
+        //         }
+        //     });
+
+        //     setInterval(() => {
+        //         const blueCarTop = parseInt(getComputedStyle(blueCar).top);
+        //         const blueCarLeft = parseInt(getComputedStyle(blueCar).left);
+        //         const raceCarLeft = parseInt(getComputedStyle(raceCar).left);
+
+        //         if (blueCarLeft === raceCarLeft && blueCarTop > 250 && blueCarTop < 450) {
+        //             result.style.display = "block";
+        //             game.style.display = "none";
+        //             score.innerHTML = `Score: ${counter}`;
+        //             counter = 0;
+        //         }
+        //     }, 10);
+
+    </script>
+</body>
+
+</html>

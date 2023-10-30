@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Number Guessing Game</title>
+</head>
+
+<body>
+    <h1>Number Guessing Game</h1>
+    <p>Guess a number between 1 and 10</p>
+    <input type="number" id="guessField">
+    <input type="submit" value="Submit guess" id="guessSubmit">
+    <p class="message"></p>
+
+    <script>
+        // Generate a random number between 1 and 100
+        const randomNumber = Math.floor(Math.random() * 10) + 1;
+
+        // Get the input element and submit button
+        const guessField = document.getElementById("guessField");
+        const guessSubmit = document.getElementById("guessSubmit");
+
+        // Get the message paragraph
+        const message = document.querySelector(".message");
+
+        // Initialize the number of attempts
+        let attempts = 0;
+
+        // Add a click event listener to the submit button
+        guessSubmit.addEventListener("click", checkGuess);
+
+        // Function to check the guessed number
+        function checkGuess() {
+            const userGuess = parseInt(guessField.value);
+            attempts++;
+
+            if (userGuess === randomNumber) {
+                message.textContent = `Congratulations! You guessed the number in ${attempts} attempts.`;
+                message.style.color = "green";
+                guessField.disabled = true;
+                guessSubmit.disabled = true;
+            } else if (userGuess < randomNumber) {
+                message.textContent = "Try a higher number.";
+                message.style.color = "red";
+            } else {
+                message.textContent = "Try a lower number.";
+                message.style.color = "red";
+            }
+        }
+    </script>
+</body>
+
+</html>
