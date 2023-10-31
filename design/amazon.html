@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .allBtn {
+            background-color: rgb(230, 229, 229);
+            border-radius: 0px;
+            margin-left: 70px;
+            color: black;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        #inputwidth {
+            width: 700px;
+            height: 50px;
+            border-radius: 0px;
+        }
+
+        .bars {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .menu {
+            border: 1px solid rgb(255, 255, 255);
+            width: 50px;
+            border-radius: 6px;
+            height: 50px;
+            padding-left: 10px;
+            padding-top: 10px;
+            padding-right: 10px;
+            font-size: 30px;
+            margin-left: 20px;
+            color: white;
+        }
+
+        #logo {
+            width: 200px;
+            height: 50px;
+            margin-left: 66px;
+        }
+
+        .drobtn {
+            color: white;
+            padding: 3px;
+            font-size: 20px;
+        }
+
+        .drobtn:hover {
+            color: white;
+        }
+
+        .cart {
+            font-size: 30px;
+            margin-left: 10px;
+            padding: 0px;
+            color: #f0ba60;
+        }
+
+        .cartname {
+            font-weight: bold;
+            font-size: 20px;
+            color: white;
+        }
+
+        .hello {
+            margin-left: 50px;
+            color: white;
+        }
+
+        .try {
+            margin-left: 60px;
+            color: white;
+
+        }
+
+        .in {
+            margin-left: 20px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .bold {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .warning {
+            width: 60px;
+        }
+
+        .search {
+            margin-left: 10px;
+        }
+
+        .republic {
+            font-size: 20px;
+
+        }
+
+        .semBold {
+            font-weight: 100;
+            font-size: 16px;
+        }
+
+        i {
+            cursor: pointer;
+        }
+
+
+        .dropdownMenu {
+            width: 50px;
+            height: 40px;
+            padding: 0px;
+            margin-left: -25px;
+        }
+
+        .location {
+            color: white;
+            margin-left: -40px;
+            margin-top: 25px;
+        }
+
+
+        .rightSelect {
+            margin-left: 10px;
+            color: white;
+            font-size: 25px;
+            letter-spacing: 1px;
+            font-weight: bold;
+            margin-top: 15px;
+            text-transform: uppercase;
+            border-bottom: 2px solid white;
+
+        }
+
+        .singlehello {
+            font-size: 18px;
+            margin-right: 10px;
+            font-weight: 100;
+            color: white;
+            text-transform: capitalize;
+            text-decoration: none;
+        }
+
+        .prante {
+            display: flex;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        .semLi {
+            list-style-type: none;
+            text-transform: capitalize;
+            color: white;
+            font-size: 19px;
+            margin-left: 30px;
+            font-weight: bold;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-dark">
+        <div class="container-fluid">
+
+            <form class="d-flex">
+                <div class="dropdown">
+                    <button class="btn dropdownMenu  dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-regular fa-bars  menu"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+                <img src="https://assets.stickpng.com/thumbs/5eb14ae274bb7d0004ae6199.png" id="logo" alt="">
+                <!-- Example single danger button -->
+                <div class="input-group">
+                    <div class="btn-group">
+                        <button type="button" class="btn allBtn  rounded-0 rounded-start dropdown-toggle"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            All
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                        </ul>
+                        <div class="input-group rounded-0">
+                            <input type="text" class="form-control" placeholder="Username" id="inputwidth"
+                                aria-label="Username" aria-describedby="basic-addon1">
+                            <span class="input-group-text bg-warning warning" id="basic-addon1">
+                                <i class="fa fa-search search"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <span class="in bold">EN <br>
+
+                <div class="dropdown">
+                    <!-- <i class='fab fa-galactic-republic republic'></i> -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_India.png/800px-Flag_of_India.png"
+                        style="width: 30px;height: 30px;" alt="">
+                    <a class="btn dropdown-toggle drobtn" href="#" role="button" id="dropdownMenuLink"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+            </span>
+            <span class="hello bold">Hello.Sgin in <br>
+
+                <div class="dropdown">
+                    <span class="semBold">Account & Lits</span>
+                    <a class="btn dropdown-toggle drobtn" href="#" role="button" id="dropdownMenuLink"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+            </span>
+
+
+            <span class="hello bold">Returns <br>
+
+                <div class="dropdown">
+                    <span class="semBold">& Orders</span>
+
+                    <a class="btn dropdown-toggle drobtn" href="#" role="button" id="dropdownMenuLink"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+            </span>
+
+
+            <span class="try bold">Try <br>
+
+                <div class="dropdown">
+                    <span class="semBold">Prime</span>
+                    <a class="btn dropdown-toggle drobtn" href="#" role="button" id="dropdownMenuLink"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+            </span>
+            <i class="fa fa-solid fa-cart-plus cart"><br><span class="cartname"
+                    style="font-family: sans-serif;">Cart</span></i>
+
+        </div>
+        <div>
+            <ul class="prante">
+                <i class="fas fa-solid fa-location-arrow fs-5 location"></i>
+
+                <span class="rightSelect">
+                    <span class="singlehello">Hello <i class="fa fa-heart"></i></span>
+                    <span>Select your address</span>
+                </span>
+                <li class="semLi">Best selliers</li>
+                <li class="semLi">gift ideas</li>
+                <li class="semLi">new release</li>
+                <li class="semLi">today's deals</li>
+                <li class="semLi">coupons</li>
+                <li class="semLi">amazonBasics</li>
+                <li class="semLi">amazon pay</li>
+                <li class="semLi">customer service</li>
+                <li class="semLi">sell</li>
+            </ul>
+        </div>
+    </nav>
+</body>
+
+</html>
