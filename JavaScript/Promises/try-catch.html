@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="demo" type="text">
+    <button type="button" onclick="myFunction()">Test Input</button>
+    <p id="p01"></p>
+    <script>
+        // try {
+        //     adddlert("Welcome guest!");
+        // }
+        // catch (err) {
+        //     console.log(err);
+        //     console.log(err.message);
+        // }
+
+
+        // function myFunction() {
+        //     const message = document.getElementById("p01");
+        //     message.innerHTML = "";
+        //     let x = document.getElementById("demo").value;
+        //     try {
+        //         if (x.trim() == "") throw "empty";
+        //         if (isNaN(x)) throw "not a number";
+        //         x = Number(x);
+        //         if (x < 5) throw "too low";
+        //         if (x > 10) throw "too high";
+        //     }
+        //     catch (err) {
+        //         message.innerHTML = "Input is " + err;
+        //     }
+        // }
+
+
+
+        // Range Error
+        // A RangeError is thrown if you use a number that is outside the range of legal values.
+        // For example: You cannot set the number of significant digits of a number to 500.
+        
+
+        // let num = 1;
+        // try {
+        //     num.toPrecision(500);
+        // }
+        // catch (err) {
+        //     console.log(err.name);
+        // }
+
+
+        // let num = 1;
+        // try {
+        //     num.toPrecision(500);
+        // }
+        // catch (err) {
+        //     console.log(err.name); document.getElementById("demo").innerHTML = err.name;
+        // }
+
+
+
+
+        // Syntax Error
+        // A SyntaxError is thrown if you try to evaluate code with a syntax error.
+        
+        // try {
+        //     eval("alert('Hello)");   // Missing '(cots) will produce an error - "Hello"
+        // }
+        // catch (err) {
+        //     console.log(err.name);
+        // }
+
+
+
+        // Reference Error
+        // A ReferenceError is thrown if you use(reference) a variable that has not been declared:
+        
+        // let x = 5;
+        // try {
+        //     x = y + 1;
+        // }
+        // catch (err) {
+        //     console.log(err.name);
+        // }
+
+
+
+        // Type Error
+        // A TypeError is thrown if you use a value that is outside the range of expected types:
+        
+        // let num = 1;
+        // try {
+        //     num.toUpperCase();   // You cannot convert a number to upper case
+        // }
+        // catch (err) {
+        //     console.log(err.name);
+        // }
+    </script>
+</body>
+
+</html>

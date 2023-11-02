@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Promise Syntax
+
+        // let myPromise = new Promise(function (myResolve, myReject) {
+        //     // "Producing Code" (May take some time)
+
+        //     myResolve(); // when successful
+        //     myReject();  // when error
+        // });
+
+        // // "Consuming Code" (Must wait for a fulfilled Promise)
+        // myPromise.then(
+        //     function (value) { /* code if successful */ },
+        //     function (error) { /* code if some error */ }
+        // );
+
+
+
+        // When the producing code obtains the result, it should call one of the two callbacks:
+        // Result	Call
+        // Success	myResolve(result value)
+        // Error	myReject(error object)
+
+
+        // Promise Object Properties
+        // A JavaScript Promise object can be:
+
+        // Pending
+        // Fulfilled
+        // Rejected
+        // The Promise object supports two properties: state and result.
+
+        // While a Promise object is "pending"(working), the result is undefined.
+
+        // When a Promise object is "fulfilled", the result is a value.
+
+        // When a Promise object is "rejected", the result is an error object.
+
+        // myPromise.state	myPromise.result
+        //     "pending"	undefined
+        //     "fulfilled"	a result value
+        //     "rejected"	an error object
+
+
+        let myPromise = new Promise(function (myResolve, myReject) {
+            let req = new XMLHttpRequest();
+            req.open('GET', "mycar.htm");
+            req.onload = function () {
+                if (req.status == 200) {
+                    myResolve(req.response);
+                } else {
+                    myReject("File not Found");
+                }
+            };
+            req.send();
+        });
+
+        myPromise.then(
+            function (value) { myDisplayer(value); },
+            function (error) { myDisplayer(error); }
+        );
+
+
+    </script>
+</body>
+
+</html>
