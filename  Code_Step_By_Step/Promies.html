@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //  What is promise
+        // Why we need it
+        // Example of simple Promise
+        // what is finally keyword
+        // Exception handling with promise
+        // Promise Channing
+        // Error handling with promises
+        // Promise.all
+        // promise.allsettled
+        // promise.race
+
+        // promise ek tarah ka commitment hai ki kuch kaam hoga aur jab woh kaam pura hoga, toh humein pata chalega ki woh kaam safalta se ho gaya ya nahi.Isse hum asynchrony ke code likhne mein madad milti hai.
+        // For example, agar aap ek restaurant se online pizza order karte hain, to aapka order ek promise ke samaan hota hai.Aap restaurant se commit karte hain ki aap pizza order kar rahe hain.Jab pizza taiyar ho jata hai, aapko pata chalta hai ki order complete ho gaya hai, aur aap use khate hain(resolve).Agar pizza taiyar nahi ho pata, to aapko pata chalta hai ki order unsuccessful raha(reject).
+        // Isi tarah se, JavaScript mein promise ka upayog aksar async kaam karne, jaise ki data fetch karna, ke liye kiya jata hai.Promise se hume pata chalta hai ki kuch kaam pura hua hai aur uska parinam kya hai(safalta ya asafalta).
+
+        // JavaScript me, Promise ka upayog async kaam karne ke liye kiya jata hai.Yeh 3 lines mein samjhaya ja sakta hai:
+        // Promise ek commitment hoti hai ki ek async kaam kiya jayega.
+        // Promise then aur catch ke saath use hoti hai, then me safalta ke liye aur catch me asafalta ke liye.
+        // Promise async kaam ko suvidha se likhne aur prabandhit karne mein madad karti hai.
+
+
+        // Promise chaining ek technique hai jisme aap ek ke baad ek promise ko chain(jod) kar sakte hain taaki asynchronous code ko safalta se likha ja sake.Isse 3 lines mein samjhaya ja sakta hai:
+        // Pahla Promise then ke sath use hota hai, aur uske badle dusra Promise return kiya ja sakta hai.
+        // Is tarike se aap multiple asynchronous operations ko ek ke baad ek chain kar sakte hain.
+        // Promise chaining se code sundar aur samajhne mein asaan hota hai.
+
+
+        // Promise chaining ka simple way samjhane ke liye:
+
+        // Ek Promise ko.then() ke sath use karke uska result dusre Promise mein bheja ja sakta hai.
+        // Fir, dusre Promise ko bhi.then() ke sath use karke aage kaam kiya jata hai.
+        // Is tarike se aap ek async kaam ko kai step mein likh sakte hain, jisse code sundar aur samajhne mein asaan hota hai.
+
+
+
+        // Promises asynchrony(asynchronous programming) ke code ko likhne aur samadhani karne ke liye use kiya jata hai.Promises ka upayog kisi task ya operation ko asynchrony mein chalane ke liye hota hai, jaise ki network requests, file reading, databases se data fetch karna, aur dusre aise operations jo samay le sakte hain.
+        // Promises ka upayog tab hota hai jab aap ek task ko shuru karte hain jo samay le sakta hai aur aap chahate hain ki aapke code ke doosre bhag continue chale jayein bina wait kiye.Yadi aap ek request ko bhejte hain aur uska jawab aane mein samay lag sakta hai, to aap promise ka upayog karke response ka wait nahi karna chahte hain.Aap asychronous code ke sath promises ka upayog karke is tarah ke situations ko handle kar sakte hain.
+        // Promises ek sundar aur ek - liner(chainable) tarike se asynchrony ko likhne aur samadhan karne mein madad karte hain, jisse code maintain karna asan hota hai.Isliye, promises asynchrony ke code ke sath jyadatar istemal hote hain, jaise JavaScript me frontend aur backend development mein.
+
+
+        //    ____________________Promise.all___________________________
+        // Promise.all ek JavaScript method hai jo ek array of promises ko lekar kaam karta hai.Iska main uddeshya hai ki jab aap multiple asynchronous tasks(promises) ko ek sath chalana chahte hain aur tab un sabhi tasks ka completion ya result ka wait karna chahte hain, tab aap Promise.all ka upayog kar sakte hain.
+        // Ek simple tareeke se samjha jaye, agar aapke paas ek array of promises hai jinme alag - alag async operations hain, jaise:
+
+        // const promises = [
+        //     fetch('https://api.example.com/data/1'),
+        //     fetch('https://api.example.com/data/2'),
+        //     fetch('https://api.example.com/data/3')
+        // ];
+
+        // To aap Promise.all ka upayog karke in sabhi promises ka wait kar sakte hain aur jab sabhi promises resolve ho jaye, tab aap unke results ko ek array mein prapt kar sakte hain.Iska ek udaharan aapko dikhata hai:
+
+        // Promise.all(promises)
+        //     .then(results => {
+        //         console.log('Sabhi promises resolve ho gaye');
+        //         console.log('Unka result:', results);
+        //     })
+        //     .catch(error => {
+        //         console.error('Kuch promises reject ho gaye ya error aaya:', error);
+        //     });
+
+        // Is code mein, Promise.all ek naya promise return karta hai jo tab resolve hoga jab sabhi promises resolve honge.Is promise ka then handler us array ko prapt karega jo sabhi promises ke results ko contain karega.Agar koi promise reject ho jaye to, catch handler us error ko handle karega.
+        // Yani, Promise.all ka upayog multiple asynchronous operations ko ek sath chalane aur unke results ko ek sath prapt karne ke liye kiya jata hai.
+
+        // ___________________________promise.allsettled____________________________
+
+
+        // Promise.allSettled ek JavaScript method hai jo ek iterable(jaise array) of promises ko accept karta hai aur har promise ke status aur values ko track karta hai, chahe vo resolve ho ya reject ho.Ye method ek naya promise return karta hai, jisme har promise ke liye ek object hota hai jo status aur value(sirf resolved promises ke liye) ko contain karta hai.Isse aap multiple promises ke status aur results ko ek sath dekh sakte hain, chaahe vo success ho ya failure
+        // const promises = [
+        //     fetch('https://example.com/api/endpoint1'),
+        //     fetch('https://example.com/api/endpoint2'),
+        //     fetch('https://restcountries.com/v3.1/name/india'),
+        // ];
+        // Promise.allSettled(promises)
+        //     .then(results => {
+        //         results.forEach(result => {
+        //             if (result.status === 'fulfilled') {
+        //                 console.log('Success:', result.value);
+        //             } else {
+        //                 console.log('Failure:', result.reason);
+        //             }
+        //         });
+        //     });
+
+        // ____________________________promise.race________________________
+
+        // Promise.race ek JavaScript method hai jo ek iterable(jaise array) of promises ko accept karta hai aur phir un promises mein se sabse pehla promise jo settle(resolve ya reject) ho jata hai, uska result wapas deta hai.
+        // Iska matlab hai ki agar aap multiple asynchronous operations ko shuru karte hain, aur aapko unmein se pehla complete hone wala result chahiye, to aap Promise.race ka upyog kar sakte hain.Jab koi promise apne status ko change karke settle ho jata hai(yaani resolve ho jata hai ya reject ho jata hai), to Promise.race us promise ka result immediately wapas deta hai, bina doosre promises ko wait kiye.
+
+        // const promise1 = new Promise((resolve, reject) => {
+        //     setTimeout(() => resolve('Promise 1 resolved'), 1000);
+        // });
+        // const promise2 = new Promise((resolve, reject) => {
+        //     setTimeout(() => resolve('Promise 2 resolved'), 500);
+        // });
+        // Promise.race([promise1, promise2])
+        //     .then(result => {
+        //         console.log('First promise to settle:', result);
+        //     });
+
+        // Ismein, Promise.race se pehla settle hone wala promise promise2 hai, kyunki uska timeout duration kam hai.Isiliye, "Promise 2 resolved" is result ke roop mein console par dikhai dega, aur promise1 ka completion ab bhi chalta rahega.
+
+        // ____________code step by step________________________________
+
+
+        // let data = 1;
+        // console.log(data) // 1
+        // data = 2
+        // setTimeout(() => {
+        //     console.log(data) // 2
+        // }, 1000)
+
+        // let data = 1;
+        // console.log(data)//1
+        // data = 2
+        // setTimeout(() => {
+        //     console.log('last', data)//3
+        // }, 1000)
+        // data = 3;
+        // console.log(data)//3
+
+        // let prom = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve('executed')
+        //     })
+        // })
+        // console.log(prom) // promise dega
+
+        // let prom = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve('executed')
+        //     })
+        // })
+        // prom.then((data) => {
+        //     console.log(data)
+        // })
+
+        // let prom = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve({ name: "ayesha", age: 19 })
+        //     })
+        // })
+        // prom.then((data) => {
+        //     console.log(data)
+        // })
+
+
+        // let prom = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve({ name: "ayesha", age: 19 })
+        //     }, 1000)
+        // })
+        // prom.then((data) => {
+        //     console.log(data)
+        // })
+        // console.log(prom)
+        // console.log("Hello")
+
+
+        // let prom = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         reject("some issues")
+        //     }, 1000)
+        // })
+        // prom.then((data) => {
+        //     console.log(data)
+        // })
+
+        // let prom = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         reject("some issues")
+        //     }, 1000)
+        // })
+        // prom.then((data) => {
+        //     console.log(data)
+        // }).catch((error) => {
+        //     console.log("catch block", error)
+        // })
+
+        // let data = fetch('https://restcountries.com/v3.1/name/india')
+        // data.then(() => {
+        //     console.log(data)
+        // }).catch((error) => {
+        //     console.log(error)
+        // })
+
+
+        // let prom = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve("hello")
+        //     }, 1000)
+        // }) // jo ye dega promise wo hi sem fetch me milta olready
+        // console.log(prom)
+
+        // let data = fetch('https://restcountries.com/v3.1/name/india')
+        // console.log(data) // ye b promies dega
+
+
+        // let data = fetch('https://restcountries.com/v3.1/name/india')
+        // data.then((val) => {
+        //     console.log(val)
+        // })
+        // API ko call krte time 2 promise resolve krne hote h 1 to ho gya
+        // jub b API ka promise resolve krte h to data to deta h but uske ander ek or promise hota h
+
+        // let data = fetch('https://restcountries.com/v3.1/name/india')
+        // data.then((val) => {
+        //     return val
+        // }).then((item) => {
+        //     console.log(item)
+        // })
+
+        // let data = fetch('https://restcountries.com/v3.1/name/india')
+        // data.then((val) => {
+        //     return val.json()
+        // }).then((item) => {
+        //     console.log(item)
+        // })
+
+        // ek promise ka result dusre promise me resolve krte h to use promise channing bolte h
+        // let data = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve(10)
+        //     }, 1000)
+        // })
+        // data.then((val) => {
+        //     console.log('first', val)
+        //     return val * 10
+        // }).then((val) => {
+        //     console.log('second', val)
+        //     return val * 10
+        // }).then((val) => {
+        //     console.log('thrid', val)
+        // }).catch((item) => {
+        //     console.log(item)
+        // })
+
+
+        // let data = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve(10);
+        //     }, 1000)
+        // })
+        // data.then((val) => {
+        //     console.log("then block", val) // resolve ko call kiya to then block chlega
+        // }).catch((error) => {
+        //     console.log("catch block", error)
+        // })
+
+        // let data = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve(10);
+        //     }, 1000)
+        // }).then((val) => {
+        //     console.log('then block', val);
+        // }).finally((val) => {
+        //     console.log('final block', val)
+        // })
+        // finally ब्लॉक में undefined आ रहा है क्योंकि finally ब्लॉक को कोई आर्ग्यूमेंट नहीं मिलता है। finally ब्लॉक में कोई आर्ग्यूमेंट नहीं होता है, यह केवल एक कॉलबैक फ़ंक्शन होता है जो अंत में चलाया जाता है, चाहे प्रॉमिस रिज़ॉल्व हो या रिजेक्ट हो।
+
+        // let data = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         // reject(new Error("data issuse"));
+        //         // throw new Error("data issuse");
+        //         resolve("done")
+        //     }, 1000)
+        // }).then((val) => {
+        //     throw new Error("data issuse");
+        //     console.log('then block', val);
+        // }).catch((val) => {
+        //     console.log('catch block', val)
+        // })
+
+        // ---------------------Promise.all- ye ek array leta h--------------
+
+        // Promise.all ek JavaScript function hai jo ek array of Promises lekar kaam karta hai.Iska main kaam hai ki yeh sabhi Promises resolve ho jane par ek naya Promise return karta hai, jiska resolution value ek array hota hai.Ismein array mein original Promises ki resolve values ke saath saath, unki sequence ke order mein hoti hain.
+        // tabhi ek array of results return karega jab sabhi Promises resolve ho jate hain.Agar kisi bhi Promise mein reject ho, to Promise.all woh error ko handle karega aur catch block mein error pass karega.
+        // agar sabhi Promises resolve ho rahe hain, to Promise.all ek array of unke results ke saath resolve hoga.Lekin agar kisi ek Promise mein bhi reject hota hai, to Promise.all baki ke Promises ke execution ko rok dega aur error handling ke liye catch block chala jayega.
+        // all me ek b Promises reject ho jata h to sidha catch block chlaya jata btata nhi konsa resolve huaa h or konsa reject
+        // allSettled functoin btata h konsa resolve huaa h or konsa reject
+
+        // let data = Promise.all([
+        //     new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             resolve("1 second")
+        //         }, 1000)
+        //     }),
+        //     new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             resolve("3 second")
+        //         }, 3000)
+        //     }),
+        //     new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             resolve("2 second")
+        //         }, 2000)
+        //     })
+        // ]).then((item) => {
+        //     console.log(item)
+        // }).catch((err) => {
+        //     console.log(err)
+        // })
+
+        // const promise1 = new Promise((resolve) => {
+        //     setTimeout(() => {
+        //         resolve('Result 1');
+        //     }, 1000);
+        // });
+        // const promise2 = new Promise((resolve) => {
+        //     setTimeout(() => {
+        //         resolve('Result 2');
+        //     }, 2000);
+        // });
+        // Promise.all([promise1, promise2])
+        //     .then((results) => {
+        //         console.log('All promises are resolved:', results);
+        //     })
+        //     .catch((error) => {
+        //         console.error('At least one promise was rejected:', error);
+        //     });
+
+
+
+
+        // const promise1 = new Promise((resolve) => {
+        //     setTimeout(() => {
+        //         resolve('Result 1');
+        //     }, 1000);
+        // });
+        // const promise2 = new Promise((resolve, rejected) => {
+        //     setTimeout(() => {
+        //         rejected('Result 2');
+        //     }, 2000);
+        // });
+        // Promise.all([promise1, promise2])
+        //     .then((results) => {
+        //         console.log('All promises are resolved:', results);
+        //     })
+        //     .catch((error) => {
+        //         console.error('At least one promise was rejected:', error);
+        //     });
+
+        // const promise1 = Promise.resolve(1);
+        // const promise2 = Promise.resolve(2);
+        // const promise3 = Promise.reject("Error!");
+        // Promise.all([promise1, promise2, promise3])
+        //     .then((results) => {
+        //         console.log('All promises are resolved:', results);
+        //     })
+        //     .catch((error) => {
+        //         console.error('At least one promise was rejected:', error);
+        //     });
+
+
+        // const promise1 = Promise.resolve(1);
+        // const promise2 = Promise.resolve(2);
+        // const promise3 = Promise.resolve(3);
+        // Promise.all([promise1, promise2, promise3])
+        //     .then((results) => {
+        //         console.log('All promises are resolved:', results);
+        //     })
+        //     .catch((error) => {
+        //         console.error('At least one promise was rejected:', error);
+        //     });
+
+
+        // ---------------  allSettled --------------------------
+
+        // const promise1 = new Promise((resolve) => {
+        //     setTimeout(() => {
+        //         resolve('Result 1');
+        //     }, 1000);
+        // });
+        // const promise2 = new Promise((resolve) => {
+        //     setTimeout(() => {
+        //         resolve('Result 2');
+        //     }, 2000);
+        // });
+        // const promise3 = new Promise((resolve) => {
+        //     setTimeout(() => {
+        //         resolve('Result 2');
+        //     }, 2000);
+        // });
+        // Promise.allSettled([promise1, promise2, promise3])
+        //     .then((results) => {
+        //         console.log('All promises are resolved:', results);
+        //     })
+        //     .catch((error) => {
+        //         console.error('At least one promise was rejected:', error);
+        //     });
+
+
+        // const promise1 = new Promise((resolve) => {
+        //     setTimeout(() => {
+        //         resolve('Result 1');
+        //     }, 1000);
+        // });
+        // const promise2 = new Promise((resolve) => {
+        //     setTimeout(() => {
+        //         resolve('Result 2');
+        //     }, 2000);
+        // });
+        // const promise3 = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         reject('Result 2');
+        //     }, 2000);
+        // });
+        // Promise.allSettled([promise1, promise2, promise3])
+        //     .then((results) => {
+        //         console.log('All promises are resolved:', results);
+        //     })
+        //     .catch((error) => {
+        //         console.error('At least one promise was rejected:', error);
+        //     });
+
+
+        // -----------------------------race--------------------------
+
+        // jo subse phle resolve hoga h uska result dekne ke liy race functoin hota h
+        const promise1 = new Promise((resolve) => {
+            setTimeout(() => {
+                resolve('Result 1');
+            }, 3000);
+        });
+        const promise2 = new Promise((resolve) => {
+            setTimeout(() => {
+                resolve('Result 2'); // phle hoga resolve
+            }, 1000);
+        });
+        const promise3 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                reject('Result 2');
+            }, 2000);
+        });
+        Promise.race([promise1, promise2, promise3])
+            .then((results) => {
+                console.log('All promises are resolved:', results);
+            })
+            .catch((error) => {
+                console.error('At least one promise was rejected:', error);
+            });
+
+        // Aap Promise.all aur Promise.race ka istemal karke bhi Promises ko likh sakte hain.Promise.all ek array mein di gayi Promises ko handle karta hai aur jab sabhi Promises resolve ho jate hain, tab ek single Promise resolve hota hai.Promise.race bhi ek array of Promises ko handle karta hai, lekin yah tab resolve hota hai jab sabse pehla Promise resolve hota hai ya reject hota hai.
+    </script>
+
+
+</body>
+
+</html>
