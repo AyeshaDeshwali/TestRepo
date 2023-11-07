@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function test(a, b, fun, fun2, fun3, fun4) {
+            fun(a, b);
+            fun2(a, b);
+            fun3(a, b);
+            fun4(a, b)
+        }
+        test(10, 20, (a, b) => {
+            console.log(a + b)
+        }, (a, b) => {
+            console.log(a - b)
+        }, (a, b) => {
+            console.log(a * b)
+        }, (a, b) => {
+            console.log(a / b)
+        })
+
+
+        function test(a, b, fun) {
+            fun(a, b)
+        }
+        test(10, 20, sum)
+        function sum(a, b) {
+            console.log(a + b)
+        }
+        function sub(a, b) {
+            console.log(a - b)
+        } function mul(a, b) {
+            console.log(a * b)
+        } function div(a, b) {
+            console.log(a / b)
+        }
+
+
+        function test(x) {
+            return function (y) {
+                console.log(x + y)
+            }
+        }
+        let ans = test(10)
+        ans(20)
+
+        let arr = [1, 2, 3, 4, 5]
+        let ans = arr.map((val) => {
+            return val * 10
+        })
+        console.log(ans)
+
+        let arr = [1, 2, 3, 4, 5]
+        arr.map((val) => {
+            console.log(val * 10)
+        })
+
+
+        let arr = [1, 2, 3, 4, 5]
+        console.log(arr.map(function mapping(val) {
+            return val * 10
+        }))
+
+        let arr = [1, 2, 3, 4, 5]
+        console.log(arr.map(mapping))
+        function mapping(val) {
+            return val * 10
+        }
+
+
+    </script>
+</body>
+
+</html>
