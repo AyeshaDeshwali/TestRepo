@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function doubleEvenTripleOdd(arr) {
+        //     // Create an empty array to store the result.
+        //     const result = [];
+        //     // Loop through the input array.
+        //     for (let i = 0; i < arr.length; i++) {
+        //         const num = arr[i];
+        //         // If the number is even, multiply it by 2 and add it to the result array.
+        //         // Otherwise, multiply it by 3 and add it to the result array.
+        //         if (num % 2 === 0) {
+        //             result.push(num * 2);
+        //         } else {
+        //             result.push(num * 3);
+        //         }
+        //     }
+        //     return result;
+        // }
+        // let arr = [2, 3, 4, 5, 6, 7]
+        // console.log(doubleEvenTripleOdd(arr)) //  [4, 9, 8, 15, 12, 21]
+
+        // function test(arr) {
+        //     let newarr = []
+        //     for (let i = 0; i < arr.length; i++) {
+        //         if (arr[i] % 2 == 0) {
+        //             newarr.push(arr[i] * 2)
+        //         } else {
+        //             newarr.push(arr[i] * 3)
+        //         }
+        //     }
+        //     return newarr
+        // }
+        // let arr = [2, 3, 4, 5, 6, 7]
+        // console.log(test(arr)) //  [4, 9, 8, 15, 12, 21]
+
+
+        // function test(str) {
+        //     let word = str.split(' ')
+        //     word = word.map((val) => val.charAt(0).toUpperCase() + val.slice(1))
+        //     return word.join(' ')
+        // }
+        // console.log(test('ayesha deshwali merta city'))
+
+        // function test(str) {
+        //     let word = str.split(' ')
+        //     for (let i = 0; i < word.length; i++) {
+        //         word[i] = word[i].charAt(0).toUpperCase() + word[i].slice(1)
+        //     } return word.join(' ')
+        // }
+        // console.log(test('ayesha deshwali merta city'))
+
+        // function checkSameDigits(num) {
+        //     let numStr = num.toString()
+        //     for (let i = 1; i < numStr.length; i++) {
+        //         if (numStr[i] !== numStr[0]) {
+        //             return false;
+        //         }
+        //     }
+        //     return true;
+        // }
+        // console.log(checkSameDigits(111111)); // true
+        // console.log(checkSameDigits(123456)); // false
+
+        // function test(num) {
+        //     return num.toString().split('').reverse().join("")
+        // }
+        // console.log(test(1234))
+
+
+
+        // function test(str, string) {
+        //     let ans = str.split(' ')
+        //     for (let i = 0; i < ans.length; i++) {
+        //         if (ans[i] === string) {
+        //             return true
+        //         }
+        //     }
+        //     return false
+        // }
+        // let one = 'this is a simple string'
+        // let two = 'simple'
+        // console.log(test(one, two))
+
+        // let arr = [20, 34, 79, 40, 23, 9, 4, 39]
+        // let ans = arr.filter((num) => num < 30 || num > 50)
+        // let ans2 = ans.filter(((num) => num + 20))
+        // let ans3 = ans2.reduce((num, total) => num + total, 0)
+        // console.log(ans3)
+
+        // let arr = [1, [12], [30], 4]
+        // let ans = Math.max(...arr)
+        // console.log(ans)
+
+
+
+
+
+        // let arr = [[23], [322], [12]]
+        // let ans = Math.max(...arr)
+        // console.log(ans)
+
+        // let arr = [[1, 2], [3, 4], [5, 6], [7, 8]]
+        // let ans = arr.map((val) => val.reduce((num, total) => num + total, 0))
+        // console.log(ans)
+
+
+        // for (let i = 1; i <= 5; i++) {
+        //     let sum = ''
+        //     for (let j = 1; j <= 5 - i + 1; j++) {
+        //         sum += (i + j - 1) + " "
+        //     }
+        //     console.log(' '.repeat(i - 1) + sum)
+        // }
+
+        // function test(obj) {
+        //     return Object.entries(obj).flat()
+        // }
+        // let obj = { a: 1, b: 2, c: 3 }
+        // console.log(test(obj))
+
+        // function test(obj) {
+        //     return obj.firstName + " " + obj.lastName
+        // }
+        // let obj = { firstName: 'ayesha', lastName: "deshwali" }
+        // console.log(test(obj))
+
+
+        // let obj = {
+        //     name: "ayesha",
+        //     age: 19,
+        //     class: 12,
+        //     rollNo: 101,
+        //     mobile: 346852342
+        // }
+        // let ans = Object.keys(obj)
+        // console.log(ans)
+        // let ans = Object.keys(obj).sort()
+        // for (let i = 0; i < ans.length; i++) {
+        //     console.log(ans[i])
+        // }
+
+
+        // let obj = {
+        //     d: 4,
+        //     b: 2,
+        //     a: 1,
+        //     c: 3,
+        //     t: 7,
+        //     h: 6,
+        //     g: 5,
+        // }
+        // let ans = Object.values(obj)
+        // ans.sort((a, b) => {
+        //     return a - b
+        // })
+        // console.log(ans)
+        // let ans = Object.entries(obj).sort().flat()
+        // console.log(ans)
+
+        // let obj = {
+        //     findMax: function (a, b, c) {
+        //         return Math.max(a, b, c)
+        //     }
+        // }
+        // console.log(obj.findMax(34, 65, 1))
+
+        // let obj = {
+        //     findMax: function (...arr) {
+        //         return Math.max(...arr)
+        //     }
+        // }
+        // console.log(obj.findMax(34, 56, 67, 9823, 3, 45, 809))
+
+        // let arr = ['ayesha', 'deshwali', 'merta', 'city']
+        // if (arr.includes('ayesha')) {
+        //     console.log('yes')
+        // }
+        // else {
+        //     console.log('no')
+        // }
+
+        // function test(num) {
+        //     let sum = 0;
+        //     for (let i = 0; i < num.length; i++) {
+        //         if (num[i] % 2 === 0) {
+        //             sum += num[i]
+        //         }
+        //     }
+        //     return sum
+        // }
+        // let arr = [1, 2, 3, 8, 9, 4, 5]
+        // console.log(test(arr))
+
+
+        // function test(arr1, arr2) {
+        //     let set = new Set([arr1, arr2].flat())
+        //     // let set = new Set([...arr1, ...arr2])
+        //     return [...set]
+        // }
+        // let arr1 = [2, 4, 5]
+        // let arr2 = [2, 3, 4, 7, 8]
+        // console.log(test(arr1, arr2))
+
+        // function test(arr) {
+        //     let long = arr[0]
+        //     for (let i = 0; i < arr.length; i++) {
+        //         if (arr[i].length > long.length) {
+        //             long = arr[i]
+        //         }
+        //     }
+        //     return long
+        // }
+        // let arr = ['ayesha', 'deshwali', 'merta', 'city']
+        // console.log(test(arr))
+
+
+        // function test(arr) {
+        //     let long = arr[0]
+        //     for (let i = 0; i < arr.length; i++) {
+        //         if (arr[i] > long) {
+        //             long = arr[i]
+        //         }
+        //     }
+        //     return long
+        // }
+        // let arr = [23, 4, 655, 78, 932, 11]
+        // console.log(test(arr))
+
+        // function test(arr) {
+        //     return arr.filter((val) => val % 2 === 0)
+        // }
+        // let arr = [1, 2, 3, 4, 5]
+        // console.log(test(arr))
+
+        // function tset(arr) {
+        //     return arr.filter((val) => val.length > 6)
+        // }
+        // let arr = ['ayesha', 'saddam', 'mo. husian']
+        // console.log(tset(arr))
+
+        // function findIntersection(arr1, arr2) {
+        //     let intersection = [];
+        //     for (let i = 0; i < arr1.length; i++) {
+        //         if (arr2.includes(arr1[i])) {
+        //             intersection.push(arr1[i]);
+        //         }
+        //     }
+        //     return intersection;
+        // }
+        // let array1 = [1, 2, 3, 4];
+        // let array2 = [3, 4, 5, 6];
+        // let result = findIntersection(array1, array2);
+        // console.log(result);
+
+        // function findIntersection(arr1, arr2) {
+        //     let intersection = [];
+        //     for (let num of arr1) {
+        //         if (arr2.includes(num)) {
+        //             intersection.push(num);
+        //         }
+        //     }
+        //     return intersection;
+        // }
+        // let array1 = [1, 2, 3, 4];
+        // let array2 = [3, 4, 5, 6];
+        // let result = findIntersection(array1, array2);
+        // console.log(result); // Output: [3, 4]
+
+        // function test(arr) {
+        //     let result = []
+        //     for (let i = 0; i < arr.length; i++) {
+        //         result.push(arr[i] ** 2)
+        //     }
+        //     return result
+        // }
+        // let arr = [1, 2, 3, 4, 4, 5]
+        // console.log(test(arr))
+
+        // function test(arr) {
+        //     let result = 0
+        //     for (let i = 0; i < arr.length; i++) {
+        //         result += arr[i]
+        //     }
+        //     return result / arr.length
+        // }
+        // let arr = [1, 2, 3, 4, 5]
+        // console.log(test(arr))
+
+        // function test(arr) {
+        //     let result = arr.filter((val) => val > 5)
+        //     return result
+        // }
+        // let arr = [1, 24, 76, 3, 4]
+        // let ans = test(arr)
+        // console.log(ans)
+
+
+        // function getUniqueNumbers(arr) {
+        //     return arr.reduce((result, current) => {
+        //         if (result.indexOf(current) === -1) {
+        //             result.push(current);
+        //         }
+        //         return result;
+        //     }, []);
+        // }
+        // let arr = [1, 2, 31, 2, 4, 5, 4, 3]
+        // console.log(getUniqueNumbers(arr))
+
+
+        // let arr = [1, 2, 3, 2, 3, 5, 6, 7, 8, 3]
+        // let ans = arr.reduce((result, current) => {
+        //     if (result.indexOf(current) === -1) {
+        //         result.push(current)
+        //     }
+        //     return result
+        // }, [])
+        // console.log(ans)
+
+        // function sortStringsByLength(strings) {
+        //     strings.sort((a, b) => a.length - b.length);
+        //     return strings;
+        // }
+        // let strings = ["apple", "banana", "cherry", "date"];
+        // console.log(sortStringsByLength(strings));
+
+
+
+        // function sortStringsByLength(strings) {
+        //     strings.sort((a, b) => b - a);
+        //     return strings[1];
+        // }
+        // let arr = [12, 34, 6, 97, 3]
+        // console.log(sortStringsByLength(arr))
+
+
+        // function tset(arr) {
+        //     let set = new Set(arr)
+        //     return [...set]
+        // }
+        // let arr = [1, 2, 3, 4, 6, 7, 8, 1, 2, 3]
+        // console.log(tset(arr))
+
+        // function getUniqueNumbers(numbers) {
+        //     return Array.from(new Set(numbers));
+        // }
+        // let numbers = [1, 2, 3, 2, 4, 3, 5];
+        // console.log(getUniqueNumbers(numbers));
+
+        // function test(arr) {
+        //     return arr.filter((val) => val.includes('a'))
+        // }
+        // let arr = ['apple', 'banana', 'orange', 'lime', 'kiwi'];
+        // console.log(test(arr))
+
+        // function test(arr) {
+        //     let ans = arr.map((val) => val.split('')).reduce((a, b) => a.concat(b), [])
+        //     return ans
+        // }
+        // let arr = ['hello', 'world', 'how', 'are', 'you']
+        // console.log(test(arr))
+
+        // function test(arr) {
+        //     let ans = arr.split('')
+        //     return ans
+        // }
+        // let arr = 'hello world how are you'
+        // console.log(test(arr))
+
+        // let arr = 'hello world how are you'
+        // let ans = arr.split('')
+        // console.log(ans)
+    </script>
+
+</body>
+
+</html>
