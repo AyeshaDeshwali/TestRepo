@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Rest operator(...) aur spread operator(...) ek jaise dikhte hain lekin unka istemal alag - alag maamlo mein hota hai.Main aapko batata hoon ki in dono ko kaise pehchaan sakte hain aur unka istemal kahan hota hai:
+        // Rest Operator(... function parameters mein):
+        // Rest operator ka istemal function ke parameters mein bache hue sabhi arguments ko ek hi array mein collect karne ke liye hota hai.Yeh function ke parameter list mein ...variableName ke roop mein dikhta hai.
+
+
+        //   function sum(...numbers) {
+        //         return numbers.reduce((total, num) => total + num, 0);
+        //     }
+
+        // console.log(sum(1, 2, 3, 4)); // Output: 10
+        // Is udaharan mein, rest operator(`...numbers`) saare arguments ko `sum` function mein ek array mein collect karta hai, jise`numbers` kehte hain.
+
+
+        // Array Destructuring:
+        // Rest operator ka istemal array destructuring ke dauran kuch specific elements ko alag se collect karne ke liye bhi hota hai.
+        // const [first, ...rest] = [1, 2, 3, 4, 5];
+        // console.log(first); // Output: 1
+        // console.log(rest);  // Output: [2, 3, 4, 5]
+        // Is example mein, ...rest rest operator hai jo baki ke array elements ko ek array mein collect karta hai.
+        // ### Spread Operator(`...` function ke bahar ya array / object literals mein):
+        // Spread operator function ke bahar ya array / object literals ke andar array ke elements ya object ke properties ko spread karne ke liye istemal hota hai.Yeh bhi `...` ke roop mein dikhta hai.
+
+        // ** Udaharan:**
+
+        //     1. ** Array Literals mein Spread:**
+        //     const array1 = [1, 2, 3];
+        //     const array2 = [...array1, 4, 5];
+
+        //     console.log(array2); // Output: [1, 2, 3, 4, 5]
+
+        //     2. ** Object Literals mein Spread:**
+        //     const obj1 = { a: 1, b: 2 };
+        //     const obj2 = { ...obj1, c: 3 };
+
+        //     console.log(obj2); // Output: { a: 1, b: 2, c: 3 }
+
+        // In udaharanon mein, spread operator ka istemal array ke elements ko spread karne ke liye kiya gaya hai(`[...array1]`) ya object ke properties ko spread karne ke liye(`{ ...obj1 }`).
+
+        //     ### Kaise Pehchane:
+        //     1. ** Function ke Parameters mein:** Agar`...` function ke parameter list mein dikhe, toh yeh rest operator hai.
+        //     2. ** Function ke Bahar ya Literal ke Andar:** Agar`...` function ke parameter list ke bahar ya array / object literals ke andar dikhe, toh yeh spread operator hai.
+
+        //     Toh, dekhen context ko - agar function ke andar hai toh rest; agar bahar ya literals ke andar hai toh spread.
+
+
+
+        // Spread operator(...) ka istemal kai alag - alag tareeqon mein hota hai, aur yeh ek powerful feature hai JavaScript mein.Yahan kuch common use cases hain:
+
+        // 1. Array Concatenation:
+        // Spread operator ka istemal do arrays ko concatenate(jodna) karne ke liye kiya ja sakta hai.
+        // const arr1 = [1, 2, 3];
+        // const arr2 = [4, 5, 6];
+        // const combinedArray = [...arr1, ...arr2];
+        // console.log(combinedArray); // Output: [1, 2, 3, 4, 5, 6]
+
+
+        // 2.Array Copy:
+        // Spread operator se ek array ko copy karne mein bhi madad milti hai.
+        // const originalArray = [1, 2, 3];
+        // const copiedArray = [...originalArray];
+        // console.log(copiedArray); // Output: [1, 2, 3]
+
+        // 3. Function Arguments:
+        // Spread operator ka istemal function ke arguments ko dynamic taur par pass karne mein kiya ja sakta hai.
+        // function exampleFunction(arg1, arg2, arg3) {
+        //     console.log(arg1, arg2, arg3);
+        // }
+        // const args = [1, 2, 3];
+        // exampleFunction(...args); // Output: 1 2 3
+
+        // 4. Object Merging:
+        // Spread operator ka istemal objects ke properties ko merge karne mein bhi hota hai.
+        // const obj1 = { a: 1, b: 2 };
+        // const obj2 = { c: 3, d: 4 };
+        // const mergedObject = { ...obj1, ...obj2 };
+        // console.log(mergedObject); // Output: { a: 1, b: 2, c: 3, d: 4 }
+
+
+        // 5. Function Parameters:
+        // Spread operator ka istemal function ke parameters mein array ke elements ko distribute karne mein kiya ja sakta hai.
+
+        // function exampleFunction(a, b, c) {
+        //     console.log(a, b, c);
+        // }
+        // const arrayForParams = [1, 2, 3];
+        // exampleFunction(...arrayForParams); // Output: 1 2 3
+        
+        // Yeh kuch common use cases hain, lekin spread operator ka istemal aur bhi tareeqon mein hota hai JavaScript mein, depending on the specific requirements of the code.
+    </script>
+</body>
+
+</html>
