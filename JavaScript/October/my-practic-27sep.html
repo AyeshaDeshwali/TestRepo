@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const xhttp = new XMLHttpRequest()
+        // xhttp.onload = function () {
+        //     // console.log(this.responseText)
+        //     console.log(JSON.parse(this.responseText))
+        // }
+        // xhttp.open("GET", "https://restcountries.com/v3.1/name/india")
+        // xhttp.send()
+
+
+        // function test(num1, num2) {
+        //     let prom = +prompt('enter your number')
+        //     if (prom >= 10) {
+        //         num1()
+        //     } else {
+        //         num2()
+        //     }
+        // }
+        // test(() => {
+        //     console.log('hello')
+        // }, () => {
+        //     console.log('hi')
+        // })
+
+        // let prom = new Promise((resolve, reject) => {
+        //     let ans = +prompt('enter your number')
+        //     if (ans >= 10) {
+        //         resolve()
+        //     }
+        //     else {
+        //         reject()
+        //     }
+        // }).then(() => {
+        //     console.log('hello')
+        // }, () => {
+        //     console.error("hi")
+        // })
+
+
+        // let prom = new Promise((resolve, reject) => {
+        //     resolve()
+        // }).then(null, () => {
+        //     console.log('hello')
+        // }) // resolve ke kase m null h to kuch b print ni hoga agr reject ko call krnge to hello aayga
+
+
+        // let prom = new Promise((resolve, reject) => {
+        //     resolve()
+        // })
+        // console.log(prom) // fulfilled
+        // prom.then(() => {
+        //     console.log('hi')
+        // }, () => {
+        //     console.log('hello')
+        // })
+
+        // let prom = new Promise((resolve, reject) => {
+        //     let i = 10;
+        //     i.toUpperCase()
+        //     resolve()
+        // })
+        // console.log(prom) // fulfilled
+        // prom.then(() => {
+        //     console.log('hi')
+        // }, (error) => {
+        //     console.log(error)  // reject vala he call hoga promise automatic reject fun ko call krega error ke kase m
+        // })
+
+        // let prom = fetch('https://restcountries.com/v3.1/name/india')
+        // prom.then(() => {
+        //     console.log('success')
+        //     console.log(prom)
+        // },
+        //     () => {
+        //         console.log("error")
+        //     })
+
+
+        // console.log("start")
+        // let response = fetch('https://restcountries.com/v3.1/name/india')
+        // response.then((res) => {
+        //     res.json().then((data) => {
+        //         console.log(data) // data nikalne ke liy json function call krna pdta h jo ki again ek or promise return krta h or us promise se dayrect data ni milta uske liy .then lgana pdta h use ke ander success vala callback dena pdta h
+        //     });
+        //     () => {
+        //         console.log('error')
+        //     }
+        // })
+        // console.log("end")
+
+        // ___________________async await _________________________________
+
+        // function test() {
+        //     for (let i = 1; i <= 10; i++) {
+        //         console.log(i)
+        //     }
+        // }
+        // test()
+        // console.log("hello")
+
+        // async function test() {
+        //     for (let i = 1; i <= 10; i++) {
+        //         console.log(i);
+        //         await new Promise(resolve => setTimeout(resolve, 1000));
+        //     }
+        // }
+        // (async () => {
+        //     await test();
+        //     console.log("hello");
+        // })();
+
+        // let prom = new Promise((resolve, reject) => {
+        //     resolve()
+        // }).then(() => {
+        //     for (let i = 1; i <= 10; i++) {
+        //         console.log(i)
+        //     }
+        // }, () => {
+        //     console.log('error')
+        // })
+
+        // async function test() {
+        //     let api = await fetch('https://restcountries.com/v3.1/name/india').then(() => {
+        //         console.log('async function....')
+        //     })
+        // }
+        // test()
+        // console.log("Hello") // async await likne na likne se kuch fark ni pdta h
+
+        // async function test() {
+        //     let api = await fetch('https://restcountries.com/v3.1/name/india')
+        //     return api
+        // }
+        // let result = test()
+        // console.log(result)
+
+
+        // Jab aap fetch ka istemal await ke sath karte hain, toh then ka istemal nahi karna hota hai, kyunki await khud response ko resolve karta hai.Aapka code kuch is tarah se hona chahiye:
+
+        // async function test() {
+        //     try {
+        //         let api = await fetch('https://restcountries.com/v3.1/name/india');
+        //         console.log('async function....');
+        //         // Handle the fetched data here if needed
+        //     } catch (error) {
+        //         console.error('Error:', error);
+        //     }
+        // }
+        // test();
+        // console.log('Hello');
+
+
+        // await fetch('https://restcountries.com/v3.1/name/india'); - Is line mein await ka istemal kiya gaya hai.
+        // try aur catch - Promise ko handle karne ke liye try aur catch ka istemal kiya gaya hai.
+        // Yadi aap then ka istemal karenge toh, aap async / await ka fayda nahi utha payenge, kyunki then block alag se chalega aur async nature ko disrupt kar dega.Async / await ka istemal karne se aap ek sahaj aur readable code likh sakte hain jisme asynchronous operations ko synchronize karne mein madad milti hai.
+
+        // async function test() {
+        //     try {
+        //         let api = await fetch('https://restcountries.com/v3.1/name/india');
+        //         console.log('async function....');
+        //         // Handle the fetched data here if needed
+        //     } catch (error) {
+        //         console.error('Error:', error);
+        //     }
+        // }
+        // (async () => {
+        //     await test()
+        //     console.log("hello")
+        // })()
+        // console.log('hi');
+
+
+        // async function test(orderfood) {
+        //     let ans = `your order${orderfood} is ready now.`
+        //     return ans
+        // }
+        // let result = test(" Pizaa")
+        // console.log(result)
+
+        // async function test() {
+        //     // throw new Error()
+        //     let ans = `your order Pizaa is ready now.`
+        //     return ans
+        // }
+        // let result = test()
+        // result.then((res) => {
+        //     console.log(res)
+        // },
+        //     (error) => {
+        //         console.log(error)
+        //     })
+
+
+        // async function test() {
+        //     fetch('https://restcountries.com/v3.1/name/india').then((res) => {
+        //         console.log(res)
+        //         return 100 // yaha se krne se kuch ni hoga
+        //     })
+        //     return 200 // async functoin se kuch b return ni krnge to undefined return hoga
+        // }
+        // let result = test()
+        // result.then((res) => {
+        //     console.log(res)
+        // },
+        //     (error) => {
+        //         console.log(error)
+        //     })
+
+
+        // async function test() {
+        //     let india = await fetch('https://restcountries.com/v3.1/name/india')
+        //     return 39
+        // }
+        // let result = test()
+        // result.then((res) => {
+        //     console.log(res)
+        // },
+        //     (error) => {
+        //         console.log(error)
+        //     })
+
+        // await se sub ka responce ek sath aa rah h bina waite key jub tk ye api ek sath chl ni jati tub tk responce return ni hoga
+        // async function test() {
+        //     let india = await fetch('https://restcountries.com/v3.1/name/india')
+        //     let japan = await fetch('https://restcountries.com/v3.1/name/japan')
+        //     let china = await fetch('https://restcountries.com/v3.1/name/china')
+        //     return [india, japan, china]
+        //     // return 20 // time ni lgega esme
+        // }
+        // console.time('waite')
+        // let result = test()
+        // result.then((res) => {
+        //     console.log(res)
+        //     console.timeEnd('waite')
+        // },
+        //     (error) => {
+        //         console.log(error)
+        //     })
+
+
+        // async function test() {
+        //     let india = await fetch('https://restcountries.com/v3.1/name/india')
+        //     let indiadata = await india.json()
+        //     return indiadata
+        // }
+        // let result = test()
+        // result.then((res) => {
+        //     console.log(res)
+        // },
+        //     (error) => {
+        //         console.log(error)
+        //     })
+
+        // let i = 10;
+        // console.log(i.toUpperCase())
+        // console.log("Hello")
+
+        // error ko handle krne ke liy try catch lgate h, catch me error ka object milta,finally wo likte h jo hmesha chlegi, error kudh se throw krvani h to throw new Error likna pdta h
+
+        // let i = 10;
+        // try {
+        //     console.log(i.toUpperCase())
+        // } catch (error) {
+        //     // console.log(error)
+        //     console.error("this not work because i is " + i)
+        // }
+        // console.log("hello") // uper error aa rhi h fir b try catch se hello chl rha h es line p
+
+        // let i = 10;
+        // try {
+        //     i.toUpperCase()
+        //     throw new Error('custom error for training...')
+        // } catch (error) {
+        //     console.log(error)
+        // }
+        // finally {
+        //     console.log('finally block workd')
+        // }
+
+        // let i = "ayesha"; // shi ke case me error throw kr di
+        // try {
+        //     i.toUpperCase()
+        //     throw new Error('custom error for training...')
+        // } catch (error) {
+        //     console.log(error)
+        // }
+        // finally {
+        //     console.log('finally block workd')
+        // }
+
+
+        // let i = 10;
+        // try {
+        //     console.log('hi')
+        //     console.log('hi')
+        //     i.toUpperCase() // eske baad hi.. pirnt hoga kunki yaha pr ye error h es liy
+        //     console.log('hi...')
+        //     console.log('hi...')
+        // } catch (error) {
+        //     console.log(error)
+        // }
+        // finally {
+        //     console.log('finally block workd')
+        // }
+        // console.log('hello')
+
+
+        // let api = fetch('https://restcountries.com/v3.1/name/india')
+        // api.then((res) => {
+        //     return res.json()
+        // }).then((data) => {
+        //     console.log(data)
+        //     return new Promise((resolve) => {
+        //         resolve(10)
+        //     })
+        // }).then((res) => {
+        //     throw new Error('my error')
+        //     console.log(res)
+        // }).catch((error) => {
+        //     console.log(`Got ${error}`)
+        // })
+
+        // let prom = Promise.resolve(100)
+        // prom.then((data) => {
+        //     console.log(data)
+        // })
+
+        // let prom2 = Promise.reject(101)
+        // prom2.then((data) => {
+        //     console.log(data)
+        // }) // first me resolve hota h to esse error aaygi
+
+        // let prom2 = Promise.reject(101)
+        // prom2.then(null, (data) => {
+        //     console.log(data)
+        // }) // hmesha reject chlega resolve m null kr diya
+    </script>
+</body>
+
+</html>
