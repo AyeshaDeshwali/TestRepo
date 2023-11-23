@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Hi {
+            message() {
+                console.log("Hello world...")
+            }
+            bestie() {
+                console.log("Hi Aasta...")
+            }
+        }
+        let obj = new Hi()
+        obj.message()
+        obj.bestie()
+
+        1. constructor
+        2. prototype
+        3. static
+
+
+            class Student {
+            constructor() {
+                let name;
+                console.log('hello world')
+            }
+            hello() {
+                console.log(this.name)
+            }
+        }
+        let obj = new Student('ayesha')
+        obj.name = "ayesha"
+        obj.hello()
+
+        class Student {
+            constructor(name) {
+                this.name = name;
+                console.log('hello world')
+            }
+            hello() {
+                console.log(this.name)
+            }
+        }
+        let obj = new Student('ayesha')
+        obj.hello()
+
+        class Student {
+            constructor(name) {
+                this.name = name;
+                console.log('hello world.')
+            }
+            hello() {
+                console.log(this.name)
+            }
+            static staticTest() {
+                console.log('this is a static function this call will be direct class name.')
+            }
+        }
+        let obj = new Student('ayesha')
+        obj.hello()
+        Student.staticTest()
+    </script>
+</body>
+
+</html>

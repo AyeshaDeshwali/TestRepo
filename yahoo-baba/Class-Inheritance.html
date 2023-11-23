@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        class Employee {// base class
+            constructor() {
+                console.log("hi...")
+            }
+        }
+        class Manager extends Employee {
+        }
+
+        let employee = new Employee()
+        let manager = new Manager()
+
+
+        class Employee {// base class
+            constructor(name) {
+                this.name = name
+            }
+            info() {
+                console.log(`Employee ${this.name}`)
+            }
+        }
+        class Manager extends Employee {
+            constructor(name) {
+                super(name)
+            }
+        }
+        let manager = new Manager('ayesha')
+        console.log(manager)
+        manager.info()
+
+        class Employee {// base class
+            constructor(name, age, salary) {
+                this.name = name
+                this.age = age;
+                this.salary = salary
+            }
+            info() {
+                console.log(` Manager Name: ${this.name} \n Manager age: ${this.age} \n Manager Salary: ${this.salary}`)
+            }
+        }
+        class Manager extends Employee {
+            info() {
+                super.info()
+                console.log(`Employee Nmae: ${this.name}`)
+                super.info()
+            }
+        }
+        let manager = new Manager('ayesha', 19, 20_000)
+        console.log(manager)
+        manager.info()
+
+
+
+        class Employee {// base class
+            constructor(name, age, salary) {
+                this.name = name
+                this.age = age;
+                this.salary = salary
+            }
+            info() {
+                console.log(` Manager Name: ${this.name} \n Manager age: ${this.age} \n Manager Salary: ${this.salary}`)
+            }
+        }
+        class Manager extends Employee {
+        }
+        let manager = new Manager('ayesha', 19, 20_000)
+        console.log(manager)
+        manager.info()
+
+
+
+        class Employee {// base class
+            constructor(name, age, salary) {
+                this.name = name
+                this.age = age;
+                this.salary = salary
+            }
+            info() {
+                console.log(` Manager Name: ${this.name} \n Manager age: ${this.age} \n Manager Salary: ${this.salary}`)
+            }
+        }
+        class Manager extends Employee {
+
+            info() {
+                let a = 1000
+                let b = 2000
+                let c = this.salary + a + b
+                console.log(` Manager Name: ${this.name} \n Manager age: ${this.age} \n Manager Salary: ${c}`)
+            }
+        }
+        let manager = new Manager('ayesha', 19, 9000)
+        let employee = new Employee('husain', 35, 9000)
+        console.log(manager)
+        manager.info()
+        employee.info()
+
+
+        class HondaCar {// base class
+            constructor(color) {
+                this.color = color
+            }
+        }
+        class FordCar extends HondaCar {  // derived class
+            constructor(color) {
+                super(color)
+            }
+        }
+        let hondaCar = new HondaCar('white')
+        let fordCar = new FordCar('black')
+        console.log(hondaCar)
+        console.log(fordCar)
+    </script>
+</body>
+
+</html>
