@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo">Here we load data.</p>
+    <button onclick="loadData()">Click</button>
+    <script>
+        // readyState tells us the status of the page load)
+        // रेडीस्टेट हमें पेज लोड की स्थिति बताता है)
+
+        // readyState XMLHttpRequest object ka ek property hai jo batata hai ki current request ka status kya hai.Ye property XMLHttpRequest object ke state ko represent karta hai.XMLHttpRequest ek API hai jiska use client - side scripting languages jaise JavaScript ke through server ke saath communication ke liye hota hai.
+
+        // readyState property ke kuch values hote hain:
+
+        // 0(UNSENT): XMLHttpRequest object create hua hai, lekin koi request nahi bheji gayi hai.
+        // 1(OPENED): open method call ho chuki hai, lekin send method abhi tak nahi call hui hai.
+        // 2(HEADERS_RECEIVED): send method call ho chuki hai, aur server ne response ke headers receive kar liye hain.
+        // 3(LOADING): Server ab response body ko receive kar raha hai.
+        // 4(DONE): Request complete ho gayi hai, aur response mil gaya hai.Ab aap data ko access kar sakte hain.
+
+        // var xhttp = new XMLHttpRequest();
+        // xhttp.onreadystatechange = function () {
+        //     if (this.readyState == 4 && this.status == 200) {
+        //         // Request complete ho gayi hai aur response mil gaya hai.
+        //         console.log(this.responseText);
+        //     }
+        // };
+        // xhttp.open("GET", "https://example.com/api/data", true);
+        // xhttp.send();
+
+        // Is example mein, onreadystatechange event listener readyState ko monitor karta hai.Jab readyState 4 ho jata hai(DONE), aur status 200 hai(OK), toh hum log response data ko console mein print karte hain.
+
+
+        // jo b server se file ko access , data access es ke liy 2 mathod ke liy use krte h open(), send() in donu ko ek sath he use krte h
+        // open me 3 parametor hote h 1 mathod, 2. file name, 3. true
+        // get se data ko access ya local system se server pe data ko send krna chate h es se data koy b pdh skta h wo hidden form m ni hota h open form m hota h
+        // post me jo b data aata h jo server se request krte h ya jo b data server pe send krna chate h esme data hiddem form m rheta h post mathod ka tbi use krte h agr login logout, krvana ho ya form pe koy Secure data ko save krvana ho
+        // get ke baad file ka name aata h
+        // uske badd aata h asyncmode true ya false
+        // true ka matlb h ki asyncmode ko on rka h
+        // flase ke aage ka kam ni chlega
+
+
+
+        // Arrow functions this ko handle karne mein thoda alag taur par kaam karte hain, aur event handlers jaise contexts mein, ye expected behavior nahi dete hain.Aapko chahiye ki this XMLHttpRequest object ko refer kare, lekin arrow function se, ye asani se ho nahi pata hai.
+
+        // Isliye, aap apne code mein normal function ka upayog karein, jaise ki pehla version jo maine diya tha:
+
+        // normal function use krna hai arrow functoin ko use ni krna h
+        function loadData() {
+            let xhttp = new XMLHttpRequest()
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log(this.responseText)
+                    document.getElementById('demo').innerHTML = this.responseText
+                } else if (this.readyState == 4 && this.status == 404) {
+                    document.getElementById('demo').innerHTML = "this not found"
+                }
+            }
+            xhttp.open('GET', "ajax.txt", true)
+            xhttp.send()
+        }
+
+
+        // function loadData() {
+        //     let xhttp = new XMLHttpRequest()
+        //     xhttp.onreadystatechange = function () {
+        //         if (this.readyState == 4 && this.status == 200) {
+        //             console.log(this.responseText)
+        //             console.log(this.responseText)
+        //         } else if (this.readyState == 4 && this.status == 404) {
+        //             console.log("this not found")
+        //         }
+        //     }
+        //     xhttp.open('GET', "https://jsonplaceholder.typicode.com/posts", true)
+        //     xhttp.send()
+        // }
+
+
+
+    </script>
+</body>
+
+</html>

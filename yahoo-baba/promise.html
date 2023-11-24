@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let ans = false
+        // let prom = new Promise((resolve, reject) => {
+        //     if (ans) {
+        //         resolve('this is right')
+        //     } else {
+        //         reject('wrong')
+        //     }
+        // })
+        // let resolve = (value) => {
+        //     console.log(value)
+        // }
+        // let reject = (error) => {
+        //     console.log(error)
+        // }
+        // prom.then(resolve)
+        // prom.catch(reject)
+
+        // let ans = false
+        // function test() {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             if (ans) {
+        //                 resolve(200)
+        //             } else {
+        //                 reject(10)
+        //             }
+        //         }, 1000)
+        //     })
+        // }
+        // let result = test().then((val) => {
+        //     console.log(val)
+        // }).catch((error) => {
+        //     console.log(error)
+        // })
+
+
+        // function test(val) {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             if (val) {
+        //                 resolve(200)
+        //             } else {
+        //                 reject(10)
+        //             }
+        //         }, 1000)
+        //     })
+        // }
+        // test(false).then((val) => {
+        //     console.log(val)
+        // }).catch((error) => {
+        //     console.log(error)
+        // })
+
+        // function test(a, b) {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             let c = a / b
+        //             if (a, b) {
+        //                 resolve(`your answer ${c}`)
+        //             } else {
+        //                 reject(`your answer ${c}`)
+        //             }
+        //         }, 1000)
+        //     })
+        // }
+        // test(100, 20).then((val) => {
+        //     console.log(val)
+        // }).catch((error) => {
+        //     console.log(error)
+        // })
+        // 0 se / krne se Infinity aata h
+
+
+        // let p1 = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         console.log('one')
+        //         resolve(100)
+        //     }, 1000)
+        // })
+        // let p2 = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         console.log('two')
+        //         resolve(200)
+        //     }, 2000)
+        // })
+        // let p3 = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         console.log('three')
+        //         resolve(300)
+        //     }, 3000)
+        // })
+        // let ans = Promise.all([p1, p2, p3])
+        // ans.then((val) => {
+        //     console.log(val)
+        // }).catch((error) => {
+        //     console.log(error)
+        // })
+
+
+        // let p1 = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve(100)
+        //     }, 1000)
+        // })
+        // let p2 = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve(200)
+        //     }, 2000)
+        // })
+        // let p3 = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve(300)
+        //     }, 3000)
+        // })
+        // let total = 0
+        // let ans = Promise.all([p1, p2, p3])
+        // ans.then((val) => {
+        //     for (let i in val) {
+        //         total += val[i]
+        //     }
+        //     console.log(total)
+        // }).catch((error) => {
+        //     console.log('Error: ' + error)
+        // })
+
+
+        let allProm = (num, mess) => {
+            return function (resolve, reject) {
+                setTimeout(() => {
+                    resolve(num)
+                }, 1000)
+            }
+        }
+        let p1 = new Promise(allProm(100, 'first'))
+        let p2 = new Promise(allProm(200, 'second'))
+        let p3 = new Promise(allProm(300, 'third'))
+
+        let total = 0
+        let ans = Promise.all([p1, p2, p3])
+        ans.then((val) => {
+            for (let i in val) {
+                total += val[i]
+            }
+            console.log(total)
+        }).catch((error) => {
+            console.log('Error: ' + error)
+        })
+
+
+        //    let allProm = (num, mess) => {
+        //         return function (resolve, reject) {
+        //             setTimeout(() => {
+        //                 resolve(num)
+        //             }, num * 100)
+        //         }
+        //     }
+        //     let p1 = new Promise(allProm(10, 'first'))
+        //     let p2 = new Promise(allProm(20, 'second'))
+        //     let p3 = new Promise(allProm(30, 'third'))
+        //     let p4 = new Promise((resolve, reject) => {
+        //         reject('The 4th promise has rejected')
+        //     })
+        //     let total = 0
+        //     let ans = Promise.all([p1, p2, p3, p4])
+        //     ans.then((val) => {
+        //         for (let i in val) {
+        //             total += val[i]
+        //         }
+        //         console.log(total)
+        //     }).catch((error) => {
+        //         console.log('Error: ' + error)
+        //     })
+    </script>
+</body>
+
+</html>

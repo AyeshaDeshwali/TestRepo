@@ -1,0 +1,20 @@
+readyState aur HTTP status code dono XMLHttpRequest ke lifecycle mein alag-alag concepts hain.
+
+readyState: Ye XMLHttpRequest object ka ek property hai, jo request ke current state ko represent karta hai. Ye values 0 se 4 tak ho sakti hain, jaise maine pehle bataaya:
+
+0 (UNSENT): Request create hua hai, lekin koi request nahi bheji gayi hai.
+1 (OPENED): open method call ho chuki hai, lekin send method abhi tak nahi call hui hai.
+2 (HEADERS_RECEIVED): send method call ho chuki hai, aur server ne response ke headers receive kar liye hain.
+3 (LOADING): Server ab response body ko receive kar raha hai.
+4 (DONE): Request complete ho gayi hai, aur response mil gaya hai.
+HTTP Status Code: Ye server se aane wale response ka hissa hota hai. HTTP status code ek three-digit numeric code hota hai jo indicate karta hai ki request kaise process hui hai. Kuch common HTTP status codes hain:
+
+200 OK: Request successful.
+201 Created: Request se new resource create hua hai.
+204 No Content: Server ne request ko successfully process kiya, lekin koi content nahi bheja gaya.
+400 Bad Request: Server request ko understand nahi kar pa raha hai.
+401 Unauthorized: Authentication required hai.
+403 Forbidden: Request ko process karne ka permission nahi hai.
+404 Not Found: Requested resource server par nahi mila.
+500 Internal Server Error: Server par koi internal error hui hai.
+To summarize, readyState XMLHttpRequest object ke state ko represent karta hai, jabki HTTP status code server se aane wale response ka status batata hai.
