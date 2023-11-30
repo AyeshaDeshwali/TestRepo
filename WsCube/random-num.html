@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" value="" id='inp'>
+    <button type="button" onclick="check()">click</button>
+    <h2 id="msg"></h2>
+    <script>
+        let math = Math.floor(Math.random() * 10) + 1
+        console.log(math)
+        let count = 0
+        function check() {
+            count++;
+            let inp = Number(document.getElementById('inp').value);
+            if (math === inp) {
+                document.getElementById("msg").innerHTML = `Congratulations! Your number of attempts is ${count}.`
+            } else if (inp > 5) {
+                document.getElementById("msg").innerHTML = "number is more"
+            } else {
+                document.getElementById("msg").innerHTML = "number is less"
+            }
+        }
+    </script>
+</body>
+
+</html>

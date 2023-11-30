@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>number</title>
+</head>
+
+<body>
+    <script>
+        let num = 23;
+        let tmp = num;
+        let sum = 0;
+        while (tmp > 0) {
+            let digit = tmp % 10;
+            console.log(digit)
+            sum += digit ** 3;
+            console.log(sum)
+            tmp = parseInt(tmp / 10)
+            console.log(tmp)
+            console.log('---------------')
+        }
+    </script>
+</body>
+
+</html>

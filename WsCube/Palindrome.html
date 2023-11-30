@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let str = "ayesha"
+        // let arr = str.split('');
+        // let strReverse = arr.reverse().join("")
+        // console.log(strReverse)
+
+
+
+        // Palindrome => dad, madam, wow, noon, rotator, repaper, pop, mom.
+        // enko ulta krne pr b ye word milega
+
+        // let str = "dad"
+        // let arr = str.split('');
+        // let strReverse = arr.reverse().join("");
+        // if (str === strReverse) {
+        //     console.log(`${str} Is Palindrome`)
+        // } else {
+        //     console.log('not Palindrome')
+        // }
+
+
+
+
+
+        // let str = "ayesha"
+        // let strReverse = str.split('').reverse().join("");
+        // if (str === strReverse) {
+        //     console.log(`${str} Is Palindrome`)
+        // } else {
+        //     console.log('not Palindrome word')
+        // }
+
+        // let str = "dad";
+        // let isPalindrome = true;
+        // for (let i = 0; i < str.length / 2; i++) {
+        //     if (str[i] !== str[str.length - 1 - i]) {
+        //         isPalindrome = false;
+        //     }
+        //     console.log(isPalindrome ? 'The string is a palindrome.' : 'The string is not a palindrome.');
+        // }
+
+
+        function countOccurrences(str, charToCount) {
+            let count = 0;
+
+            for (let i = 0; i < str.length; i++) {
+                if (str[i] === charToCount) {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
+        // Example usage:
+        let myString = "programing";
+        let charToCount = "m";
+        let result = countOccurrences(myString, charToCount);
+
+        console.log(`The character "${charToCount}" appears ${result} times in the string.`);
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            height: 100vh;
+            background-color: rgb(50, 50, 50);
+            box-sizing: border-box;
+            color: white;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            font-family: sans-serif;
+        }
+
+        #container input {
+            height: 25px;
+            width: 312px;
+            display: block;
+            font-size: 25px;
+            padding: 5px;
+            margin: 20px;
+            font-weight: bold;
+        }
+
+
+        #opre,
+        #btn {
+            background-color: rgb(255, 119, 0);
+            width: 145px;
+            height: 30px;
+            color: white;
+            border: none;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-left: 25px;
+            cursor: pointer;
+        }
+
+        #opre:hover,
+        #btn:hover {
+            box-shadow: 2px 2px 8px 2px rgb(255, 255, 255);
+        }
+
+        #opre option {
+            background-color: white;
+            color: black;
+        }
+
+        #answer {
+            background-color: white;
+            color: black;
+            width: 323px;
+            height: 30px;
+            margin-left: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <input type="number" id="first" value="" />
+        <input type="number" id="second" value="" />
+        <select name="" id="opre">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="x">x</option>
+            <option value="/">/</option>
+        </select>
+        <button id="btn" onclick="calculate()">click me</button>
+        <h1 id="answer"></h1>
+    </div>
+    <script>
+        function calculate() {
+            let num1 = document.getElementById('first').value
+            let num2 = document.getElementById('second').value
+            let opre = document.getElementById('opre').value
+            let ans;
+            if (opre === "+") {
+                ans = parseInt(num1) + parseInt(num2)
+            } else if (opre === "-") {
+                ans = num1 - num2
+            } else if (opre === "x") {
+                ans = num1 * num2
+            } else if (opre === "/") {
+                ans = parseInt(num1 / num2).toFixed(2)
+            }
+            document.getElementById("answer").innerHTML = ans
+        }
+    </script>
+</body>
+
+</html>

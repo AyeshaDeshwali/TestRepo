@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" value="" id="inp" />
+    <button type="button" onclick="check()">click</button>
+    <h2 id="msg"></h2>
+    <script>
+        function check() {
+            let ans = +document.getElementById('inp').value;
+            let msg;
+            if (ans % 2 === 0) {
+                msg = `${ans} is even`
+            } else {
+                msg = `${ans} is odd`
+            }
+            document.getElementById('msg').innerHTML = msg
+        }
+
+
+        let num = Math.floor(Math.random() * 100) + 1
+        let ans = num % 2 === 0 ? `${num} is even` : `${num} is odd`
+        console.log(ans)
+    </script>
+</body>
+
+</html>

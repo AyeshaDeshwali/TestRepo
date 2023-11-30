@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" value="" id="inp">
+    <button type="button" onclick="check()">click</button>
+    <h3 id="msg"></h3>
+    <script>
+        //   Convert Kilometres to Miles   
+        function check() {
+            let ans = document.getElementById('inp').value;
+            let n = 100;
+            let b = n * ans;
+            document.getElementById('msg').textContent = b
+        }
+    </script>
+</body>
+
+</html>

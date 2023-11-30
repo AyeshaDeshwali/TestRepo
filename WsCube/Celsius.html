@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" value="" id="inp">
+    <button type="button" onclick="check()">click</button>
+    <h2 id="msg"></h2>
+    <script>
+
+        function check() {
+            let ans = document.getElementById("inp").value;
+            // let math = Math.sign(ans)
+            // document.getElementById('msg').innerHTML = math
+            if (ans > 0) {
+                document.getElementById('msg').innerHTML = "positive number"
+            } else if (ans < 0) {
+                document.getElementById('msg').innerHTML = 'nagitive number'
+            } else if (ans == 0) {
+                document.getElementById('msg').innerHTML = "is zero"
+            } else {
+                document.getElementById('msg').innerHTML = "invalid input"
+            }
+        }
+
+
+
+
+        // Convert Celsius to Fahrenheit      
+
+        // let a = 2;
+        // let b = (a * 2.2) + 1;
+        // console.log(b) // 5.4
+
+        // console.log(2 * 2.6)//5.2
+        // console.log(2 * 2.0)//4
+
+    </script>
+</body>
+
+</html>
