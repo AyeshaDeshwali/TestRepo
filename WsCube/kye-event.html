@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inp" onkeyup="val(this)">
+    <h1 id="result"></h1>
+    <script>
+        // function val(elm) {
+        //     if (isNaN(elm.value)) {
+        //         document.getElementById('result').innerHTML = "please enter number only"
+        //     } else {
+        //         document.getElementById('result').innerHTML = " "
+        //     }
+        // }
+
+        let a = prompt('enter a number')
+        for (let i = 1; i <= 10; i++) {
+            document.write(`${i} x ${a} = ${i * a} <br>`);
+        }
+    </script>
+</body>
+
+</html>

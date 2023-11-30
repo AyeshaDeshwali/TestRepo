@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .yellow {
+        background-color: yellow;
+        height: 300px;
+        width: 300px;
+        position: relative;
+    }
+
+    #red {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        background-color: red;
+    }
+</style>
+
+<body>
+    <div class="yellow">
+        <div id="red"></div>
+    </div>
+    <br>
+    <button onclick="test()"> click</button>
+    <script>
+        // function test() {
+        //     let ans = document.getElementById('red')
+        //     let pos = 0
+        //     let anim = setInterval(function ani() {
+        //         if (pos === 270) {
+        //             clearInterval(anim)
+        //         } else {
+        //             pos++
+        //             ans.style.top = pos + "px"
+        //             ans.style.left = pos + "px"
+        //         }
+        //     }, 5)
+        // }
+
+
+
+        function test() {
+            let ans = document.getElementById('red')
+            let pos = 0;
+            let ani = setInterval(() => {
+                if (pos === 270) {
+                    clearInterval(ani)
+                } else {
+                    pos++
+                    ans.style.top = pos + "px"
+                    ans.style.left = pos + "px"
+                }
+            }, 5)
+        }
+    </script>
+</body>
+
+</html>
