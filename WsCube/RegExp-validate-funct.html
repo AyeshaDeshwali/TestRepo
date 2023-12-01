@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: rgb(10, 45, 45)
+        }
+
+        form {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px white;
+        }
+
+        h1 {
+            font-size: 30px;
+            text-align: center;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        p#alert {
+            color: red;
+            font-size: 14px;
+        }
+
+        input[type="submit"] {
+            background-color: rgb(10, 45, 45);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 12px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: rgb(16, 74, 74)
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #error {
+            color: red;
+        }
+
+        .password-check {
+            display: flex;
+            color: gray;
+            font-weight: bold;
+        }
+    </style>
+    </head>
+
+    <body>
+        <!-- autocomplete="off" es se jub input me liknge to box ni dikay dega jo b phle likhe uska -->
+        <form action="" onsubmit="return validate()">
+            <fieldset>
+                <legend>Login Form</legend>
+                <div>
+                    <label for="text">User Name:</label>
+                    <input type="text" id="text" name="text" autocomplete="off">
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" autocomplete="off" name="password" onkeyup="passCheck(this)">
+                </div>
+                <div>
+                    <label for="password">Confirm Password:</label>
+                    <input type="password" id="confirm-pass" name="confirm-pass" onkeyup="passCheck(this.value)">
+                    <p id="error"></p>
+                </div>
+                <p>
+                    <lable class="password-check">8 characters</lable>
+                    <lable class="password-check">1 lower case characters</lable>
+                    <lable class="password-check">1 upper case characters</lable>
+                    <lable class="password-check">1 numerical characters</lable>
+                    <lable class="password-check">1 special characters</lable>
+                </p>
+                <p>
+                <p id="result"></p>
+                <input type="submit" name="" id="" value="Submit">
+                </p>
+            </fieldset>
+        </form>
+        <script>
+
+            // const LowerCase = /(?=.*[a-z])/;
+            //     const UpperCase = /(?=.*[A-Z])/;
+            //     const NUMBER = /(?=.*[0-9])/;
+            //     const SpecialChar = /(?=.*[!@#\$%\^&\*])/;
+            //     const EightChar = /^.{8,}$/;
+
+            // function passCheck(data) {
+            //     let passClass = document.getElementsByClassName('password-check ');
+            //     const LowerCase = new RegExp('(?=.*[a-z])');
+            //     const UpperCase = new RegExp('(?=.*[A-Z])');
+            //     const NUMBER = new RegExp('(?=.*[0-9])');
+            //     const SpecialChar = new RegExp('(?=.*[!@#\$%\^&\])'); // Added a closing square bracket
+            //     const EightChar = new RegExp('(?=.{8,})'); // Also adjusted the EightChar regex
+            //     if (LowerCase.test(data) && UpperCase.test(data) && NUMBER.test(data) && SpecialChar.test(data) && EightChar.test(data)) {
+            //         passClass[0].style.color = "green";
+            //     } else {
+            //         passClass[0].style.color = "gray";
+            //     }
+            // }
+
+
+            // function passCheck(data) {
+            //     const passClass = document.getElementsByClassName('password-check ');
+            //     const conditions = [
+            //         new RegExp('(?=.{8,})'),   // EightChar
+            //         new RegExp('(?=.*[a-z])'),      // LowerCase
+            //         new RegExp('(?=.*[A-Z])'),      // UpperCase
+            //         new RegExp('(?=.*[0-9])'),      // NUMBER
+            //         new RegExp('(?=.*[!@#\$%\^&\])'), // SpecialChar
+            //     ];
+            //     for (let i = 0; i < conditions.length; i++) {
+            //         passClass[i].style.color = conditions[i].test(data) ? "green" : "gray";
+            //     }
+            // }
+
+            // function passCheck(data) {
+            //     let passClass = document.getElementsByClassName('password-check ');
+            //     const LowerCase = new RegExp('(?=.*[a-z])');
+            //     const UpperCase = new RegExp('(?=.*[A-Z])');
+            //     const NUMBER = new RegExp('(?=.*[0-9])');
+            //     const SpecialChar = new RegExp('(?=.*[!@#\$%\^&\])'); // Added a closing square bracket
+            //     const EightChar = new RegExp('(?=.{8,})'); if (LowerCase.test(data)) {
+            //         passClass[0].style.color = "green";
+            //     } else {
+            //         passClass[0].style.color = "gray";
+            //     }
+            //     if (UpperCase.test(data)) {
+            //         passClass[1].style.color = "green";
+            //     } else {
+            //         passClass[1].style.color = "gray";
+            //     }
+            //     if (NUMBER.test(data)) {
+            //         passClass[2].style.color = "green";
+            //     } else {
+            //         passClass[2].style.color = "gray";
+            //     }
+            //     if (SpecialChar.test(data)) {
+            //         passClass[3].style.color = "green";
+            //     } else {
+            //         passClass[3].style.color = "gray";
+            //     }
+            //     if (EightChar.test(data)) {
+            //         passClass[4].style.color = "green";
+            //     } else {
+            //         passClass[4].style.color = "gray";
+            //     }
+            // }
+
+        </script>
+    </body>
+
+</html>
