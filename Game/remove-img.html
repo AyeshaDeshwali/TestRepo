@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #4c4d51;
+        }
+
+        #box {
+            width: 50%;
+            margin: 20px auto;
+            border-radius: 10px;
+            background-color: rgb(148, 145, 145);
+        }
+
+        #box img {
+            width: 30%;
+            height: 300px;
+            border: 4px solid white;
+            border-radius: 10px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <img src="https://i.pinimg.com/originals/d0/1e/65/d01e652e324e6c4c6c67e3f0c11fdbfd.gif" alt="">
+        <img src="https://i.pinimg.com/236x/13/1d/88/131d88345cfed5a25bc633c4bce68d72.jpg" alt="">
+        <img src="https://i.pinimg.com/236x/dc/bd/4a/dcbd4a412fc0a7268c275efb7207654a.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/82/0b/40/820b4025afee5f9a8e995dbac21619b4.jpg" alt="">
+        <img src="https://static.statusqueen.com/dpimages/thumbnail/Stylish_Girl_dp_-2693.jpg" alt="">
+        <img src="https://i.pinimg.com/1200x/98/8b/31/988b310818d2d2ccbd07c7ce6bd41707.jpg" alt="">
+    </div>
+    <script>
+        let ans = document.querySelector("#box")
+        ans.addEventListener('click', (e) => {
+            if (e.target.tagName === "IMG") {
+                e.target.remove()
+            }
+        })
+
+        // let ans = document.querySelector("#box");
+        // ans.addEventListener('click', (e) => {
+        //     if (e.target.tagName === "IMG") {
+        //         if (e.target.style.display === "none") {
+        //             e.target.style.display = "block";
+        //         } else {
+        //             e.target.style.display = "none";
+        //         }
+        //     }
+        // });
+
+
+    </script>
+</body>
+
+</html>
