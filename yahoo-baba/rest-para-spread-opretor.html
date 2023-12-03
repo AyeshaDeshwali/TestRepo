@@ -13,207 +13,207 @@
 
 
 
-        const obj = { a: '1', b: '2' };
-        const map = new Map(Object.entries(obj));
-        console.log(...[map])
-        console.log([...map].flat())
-        console.log(map)
+        // const obj = { a: '1', b: '2' };
+        // const map = new Map(Object.entries(obj));
+        // console.log(...[map])
+        // console.log([...map].flat())
+        // console.log(map)
 
 
-        const myMap = new Map([
-            ['name', 'ayesha'],
-            ['key2', 'value2'],
-            ['key3', 'value3']
-        ]);
-        console.log([...myMap].flat())
-        console.log(myMap)
-        const myArray = Array.from(myMap);
-        console.log(myArray.flat())
-        console.log(myArray)
+        // const myMap = new Map([
+        //     ['name', 'ayesha'],
+        //     ['key2', 'value2'],
+        //     ['key3', 'value3']
+        // ]);
+        // console.log([...myMap].flat())
+        // console.log(myMap)
+        // const myArray = Array.from(myMap);
+        // console.log(myArray.flat())
+        // console.log(myArray)
 
 
-        function test() {
-            let sum = 0;
-            for (let i in arguments) {
-                sum += arguments[i]
-            }
-            return sum
-        }
-        let ans = test(20, 20, 10, 3, 2, 5)
-        console.log(ans)
+        // function test() {
+        //     let sum = 0;
+        //     for (let i in arguments) {
+        //         sum += arguments[i]
+        //     }
+        //     return sum
+        // }
+        // let ans = test(20, 20, 10, 3, 2, 5)
+        // console.log(ans)
 
-        function test(...arg) {
-            let sum = 0;
-            for (let i in arg) {
-                sum += arg[i]
-            }
-            return sum
-        }
-        let ans = test(20, 20, 10, 3)
-        // let ans = test('hello', 20, 20, 10, 3)/// 0hello2020103 string me print honge
-        console.log(ans)
-
-
-        function test(name, ...arg) {
-            console.log(arguments)
-            console.log(name)
-            let sum = 0;
-            for (let i in arg) {
-                sum += arg[i]
-            }
-            return sum
-        }
-        let ans = test('hello', 20, 20, 10, 3)
-        console.log(ans)
-
-        function test(name, ...arg) {
-            let sum = 0;
-            for (let i in arg) {
-                sum += arg[i]
-            }
-            return sum
-        }
-        let arr = [10, 20]
-        console.log(test(5, 5, 5, 5, 5, ...arr))
-
-        let arr1 = [1, 2, 3, 4, 5]
-        let arr2 = arr1
-        arr1.push(10)
-        console.log(arr1, arr2)
+        // function test(...arg) {
+        //     let sum = 0;
+        //     for (let i in arg) {
+        //         sum += arg[i]
+        //     }
+        //     return sum
+        // }
+        // let ans = test(20, 20, 10, 3)
+        // // let ans = test('hello', 20, 20, 10, 3)/// 0hello2020103 string me print honge
+        // console.log(ans)
 
 
-        let arr1 = [1, 2, 3, 4, 5]
-        let arr2 = [...arr1] /// only arr1 me 10 rhega
-        arr1.push(10)
-        console.log(arr1, arr2)
+        // function test(name, ...arg) {
+        //     console.log(arguments)
+        //     console.log(name)
+        //     let sum = 0;
+        //     for (let i in arg) {
+        //         sum += arg[i]
+        //     }
+        //     return sum
+        // }
+        // let ans = test('hello', 20, 20, 10, 3)
+        // console.log(ans)
 
-        let arr1 = [1, 2, 3, 4, 5]
-        let arr2 = [100, ...arr1, 200]
-        arr1.push(300)
-        console.log(arr1, arr2) // arr1 me hi push hoga only 100 or 200 arr2 me jayga
+        // function test(name, ...arg) {
+        //     let sum = 0;
+        //     for (let i in arg) {
+        //         sum += arg[i]
+        //     }
+        //     return sum
+        // }
+        // let arr = [10, 20]
+        // console.log(test(5, 5, 5, 5, 5, ...arr))
 
-        let name = 'ayesha'
-        let age = 19;
-        let obj = {
-            name,
-            age,
-        }
-        console.log(obj)
-
-        let name = 'ayesha'
-        let age = 19;
-        let obj = {
-            name: name,
-            age: age,
-        }
-        console.log(obj)
-
-
-        let name = 'ayesha'
-        let age = 19;
-        let obj = {
-            [name]: "ayesha",
-            [age]: 19,
-        }
-        console.log(obj) /// key b yhi h value b yhi b h
+        // let arr1 = [1, 2, 3, 4, 5]
+        // let arr2 = arr1
+        // arr1.push(10)
+        // console.log(arr1, arr2)
 
 
-        let name = 'ayesha'
-        let age = 19;
-        let obj = {
-            ['name']: "ayesha",
-            ['age']: 19,
-        }
-        console.log(obj)
+        // let arr1 = [1, 2, 3, 4, 5]
+        // let arr2 = [...arr1] /// only arr1 me 10 rhega
+        // arr1.push(10)
+        // console.log(arr1, arr2)
+
+        // let arr1 = [1, 2, 3, 4, 5]
+        // let arr2 = [100, ...arr1, 200]
+        // arr1.push(300)
+        // console.log(arr1, arr2) // arr1 me hi push hoga only 100 or 200 arr2 me jayga
+
+        // let name = 'ayesha'
+        // let age = 19;
+        // let obj = {
+        //     name,
+        //     age,
+        // }
+        // console.log(obj)
+
+        // let name = 'ayesha'
+        // let age = 19;
+        // let obj = {
+        //     name: name,
+        //     age: age,
+        // }
+        // console.log(obj)
 
 
-        let name = 'student'
-        let age = 19;
-        let obj = {
-            [`${name}Name`]: "ayesha",
-            ['age']: 19,
-        }
-        console.log(obj)
+        // let name = 'ayesha'
+        // let age = 19;
+        // let obj = {
+        //     [name]: "ayesha",
+        //     [age]: 19,
+        // }
+        // console.log(obj) /// key b yhi h value b yhi b h
 
 
-        let name = 'student'
-        let age = 'ds';
-        let obj = {
-            [`${name}Name`]: "ayesha",
-            ['age']: 19,
-            'test fun'() {
-                return this.studentName + " " + this.age
-            }
-        }
-        console.log(obj['test fun']())
+        // let name = 'ayesha'
+        // let age = 19;
+        // let obj = {
+        //     ['name']: "ayesha",
+        //     ['age']: 19,
+        // }
+        // console.log(obj)
 
 
-        let name = 'student'
-        let age = 'ds';
-        let obj = {
-            [`${name}Name`]: "ayesha",
-            ['age']: 19,
-            test() {
-                return this[`${name}Name`] + " " + this.age
-                // return this.studentName + " " + this.age
-            }
-
-        }
-        console.log(obj.test())
+        // let name = 'student'
+        // let age = 19;
+        // let obj = {
+        //     [`${name}Name`]: "ayesha",
+        //     ['age']: 19,
+        // }
+        // console.log(obj)
 
 
-        let a = 'ayesha '
-        let b = ' babu'
-        let c = ' cinu'
-        function test(a, b, c) {
-            let ans = a + " " + b
-            return { ans, c }
-        }
-        let obj = test(a, b, c)
-        console.log(obj.ans)
-        console.log(obj.c)
+        // let name = 'student'
+        // let age = 'ds';
+        // let obj = {
+        //     [`${name}Name`]: "ayesha",
+        //     ['age']: 19,
+        //     'test fun'() {
+        //         return this.studentName + " " + this.age
+        //     }
+        // }
+        // console.log(obj['test fun']())
 
 
-        let a = 'ayesha '
-        let b = ' babu'
-        let c = ' cinu'
-        function test(a, b, c) {
-            let ans = a + b + c
-            // return [ans, c]
-            // return { ans }
-            // return { a, b, c }
-        }
-        console.log(test(a, b, c))
+        // let name = 'student'
+        // let age = 'ds';
+        // let obj = {
+        //     [`${name}Name`]: "ayesha",
+        //     ['age']: 19,
+        //     test() {
+        //         return this[`${name}Name`] + " " + this.age
+        //         // return this.studentName + " " + this.age
+        //     }
 
-        let a = 'ayesha '
-        let b = ' babu'
-        let c = ' cinu'
-        function test(a, b, c) {
-            // return [a, b, c]
-            return a, b, c // c last h eska hi aaygi value cinu
-        }
-        console.log(test(a, b, c))
-
-        let arr = ['husain', 5]
-        // let [, , ...enythink] = arr // undefined sub empty ho jayga
-        let [name, ...enythink] = arr
-        console.log(enythink)
-        console.log(name, enythink)
+        // }
+        // console.log(obj.test())
 
 
-        function test([name, age = 20, city]) {
-            // return [name, age, city]
-            // console.log(name, age, city)
-            console.log(name)
-        }
-        console.log(['ayesha', 19, 'merta'])
+        // let a = 'ayesha '
+        // let b = ' babu'
+        // let c = ' cinu'
+        // function test(a, b, c) {
+        //     let ans = a + " " + b
+        //     return { ans, c }
+        // }
+        // let obj = test(a, b, c)
+        // console.log(obj.ans)
+        // console.log(obj.c)
 
 
-        function test() {
-            return ["ayesha", 20, "city"]
-        }
-        let [name, age = 18, city] = test()
-        console.log(name, age, city)
+        // let a = 'ayesha '
+        // let b = ' babu'
+        // let c = ' cinu'
+        // function test(a, b, c) {
+        //     let ans = a + b + c
+        //     // return [ans, c]
+        //     // return { ans }
+        //     // return { a, b, c }
+        // }
+        // console.log(test(a, b, c))
+
+        // let a = 'ayesha '
+        // let b = ' babu'
+        // let c = ' cinu'
+        // function test(a, b, c) {
+        //     // return [a, b, c]
+        //     return a, b, c // c last h eska hi aaygi value cinu
+        // }
+        // console.log(test(a, b, c))
+
+        // let arr = ['husain', 5]
+        // // let [, , ...enythink] = arr // undefined sub empty ho jayga
+        // let [name, ...enythink] = arr
+        // console.log(enythink)
+        // console.log(name, enythink)
+
+
+        // function test([name, age = 20, city]) {
+        //     // return [name, age, city]
+        //     // console.log(name, age, city)
+        //     console.log(name)
+        // }
+        // console.log(['ayesha', 19, 'merta'])
+
+
+        // function test() {
+        //     return ["ayesha", 20, "city"]
+        // }
+        // let [name, age = 18, city] = test()
+        // console.log(name, age, city)
 
         let obj = {
             name: 'ayesha',

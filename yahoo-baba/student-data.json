@@ -1,0 +1,37 @@
+{
+  "student_id": 12345,
+  "first_name": "John",
+  "last_name": "Doe",
+  "age": 20,
+  "grade": "A",
+  "courses": [
+    {
+      "course_id": 101,
+      "course_name": "Mathematics",
+      "teacher": "Mr. Smith",
+      "grade": "A-"
+    },
+    {
+      "course_id": 102,
+      "course_name": "Science",
+      "teacher": "Ms. Johnson",
+      "grade": "B+"
+    },
+    {
+      "course_id": 103,
+      "course_name": "History",
+      "teacher": "Mr. Davis",
+      "grade": "A"
+    }
+  ],
+  "contact": {
+    "email": "john.doe@example.com",
+    "phone": "+1234567890",
+    "address": {
+      "street": "123 Main St",
+      "city": "Anytown",
+      "state": "CA",
+      "zip": "12345"
+    }
+  }
+}

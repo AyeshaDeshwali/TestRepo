@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <span class="button" id="a">one</span>
+    <span class="button" id="b">two</span>
+    <span class="button" id="c">three</span>
+    <span class="button" id="d">four</span>
+    <script>
+        let button = document.querySelectorAll(".button")
+        let body = document.querySelector('body')
+        button.forEach((val) => {
+            console.log(val)
+            val.addEventListener(('click'), (e) => {
+                console.log(e)
+                console.log(e.target)
+                if (e.target.id === 'a') {
+                    body.style.backgroundColor = e.target.id
+                }
+                if (e.target.id === 'b') {
+                    body.style.backgroundColor = e.target.id
+                }
+                if (e.target.id === 'c') {
+                    body.style.backgroundColor = e.target.id
+                } if (e.target.id === 'd') {
+                    body.style.backgroundColor = e.target.id
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

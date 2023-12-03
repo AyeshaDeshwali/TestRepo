@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let ans = async function () {
+        //     return "Hello!"
+        // }
+        // ans().then((result) => {
+        //     console.log(result)
+        // }, (error) => {
+        //     console.log(error)
+        // })
+
+        // async function ans() {
+        //     return await "Hello!"
+        // }
+        // console.log(ans())
+
+        // async function ans() {
+        //     return "Hello!"
+        // }
+        // ans().then((result) => {
+        //     console.log(result)
+        // }, (error) => {
+        //     console.log(error)
+        // })
+
+        // let ans = async () => {
+        //     return "Hello!"
+        // }
+        // ans().then((result) => {
+        //     console.log(result)
+        // }).catch((error) => {
+        //     console.log(error)
+        // })
+
+
+        // async function test() {
+        //     let one = await new Promise((resolve) => {
+        //         setTimeout(() => {
+        //             console.log(1)
+        //             resolve(1)
+        //         }, 1000)
+        //     })
+        //     let two = await new Promise((resolve) => {
+        //         setTimeout(() => {
+        //             console.log(2)
+        //             resolve(2)
+        //         }, 2000)
+        //     })
+        //     let three = await new Promise((resolve) => {
+        //         setTimeout(() => {
+        //             console.log(3)
+        //             resolve(3)
+        //         }, 3000)
+        //     })
+        //     return [one, two, three]
+        // }
+        // test().then((result) => {
+        //     console.log(result)
+        // }).catch((error) => {
+        //     console.log(error)
+        // })
+
+        // console.log('hello')
+
+        // function test() {
+        //     console.log(1);
+        //     setTimeout(() => {
+        //         console.log(2);
+        //         setTimeout(() => {
+        //             console.log(3);
+        //         }, 0);
+        //     }, 2000);
+        // }
+        // test();
+
+        // function test() {
+        //     console.log(1);
+        //     const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+        //     setTimeout(async () => {
+        //         console.log(2);
+        //         await delay(0);
+        //         console.log(3);
+        //     }, 2000);
+        // }
+        // test(); // 123
+
+
+
+        // function test() {
+        //     console.log(1)
+        //     console.log(2)
+        // }
+        // console.log(3)
+        // test()
+        // console.log(4) // 3124
+
+        // async function test() {
+        //     console.log(1)
+        //     console.log(2)
+        // }
+        // console.log(3)
+        // test()
+        // console.log(4) // 3124
+        // (async function () {
+        //     console.log(await "Hello")
+        // })()
+
+
+
+        // async function fechdata() {
+        //     try {
+        //         let resp = await fetch('https://restcountries.com/v3.1/name/india');
+        //         let file1 = await fetch('./async.js');
+        //         let file2 = await fetch('./async2.js');
+        //         if (!resp.ok) {
+        //             throw new Error(`Network response was not ok: ${resp.status}`);
+        //         }
+        //         if (!file1.ok) {
+        //             throw new Error(`Error fetching 'async.js': ${file1.status}`);
+        //         }
+        //         if (!file2.ok) {
+        //             throw new Error(`Error fetching 'async2.js': ${file2.status}`);
+        //         }
+        //         let data = await resp.json();
+        //         let data2 = await file1.json();
+        //         let data3 = await file2.json();
+        //         return [data, data2, data3];
+        //     } catch (error) {
+        //         console.log("Error fetching data:", error);
+        //         throw error;
+        //     }
+        // }
+        // async function getdata() {
+        //     try {
+        //         let ans = await fechdata();
+        //         console.log(ans);
+        //     } catch (error) {
+        //         console.log("Error in getdata():", error);
+        //     }
+        // }
+        // getdata();
+
+
+        // async function test() {
+        //     let india = await fetch("https://restcountries.com/v3.1/name/india")
+        //     let japan = await fetch("https://restcountries.com/v3.1/name/japan")
+        //     let data = await india.json()
+        //     let data1 = await japan.json()
+        //     return [data, data1].flat()
+        // }
+        // test().then((result) => {
+        //     console.log(result)
+        // })
+
+        // console.log('one')
+        // async function test() {
+        //     let india = await fetch("./test.txt")
+        //     console.log("three")
+        //     let data = await india.text()
+        //     console.log('four')
+        //     return data
+        // }
+        // console.log('two')
+        // test().then((result) => {
+        //     console.log(result)
+        // })
+        // console.log('five') // one two five three four
+
+        // async function test() {
+        //     return (await fetch("./async.js")).text() // uper ye kam 3 line me kiya gya lakin ye ek line m b kr skte h jase yaha kiya h
+        //     // return (await fetch("./async.js")).json() // agr file me data json kr form h to hi .json ka use kr skte h otherwise .text ka use krna h agr file me data simple text ki foem  h to
+        // }
+        // test().then((result) => {
+        //     console.log(result)
+        // }).catch((error) => {
+        //     console.log(error)
+        // })
+
+
+        // async function test() {
+        //     try {
+        //         let india = await fetch("./test.txt")
+        //         let data = await india.text()
+        //         return data
+        //     } catch (error) {
+        //         console.log(error)
+        //     }
+        // }
+        // test().then((result) => {
+        //     console.log(result)
+        // }) // .catch yah likne ke jrurat ni h baar 
+
+    </script>
+</body>
+
+</html>
