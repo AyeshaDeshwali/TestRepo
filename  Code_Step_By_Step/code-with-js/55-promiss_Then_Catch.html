@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="https://cdn.programiz.com/sites/tutorial2program/files/javascript-promise-chaining.png" alt="">
+    <script>
+        // const myPromiss = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         console.log("2 seconds have passed")
+        //         resolve('resolved message')
+        //     }, 2000)
+        // })
+        // myPromiss.then((response) => {
+        //     console.log('response log.')
+        //     console.log(response)
+        // })
+
+
+        // const prom = new Promise((resolve, reject) => {
+        //     let i = false;
+        //     if (i) {
+        //         setTimeout(() => {
+        //             resolve('i is true')
+        //         });
+        //     } else {
+        //         reject('i is false')
+        //     }
+        // })
+
+        // prom.then((res) => {
+        //     console.log(res)
+        // }).catch(console.error())
+
+        // let prom = new Promise((resolve, reject) => {
+        //     console.log('hello')
+        //     resolve(20)
+        // })
+        // console.log('hello')
+        // setTimeout(() => {
+        //     console.log('time')
+        // }, 2000)
+        // console.log('hi')
+
+
+
+        // let prom = new Promise((resolve, rejecte) => {
+        //     setTimeout(() => resolve('done'), 1000)
+        // })
+        // prom.then(alert)
+
+
+
+        // let p1 = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         console.log('2 seconds')
+        //         resolve(10)
+        //     }, 2000);
+        // })
+
+        // p1.then((value) => {
+        //     console.log(value)
+        //     let p2 = new Promise((resolve, reject) => {
+        //         setTimeout(() => { resolve('promiss 2') }, 2000)
+        //     })
+        //     return p2
+        // }).then((value) => {
+        //     console.log('We are done')
+        // }).then((value) => {
+        //     console.log('complit')
+        // })
+
+
+        // try {
+        //     console.log(hello)
+        // } catch (error) {
+        //     console.log(error)
+        // }
+
+
+        // try {
+        //     setTimeout(() => {
+        //         console.log(hello)
+        //     }, 100)
+        // } catch (error) {
+        //     console.log(error)
+        // }
+        // Aapke code mein ek asynchronous operation, setTimeout function ke through, use ho raha hai.Lekin try-catch block synchronous code ke errors ko handle karne ke liye hota hai, asynchronous code ko handle karne mein nahi.
+        // setTimeout function ke andar ka code delay ke baad run hota hai, jab ki try-catch block tab tak execute ho chuka hota hai jab setTimeout chal raha hota hai, isliye try-catch block error ko capture nahi kar pata.
+
+        // try {
+        //     setTimeout(() => {
+        //         try {
+        //             console.log(hello);
+        //         } catch (innerError) {
+        //             console.error(innerError);
+        //         }
+        //     }, 100);
+        // } catch (error) {
+        //     console.log(error);
+        // }
+
+        // try-catch block asynchronous code ko handle kar sakta hai, lekin ismein ek important point hai ki agar asynchronous code mein koi error aata hai, to woh try-catch block mein catch nahi hoga, kyunki try-catch block tab tak execute hota hai jab tak ki code synchronous hota hai.
+        // Iske bajaaye, asynchronous code mein error handling ke liye aapko Promises ka istemal karna hota hai.Agar aap ek async function ka use kar rahe hain, toh aap try-catch ka istemal await ke sath kar sakte hain.
+
+        // async function exampleAsyncFunction() {
+        //     try {
+        //         // Asynchronous operation
+        //         await someAsyncOperation();
+        //     } catch (error) {
+        //         // Handle error here
+        //         console.error('Error:', error);
+        //     }
+        // }
+        // function someAsyncOperation() {
+        //     return new Promise((resolve, reject) => {
+        //         // Simulating an asynchronous operation
+        //         setTimeout(() => {
+        //             // Assuming an error occurred
+        //             reject('Something went wrong');
+        //         }, 1000);
+        //     });
+        // }
+        // exampleAsyncFunction();
+        // Is example mein, someAsyncOperation ek asynchronous operation simulate kar raha hai aur exampleAsyncFunction ek async function hai jo is operation ko call kar rahi hai.try -catch block await ke sath use ho raha hai jisse agar Promise reject hota hai, toh error catch ho sake.
+        // Yadi aap non - Promise - based asynchronous code mein ho(for example, callbacks), toh aapko error handling ko callback ke andar karna hoga.
+
+
+        try {
+            let age = +prompt('what is your age')
+            if (age > 90) {
+                throw new Error('not valid')
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dark {
+            background-color: black;
+            color: white;
+        }
+
+        .ligth {
+            background-color: rgb(240, 243, 245);
+            color: black;
+        }
+
+        div {
+            height: 100px;
+            width: 100px;
+            background-color: aquamarine;
+            color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn" type="">click</button>
+    <h1>hello world</h1>
+
+    <div>this is a box</div>
+    <script>
+        // let ans = document.querySelector('#btn')
+        // let body = document.querySelector("body")
+        // let currentMode = "light"
+        // ans.addEventListener('click', () => {
+        //     if (currentMode === "light") {
+        //         currentMode = 'dark'
+        //         body.classList.add('dark')
+        //         body.classList.remove('light')
+        //     } else {
+        //         currentMode = 'light'
+        //         body.classList.add('light')
+        //         body.classList.remove('dark')
+        //     }
+        //     console.log(currentMode)
+        // })
+
+        // let ans = document.querySelector('div')
+        // ans.addEventListener('mouseover', () => {
+        //     ans.innerHTML = "hello"
+        //     console.log(ans)
+        // })
+
+
+        // let ans = document.querySelector('#btn')
+        // ans.onclick = () => {
+        //     console.log("hello")
+        //     let a = 99;
+        //     a++
+        //     console.log(a)
+        // }
+
+        //  let ans = document.querySelector('#btn')
+        //     ans.onmouseover = () => {
+        //         console.log("hello")
+        //         let a = 99;
+        //         a++
+        //         console.log(a)
+        //     }
+
+        let ans = document.querySelector('#btn')
+        function test1() {
+            console.log('hi..')
+        }
+        function test2() {
+            console.log('hi..')
+        }
+        function test3() {
+            console.log('hi..')
+        }
+        ans.addEventListener('click', test1)
+        ans.addEventListener('click', test2)
+        ans.removeEventListener('click', test3)
+        console.log(ans)
+    </script>
+</body>
+
+
+</html>

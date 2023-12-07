@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // Ji haan, nested callbacks ko "Callback Hell" kehte hain.Callback Hell ek situation hai jab aap bahut saare nested callbacks ka istemal karte hain, jo ki code ko padhne aur maintain karne mein mushkil bana deta hai.
+        // Jab aap multiple asynchronous operations ko series mein execute karte hain, aur har ek operation ke liye ek callback function define karni padti hai, to yeh situation aati hai.
+
+        // Callback Hell se bachne ke liye modern JavaScript mein Promise aur async / await ka istemal hota hai.In techniques se aap code ko clean aur readable banane mein madad milti hai, aur aapko ek level of indentation ke andar code likhne ki zarurat nahi hoti, jisse readability badhti hai.
+
+        // Callback Hell, jise "Pyramid of Doom" bhi kaha jata hai,
+
+        // bed work
+        // fetch('https://api.example.com/user', (userError, userData) => {
+        //     if (userError) {
+        //         console.error('Error fetching user data:', userError);
+        //     } else {
+        //         fetch('https://api.example.com/posts', (postsError, postData) => {
+        //             if (postsError) {
+        //                 console.error('Error fetching posts data:', postsError);
+        //             } else {
+        //                 fetch('https://api.example.com/comments', (commentsError, commentsData) => {
+        //                     if (commentsError) {
+        //                         console.error('Error fetching comments data:', commentsError);
+        //                     } else {
+        //                         // Process user, posts, and comments data
+        //                         console.log('User Data:', userData);
+        //                         console.log('Posts Data:', postData);
+        //                         console.log('Comments Data:', commentsData);
+        //                     }
+        //                 });
+        //             }
+        //         });
+        //     }
+        // });
+
+
+        // good work
+        // async function fetchData() {
+        //     try {
+        //         const userResponse = await fetch('https://api.example.com/user');
+        //         const userData = await userResponse.json();
+        //         const postsResponse = await fetch('https://api.example.com/posts');
+        //         const postData = await postsResponse.json();
+        //         const commentsResponse = await fetch('https://api.example.com/comments');
+        //         const commentsData = await commentsResponse.json();
+        //         // Process user, posts, and comments data
+        //         console.log('User Data:', userData);
+        //         console.log('Posts Data:', postData);
+        //         console.log('Comments Data:', commentsData);
+        //     } catch (error) {
+        //         console.error('Error fetching data:', error);
+        //     }
+        // }
+        // fetchData();
+
+
+        // Example of Callback Hell
+
+        function fetchData(callback) {
+            setTimeout(() => {
+                console.log('Fetching data...');
+                const data = { user: 'John' };
+                callback(null, data);
+            }, 1000);
+        }
+
+        function processData(userData, callback) {
+            setTimeout(() => {
+                console.log('Processing data...');
+                const processedData = { ...userData, status: 'Active' };
+                callback(null, processedData);
+            }, 1000);
+        }
+
+        function saveData(processedData, callback) {
+            setTimeout(() => {
+                console.log('Saving data...');
+                const savedData = { ...processedData, saved: true };
+                callback(null, savedData);
+            }, 1000);
+        }
+
+        // Nested callbacks leading to Callback Hell
+        fetchData((fetchError, userData) => {
+            if (fetchError) {
+                console.error('Error fetching data:', fetchError);
+            } else {
+                processData(userData, (processError, processedData) => {
+                    if (processError) {
+                        console.error('Error processing data:', processError);
+                    } else {
+                        saveData(processedData, (saveError, savedData) => {
+                            if (saveError) {
+                                console.error('Error saving data:', saveError);
+                            } else {
+                                console.log('Final saved data:', savedData);
+                            }
+                        });
+                    }
+                });
+            }
+        });
+
+
+        // Example using Promises to avoid Callback Hell
+
+        function fetchData() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    console.log('Fetching data...');
+                    const data = { user: 'John' };
+                    resolve(data);
+                }, 1000);
+            });
+        }
+
+        function processData(userData) {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    console.log('Processing data...');
+                    const processedData = { ...userData, status: 'Active' };
+                    resolve(processedData);
+                }, 1000);
+            });
+        }
+
+        function saveData(processedData) {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    console.log('Saving data...');
+                    const savedData = { ...processedData, saved: true };
+                    resolve(savedData);
+                }, 1000);
+            });
+        }
+        // Using Promises to avoid Callback Hell
+        fetchData()
+            .then(processData)
+            .then(saveData)
+            .then((finalData) => {
+                console.log('Final saved data:', finalData);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+
+    </script>
+</body>
+
+</html>

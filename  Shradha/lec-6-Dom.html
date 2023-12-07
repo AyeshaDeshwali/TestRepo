@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>hello</p>
+    <div id="hi">this is a div tag</div>
+    <ul id="un">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+    </ul>
+    <script>
+        // let ans = document.getElementById('hi')
+        // ans.setAttribute('name', 'hello')
+        // ans.setAttribute('class', 'cls')
+        // ans.setAttribute('id', 'yes')
+        // ans.removeAttribute('class')
+        // console.log(ans)
+
+
+        // let a = document.getElementById('hi')
+        // console.log(a)
+
+        // let a = document.querySelector('div')
+        // let ans = a.getAttribute('id')
+        // console.log(ans)
+
+        // let a = document.createElement("button")
+        // a.innerText = "click me"
+        // document.write(a)
+
+        // let div = document.querySelector('ul')
+        // insert element in list js
+        // div.prepend(a)
+        // div.before(a)
+        // div.after(a)
+        // div.append(a)
+
+        // let p = document.querySelector('p')
+        // p.before(a)
+
+        // let btn = document.createElement('button')
+        // btn.innerText = 'click'
+        // btn.style.color = 'red'
+
+        // -----------------------------------------------------------------------------------------
+
+
+
+        // let str = "Ayehsa Deshwali"
+        // let result = ""
+        // for (let i = 0; i < str.length; i++) {
+        //     if (str[i].toUpperCase() == str[i]) {
+        //         result += str[i].toLowerCase()
+        //     } else {
+        //         result += str[i].toUpperCase()
+        //     }
+        // }
+        // console.log(result)
+
+        // function test(str) {
+        //     let world = str.charAt(0).toUpperCase() + str.slice(1)
+        //     return world
+        // }
+        // console.log(test('ayesha deshwali'))
+
+        // function test(str) {
+        //     let words = str.split(' ');
+        //     for (let i = 0; i < words.length; i++) {
+        //         words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+        //     }
+        //     let result = words.join(' ');
+        //     return result;
+        // }
+        // console.log(test('ayesha deshwali'));
+
+
+        function test(str) {
+            let words = str.split(' ');
+            let capitalizedWords = words.map(function (word) {
+                return word.charAt(0).toUpperCase() + word.slice(1);
+            });
+            let result = capitalizedWords.join(' ');
+            return result;
+        }
+        console.log(test('ayesha deshwali'));
+
+
+    </script>
+</body>
+
+</html>

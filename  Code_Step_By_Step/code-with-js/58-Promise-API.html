@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                reject(new Error('error....'))
+            }, 2000)
+        })
+        let p2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('two')
+            }, 1000)
+        })
+        let p3 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("three")
+            }, 3000)
+        })
+
+        // p1.then((val) => {
+        //     console.log(val)
+        // })
+        // p2.then((val) => {
+        //     console.log(val)
+        // })
+        // p3.then((val) => {
+        //     console.log(val)
+        // })
+
+        // let ans = Promise.all([p1, p2, p3]) // agr ek b promise reject huy to Promise.all ni chlega all se ek sath aaynge
+        // console.log(ans)
+        // ans.then((val) => {
+        //     console.log(val)
+        // })
+
+        // let ans = Promise.allSettled([p1, p2, p3]) // error ni milega // agr ek b reject ho jata h to baki ke reslove chl jaynge
+        // console.log(ans)
+        // ans.then((val) => {
+        //     console.log(val)
+        // })
+
+        // let ans = Promise.race([p1, p2, p3]) /// race jo time pe phle hoga chay reject ho ya resolve bta dega phle se hi baaki ni dekhege
+        // console.log(ans)
+        // ans.then((val) => {
+        //     console.log(val)
+        // })
+
+        // let ans = Promise.any([p1, p2, p3]) // any resolve hone ka wait krta h reject hone ka ni // agr sub me error h to hi error aaygi vrna ni aaygi // ye error aaygi ye hogi AggregateError: All promises were rejected
+        // console.log(ans)
+        // ans.then((val) => {
+        //     console.log(val)
+        // })
+
+        // let ans = Promise.resolve(6)
+        // console.log(ans)
+        // ans.then((val) => {
+        //     console.log(val) // resolve functoin resolve promise deta h
+        // })
+
+        // let ans2 = Promise.reject(new Error('hi...'))
+        // console.log(ans2)
+        // ans2.then((val) => {
+        //     console.log(val) // reject function reject promise deta h
+        // })
+
+
+        // ---------------------------------------------------------------------------------------------------
+
+        // async functions internally use Promises.Jab aap koi function async declare karte hain, woh function ek Promise return karta hai.Yeh Promise resolve hota hai jab async function ka execution complete hota hai, aur reject hota hai agar koi error aata hai.
+
+        // Promise ka istemal direct callback - based code se bachne aur asynchronous operations ko handle karne ke liye hota hai.Jab aap async function mein await ka use karte hain, toh woh internally ek Promise ka wait karta hai
+        
+        // function fetchData() {
+        //     return new Promise((resolve, reject) => {
+        //         fetch('https://example.com/data')
+        //             .then(response => response.json())
+        //             .then(data => resolve(data))
+        //             .catch(error => reject(error));
+        //     });
+        // }
+
+        // async function fetchDataAsync() {
+        //     try {
+        //         let data = await fetchData();
+        //         console.log(data);
+        //     } catch (error) {
+        //         console.error('Error fetching data:', error);
+        //     }
+        // }
+        // fetchDataAsync();
+
+        // Is example mein, fetchData ek Promise return karta hai jise fetchDataAsync async function ke andar await ke sath use kiya gaya hai.async function bhi ultimately ek Promise return karegi.
+        // Promise ka use aapko manually Promise create karne ya existing Promise - based APIs ke saath interact karne mein hota hai.Jab aap kisi function ke result ka wait karte hain, aapko Promise ka use kisi na kisi form mein hota hai, chahe woh direct ho ya async function ke through.
+        // async aur await syntax ka use karke, aap Promises ko handle karte hue code ko synchronous code jaisa likh sakte hain, jisse readability aur maintainability improve hoti hai.
+    
+    
+    
+    </script>
+</body>
+
+</html>

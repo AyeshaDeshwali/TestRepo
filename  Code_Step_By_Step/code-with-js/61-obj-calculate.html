@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let random = Math.random()
+        console.log(random)
+        let a = prompt("Enter first number")
+        let c = prompt("Enter operation")
+        let b = prompt("Enter second number")
+        let obj = {
+            "+": "-",
+            "*": "+",
+            "-": "/",
+            "/": "**",
+        };
+        if (random > 0.1) {
+            console.log(`The result is ${a} ${c} ${b}`)
+            console.log(`The result is ${eval(`${a} ${c} ${b}`)}`)
+        } else {
+            c = obj[c]
+            console.log(`The result is ${eval(`${a} ${c} ${b}`)}`)
+        }
+
+        // let a = prompt('enter your first number');
+        // let operation = prompt('enter your operation');
+        // let b = prompt('enter your second number');
+        // let result = true;
+        // if (result) {
+        //     switch (operation) {
+        //         case '+':
+        //             result = Number(a) + Number(b);
+        //             break;
+        //         case '-':
+        //             result = Number(a) - Number(b);
+        //             break;
+        //         case '*':
+        //             result = Number(a) * Number(b);
+        //             break;
+        //         case '/':
+        //             result = Number(a) / Number(b);
+        //             break;
+        //         default:
+        //             console.log('Invalid operation');
+        //     }
+        // }
+        // console.log(result);
+
+
+        // let random = Math.random();
+        // console.log(random);
+        // let a = prompt('enter your first number');
+        // let operation = prompt('enter your operation');
+        // let b = prompt('enter your second number');
+        // let result;
+        // // Check if the operation is inverted
+        // if (random > 0.5) {
+        //     switch (operation) {
+        //         case '+':
+        //             result = Number(a) + Number(b);
+        //             break;
+        //         case '-':
+        //             result = Number(a) - Number(b);
+        //             break;
+        //         case '*':
+        //             result = Number(a) * Number(b);
+        //             break;
+        //         case '/':
+        //             result = Number(a) / Number(b);
+        //             break;
+        //         default:
+        //             console.log('Invalid operation');
+        //     }
+        // }
+        // console.log(result);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission Example</title>
+</head>
+
+<body>
+
+    <!-- <form id="myForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Submit</button>
+    </form> -->
+
+    <script>
+        // document.getElementById('myForm').addEventListener('submit', function (event) {
+        //     event.preventDefault(); // Form submission prevent karna
+        //     alert('Form submitted!');
+        // });
+
+
+        //  Aapko yeh yaad rakhna important hai ki Promises asynchronous operations ke liye hoti hain, aur Async / Await unko simplify karne mein madad karte hain.
+
+
+        // async aur await JavaScript mein asynchronous programming ko handle karne ke liye use hote hain.Yeh dono keywords aapko promises aur asynchronous code ko likhne aur padhne mein madad karte hain.
+
+        // "async and await make promises easier to write"
+
+        // async makes a function return a Promise
+
+        // await makes a function wait for a Promise
+
+        // async function test(value) {
+        //     return 'hello'
+        // }
+        // test().then((value) => {
+        //     console.log(value)
+        // }).catch((error) => {
+        //     console.log(error)
+        // })
+
+
+        // async function test() {
+        //     let prom = new Promise((resolve, reject) => {
+        //         resolve('hello')
+        //     })
+        //     console.log(await prom)
+        // }
+        // test()
+
+
+        // 1.  async Keyword:
+
+        // async keyword ek function ke samne likha jaata hai, jise hum "async function" kehte hain.
+        // Iska use function ko batane ke liye hota hai ki yeh asynchronous operations ko handle karegi.
+        // Example:
+
+
+        // async function fetchData() {
+        //         // Asynchronous operations
+        //         // ...
+        //     }
+
+        // 2. await Keyword:
+
+        // await keyword, ek async function ke andar hi use hota hai.Yeh ek Promise ko wait karne ke liye istemal hota hai.
+        // await ka use karte waqt, code execution rukta hai jab tak Promise resolve ya reject nahi hota.
+        // Example
+
+        // async function fetchData() {
+        //     let result = await fetch('https://api.example.com/data');
+        //     // Code yaha par rukega jab tak fetch ka Promise resolve nahi hota
+        //     console.log(result);
+        // }
+
+        // Jab aap await ka istemal karte hain, aapko.then() aur.catch() ka use nahi karna padta hai, jisse aapka code readable aur concise ho jata hai.
+
+        // Yeh keywords code ko asynchronous banane mein madad karte hain aur isse aap asynchronous code ko sync code jaisa likh sakte hain, jo code ko padhne aur maintain karne mein asaan banata hai.
+
+
+        // async / await aur Promise dono asynchronous programming ko handle karne ke tarike hain, lekin unme kuch key differences hain.
+        // 1. async / await:
+        // async function ke andar await ka use karte hain.
+        // Code ko synchronous style mein likhne mein madad karta hai, jisse readability badhti hai.
+        // Error handling ko try-catch blocks ke through handle kiya ja sakta hai.
+
+        // async function fetchData() {
+        //     try {
+        //         let result = await fetch('https://api.example.com/data');
+        //         console.log(result);
+        //     } catch (error) {
+        //         console.error('Error fetching data:', error);
+        //     }
+        // }
+
+
+        // 2.Promise:
+        // Promises ek alternative approach hain, jismein.then() aur.catch() ka istemal hota hai.
+        // Chaining multiple asynchronous operations ke liye promises ka istemal kiya ja sakta hai.
+
+        // function fetchData() {
+        //     return new Promise((resolve, reject) => {
+        //         fetch('https://api.example.com/data')
+        //             .then(response => resolve(response))
+        //             .catch(error => reject(error));
+        //     });
+        // }
+        // // Promises ko use karte hue
+        // fetchData()
+        //     .then(result => console.log(result))
+        //     .catch(error => console.error('Error fetching data:', error));
+
+        // async function test() {
+        //     let merta = new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             resolve('merta 22 dg')
+        //         }, 2000);
+        //     });
+        //     let jaipur = new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             resolve('jaipur 54 dg')
+        //         }, 5000);
+        //     })
+
+        //     let mr = await merta // phle resolve hoke value eski aaygi eske baad hi jaipur ke aaygi
+        //     console.log(mr)
+        //     let jai = await jaipur
+        //     console.log(jai)
+        //     return [mr, jai]
+
+        //     // return [merta, jaipur]
+
+        //     // merta.then(alert)
+        //     // jaipur.then(alert)
+        // }
+        // let ans = test()
+        // // console.log(test())
+        // ans.then((val) => {
+        //     console.log(val)
+        // })
+
+
+        async function test() {
+            let merta = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('merta 22 dg')
+                }, 2000);
+            });
+            let jaipur = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('jaipur 54 dg')
+                }, 5000);
+            })
+            let mr = await merta // phle resolve hoke value eski aaygi eske baad hi jaipur ke aaygi
+            let jai = await jaipur
+            return [mr, jai]
+            console.log(mr)
+            console.log(jai)
+        }
+        let hello = async () => {
+            console.log('this is a hello....')
+        }
+        async function main() {
+            let ans = await test()
+            let ans2 = await hello()
+            console.log(ans)
+        }
+        main()
+
+
+    </script>
+
+</body>
+
+</html>

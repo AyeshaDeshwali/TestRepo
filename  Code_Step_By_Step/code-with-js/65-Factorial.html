@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // function fact(number) {
+        //     let num = Array.from(Array(number + 1).keys())
+        //     console.log(num)
+        //     return num.slice(1,).reduce((a, b) => a * b)
+        // }
+        // console.log(fact(5))
+
+
+        function fact(number) {
+            let fact = 1
+            for (let i = 1; i <= number; i++) {
+                fact *= i
+            }
+            return fact
+        }
+        console.log(fact(5))
+
+
+
+        // let number = 5;
+        // let factorial = [...Array(number).keys()].reduce((acc, val) => acc * (val + 1), 1);
+        // console.log(factorial);
+
+        // let number = [1, 2, 3, 4, 5];
+        // let factorial = [number.reduce((acc, val) => acc * (val), 1)];
+        // console.log(factorial);
+
+        // let number = [1, 2, 3, 4, 5];
+        // let factorial = number.reduce((acc, val) => acc * (val), 1);
+        // console.log(factorial);
+
+
+        // let number = [1, 2, 3, 4, 5];
+        // let factorial = Array.from(number).reduce((a, b) => a * b)
+        // console.log(factorial);
+
+
+        // let number = [1, 2, 3, 4, 5];
+        // let factorial = number.reduce((a, b) => a * b, 0)
+        // console.log(factorial);
+
+        // let num = [1, 2, 3, 4, 5];
+        // let fact = 1;
+        // for (let i = 1; i <= num.length; i++) {
+        //     fact *= i
+        // }
+        // console.log(fact)
+
+
+        // let num = 5;
+        // let fact = 1;
+        // for (let i = 1; i <= num; i++) {
+        //     fact *= i
+        // }
+        // console.log(fact)
+
+        // document.title = "hello world"
+    </script>
+</body>
+
+</html>
