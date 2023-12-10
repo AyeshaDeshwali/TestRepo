@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+
+        }
+
+        body {
+            background-color: orangered;
+
+        }
+
+        .wrapper {
+            width: 400px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+        }
+
+        .container {
+            width: 100%;
+            background-color: rgb(245, 72, 9);
+            padding: 50px 40px;
+            box-shadow: 0 20px 65px rgba(87, 11, 16, 0.5);
+            position: relative;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .container:after {
+            content: "";
+            position: absolute;
+            width: 80%;
+            height: 120%;
+            background-color: white;
+            z-index: -1;
+            top: -10%;
+            left: 10%;
+        }
+
+        .container p {
+            color: rgb(201, 213, 218);
+            line-height: 2;
+            font-size: 18px;
+        }
+
+        .container h3 {
+            color: white;
+            margin: 20px 0 60px 0;
+            font-weight: 600;
+            text-transform: capitalize;
+
+        }
+
+        .container button {
+            background-color: white;
+            border: none;
+            padding: 15px 45px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 600;
+            color: orangered;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <p id="quote">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur, accusantium eos saepe.
+            </p>
+            <h3 id="author">
+                Lorem ipsum dolor.
+            </h3>
+            <button type="button" id="btn">Get Quote</button>
+        </div>
+    </div>
+    <script>
+
+        let quote = document.getElementById('quote')
+        let author = document.getElementById('author')
+        let btn = document.getElementById('btn')
+        const url = "https://api.quotable.io/random";
+        let getQuote = () => {
+            fetch(url).then(data => data.json())
+                .then(item => {
+                    console.log(item.content)
+                    console.log(item.author)
+                    quote.innerText = item.content
+                    author.innerText = item.author
+                })
+        }
+        window.addEventListener('load', getQuote)
+        btn.addEventListener('click', getQuote)
+    </script>
+</body>
+
+</html>

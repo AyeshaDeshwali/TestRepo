@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: rgb(255, 191, 0);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: sans-serif;
+        }
+
+        .wrapper {
+            background-color: black;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            height: 300px;
+            width: 500px;
+            line-height: 2;
+        }
+
+        button {
+            background-color: white;
+            border: none;
+            padding: 15px 45px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 70px;
+            color: rgb(4, 1, 0);
+            cursor: pointer;
+        }
+
+        span {
+            font-size: 70px;
+        }
+
+        p {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .fade {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 1.5s;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <span>&#128514;</span>
+        <p id="joke" class="fade"></p>
+        <br>
+        <button id="btn">Get Random </button>
+
+    </div>
+
+    <script>
+        let jokeContainer = document.getElementById('joke')
+        let btn = document.getElementById('btn')
+        let url = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single";
+        let getJoke = () => {
+            jokeContainer.classList.remove('fade')
+            fetch(url).then(data => data.json())
+                .then(item => {
+                    jokeContainer.textContent = `${item.joke}`;
+                    jokeContainer.classList.add('fade');
+                });
+        }
+        btn.addEventListener('click', getJoke)
+        getJoke()
+    </script>
+</body>
+
+</html>
