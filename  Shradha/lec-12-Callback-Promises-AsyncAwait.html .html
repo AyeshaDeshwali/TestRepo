@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lec-12-Callback-Promises-AsyncAwait.html</title>
+</head>
+
+<body>
+    <script>
+        // console.log('one')
+        // console.log('two')
+        // setTimeout(()=>{console.log("Hello")})
+        // console.log('three')
+        // console.log('four')
+        // console.log('five')
+
+        // function sum(a, b) {
+        //     console.log(a + b)
+        // }
+        // function calculate(a, b, callback) {
+        //     callback(a, b)
+        // }
+        // calculate(2, 2, sum)
+
+
+
+        // function calculate(a, b, callback) {
+        //     callback(a, b)
+        // }
+        // calculate(2, 2, function sum(a, b) {
+        //     console.log(a + b)
+        // })
+
+        // function sum(a, b) {
+        //     console.log(a + b)
+        // }
+        // function calculate(a, b, callback) {
+        //     callback(a, b)
+        // }
+        // calculate(2, 2, sum)
+        // calculate(2, 2, (a, b) => {
+        //     console.log(a + b)
+        // })
+
+
+        // let age = 20;
+        // if (age >= 18) {
+        //     if (age >= 60) {
+        //         console.log('senior')
+        //     } else {
+        //         console.log("middle")
+        //     }
+        // } else {
+        //     console.log("child")
+        // }
+
+        // for (let i = 0; i <= 5; i++) {
+        //     let sum = ""
+        //     for (j = 0; j <= i; j++) {
+        //         sum += i
+        //     }
+        //     console.log(sum, '\n')
+        // }
+
+        // function getData(dataID, getNextData) {
+        //     setTimeout(() => {
+        //         getNextData
+        //     }, 2000)
+        // }
+        // console.log(getData(10))
+        // console.log(getData(10))
+
+        // function test() {
+        //     return new Promise((rsolve, reject) => {
+        //         setTimeout(() => {
+        //             console.log('some data1')
+        //             rsolve()
+        //         }, 4000)
+        //     })
+        // }
+        // let one = test().then((res) => {
+        //     console.log(res)
+        // })
+        // console.log(one)
+
+
+        //  function test1() {
+        //         return new Promise((rsolve, reject) => {
+        //             setTimeout(() => {
+        //                 console.log('some data1')
+        //                 rsolve()
+        //             }, 4000)
+        //         })
+        //     }
+
+        //     let one = test().then((res) => {
+        //         console.log(res)
+        //     })
+        //     console.log(one)
+
+
+        // function getData(dataID) {
+        //     return new Promise((rsolve, reject) => {
+        //         setTimeout(() => {
+        //             console.log('some ', dataID)
+        //             rsolve()
+        //         }, 3000)
+        //     })
+        // }
+        // promise chain
+        // getData(1)
+        //     .then((res) => {
+        //         return getData(2)
+        //     })
+        //     .then(() => {
+        //         return getData(3)
+        //     })
+        //     .then((res) => {
+        //         console.log(res)
+        //     })
+
+        // // callback hell
+        // function getData(dataID, getNextData) {
+        //     return new Promise((rsolve, reject) => {
+        //         setTimeout(() => {
+        //             console.log('some ', dataID)
+        //             rsolve("success")
+        //             if (getNextData) {
+        //                 getNextData()
+        //             }
+        //         }, 3000)
+        //     })
+        // }
+        // getData(1, () => {
+        //     console.log("gatting data 2...")
+        //     getData(2, () => {
+        //         console.log('gatting data 3')
+        //         getData(3, () => {
+        //             console.log('gatting data 3....')
+        //         })
+        //     })
+        // })// callback hell
+
+
+        // async function test() {
+        //     console.log('hello')
+        // }
+        // test()
+
+        // function api() {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             console.log('weather data')
+        //             resolve(200)
+        //         }, 2000)
+        //     })
+        // }
+        // async function getWeatherData() {
+        //     await api()
+        // }
+        // getWeatherData()
+
+        // function getData(dataID) {
+        //     return new Promise((rsolve, reject) => {
+        //         setTimeout(() => {
+        //             console.log('some ', dataID)
+        //             rsolve()
+        //         }, 3000)
+        //     })
+        // }
+
+        // async function getAllData() {
+        //     await getData(1)
+        //     await getData(2)
+        //     await getData(3)
+        // }
+        // console.log(getAllData())
+
+
+
+        function getData(dataID) {
+            return new Promise((rsolve, reject) => {
+                setTimeout(() => {
+                    console.log('some ', dataID)
+                    rsolve()
+                }, 3000)
+            })
+        }
+
+        (async function () {
+            await getData(1)
+            await getData(2)
+            await getData(3)
+        })()
+
+        alert('hello')
+        prompt('what is your name')
+        confirm('hi')
+    </script>
+</body>
+
+</html>
