@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Container Example</title>
+</head>
+
+<body>
+
+    <button onclick="createAndManipulateCard()">Create Card and Manipulate Data</button>
+
+    <script>
+        class Card {
+            constructor() {
+                this.data = [];
+            }
+
+            addData(data) {
+                this.data.push(data);
+            }
+
+            getData() {
+                return this.data;
+            }
+        }
+
+        class Container {
+            constructor() {
+                this.card = null;
+            }
+
+            createCard() {
+                this.card = new Card();
+            }
+
+            addDataToCard(data) {
+                if (this.card) {
+                    this.card.addData(data);
+                } else {
+                    console.log("Error: Card not created. Create a card first.");
+                }
+            }
+
+            getDataFromCard() {
+                if (this.card) {
+                    return this.card.getData();
+                } else {
+                    console.log("Error: Card not created. Create a card first.");
+                    return null;
+                }
+            }
+        }
+
+        function createAndManipulateCard() {
+            const container = new Container();
+            container.createCard();
+            container.addDataToCard("Data 1");
+            container.addDataToCard("Data 2");
+
+            const cardData = container.getDataFromCard();
+
+            // Displaying data in an alert
+            alert("Card Data: " + JSON.stringify(cardData));
+        }
+    </script>
+
+</body>
+
+</html>

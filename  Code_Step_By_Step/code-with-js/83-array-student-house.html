@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>click me</button>
+    <div id="msg"></div>
+    <script>
+        // let students = ["Ayesha", "Saddam Husain", "Mo. Jakir", "Sahil Khan", "Aastana", "Farjana", "Mo Husain"]
+        // let houses = []
+        // for (let student of students) {
+        //     if (student.length < 6) {
+        //         houses.push("Gryffindor")
+        //     } else if (student.length < 8) {
+        //         houses.push("Hufflepuff")
+        //     } else if (student.length < 12) {
+        //         houses.push("Ravenclaw")
+        //     } else {
+        //         houses.push("Slytherin")
+        //     }
+        // }
+        // console.log(houses)
+
+        // let a = prompt("enter your name")
+        // console.log(localStorage.setItem("name", a))
+
+
+
+        // if (localStorage.getItem('name')) {
+        //     a = localStorage.getItem("name")
+        //     console.log(a)
+        // } else {
+        //     let a = prompt("enter your name")
+        //     console.log(localStorage.setItem("name", a))
+        // }
+
+
+        function test(note) {
+            let a = localStorage.setItem("note", note)
+            return a
+        }
+        let note = localStorage.getItem('note')
+        if (note) {
+            document.querySelector('div').innerHTML = note
+        }
+        document.querySelector('button').addEventListener('click', () => {
+            let note = prompt('enter your name')
+            test(note)
+            document.querySelector('div').innerHTML = note
+        })
+
+    </script>
+</body>
+
+</html>

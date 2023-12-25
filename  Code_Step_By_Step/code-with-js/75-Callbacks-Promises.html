@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let prom = new Promise((resolve, reject) => {
+            let a = Math.random()
+            if (a < 0.5) {
+                reject('no random number')
+            } else {
+                setTimeout(() => {
+                    console.log('yes i am done')
+                    resolve('ayesha')
+                }, 3000)
+            }
+        })
+        prom.then((a) => {
+            console.log(a)
+        }).catch((err) => { console.log(err) })
+
+
+
+
+    </script>
+</body>
+
+</html>

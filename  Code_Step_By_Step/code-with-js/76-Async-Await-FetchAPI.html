@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        async function test(one, two) {
+            let one1 = await fetch(`https://restcountries.com/v3.1/name/${one}`)
+            let result1 = await one1.json()
+            let two2 = await fetch(`https://restcountries.com/v3.1/name/${two}`)
+            let result2 = await two2.json()
+            return { result1, result2 }
+        }
+        test('india', 'japan')
+            .then((val) => {
+                console.log(val.result1)
+                console.log(val.result2)
+            }).catch((err) => {
+                console.log(err)
+            })
+    </script>
+</body>
+
+</html>

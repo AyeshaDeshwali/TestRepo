@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            background-color: aqua;
+            border: 2px solid red;
+            padding: 60px;
+            color: white;
+        }
+
+        .containerChild {
+            background-color: rgb(46, 6, 99);
+            padding: 20px;
+        }
+
+        .child {
+            background-color: bisque;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="containerChild">
+            <div class="child">
+                i am a child
+            </div>
+        </div>
+    </div>
+    <script>
+        // document.querySelector('.child').addEventListener('click', () => {
+        //     console.log('child clicked...')
+        // })
+        // document.querySelector('.containerChild').addEventListener('click', () => {
+        //     console.log('containerChild clicked...')
+        // })
+        // document.querySelector('.container').addEventListener('click', () => {
+        //     console.log('container clicked...')
+        // }) /// event bubbling
+
+
+        document.querySelector('.container').addEventListener('click', (e) => {
+            e.stopPropagation()
+            console.log('child clicked...')
+        })
+        document.querySelector('.containerChild').addEventListener('click', (e) => {
+            console.log('parents clicked...')
+            e.stopPropagation()
+        })
+        document.querySelector('.child').addEventListener('click', () => {
+            console.log('grandparents clicked...')
+        }) // event bubbling ko stop kr diya
+
+        function test() {
+            let val1 = Math.floor(Math.random() * 255)
+            let val2 = Math.floor(Math.random() * 255)
+            let val3 = Math.floor(Math.random() * 255)
+            return `rgba(${val1}, ${val2}, ${val3})`
+        }
+
+        setInterval(() => {
+            document.querySelector('.container').style.background = test()
+        }, 1000)
+        setInterval(() => {
+            document.querySelector('.containerChild').style.background = test()
+        }, 1000);
+        setInterval(() => {
+            document.querySelector('.child').style.background = test()
+        }, 1000)
+    </script>
+</body>
+
+</html>
