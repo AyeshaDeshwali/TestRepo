@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <style>
+        body {
+            height: 500vh;
+            overflow-y: scroll;
+            /* Enable vertical scrolling */
+            background-color: aliceblue;
+        }
+
+        #scrollToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            height: 50px;
+            width: 50px;
+            right: 20px;
+            background-color: #1d7ce1;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            padding: 10px 15px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .btnup {
+            font-size: 20px;
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: #0a69cf;
+        }
+    </style>
+    <title>Smooth Scroll to Top</title>
+</head>
+
+<body>
+    <button id="scrollToTopBtn" onclick="smoothScrollToTop()"><i class="fa fa-arrow-up btnup"></i></button>
+
+    <script>
+        function smoothScrollToTop() {
+            const scrollStep = -window.scrollY / (500 / 500);
+            const scrollInterval = setInterval(() => {
+                if (window.scrollY !== 0) {
+                    window.scrollBy(0, scrollStep);
+                } else {
+                    clearInterval(scrollInterval);
+                }
+            }, 500);
+        }
+
+        window.onscroll = function () {
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 150) {
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        };
+    </script>
+
+</body>
+
+</html>

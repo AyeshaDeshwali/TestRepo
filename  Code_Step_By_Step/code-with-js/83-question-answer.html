@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice</title>
+    <style>
+        body {
+            height: 500vh;
+            overflow-y: scroll;
+            background-color: aliceblue;
+        }
+
+        #scrollToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            height: 50px;
+            width: 50px;
+            right: 20px;
+            background-color: #1d7ce1;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            padding: 10px 15px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .btnup {
+            font-size: 20px;
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: #0a69cf;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="scrollToTopBtn" onclick="smoothScrollToTop()"><i class="fa fa-arrow-up btnup"></i></button>
+
+    <script>
+
+        //1. JavaScript function likhun jo ek wizard school ke students ke naam ko dekhe aur unhe unke naam ki length ke adhar par Gryffindor, Hufflepuff, Ravenclaw, ya Slytherin mei sort kare
+        // function test(name) {
+        //     let obj = {
+        //         one: [],
+        //         two: [],
+        //         three: [],
+        //         four: []
+        //     }
+        //     let fun = name.forEach((val) => {
+        //         let length = val.length;
+        //         if (length < 6) {
+        //             obj.one.push(val)
+        //         } else if (length < 8) {
+        //             obj.two.push(val)
+        //         } else if (length < 12) {
+        //             obj.three.push(val)
+        //         } else {
+        //             obj.four.push(val)
+        //         }
+        //     })
+        //     return obj
+        // }
+        // let arr = ['hi', 'mo. husain', 'abubakr', 'aastana', 'ayesha deshwali', "saddam husain", 'farjana', "love you all"]
+        // let ans = test(arr)
+        // console.log(ans)
+
+        //2. JavaScript function jo ek array ke har element ko double karega, lekin agar array mein consecutive duplicate elements hain toh sirf ek ko double karega:
+
+        // function test(arr) {
+        //     let ans = []
+        //     for (let i = 0; i < arr.length; i++) {
+        //         if (!ans.includes(arr[i])) {
+        //             ans.push(arr[i])
+        //         }
+        //     }
+        //     return ans
+        // }
+        // let arr = ['a', 'b', 'c', 'd', 'd', 'a', 'c', 'f', 'g']
+        // let ans = test(arr)
+        // console.log(ans)
+
+        // function doubleTrouble(arr) {
+        //     let result = [];
+        //     for (let i = 0; i < arr.length; i++) {
+        //         let curr = arr[i]
+        //         let prv = arr[i - 1]
+        //         if (curr !== prv && curr !== arr[i + 1]) {
+        //             result.push(curr * 2)
+        //         } else if (curr !== prv && curr === arr[i + 1]) {
+        //             result.push(curr)
+        //         }
+        //     }
+        //     return result;
+        // }
+        // const inputArray = [1, 2, 2, 3, 4, 4, 4, 5];
+        // const resultArray = doubleTrouble(inputArray);
+        // console.log(resultArray);
+
+
+        //3. The Mirror Mirror: Imagine you have a string, and you need to create a new string that is a mirror image of the original.Write a function that appends the reversed version of the original string to itself.
+
+
+        // function test(str) {
+        //     let ans = str.split("").reverse().join("")
+        //     return ans + str
+        // }
+        // let str = "Hello"
+        // console.log(test(str))
+
+        //4. The Password Validator: You are building a password validation feature.Create a function that checks if a given password meets the following criteria: at least 8 characters long, contains both uppercase and lowercase letters, and includes at least one digit.
+
+        // function result(num) {
+        //     let pass = "";
+        //     if (/[a-z]/.test(num) && /[A-Z]/.test(num) && num.length > 8) {
+        //         pass = num
+        //     }
+        //     return pass
+        // }
+        // let number = "101Ayesha"
+        // let ans = result(number)
+        // console.log(ans)
+
+        //5. The Sum Selector: You are working on a function that should sum all numbers in an array until it encounters a negative number.Write a function that performs this summation.
+
+        // function test(arr) {
+        //     let arr1 = 0;
+        //     for (let i = 0; i < arr.length; i++) {
+        //         if (arr[i] < 0) {
+        //             break;
+        //         } else {
+        //             arr1 += arr[i]
+        //         }
+        //     }
+        //     return arr1
+        // }
+        // console.log(test([1, 2, 3, 4, -5, 3]))
+
+        // function test(arr) {
+        //     let arr1 = []
+        //     for (let i = 0; i < arr.length; i++) {
+        //         if (arr[i] < 0) {
+        //             break;
+        //         } else {
+        //             arr1.push(arr[i])
+        //         }
+        //     }
+        //     return arr1
+        // }
+        // console.log(test([1, 2, 3, 4, -5, 3]))
+
+        //6. The Vowel Counter: You need to create a function that counts the number of vowels in a given string.Consider both uppercase and lowercase vowels.
+
+        // function test(str) {
+        //     let string = str.match(/[AEIOUaeiou]/gi)
+        //     return string ? string.length : 0
+        // }
+        // console.log(test('Ayesha'))
+
+        // function test(str) {
+        //     // let string = str.match(/[AIOUEaioue]/gi, " ")
+        //     let string = str.replace(/[AIOUEaioue]/gi, " ")
+        //     return string
+        // }
+        // console.log(test('ayesha Deshwali'))
+
+        //7.  The Local Storage Manager: You are working on a note - taking app, and you want to implement a function named saveNoteToLocalStorage that takes a note object and saves it to the browser's local storage.
+
+
+        // function storage(note) {
+        //     if (typeof (Storage) !== undefined) {
+        //         // let noteJson = note
+        //         let noteJson = JSON.stringify(note)
+        //         localStorage.setItem("noteKey", noteJson)
+        //     } else {
+        //         console.log("localStorage is not sported")
+        //     }
+        // }
+        // // let obj = `{ name: "saddam husain" }`
+        // let obj = { name: "mo. husain" }
+        // storage(obj)
+
+        //8. Async Array Mapping: Write an asynchronous function that takes an array of numbers and returns a new array of Promises where each number is multiplied by 2 after a delay of 500 milliseconds.
+
+        // function test(arr) {
+        //     let prom = new Promise((resolve, reject) => {
+        //         setTimeout(() => {
+        //             let ans = 0;
+        //             for (let i = 0; i < arr.length; i++) {
+        //                 ans += arr[i];
+        //             }
+        //             resolve(ans);
+        //         }, 5000)
+        //     });
+        //     return prom;
+        // }
+        // test([1, 2, 3, 4])
+        //     .then((val) => {
+        //         console.log(val);
+        //     })
+        //     .catch((error) => {
+        //         console.log(error);
+        //     });
+
+        // async function test(arr) {
+        //     let arr2 = 0
+        //     for (let i = 0; i < arr.length; i++) {
+        //         arr2 += arr[i]
+        //     }
+        //     return await arr2
+        // }
+        // async function main() {
+        //     return await test([1, 2, 3, 4, 5])
+        // }
+        // main().then(val => {
+        //     console.log(val)
+        // }).catch(error => {
+        //     console.log(error)
+        // })
+
+
+        // function test(number) {
+        //     return new Promise((resolve) => {
+        //         setTimeout(() => {
+        //             resolve(number * 2)
+        //         }, 200)
+        //     })
+        // }
+        // async function mul(num) {
+        //     let arr = []
+        //     for (let i = 0; i < num.length; i++) {
+        //         let result = await test(num[i])
+        //         arr.push(result)
+        //     }
+        //     return arr
+        // }
+        // mul([1, 2, 3, 4]).then((val) => {
+        //     console.log(val)
+        // }).catch((data) => {
+        //     console.log(data)
+        // })
+
+
+        //9. The Asynchronous Shopper: Imagine you are building an online shopping application.Write an asynchronous function called placeOrder that simulates placing an order and returns a promise.The promise should resolve with an order confirmation message after a random delay.
+
+        // async function test(ms) {
+        //     return new Promise((resolve) => {
+        //         setTimeout(resolve, ms)
+        //     })
+        // }
+        // async function msg(num) {
+        //     await test(Math.random() * 5000) + 10000
+        //     return "Order successfully placed! Aapke items jald hi ship honge."
+        // }
+        // msg().then((val) => {
+        //     console.log(val)
+        // }).catch((data) => {
+        //     console.log(data)
+        // })
+
+        // function delay(ms) {
+        //     return new Promise(resolve => setTimeout(resolve, ms));
+        // }
+        // async function placeOrder(items) {
+        //     console.log(`Placing order for ${items.join(', ')}...`);
+        //     await delay(Math.floor(Math.random() * 5000) + 1000); // Random delay between 1 to 5 seconds
+        //     return `Order placed successfully! Your items (${items.join(', ')}) will be shipped soon.`;
+        // }
+        // const itemsToOrder = ['Laptop', 'Headphones', 'Book'];
+        // placeOrder(itemsToOrder)
+        //     .then(orderConfirmation => {
+        //         console.log(orderConfirmation);
+        //     })
+        //     .catch(error => {
+        //         console.error(error);
+        //     });
+
+
+        //10. The Coffee Machine: In your coffee shop application, you need to simulate the process of brewing coffee asynchronously.Write an async function named brewCoffee that takes the type of coffee and returns a promise.The promise should resolve with a message indicating that the coffee is ready after a random delay.
+
+        // async function test(ms) {
+        //     return new Promise((resolve) => {
+        //         setTimeout(resolve, ms)
+        //     })
+        // }
+        // async function msg(coffeeType) {
+        //     await test(Math.random() * 5000) + 10000
+        //     return `Your ${coffeeType} coffee is ready! Enjoy.`
+        // }
+        // msg('Cappuccino').then((val) => {
+        //     console.log(val)
+        // }).catch((data) => {
+        //     console.log(data)
+        // })
+
+
+        // Function to generate a random delay
+        // function getRandomDelay() {
+        //     return Math.floor(Math.random() * 5000) + 1000; // Random delay between 1 and 5 seconds
+        // }
+        // // Async function to simulate brewing coffee
+        // async function brewCoffee(coffeeType) {
+        //     return new Promise((resolve, reject) => {
+        //         const brewingTime = getRandomDelay();
+        //         // Simulating the asynchronous process of brewing coffee
+        //         setTimeout(() => {
+        //             // Resolve the promise with a message indicating that the coffee is ready
+        //             resolve(`Your ${coffeeType} coffee is ready!`);
+        //         }, brewingTime);
+        //     });
+        // }
+        // const coffeeType = "Cappuccino";
+        // // Calling the async function and handling the promise
+        // brewCoffee(coffeeType)
+        //     .then((message) => {
+        //         console.log(message);
+        //     })
+        //     .catch((error) => {
+        //         console.error("Error brewing coffee:", error);
+        //     });
+
+        //11. The Array Filterer: You are building a search feature for your e - commerce site.Write a function named filterProducts that takes an array of product objects and a filter criterion.The function should return a new array containing only the products that match the filter criterion.
+
+        // function test(a, b) {
+        //     let m = a.filter((val) => {
+        //         // return val.age === b
+        //         return val.name.includes(b)
+        //     })
+        //     return m
+        // }
+        // let me = [
+        //     { name: 'ayesha', age: 20 },
+        //     { name: "saddam", age: 20 }
+        // ]
+        // // let ans = test(me, 20)
+        // let ans = test(me, "ayesha")
+        // console.log(ans)
+
+        // function filterProducts(products, filterCriterion) {
+        //     const filteredProducts = products.filter((product) => {
+        //         return product.name.includes(filterCriterion);
+        //     });
+        //     return filteredProducts;
+        // }
+        // const products = [
+        //     { id: 1, name: "Laptop", price: 999.99 },
+        //     { id: 2, name: "Headphones", price: 49.99 },
+        //     { id: 3, name: "Smartphone", price: 699.99 },
+        // ];
+        // const filterCriterion = "Laptop";
+        // const filteredProducts = filterProducts(products, filterCriterion);
+        // console.log("Filtered Products:", filteredProducts);
+
+        //12. The Token Manager: You are developing a user authentication system, and you need to manage user authentication tokens.Implement a function named setAuthToken that takes an authentication token and sets it in localStorage with an expiration time.
+
+        // function test(token, time) {
+        //     let timeSet = new Date().getDate() + time * 60 * 1000
+        //     let obj = {
+        //         myTokenNum: token,
+        //         expirationTime: timeSet
+        //     }
+        //     let jsonToken = JSON.stringify(obj)
+        //     localStorage.setItem('authToken', jsonToken)
+        // }
+        // let authToken = 101;
+        // let expirationMinutes = 30;
+        // test(authToken, expirationMinutes)
+
+        //13. The Shopping Cart Totalizer: You are working on an e - commerce website, and you need to calculate the total cost of items in the shopping cart.Implement a function named calculateTotal that takes an array of products with prices and quantities and returns the total cost.
+
+        // function test(cart) {
+        //     let total = 0;
+        //     for (let i = 0; i < cart.length; i++) {
+        //         let product = cart[i]
+        //         let calculate = product.price * product.quantities
+        //         total += calculate
+        //     }
+        //     return total
+        // }
+        // let obj = [
+        //     { juice: "mengo", price: 20, quantities: 2 },
+        //     { juice: "apple", price: 30, quantities: 2 },
+        //     { juice: "orango", price: 40, quantities: 3 },
+        // ]
+        // console.log(test(obj))
+
+        //14. The Window Scroller: You are developing a single - page application with a smooth scrolling effect.Implement a function named smoothScrollToTop that smoothly scrolls the window to the top when called.
+        function smoothScrollToTop() {
+            const scrollStep = -window.scrollY / (500 / 500);
+            const scrollInterval = setInterval(() => {
+                if (window.scrollY !== 0) {
+                    window.scrollBy(0, scrollStep);
+                } else {
+                    clearInterval(scrollInterval);
+                }
+            }, 500);
+        }
+
+        window.onscroll = function () {
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 150) {
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        };
+
+
+
+
+    </script>
+</body>
+
+</html>
