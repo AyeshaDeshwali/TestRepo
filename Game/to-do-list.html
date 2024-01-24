@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #inp {
+            margin: 20px;
+
+
+        }
+
+        #input {
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        #add {
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+
+        #text {
+            margin: 20px;
+        }
+
+        li {
+            list-style-type: none;
+            background-color: #fff;
+            padding: 10px;
+            width: 200px;
+            margin: 10px 0;
+            display: block;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        i {
+            margin-left: 10px;
+            color: #e74c3c;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="inp">
+        <input type="text" name="" id="input">
+        <button type="button" id="add" onclick="added()">click</button>
+        <div id="text"></div>
+    </div>
+
+
+    <script>
+        let input = document.getElementById('input');
+        let text = document.getElementById('text');
+
+        function added() {
+            if (input.value === "") {
+                alert('Please write here.');
+            } else {
+                let newElm = document.createElement('li');
+                newElm.innerHTML = `${input.value} < i class="fas fa-trash" ></i >`;
+                text.appendChild(newElm);
+                input.value = "";
+
+                newElm.querySelector('i').addEventListener('click', () => {
+                    newElm.remove();
+                });
+            }
+        }
+    </script>
+
+</body>
+
+</html>
