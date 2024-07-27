@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch with AM/PM</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            height: 100vh;
+            background-color: black;
+            font-family: sans-serif;
+        }
+
+        .watch {
+            display: flex;
+            font-size: 30px;
+            font-weight: bold;
+            color: red;
+        }
+
+        .watch div {
+            margin: 0 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="watch">
+        <div id="hours">00</div>
+        <div>:</div>
+        <div id="minutes">00</div>
+        <div>:</div>
+        <div id="seconds">00</div>
+        <div id="ampm">AM</div>
+    </div>
+    <script>
+        function updateWatch() {
+            const time = new Date();
+            let hours = time.getHours().toString().padStart(2, "0");
+            const minutes = time.getMinutes().toString().padStart(2, "0");
+            const seconds = time.getSeconds().toString().padStart(2, "0");
+
+            let ampm = "AM";
+            if (hours >= 12) {
+                ampm = "PM";
+                hours = hours % 12;
+            }
+            if (hours === 0) {
+                hours = 12;
+            }
+
+            document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
+            document.getElementById("ampm").textContent = ampm;
+        }
+        setInterval(updateWatch, 1000);
+        updateWatch();
+    </script>
+</body>
+
+</html>
+
+
